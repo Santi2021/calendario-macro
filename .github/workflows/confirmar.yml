@@ -1,0 +1,61 @@
+name: Confirmar publicaciones
+
+on:
+  schedule:
+    - cron: "0 12 * * *"    # 09:00 Argentina: confirma lo del día anterior
+    - cron: "30 22 * * *"   # 19:30 Argentina: confirma lo de hoy (INDEC sale a las 16:00)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Probar sin escribir"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: confirmador
+  cancel-in-progress: false   # nunca dos corridas a la vez escribiendo el estado
+
+jobs:
+  confirmar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Dependencias
+        run: pip install requests==2.32.3
+
+      - name: Autotest (si falla, no se toca ningún dato)
+        run: python confirmador.py --selftest
+
+      - name: Corrida
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python confirmador.py --dry-run
+          else
+            python confirmador.py
+          fi
+
+      - name: Guardar estado
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: |
+          git config user.name "confirmador"
+          git config user.email "confirmador@users.noreply.github.com"
+          git add data/estado.json data/reporte.md
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Confirmaciones $(date -u +%F)"
+            git pull --rebase
+            git push
+          fi
