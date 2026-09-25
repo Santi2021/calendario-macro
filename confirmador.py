@@ -113,7 +113,7 @@ CONF = {
 CALENDARIOS = {
     "indec_2sem": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem{yyyy}.pdf",
     "indec_1sem_prox": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem{yyyy1}.pdf",
-    "bcra_calendario": "https://www.bcra.gob.ar/calendario-de-informes/",
+    "bcra_fechas": "https://www.bcra.gob.ar/calendario-de-informes/",
 }
 
 
@@ -416,6 +416,14 @@ def vigilar_calendarios(http: Http, estado_cal: dict, log: list) -> list:
         if url.endswith(".pdf") and not texto.lstrip().startswith("%PDF"):
             # El servidor respondió 200 pero con una página HTML: el PDF no existe todavía.
             continue
+        if not url.endswith(".pdf"):
+            # Las páginas HTML cambian en cada carga (scripts, tokens de sesión): se compara sólo
+            # el conjunto de fechas que publican. Si no hay fechas legibles, no se puede vigilar así.
+            limpio = re.sub(r"<script.*?</script>|<style.*?</style>", " ", texto, flags=re.S | re.I)
+            fechas = re.findall(r"\b\d{1,2}(?:/\d{1,2}/\d{2,4}| de [a-záéíóú]+(?: de \d{4})?)", limpio, re.I)
+            if not fechas:
+                continue
+            texto = " ".join(sorted(set(f.lower() for f in fechas)))
         h = hashlib.sha256(texto.encode("utf-8", "ignore")).hexdigest()
         previo = estado_cal.get(nombre)
         if previo is None:
@@ -625,6 +633,17 @@ def selftest() -> int:
     HOY = dt.date(2026, 9, 24)
     av = vigilar_calendarios(Http(fake={"https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2027.pdf": (200, "<html>no encontrado</html>")}), cal, [])
     check("soft404_calendario", not any("2027" in a for a in av))
+
+    # 15. Página HTML con tokens que cambian en cada carga: sin aviso si las fechas no cambian
+    cal2 = {}
+    p1 = "<script>var t='abc123'</script><td>14 de octubre</td><td>21 de octubre</td>"
+    p2 = "<script>var t='zzz999'</script><td>14 de octubre</td><td>21 de octubre</td>"
+    vigilar_calendarios(Http(fake={"https://www.bcra.gob.ar/calendario-de-informes/": (200, p1)}), cal2, [])
+    av2 = vigilar_calendarios(Http(fake={"https://www.bcra.gob.ar/calendario-de-informes/": (200, p2)}), cal2, [])
+    check("calendario_html_sin_ruido", not av2)
+    p3 = p2.replace("21 de octubre", "23 de octubre")
+    av3 = vigilar_calendarios(Http(fake={"https://www.bcra.gob.ar/calendario-de-informes/": (200, p3)}), cal2, [])
+    check("calendario_html_detecta_cambio", len(av3) == 1)
 
     total = ok + len(fallos)
     print(f"Autotest: {ok}/{total} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
