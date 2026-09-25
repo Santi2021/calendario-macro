@@ -58,6 +58,10 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         run: python extraer_cambiario.py
 
+      - name: Anexo sectorial CLANAE (BCRA)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python extraer_clanae.py
+
       - name: Guardar estado
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         env:
