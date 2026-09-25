@@ -1,0 +1,103 @@
+codigo,columna_excel,encabezado_original
+mlc001,B,"OPERACIONES DE CAMBIO ENTRE ENTIDADES AUTORIZADAS A OPERAR EN CAMBIOS Y SUS CLIENTES, Serie_mensual (4), equivalente en millones de dólares estadounidenses / Total"
+mlc002,C,RESULTADO MERCADO DE CAMBIOS(3) / Total
+mlc003,D,CUENTA CORRIENTE CAMBIARIA / Total
+mlc004,E,BIENES / Total
+mlc005,F,Cobros de exportaciones de bienes / Cobros de exportaciones
+mlc006,G,Cobros anticipados de exportaciones
+mlc007,H,Financiaciones locales de exportaciones
+mlc008,I,Prefinanciaciones de exportaciones del exterior
+mlc009,J,Otros ingresos por bienes
+mlc010,K,Total
+mlc011,L,Pagos de importaciones de bienes / Pagos anticipados de importaciones
+mlc012,M,Pagos a la vista de importaciones
+mlc013,N,Pagos diferidos de importaciones y otros egresos por bienes
+mlc014,O,Total
+mlc015,P,SERVICIOS / Total
+mlc016,Q,Ingresos / Consumos de bienes y servicios pagados con tarjetas y viajes (8)
+mlc017,R,Servicios empresariales profesionales y técnicos
+mlc018,S,"Servicios de comunicaciones, telecomunicaciones"
+mlc019,T,Cargos por el uso de la propiedad intelectual
+mlc020,U,Servicios financieros
+mlc021,V,Fletes
+mlc022,W,Servicios de transporte de pasajeros
+mlc023,X,Otros servicios de transporte
+mlc024,Y,Servicios de seguros
+mlc025,Z,Servicios relacionados con el comercio
+mlc026,AA,Servicios de construcción
+mlc027,AB,Servicios Arrendamiento operativo
+mlc028,AC,Servicios de información e informática
+mlc029,AD,Servicios personales culturales y recreativos
+mlc030,AE,Servicios de gobierno
+mlc031,AF,Otros
+mlc032,AG,Total
+mlc033,AH,Egresos / Consumos de bienes y servicios pagados con tarjetas y viajes (8)
+mlc034,AI,Servicios empresariales profesionales y técnicos
+mlc035,AJ,"Servicios de comunicaciones, telecomunicaciones"
+mlc036,AK,Cargos por el uso de la propiedad intelectual
+mlc037,AL,Servicios financieros
+mlc038,AM,Fletes
+mlc039,AN,Servicios de transporte de pasajeros
+mlc040,AO,Otros servicios de transporte
+mlc041,AP,Servicios de seguros
+mlc042,AQ,Servicios relacionados con el comercio
+mlc043,AR,Servicios de construcción
+mlc044,AS,Servicios Arrendamiento operativo
+mlc045,AT,Servicios de información e informática
+mlc046,AU,Servicios personales culturales y recreativos
+mlc047,AV,Servicios de gobierno
+mlc048,AW,Otros
+mlc049,AX,Total
+mlc050,AY,INGRESO PRIMARIO / Total
+mlc051,AZ,Ingresos / Intereses
+mlc052,BA,Utilidades y Dividendos
+mlc053,BB,Remuneraciones
+mlc054,BC,Otras rentas
+mlc055,BD,Total
+mlc056,BE,Egresos / Intereses
+mlc057,BF,Utilidades y Dividendos
+mlc058,BG,Remuneraciones
+mlc059,BH,Otras rentas
+mlc060,BI,Total
+mlc061,BJ,INGRESO SECUNDARIO / Ingresos
+mlc062,BK,Egresos
+mlc063,BL,Total
+mlc064,BM,CUENTA CAPITAL / Ingresos
+mlc065,BN,Egresos
+mlc066,BO,Total
+mlc067,BP,CUENTA FINANCIERA / Total
+mlc068,BQ,Inversión directa y de portafolio de no residentes / Total
+mlc069,BR,Ingresos / Inversión directa
+mlc070,BS,Inversiones aplicadas a la compra de inmuebles
+mlc071,BT,Inversión de portafolio
+mlc072,BU,Total
+mlc073,BV,Egresos / Inversión directa
+mlc074,BW,Inversiones aplicadas a la compra de inmuebles
+mlc075,BX,Inversión de portafolio
+mlc076,BY,Total
+mlc077,BZ,"Préstamos financieros, títulos de deuda y líneas de crédito(2) / Total"
+mlc078,CA,Ingresos / Préstamos de Organismos Internacionales y agencias oficiales de crédito
+mlc079,CB,Otros préstamos del exterior y títulos de deuda
+mlc080,CC,Líneas de crédito
+mlc081,CD,Financiaciones locales
+mlc082,CE,Total
+mlc083,CF,Egresos / Préstamos de Organismos Internacionales y agencias oficiales de crédito
+mlc084,CG,Otros préstamos del exterior y títulos de deuda
+mlc085,CH,Líneas de crédito
+mlc086,CI,Financiaciones locales
+mlc087,CJ,Total
+mlc088,CK,Compra-venta de billetes y divisas sin fines específicos del sector privado no financiero / Total
+mlc089,CL,Ingresos / Billetes
+mlc090,CM,Inversiones directas en el exterior
+mlc091,CN,Otras inversiones en el exterior
+mlc092,CO,Total
+mlc093,CP,Egresos / Billetes
+mlc094,CQ,Inversiones directas en el exterior
+mlc095,CR,Otras inversiones en el exterior
+mlc096,CS,Operaciones de canje por transferencias con el exterior
+mlc097,CT,Compra-venta de títulos valores por parte de las entidades financieras
+mlc098,CU,Suscripción primaria de entidades financieras de valores emitidos en moneda extranjera
+mlc099,CV,Otros movimientos de la cuenta financiera
+mlc100,CW,Concepto no informado por el cliente
+mlc101,CX,"Item de Memorandum:
+Pago del saldo en moneda extranjera por uso de tarjetas en el exterior(7)"

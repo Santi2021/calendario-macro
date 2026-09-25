@@ -1,0 +1,54 @@
+codigo,columna_excel,encabezado_original
+bal001,B,"BALANCE CAMBIARIO, Serie_mensual (1), equivalente en dólares estadounidenses / Total"
+bal002,C,CUENTA CORRIENTE CAMBIARIA / Total
+bal003,D,Bienes / Cobros de exportaciones de bienes
+bal004,E,Pagos de importaciones de bienes
+bal005,F,Total
+bal006,G,Servicios / Ingresos
+bal007,H,Egresos
+bal008,I,Total
+bal009,J,Ingreso primario / Total
+bal010,K,Intereses / Ingresos
+bal011,L,Egresos
+bal012,M,Egresos intereses / Pagos de intereses al FMI
+bal013,N,Pagos de intereses a otros Org. Int. Y otros bilaterales
+bal014,O,Otros pagos de intereses
+bal015,P,Otros pagos de Gobierno Nacional
+bal016,Q,Total
+bal017,R,Utilidades y dividendos y otras rentas / Ingresos
+bal018,S,Egresos
+bal019,T,Total
+bal020,U,Ingreso secundario / Ingresos
+bal021,V,Egresos
+bal023,W,Cuenta de capital cambiaria
+bal024,X,Total / Total
+bal025,Y,Cuenta financiera / Total / Total
+bal026,Z,Inversión directa de no residentes / Ingresos / Ingresos
+bal027,AA,Egresos / Egresos
+bal028,AB,Total / Total
+bal029,AC,Inversión de portafolio de no residentes / Ingresos / Ingresos
+bal030,AD,Egresos / Egresos
+bal031,AE,Total / Total
+bal032,AF,"Préstamos financieros, títulos de deuda y líneas de crédito(1)(5) / Ingresos / Ingresos"
+bal033,AG,Egresos / Egresos
+bal034,AH,Total / Total
+bal035,AI,Operaciones con el FMI / Ingresos / Ingresos
+bal036,AJ,Egresos / Egresos
+bal037,AK,Total / Total
+bal038,AL,Préstamos de otros Org. Int. y otros bilaterales / Ingresos / Ingresos
+bal039,AM,Egresos / Egresos
+bal040,AN,Total / Total
+bal041,AO,Compra-venta de billetes y divisas sin fines específicos del sector privado no financiero / Ingresos / Ingresos
+bal042,AP,Egresos / Egresos
+bal043,AQ,Operaciones de canje por transferencias con el exterior / Operaciones de canje por transferencias con el exterior
+bal044,AR,Formación de activos externos del sector financiero (PGC) / Formación de activos externos del sector financiero (PGC)
+bal045,AS,Formación de activos externos del sector público / Formación de activos externos del sector público
+bal046,AT,Compra-venta de títulos valores / Compra-venta de títulos valores
+bal047,AU,Otras operaciones del sector público nacional (neto)(6) / Otras operaciones del sector público (neto)
+bal048,AV,Otros movimientos netos
+bal049,AW,Concepto no informado por el cliente (neto) / Concepto no informado por el cliente (neto)
+bal050,AX,Variación de Reservas Internacionales por transacciones / Variación de Reservas Internacionales por transacciones
+bal051,AY,Variación contable de Reservas Internacionales del BCRA / Variación contable de Reservas Internacionales del BCRA
+bal052,AZ,Ajuste por tipo de pase y valuación / Ajuste por tipo de pase y valuación
+bal053,BA,"Item de Memorandum:
+Pago del saldo en moneda extranjera por uso de tarjetas en el exterior(7)"
