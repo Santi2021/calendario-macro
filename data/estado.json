@@ -1,0 +1,118 @@
+{
+ "eventos": {
+  "bcra.boletin|2026-09-14|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-14",
+   "evidencia": "https://www.bcra.gob.ar/publicaciones/boletin-estadistico-septiembre-de-2026/",
+   "metodo": "bcra_publicacion",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.canasta_crianza|2026-09-14|2026-08": {
+   "estado": "sin_metodo"
+  },
+  "indec.ucii|2026-09-15|2026-07": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-15",
+   "evidencia": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVllzWERZRG95dlR6SmN3R29Na1FEZ0VrUXBidWoxSWM4bnVlRlk1QjN0U3Bnbmw1NEJBZFNlcEQxcThmQ2VVdGxNT2pUUlczUTI4U1h0Nm51ZWVhZEhYRWU0ZERQNnpKNFF2aW1RRlpuelo4d3dGZEhIQTJTaWRJcy1zODhPbUJiRElPTjdJeUFlV3g4UnREdzI1YWZ2UUhOTElZMERGby1fRnNTQUJYVXNGU1dhWTNndWpHMzRoLXFLdzFuTUk3aWFFY1ZDTmFGSlV1QTJHQmJsVFppUjFV0gH6AUFVX3lxTE9GcmVjblhwRnNkaGx4TE5CdF90VWxRdjlNV0pPZ1lrc2ZJMkpKNE1VQk5vYTVzSmJ4RWhGamJSQm82TjdqeGluNkRsZXk3NTlUNTl4bzdBWjZ4V05ZZGdMMmxFUERRZW03ZjdZT3dtT1JnUkVBX3RzNjlqT3B2R2lPUmMyWDFVeEEtc2h0VmlaSEkxMUZTOEtvbWVGZmdJU3Nkak9PUTRkVFZsVlRtWmcxa2hac1FncWNlSGU3dXZWR3l1Ukp0ZzR5Ti13T0U2UGJVczNsRHhoYWtib2M3SFEyVEtEN1BxcE1CZ2VWaUs1a1BJWEpRcG56RGc?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.icc|2026-09-16|2026-08": {
+   "estado": "sin_metodo"
+  },
+  "indec.sipm|2026-09-16|2026-08": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-16",
+   "evidencia": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNemhISENLcEEwWDA0ZkFCVjY1Y1NyTEJ4cFpVUjh2WjRuWVVnQ09TM3B4M3BTRk1qS3VYY1h4ZmR1LWhXYkhzWG1WWllianZ3aXQ4eVItZXZfWTY4TEs2azM5aDg5ZGt0RjdNUENOV1hPMFFFT09hcmgwdU5VUG5XMWxSVm1LOU95eVk0bWE3Q01obGluMFRZNjQ0eEMtQWJlSTN1cXJOdjRGNlJIV2xDOGFsSFFmT211aEw4YklZTEZmVGNBV0dKWXlVNG9zZjdSTlHSAeYBQVVfeXFMUHNGTXl6LVNDc0dYQ0w1WW80Y1Y3Yng3Y042dXNGYk1sMHhYVzJ2VG1DWjVYcmVfR2xSdWVPZE5FaV9QUWZXMUYzN2dmV2k1bEhxSkY0NU5aZWkyZEY2Vlk1d2FLdkNVU2NYSHB0MklWNi1qYXpUQlBhWEJRNnZqRUphZHUyU3I2dlY0X2NXU2s5MUJxb0NnVy0yUHB0MGJHZC16V2NGU1Yyb2k4aml0d2tSbXJSdm5peE5SdHoxX0NuSTFpRGczRnpDTlFQd2p0Y0FOLXVjOHdQSlZ4cXU5MzBBNEF0YWc?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.eph_mercado_trabajo|2026-09-17|2026-Q2": {
+   "estado": "sin_metodo"
+  },
+  "indec.farmaceutica|2026-09-17|2026-Q2": {
+   "estado": "sin_metodo"
+  },
+  "indec.pib_avance|2026-09-17|2026-Q2": {
+   "estado": "sin_metodo"
+  },
+  "bcra.bancos|2026-09-18|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-18",
+   "evidencia": "https://www.bcra.gob.ar/publicaciones/informe-sobre-bancos-julio-de-2026/",
+   "metodo": "bcra_publicacion",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "bcra.estado_resumido|2026-09-18|2026-09-15": {
+   "estado": "sin_metodo"
+  },
+  "indec.ica|2026-09-18|2026-08": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-18",
+   "evidencia": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVUpnd3M4aTY1RnltZ1RMaEN6QkNlZGJnWGVWSHRDUDNlZzliU3FuWkpvWHZoMFlCWk5HdUo3SUkxZWhsX3lDMTVqR3E4ejlHakpRMEh3Y2FSNk11TDVFLThyTWoxWlRBTnlPR0NFZlZqS19jZG5vb045Tkd1ejBJXzJYYm5XTnhLVXZxV0JTczZLano1VW9CRWtR0gGuAUFVX3lxTE4zb0NwUW5wbEpfWURtTU0zWVhrWDh1TVhWMlVFM2EtdkNjS3NibE9VMjVWaVdCWGpSX1JRS3JNX3ZEMFY4Y3NlYUJnLWhzZExqbHFNMXA0Q2UyTHB1U2lUbjVfaVpueElxamlzVVgtNzd4VkxtV0VBT2RUcWVlTGNvT1FNN3RFSzltUDE4QU8tSmI5ajhmMDFhRUpRZjRpRDNYUk1udkRsVXQ0SFREdw?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.etn_industria|2026-09-21|exp:2026-09": {
+   "estado": "sin_metodo"
+  },
+  "indec.etn_super|2026-09-21|exp:2026-09": {
+   "estado": "sin_metodo"
+  },
+  "indec.salarios|2026-09-22|2026-07": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-22",
+   "evidencia": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNNEIwNGJfUENYUnNJSElZZlExMXRac1VWRHdDdk9QQTRYdkJtYlEta2pXb21YTWJyR1NjVzJLVG1YcUk0YmU3bmhYTHV5NHBGcG9tRW83X1p2ZE1uYk0tNC1rSHdXbzZXa2xtNUJRcDQ3aWNfd3NCNk52QS1jb1B4d1V0MmowcGVaNXlYVHE0VE5mQW91STZQVzVET1VFUzhjUm8zWTBJLXdCRS1hNUNKQ19jcll6Q1VEZEs1bDFwdWR3V3k2UWlxMThVQ0tzVEdydGZpSkpTMkZoS083Z3VzQTNDMlgxUUVZV0FZ?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "bcra.planilla_reservas|2026-09-23|2026-08": {
+   "estado": "sin_metodo"
+  },
+  "indec.mayoristas|2026-09-23|2026-07": {
+   "estado": "sin_metodo"
+  },
+  "indec.shoppings|2026-09-23|2026-07": {
+   "estado": "sin_metodo"
+  },
+  "indec.supermercados|2026-09-23|2026-07": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-23",
+   "evidencia": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZlBDWktnazZhY1UzSmd6WVVRVC1wZjdqZjBZT0ZRb0oxZFotbVNiRGRQVEZabW9WaEhJd21JOGVvcnRBcnlQNUpOQ1pUWTc3RE85U21jckItb21XNjk3NU1reW9Ebm5jb0ZCMm9UV2lUVjRmc29pYnNWWmtXOWc4ZVJDcC1XOGpoR0k3T0pSMm11WFZyZDVuclZrWUlNUE5nSlJxOXR2ZkZqLXhFUWc?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.emae|2026-09-24|2026-07": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-24",
+   "evidencia": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHpsSDZkXzhiM1BDTy1HbkFnTGtmNG5nX0cySnZNZmdZTHpfUWVFSHV1cGgwZjIwVy1iNGlSdWRTc0tnczlEdTVicXJleWVNc3J4ZVFPYXFZS3FCNjFZeWQtRlUteFlna01YcjJZVGMwVDN3RWFmOWRoSjVZcGU5S1Z6VnhUUUFCdjE4ZVhUT3dYaTJmN09uLUN3a18wWU92Y1ROSi03N0xIbTE5cllVTEN5UVI3Q185NnFN0gHPAUFVX3lxTE13ZUJGVS1HelF4RTFQRVpkX1BFWGhVaGVkSlM2ZW1qczRYNkVOUEJhaU1JeG1QT2RaSnE5Vl91MXdXaDNfQXZNQ1dycTVscW9iWXBEX1o5amRzeVZsSkVLNzZvd2wzcmkwMVRPLXg2QlB5YkRnYTl5b1UwajExNFRPZU1WOHpCdmI1TTZndUtJdVpiQVJ0eldQZHdGOTZ3TFo2VHJyMWc1aGF3NWctbWZIMXVVUWVPdUl3dkhfUFJjNzAtRXFLRHJUZ2NCSGhCOA?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  },
+  "indec.pobreza|2026-09-24|2026-S1": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-24",
+   "evidencia": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbnJXUHZxOXNlSi1hNlllaXJYVG9NcnZiZW5yTk96MGVnaC00UDJqZXdETTBDRWhGc25Ra2FvLU85R2xsVTNvbGVDZjJ0bWVGM001Q1RGSEV3WXJMZ29UOUdrWjcwb0tkcWJmRS1SVzgtNzZyNHVSWVhidzROTHlUclNiMTQzODlRRkVkVGhtQm1LUWNYZGR0Wks5cWp3LTB3NDJteTlIU2xPVTFYQ0sxWHNFMDBkX3JTTTUySWg0YVNiOUZkcF8xcVFJT0gtUdIB6AFBVV95cUxNWXVzY0ZCTlA2ZHMwY29uTDBxd3pKaWlhd3h2SFhINmU5YWtydTRVYTJsLWpUeE5KSTBnUTdiSm5zdnJrX0VhV0JkZXZsbjFUOVJkNzFwazE1Y2Y0SXhFUF9rT3FsajZ1NHdwMWVuQ3BWNktwcDgwb3d6STEzdTZsS3E5Wm8zLUJwM0hUN1FFckdRc05ESUlBeHpqQUdJb0FUR3FqeFBvQlA4MG5tTnBfMGxaVW54OUNtc3h5dFpuQ3duT3hFLUoza0JVMGN6NThxdVVNMjQ5aFJEbTRsSW1hRVVlYnBHd1pE?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-09-24",
+   "desvio_dias": 0
+  }
+ },
+ "salud": {
+  "bcra_publicacion": 0,
+  "prensa": 0
+ },
+ "calendarios": {
+  "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
+  "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
+ },
+ "ultima_corrida": "2026-09-24T21:35:12-03:00"
+}
