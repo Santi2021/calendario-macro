@@ -30,31 +30,31 @@ concepto_id,nivel_a,nivel_b,nivel_c,nivel_d
 29,01- Cuenta Corriente,03- Ingreso primario,01- Ingreso Primario - Ingresos,Otras rentas - Ingresos
 30,01- Cuenta Corriente,03- Ingreso primario,02- Ingreso Primario - Egresos,Intereses - Egresos
 31,01- Cuenta Corriente,03- Ingreso primario,02- Ingreso Primario - Egresos,Utilidades y Dividendos - Egresos
-32,01- Cuenta Corriente,03- Ingreso primario,02- Ingreso Primario - Egresos,Otras rentas - Egresos
-33,01- Cuenta Corriente,04- Ingreso secundario,01- Ingreso Secundario - Ingresos,Ingreso Secundario - Ingresos
-34,01- Cuenta Corriente,04- Ingreso secundario,02- Ingreso Secundario - Egresos,Ingreso Secundario - Egresos
-35,02- Cuenta Capital,01- Cuenta Capital,01- Capital - Ingresos,Capital - Ingresos
-36,02- Cuenta Capital,01- Cuenta Capital,01-Capital - Egresos,Capital - Egresos
-37,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversión directa - Ingresos
-38,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversiones aplicadas a la compra de inmuebles - Ingresos
-39,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversión de portafolio - Ingresos
-40,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversión directa - Egresos
-41,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversiones aplicadas a la compra de inmuebles - Egresos
-42,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversión de portafolio - Egresos
-43,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Préstamos de Organismos Internacionales y agencias oficiales de crédito - Ingresos
-44,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Otros préstamos del exterior y títulos de deuda - Ingresos
-45,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Líneas de crédito - Ingresos
-46,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Financiaciones locales - Ingresos
-47,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Préstamos de Organismos Internacionales y agencias oficiales de crédito - Egresos
-48,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Otros préstamos del exterior y títulos de deuda - Egresos
-49,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Líneas de crédito - Egresos
-50,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Financiaciones locales - Egresos
-51,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Billetes - Ingresos
-52,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Divisas - Ingresos
-53,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Billetes - Egresos
-54,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Otras inversiones
+32,01- Cuenta Corriente,04- Ingreso secundario,01- Ingreso Secundario - Ingresos,Ingreso Secundario - Ingresos
+33,01- Cuenta Corriente,04- Ingreso secundario,02- Ingreso Secundario - Egresos,Ingreso Secundario - Egresos
+34,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversión directa - Ingresos
+35,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversión de portafolio - Ingresos
+36,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversión de portafolio - Egresos
+37,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Préstamos de Organismos Internacionales y agencias oficiales de crédito - Ingresos
+38,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Otros préstamos del exterior y títulos de deuda - Ingresos
+39,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Préstamos de Organismos Internacionales y agencias oficiales de crédito - Egresos
+40,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Otros préstamos del exterior y títulos de deuda - Egresos
+41,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Billetes - Ingresos
+42,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Divisas - Ingresos
+43,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Billetes - Egresos
+44,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Otras inversiones
+45,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Inversiones directas de residentes en el exterior
+46,03- Cuenta Financiera,06- Otros movimientos de la cuenta financiera,01- Otros movimientos de la cuenta financiera,Otros movimientos de la cuenta financiera
+47,03- Cuenta Financiera,04- Operaciones de canje por transferencias con el exterior,01- Operaciones de canje por transferencias con el exterior,Operaciones de canje por transferencias con el exterior
+48,02- Cuenta Capital,01- Cuenta Capital,01-Capital - Egresos,Capital - Egresos
+49,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Financiaciones locales - Ingresos
+50,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Líneas de crédito - Egresos
+51,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Financiaciones locales - Egresos
+52,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversión directa - Egresos
+53,01- Cuenta Corriente,03- Ingreso primario,02- Ingreso Primario - Egresos,Otras rentas - Egresos
+54,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Líneas de crédito - Ingresos
 55,03- Cuenta Financiera,05- Compra-venta de títulos valores,01- Compra-venta de títulos valores,Compra-venta de títulos valores
-56,03- Cuenta Financiera,06- Otros movimientos de la cuenta financiera,01- Otros movimientos de la cuenta financiera,Otros movimientos de la cuenta financiera
-57,03- Cuenta Financiera,04- Operaciones de canje por transferencias con el exterior,01- Operaciones de canje por transferencias con el exterior,Operaciones de canje por transferencias con el exterior
-58,04- Concepto no informado por el cliente,01- Concepto no informado por el cliente,01- Concepto no informado por el cliente,Concepto no informado por el cliente
-59,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Inversiones directas de residentes en el exterior
+56,02- Cuenta Capital,01- Cuenta Capital,01- Capital - Ingresos,Capital - Ingresos
+57,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,01-Inversión directa y de portafolio de no residentes - Ingresos,Inversiones aplicadas a la compra de inmuebles - Ingresos
+58,03- Cuenta Financiera,01- Inversión directa y de portafolio de no residentes,02- Inversión directa y de portafolio de no residentes - Egresos,Inversiones aplicadas a la compra de inmuebles - Egresos
+59,04- Concepto no informado por el cliente,01- Concepto no informado por el cliente,01- Concepto no informado por el cliente,Concepto no informado por el cliente

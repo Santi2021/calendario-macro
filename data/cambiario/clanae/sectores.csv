@@ -74,21 +74,21 @@ sector_id,letra_id,letra,division
 73,19,"Servicios artisticos, culturales, deportivos y de esparcimiento",Servicios artisticos y de espectaculos
 74,9,Industria manufacturera,Elaboracion de productos alimenticios
 75,25,"Servicios profesionales, cientificos y tecnicos","Actividades profesionales, cientificas y tecnicas ncp"
-76,1,Actividades administrativas y servicios de apoyo,Servicios de agencias de viaje y otras actividades complementarias de apoyo turistico
-77,10,Informacion y comunicaciones,Actividades de prestacion de servicios de informacion
-78,1,Actividades administrativas y servicios de apoyo,Servicios de limpieza y mantenimiento de edificios y espacios verdes
-79,23,Servicios de organizaciones y organos extraterritoriales,Servicios de organizaciones y organos extraterritoriales
-80,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Servicio de depuracion de aguas residuales, alcantarillado y cloacas"
-81,17,Seguros,Seguros
-82,1,Actividades administrativas y servicios de apoyo,Obtencion y dotacion de personal
-83,18,Servicio de transporte y almacenamiento,Servicio de correos y mensajerias
-84,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico",Descontaminacion y otros servicios de gestion de residuos
-85,25,"Servicios profesionales, cientificos y tecnicos",Servicios veterinarios
+76,1,Actividades administrativas y servicios de apoyo,Servicios seguridad e investigacion
+77,1,Actividades administrativas y servicios de apoyo,Obtencion y dotacion de personal
+78,1,Actividades administrativas y servicios de apoyo,Servicios de agencias de viaje y otras actividades complementarias de apoyo turistico
+79,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","captacion, depuracion y distribucion de agua"
+80,17,Seguros,Seguros
+81,18,Servicio de transporte y almacenamiento,Servicio de correos y mensajerias
+82,10,Informacion y comunicaciones,Actividades de prestacion de servicios de informacion
+83,13,Otros servicios de asociaciones n.c.p,Otros servicios de asociaciones n.c.p
+84,23,Servicios de organizaciones y organos extraterritoriales,Servicios de organizaciones y organos extraterritoriales
+85,19,"Servicios artisticos, culturales, deportivos y de esparcimiento","Servicios de bibliotecas, archivos, museos y servicios culturales ncp"
 86,16,Salud humana y servicios sociales,Servicios sociales con alojamiento
-87,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Captacion, depuracion y distribucion de agua"
-88,1,Actividades administrativas y servicios de apoyo,Servicios seguridad e investigacion
-89,13,Otros servicios de asociaciones n.c.p,Otros servicios de asociaciones n.c.p
-90,19,"Servicios artisticos, culturales, deportivos y de esparcimiento","Servicios de bibliotecas, archivos, museos y servicios culturales ncp"
-91,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","captacion, depuracion y distribucion de agua"
-92,11,Otros bienes o servicios prestados por personas juridicas n.c.p.,Otros bienes o servicios prestados por personas juridicas n.c.p.
-93,16,Salud humana y servicios sociales,Servicios sociales sin alojamiento
+87,16,Salud humana y servicios sociales,Servicios sociales sin alojamiento
+88,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Servicio de depuracion de aguas residuales, alcantarillado y cloacas"
+89,1,Actividades administrativas y servicios de apoyo,Servicios de limpieza y mantenimiento de edificios y espacios verdes
+90,25,"Servicios profesionales, cientificos y tecnicos",Servicios veterinarios
+91,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Captacion, depuracion y distribucion de agua"
+92,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico",Descontaminacion y otros servicios de gestion de residuos
+93,11,Otros bienes o servicios prestados por personas juridicas n.c.p.,Otros bienes o servicios prestados por personas juridicas n.c.p.

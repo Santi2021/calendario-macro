@@ -1,24 +1,24 @@
 {
- "xlsx_modificado": "2026-08-28T16:40:00Z",
+ "xlsx_modificado": "2026-09-25T13:27:49Z",
  "fuente": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/anexo-estadistico-mercado-cambios-balance-cambiario.xlsx",
  "hojas": {
   "balance_cambiario": {
    "nombre": "Balance Cambiario",
    "series": 52,
    "desde": "2003-01",
-   "hasta": "2026-07"
+   "hasta": "2026-08"
   },
   "cta_financiera_por_sector": {
    "nombre": "Cta. Financiera por sector",
    "series": 5,
    "desde": "2003-01",
-   "hasta": "2026-07"
+   "hasta": "2026-08"
   },
   "mercado_de_cambios": {
    "nombre": "Mercado de Cambios",
    "series": 101,
    "desde": "2003-01",
-   "hasta": "2026-07"
+   "hasta": "2026-08"
   }
  }
 }
