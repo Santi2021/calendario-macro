@@ -35,7 +35,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
 .hoy .fecha{font-stretch:62%;font-weight:750;line-height:.82;font-size:clamp(64px,10vw,124px);letter-spacing:-.02em}
 .hoy .fecha small{display:block;letter-spacing:0;font-size:15px;font-stretch:100%;font-weight:500;margin-top:10px;opacity:.7;line-height:1.3}
 .hoy h2{margin:4px 0 12px;font-size:16px;font-weight:600;opacity:.7}
-.hoy ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.hoy ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}.hoy ul.sinh li{grid-template-columns:1fr}.hoy ul.sinh .h{display:none}
 .hoy li{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:baseline;cursor:pointer}
 .hoy li .h{font-weight:600;opacity:.7}.hoy li .t{font-size:clamp(17px,2vw,21px);font-weight:600;line-height:1.25}
 .hoy li .t.baja{font-weight:400;opacity:.8;font-size:16px}.hoy li .o{font-size:13px;opacity:.6;font-weight:500;margin-left:6px}
@@ -81,7 +81,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
 .dia header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .dia header .n{font-stretch:62%;font-weight:750;font-size:36px;line-height:.9}.dia header .d{font-size:13px;color:var(--ink2);line-height:1.2}
 .dia header .fer{font-size:12px;color:var(--bad);display:block}
-.dia .ev{grid-template-columns:4px 1fr}.dia .ev .h,.dia .ev .s{display:none}
+.dia .ev{grid-template-columns:4px 1fr}.dia .ev .h{display:none}.dia .ev .s{grid-column:2}
 /* mes */
 .mes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.mes .cab{font-size:13px;color:var(--ink3);padding:0 4px}
 .celda{background:var(--panel);border-radius:8px;padding:8px;min-height:104px;cursor:pointer;border:1px solid transparent;text-align:left;display:flex;flex-direction:column;gap:4px}
@@ -104,7 +104,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
 .hist{width:100%;border-collapse:collapse;font-size:13.5px}.hist td{padding:5px 6px;border-bottom:1px solid var(--line)}
 .panel a{color:var(--indec)}.cerrar{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:16px;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:4px 10px;cursor:pointer}
 .atajos{font-size:12.5px;color:var(--ink3)}kbd{font:inherit;font-size:11.5px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--panel)}
-@media (max-width:900px){.semana{grid-template-columns:1fr}.dia{min-height:0}.mes{gap:3px}.celda{min-height:62px;padding:5px}.celda .top{display:none}
+@media (max-width:900px){.topbar{position:static;margin-bottom:12px}.reloj{display:none}.semana{grid-template-columns:1fr}.dia{min-height:0}.mes{gap:3px}.celda{min-height:62px;padding:5px}.celda .top{display:none}
 .hoy{grid-template-columns:1fr}.prox{border-left:0;padding-left:0;border-top:1px solid color-mix(in srgb,var(--hoyTxt) 25%,transparent);padding-top:14px}
 .agdia{grid-template-columns:1fr;gap:6px}.agdia .d{display:flex;align-items:baseline;gap:10px}.buscar{width:100%}.ev{grid-template-columns:4px 44px 1fr}.ev .s{grid-column:3}}
 @media (prefers-reduced-motion:reduce){.panel,.cortina{transition:none}}
@@ -202,7 +202,7 @@ function cuenta(e){const [H,M]=(e.h||"00:00").split(":").map(Number);const a=aho
 function hoyBox(){
   const f=iso(HOY),evs=porDia(f);
   let h=`<div class="fecha">${HOY.getDate()}<small>${DIAS[HOY.getDay()]}<br>${MESES[HOY.getMonth()]} ${HOY.getFullYear()}</small></div><div>`;
-  h+=evs.length?`<h2>Hoy se publica</h2><ul>`+evs.map(e=>`<li data-i="${e.i}"><span class="h">${e.h||""}</span><span class="t ${e.p==="baja"?"baja":""}">${esc(nombre(e))}<span class="o">${esc((CAT[e.id]||{}).o||"")}</span> ${stHTML(e)}</span></li>`).join("")+`</ul>`
+  h+=evs.length?`<h2>Hoy se publica</h2><ul class="${evs.some(e=>e.h)?"":"sinh"}">`+evs.map(e=>`<li data-i="${e.i}"><span class="h">${e.h||""}</span><span class="t ${e.p==="baja"?"baja":""}">${esc(nombre(e))}<span class="o">${esc((CAT[e.id]||{}).o||"")}</span> ${stHTML(e)}</span></li>`).join("")+`</ul>`
     :`<h2>Hoy</h2><p class="vacio">${FER[f]?"Feriado: "+esc(FER[f])+".":"No hay publicaciones con estos filtros."}</p>`;
   h+="</div>";const p=proximo();
   if(p){const d=parse(p.f);h+=`<div class="prox" data-i="${p.i}" style="cursor:pointer"><div class="l">Próximo dato clave</div><div class="cd">${cuenta(p)}</div><div class="n">${esc(nombre(p))}</div><div class="w">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?", "+p.h:""}</div></div>`}
