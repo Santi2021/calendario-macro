@@ -64,6 +64,7 @@ CONF = {
     "bcra.bancos":           [("bcra_publicacion", {"slug": "informe-sobre-bancos-{mes}-de-{yyyy}", "lag": 2, "verificado": True}),
                               ("bcra_listado", {"nombre": "Informe sobre Bancos"})],
     "bcra.cambiario":        [("bcra_publicacion", {"slug": "informe-de-evolucion-del-mercado-de-cambios-y-balance-cambiario-{mes}-de-{yyyy}", "lag": 1, "verificado": True}),
+                              ("xlsx_modificado", {"url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/anexo-estadistico-mercado-cambios-balance-cambiario.xlsx"}),
                               ("bcra_listado", {"nombre": "Mercado de Cambios y Balance Cambiario"}),
                               ("prensa", {"q": '"balance cambiario" BCRA', "lag": 1})],
     "bcra.pagos_minoristas": [("bcra_publicacion", {"slug": "informe-de-pagos-minoristas-{mes}-de-{yyyy}", "lag": 1, "verificado": False}),
@@ -247,6 +248,42 @@ def m_bcra_publicacion(http: Http, ev: dict, p: dict):
     raise IOError(f"{url}: sin fecha de publicación legible")
 
 
+def m_xlsx_modificado(http: Http, ev: dict, p: dict):
+    """Planilla de datos que el organismo reemplaza en cada publicación (misma dirección siempre).
+    La fecha de modificación interna del XLSX (docProps/core.xml) es la hora exacta de la carga."""
+    import io, zipfile
+    if requests is None and http.fake is None:
+        raise IOError("sin requests")
+    if http.fake is not None:
+        st, contenido = http.get(p["url"])
+        datos = contenido if isinstance(contenido, bytes) else contenido.encode("latin-1")
+    else:
+        r = None
+        for intento in range(3):
+            try:
+                r = requests.get(p["url"], headers=UA, timeout=90)
+                break
+            except Exception as ex:
+                if intento == 2:
+                    raise IOError(f"{p['url']}: {ex}")
+                time.sleep(3)
+        st, datos = r.status_code, r.content
+    if st != 200:
+        raise IOError(f"{p['url']}: HTTP {st}")
+    try:
+        core = zipfile.ZipFile(io.BytesIO(datos)).read("docProps/core.xml").decode("utf-8", "ignore")
+    except Exception as ex:
+        raise IOError(f"XLSX ilegible: {ex}")
+    m = re.search(r"<dcterms:modified[^>]*>([^<]+)</dcterms:modified>", core)
+    if not m:
+        raise IOError("XLSX sin fecha de modificación")
+    fecha = dt.datetime.fromisoformat(m.group(1).replace("Z", "+00:00")).astimezone(TZ).date()
+    f = d(ev["fecha"])
+    if f - dt.timedelta(days=1) <= fecha <= f + dt.timedelta(days=VENTANA_DIAS):
+        return fecha, p["url"]
+    return None, None                      # la planilla todavía es la del mes anterior
+
+
 def m_archivo(http: Http, ev: dict, p: dict):
     f = d(ev["fecha"])
     y, m = mes_ref(f, 1)
@@ -334,7 +371,7 @@ def m_prensa(http: Http, ev: dict, p: dict):
     return None, None
 
 
-METODOS = {"bcra_listado": m_bcra_listado, "bcra_publicacion": m_bcra_publicacion, "archivo": m_archivo, "rss": m_rss,
+METODOS = {"bcra_listado": m_bcra_listado, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
            "pagina_fecha": m_pagina_fecha, "prensa": m_prensa}
 
 
@@ -646,6 +683,20 @@ def selftest() -> int:
     p3 = p2.replace("21 de octubre", "23 de octubre")
     av3 = vigilar_calendarios(Http(fake={"https://www.bcra.gob.ar/calendario-de-informes/": (200, p3)}), cal2, [])
     check("calendario_html_detecta_cambio", len(av3) == 1)
+
+    # 16. XLSX: la fecha de modificación interna confirma la publicación; la del mes anterior no
+    import io, zipfile
+    def xlsx(fecha_iso):
+        b = io.BytesIO()
+        with zipfile.ZipFile(b, "w") as z:
+            z.writestr("docProps/core.xml", f'<cp:coreProperties><dcterms:modified xsi:type="dcterms:W3CDTF">{fecha_iso}</dcterms:modified></cp:coreProperties>')
+        return b.getvalue().decode("latin-1")
+    ux = "https://x/anexo.xlsx"
+    HOY = dt.date(2026, 9, 26)
+    f, u = m_xlsx_modificado(Http(fake={ux: (200, xlsx("2026-09-25T20:10:00Z"))}), {"fecha": "2026-09-25"}, {"url": ux})
+    check("xlsx_confirma", f == dt.date(2026, 9, 25))
+    f, u = m_xlsx_modificado(Http(fake={ux: (200, xlsx("2026-08-28T16:40:00Z"))}), {"fecha": "2026-09-25"}, {"url": ux})
+    check("xlsx_mes_anterior_no_confirma", f is None)
 
     total = ok + len(fallos)
     print(f"Autotest: {ok}/{total} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
