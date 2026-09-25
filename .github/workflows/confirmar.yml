@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: confirmador
@@ -48,6 +49,8 @@ jobs:
 
       - name: Guardar estado
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "confirmador"
           git config user.email "confirmador@users.noreply.github.com"
@@ -58,4 +61,6 @@ jobs:
             git commit -m "Confirmaciones $(date -u +%F)"
             git pull --rebase
             git push
+            # Los push del bot no siempre disparan la reconstrucción de la web: se pide explícitamente
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "No se pudo pedir la reconstrucción de la web"
           fi
