@@ -69,8 +69,10 @@ def main():
         filas.append([vid, desc, v.get("categoria", ""), v.get("unidadExpresion", v.get("unidad", ""))])
     with open(os.path.join(SALIDA, "catalogo.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f); w.writerow(["id", "descripcion", "categoria", "unidad"]); w.writerows(filas)
-    elegidas = [f for f in filas if FILTRO.search(str(f[1])) and TEMA.search(str(f[1]))]
-    elegidas += [f for f in filas if re.search(r"reservas internacionales", str(f[1]), re.I) and f not in elegidas]
+    # Series.xlsm: 77 reservas, 78 compras de divisas, 81 efectivo mínimo, 107/108 depósitos en USD,
+    # 118-125 préstamos al sector privado en USD, 158 LEBAC/LEDIV/BOPREAL en USD
+    FIJAS = {77, 78, 81, 107, 108, 118, 119, 120, 121, 122, 123, 124, 125, 158}
+    elegidas = [f for f in filas if f[0] in FIJAS]
     print(f"API: {base} | {len(filas)} variables | {len(elegidas)} elegidas")
     salida = []
     hoy = dt.date.today()
