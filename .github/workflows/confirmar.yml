@@ -62,6 +62,10 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         run: python extraer_clanae.py
 
+      - name: Series monetarias en dólares (API BCRA, una vez por día)
+        if: ${{ github.event.schedule == '17 12 * * *' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run) }}
+        run: python extraer_bcra_api.py
+
       - name: Guardar estado
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         env:
@@ -71,6 +75,7 @@ jobs:
           git config user.email "confirmador@users.noreply.github.com"
           git add data/estado.json data/reporte.md
           git add data/cambiario 2>/dev/null || true
+          git add data/bcra_api 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Sin cambios"
           else
