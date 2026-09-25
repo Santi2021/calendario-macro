@@ -195,14 +195,14 @@ function chips(){
 function guardar(){store.set("filtros2",{vista:st.vista,org:st.org,pri:st.pri,est:st.est,sem:st.sem});render()}
 
 function proximo(){const a=ahoraAR();const ahora=a.f+"T"+String(a.h).padStart(2,"0")+":"+String(a.m).padStart(2,"0");
-  return E.filter(e=>pasa(e)&&e.p==="alta"&&(e.f+"T"+(e.h||"23:59"))>ahora).sort((x,y)=>(x.f+(x.h||"")).localeCompare(y.f+(y.h||"")))[0]}
+  return E.filter(e=>pasa(e)&&e.p==="alta"&&e.f>a.f).sort((x,y)=>(x.f+(x.h||"")).localeCompare(y.f+(y.h||"")))[0]}
 function cuenta(e){const [H,M]=(e.h||"00:00").split(":").map(Number);const a=ahoraAR();const hoy=parse(a.f);const dias=Math.round((parse(e.f)-hoy)/864e5);
   let min=dias*1440+(H*60+M)-(a.h*60+a.m);if(!e.h)return dias===0?"hoy":dias===1?"mañana":`en ${dias} días`;
   if(min<60)return`en ${min} min`;if(min<1440)return`en ${Math.floor(min/60)} h ${min%60} min`;return dias===1?`mañana ${e.h}`:`en ${dias} días`}
 function hoyBox(){
   const f=iso(HOY),evs=porDia(f);
   let h=`<div class="fecha">${HOY.getDate()}<small>${DIAS[HOY.getDay()]}<br>${MESES[HOY.getMonth()]} ${HOY.getFullYear()}</small></div><div>`;
-  h+=evs.length?`<h2>Hoy se publica</h2><ul class="${evs.some(e=>e.h)?"":"sinh"}">`+evs.map(e=>`<li data-i="${e.i}"><span class="h">${e.h||""}</span><span class="t ${e.p==="baja"?"baja":""}">${esc(nombre(e))}<span class="o">${esc((CAT[e.id]||{}).o||"")}</span> ${stHTML(e)}</span></li>`).join("")+`</ul>`
+  h+=evs.length?`<h2>Hoy se publica</h2><ul class="${evs.some(e=>e.h)?"":"sinh"}">`+evs.map(e=>`<li data-i="${e.i}"><span class="h">${e.h||""}</span><span class="t ${e.p==="baja"?"baja":""}">${esc(nombre(e))}<span class="o">${esc((CAT[e.id]||{}).o||"")}</span>${e.h&&/^en \d/.test(cuenta(e))?` <span class="o">· ${cuenta(e)}</span>`:""} ${stHTML(e)}</span></li>`).join("")+`</ul>`
     :`<h2>Hoy</h2><p class="vacio">${FER[f]?"Feriado: "+esc(FER[f])+".":"No hay publicaciones con estos filtros."}</p>`;
   h+="</div>";const p=proximo();
   if(p){const d=parse(p.f);h+=`<div class="prox" data-i="${p.i}" style="cursor:pointer"><div class="l">Próximo dato clave</div><div class="cd">${cuenta(p)}</div><div class="n">${esc(nombre(p))}</div><div class="w">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?", "+p.h:""}</div></div>`}
