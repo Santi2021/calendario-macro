@@ -1,0 +1,102 @@
+[
+ {
+  "fecha": "2026-01-01",
+  "nombre": "Año Nuevo",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-02-16",
+  "nombre": "Carnaval",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-02-17",
+  "nombre": "Carnaval",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-03-23",
+  "nombre": "No laborable turístico",
+  "tipo": "puente"
+ },
+ {
+  "fecha": "2026-03-24",
+  "nombre": "Día de la Memoria",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-04-02",
+  "nombre": "Malvinas",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-04-03",
+  "nombre": "Viernes Santo",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-05-01",
+  "nombre": "Día del Trabajador",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-05-25",
+  "nombre": "Revolución de Mayo",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-06-15",
+  "nombre": "Güemes (trasladado)",
+  "tipo": "trasladable"
+ },
+ {
+  "fecha": "2026-06-20",
+  "nombre": "Día de la Bandera",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-07-09",
+  "nombre": "Independencia",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-07-10",
+  "nombre": "No laborable turístico",
+  "tipo": "puente"
+ },
+ {
+  "fecha": "2026-08-17",
+  "nombre": "San Martín",
+  "tipo": "trasladable"
+ },
+ {
+  "fecha": "2026-10-12",
+  "nombre": "Diversidad Cultural",
+  "tipo": "trasladable"
+ },
+ {
+  "fecha": "2026-11-09",
+  "nombre": "Visita del papa León XIV",
+  "tipo": "a_verificar"
+ },
+ {
+  "fecha": "2026-11-23",
+  "nombre": "Soberanía Nacional (trasladado)",
+  "tipo": "trasladable"
+ },
+ {
+  "fecha": "2026-12-07",
+  "nombre": "No laborable turístico",
+  "tipo": "puente"
+ },
+ {
+  "fecha": "2026-12-08",
+  "nombre": "Inmaculada Concepción",
+  "tipo": "inamovible"
+ },
+ {
+  "fecha": "2026-12-25",
+  "nombre": "Navidad",
+  "tipo": "inamovible"
+ }
+]
