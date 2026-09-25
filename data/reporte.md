@@ -7,4 +7,5 @@
 
 ## Log técnico
 [fallo] bcra.cambiario bcra_listado: listado BCRA sin fechas legibles (tabla cargada por JavaScript)
+[fallo] bcra.pagos_minoristas bcra_publicacion: https://www.bcra.gob.ar/publicaciones/informe-de-pagos-minoristas-agosto-de-2026/: 404 con patrón no verificado
 [fallo] bcra.pagos_minoristas bcra_listado: listado BCRA sin fechas legibles (tabla cargada por JavaScript)
