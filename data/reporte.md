@@ -1,9 +1,5 @@
 # Reporte del 2026-09-25
 
-## Confirmados
-- 2026-09-25 Informe de Evolución del Mercado de Cambios y Balance Cambiario: bcra_publicacion
-- 2026-09-25 Informe de Pagos Minoristas: bcra_publicacion
-
 ## Métodos caídos (3 corridas o más fallando)
 - bcra_listado
 
