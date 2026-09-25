@@ -54,6 +54,10 @@ jobs:
             python confirmador.py
           fi
 
+      - name: Datos del mercado de cambios (BCRA)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python extraer_cambiario.py
+
       - name: Guardar estado
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         env:
@@ -62,6 +66,7 @@ jobs:
           git config user.name "confirmador"
           git config user.email "confirmador@users.noreply.github.com"
           git add data/estado.json data/reporte.md
+          git add data/cambiario 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Sin cambios"
           else
