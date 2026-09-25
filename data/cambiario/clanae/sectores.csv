@@ -1,0 +1,94 @@
+sector_id,letra_id,letra,division
+1,5,Construccion,Actividades especializadas de construccion
+2,25,"Servicios profesionales, cientificos y tecnicos",Oficinas centrales y servicios de asesoramiento empresarial
+3,19,"Servicios artisticos, culturales, deportivos y de esparcimiento",Servicios relacionados con juegos de azar y apuestas
+4,9,Industria manufacturera,Fabricacion de productos textiles
+5,10,Informacion y comunicaciones,Servicios de radio y television
+6,10,Informacion y comunicaciones,Servicios de telecomunicaciones
+7,9,Industria manufacturera,Fabricacion de maquinaria y equipos electricos ncp
+8,20,Servicios de alojamiento y servicios de comida,Servicios de comidas y bebidas
+9,9,Industria manufacturera,Fabricacion de coque y productos de la refinacion del petroleo
+10,19,"Servicios artisticos, culturales, deportivos y de esparcimiento",Servicios para la practica deportiva y de entretenimiento
+11,20,Servicios de alojamiento y servicios de comida,Servicios de alojamiento
+12,9,Industria manufacturera,"Fabricacion de productos farmaceuticos, sustancias quimicas medicinales y productos botanicos de uso farmaceutico"
+13,12,Otros intermediarios financieros,Otros intermediarios financieros
+14,10,Informacion y comunicaciones,Servicios de programacion y consultoria informatica y actividades conexas
+15,9,Industria manufacturera,"Reparacion, mantenimiento e instalacion de maquinas y equipos"
+16,1,Actividades administrativas y servicios de apoyo,"Actividades de alquiler y arrendamiento, excepto las actividades inmobiliarias"
+17,21,Servicios de asociaciones y servicios personales,Servicios personales ncp
+18,7,Explotacion de minas y canteras,Extraccion de petroleo crudo y gas natural
+19,9,Industria manufacturera,"Fabricacion de vehiculos automotores, remolques y semirremolques"
+20,9,Industria manufacturera,"Fabricacion de productos elaborados de metal, excepto maquinaria y equipo"
+21,9,Industria manufacturera,Fabricacion de productos minerales no metalicos
+22,21,Servicios de asociaciones y servicios personales,"Reparacion y mantenimiento de equipos informaticos y de comunicacion, efectos personales y enseres domesticos"
+23,9,Industria manufacturera,Fabricacion de maquinaria y equipo ncp
+24,8,Gobierno General y BCRA,Gobierno General y BCRA
+25,9,Industria manufacturera,"Produccion de madera y fabricacion de productos de madera y corcho, excepto muebles, fabricacion de articulos de paja y de materiales trenzables"
+26,9,Industria manufacturera,"Fabricacion de productos informaticos, electronicos y opticos"
+27,9,Industria manufacturera,Impresion y reproduccion de grabaciones
+28,18,Servicio de transporte y almacenamiento,"Servicios de manipulacion y de almacenamiento, servicios de apoyo al transporte"
+29,24,Servicios inmobiliarios,Servicios inmobiliarios
+30,4,"Comercio al por mayor y al por menor, reparacion de vehiculos automotores y motocicletas","Comercio al por menor, excepto el comercio de vehiculos automotores y motocicletas"
+31,9,Industria manufacturera,Fabricacion de papel y de productos de papel
+32,4,"Comercio al por mayor y al por menor, reparacion de vehiculos automotores y motocicletas","Comercio al por mayor y/o en comision o consignacion, excepto el comercio de vehiculos automotores y motocicletas"
+33,2,"Agricultura, ganaderia, caza, silvicultura y pesca","Silvicultura, extraccion de productos forestales y servicios de apoyo"
+34,22,Servicios de hogares privados que contratan servicio domestico,Servicios de hogares privados que contratan servicio domestico
+35,9,Industria manufacturera,Fabricacion de productos de caucho y plastico
+36,9,Industria manufacturera,Fabricacion de muebles y colchones
+37,9,Industria manufacturera,"Confeccion de prendas de vestir, terminacion y tenido de pieles"
+38,7,Explotacion de minas y canteras,Extraccion de carbon y lignito
+39,7,Explotacion de minas y canteras,Extraccion de minerales metaliferos
+40,6,Ensenanza,Ensenanza
+41,9,Industria manufacturera,Fabricacion de sustancias y productos quimicos
+42,25,"Servicios profesionales, cientificos y tecnicos",Investigacion y desarrollo
+43,3,Auxiliares financieros,Auxiliares financieros
+44,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Recoleccion, transporte, tratamiento y disposicion final de residuos, recuperacion de materiales y desechos"
+45,4,"Comercio al por mayor y al por menor, reparacion de vehiculos automotores y motocicletas","Venta, mantenimiento y reparacion de vehiculos automotores y motocicletas"
+46,2,"Agricultura, ganaderia, caza, silvicultura y pesca","Agricultura, ganaderia, caza y servicios de apoyo"
+47,9,Industria manufacturera,Industrias manufactureras ncp
+48,18,Servicio de transporte y almacenamiento,Servicio de transporte terrestre
+49,5,Construccion,Construccion de edificios y sus partes
+50,9,Industria manufacturera,Fabricacion de metales comunes
+51,5,Construccion,Obras de ingenieria civil
+52,2,"Agricultura, ganaderia, caza, silvicultura y pesca","Pesca, acuicultura y servicios de apoyo"
+53,9,Industria manufacturera,Elaboracion de bebidas
+54,25,"Servicios profesionales, cientificos y tecnicos","Servicios juridicos, de contabilidad y auditoria, asesoramiento empresarial y en materia de gestion"
+55,21,Servicios de asociaciones y servicios personales,Servicios de asociaciones
+56,28,"Suministro de electricidad, gas, vapor y aire acondicionado","Suministro de electricidad, gas, vapor y aire acondicionado"
+57,25,"Servicios profesionales, cientificos y tecnicos",Servicios de arquitectura e ingenieria y servicios conexos de asesoramiento tecnico
+58,10,Informacion y comunicaciones,Servicios de edicion
+59,18,Servicio de transporte y almacenamiento,Servicio de transporte aereo
+60,9,Industria manufacturera,"Curtido y terminacion de cueros, fabricacion de articulos de marroquineria, talabarteria y calzado y de sus partes"
+61,9,Industria manufacturera,Fabricacion de equipo de transporte ncp
+62,7,Explotacion de minas y canteras,Servicios de apoyo para la mineria
+63,14,Otros servicios prestados por personas humanas n.c.p.,Otros servicios prestados por personas humanas n.c.p.
+64,1,Actividades administrativas y servicios de apoyo,Servicios empresariales ncp
+65,9,Industria manufacturera,Elaboracion de productos de tabaco
+66,18,Servicio de transporte y almacenamiento,Servicio de transporte por via acuatica
+67,7,Explotacion de minas y canteras,Explotacion de minas y canteras ncp
+68,16,Salud humana y servicios sociales,Servicios de atencion a la salud humana
+69,15,"Personas humanas, no residentes y otros sin clasificaci?n","Personas humanas, no residentes y otros sin clasificaci?n"
+70,10,Informacion y comunicaciones,Servicios de cinematografia
+71,26,"Sociedades captadoras de depositos, excepto el banco central","Sociedades captadoras de depositos, excepto el banco central"
+72,25,"Servicios profesionales, cientificos y tecnicos",Servicios de publicidad e investigacion de mercado
+73,19,"Servicios artisticos, culturales, deportivos y de esparcimiento",Servicios artisticos y de espectaculos
+74,9,Industria manufacturera,Elaboracion de productos alimenticios
+75,25,"Servicios profesionales, cientificos y tecnicos","Actividades profesionales, cientificas y tecnicas ncp"
+76,1,Actividades administrativas y servicios de apoyo,Servicios de agencias de viaje y otras actividades complementarias de apoyo turistico
+77,10,Informacion y comunicaciones,Actividades de prestacion de servicios de informacion
+78,1,Actividades administrativas y servicios de apoyo,Servicios de limpieza y mantenimiento de edificios y espacios verdes
+79,23,Servicios de organizaciones y organos extraterritoriales,Servicios de organizaciones y organos extraterritoriales
+80,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Servicio de depuracion de aguas residuales, alcantarillado y cloacas"
+81,17,Seguros,Seguros
+82,1,Actividades administrativas y servicios de apoyo,Obtencion y dotacion de personal
+83,18,Servicio de transporte y almacenamiento,Servicio de correos y mensajerias
+84,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico",Descontaminacion y otros servicios de gestion de residuos
+85,25,"Servicios profesionales, cientificos y tecnicos",Servicios veterinarios
+86,16,Salud humana y servicios sociales,Servicios sociales con alojamiento
+87,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","Captacion, depuracion y distribucion de agua"
+88,1,Actividades administrativas y servicios de apoyo,Servicios seguridad e investigacion
+89,13,Otros servicios de asociaciones n.c.p,Otros servicios de asociaciones n.c.p
+90,19,"Servicios artisticos, culturales, deportivos y de esparcimiento","Servicios de bibliotecas, archivos, museos y servicios culturales ncp"
+91,27,"Suministro de agua, cloacas, gestion de residuos, recuperacion de materiales y saneamiento publico","captacion, depuracion y distribucion de agua"
+92,11,Otros bienes o servicios prestados por personas juridicas n.c.p.,Otros bienes o servicios prestados por personas juridicas n.c.p.
+93,16,Salud humana y servicios sociales,Servicios sociales sin alojamiento
