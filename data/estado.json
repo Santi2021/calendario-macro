@@ -104,15 +104,25 @@
    "metodo": "prensa",
    "confirmado_el": "2026-09-24",
    "desvio_dias": 0
+  },
+  "bcra.cambiario|2026-09-25|": {
+   "estado": "programado"
+  },
+  "bcra.pagos_minoristas|2026-09-25|": {
+   "estado": "programado"
+  },
+  "indec.turismo_int|2026-09-25|2026-08": {
+   "estado": "sin_metodo"
   }
  },
  "salud": {
   "bcra_publicacion": 0,
-  "prensa": 0
+  "prensa": 0,
+  "bcra_listado": 1
  },
  "calendarios": {
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-24T21:35:12-03:00"
+ "ultima_corrida": "2026-09-25T10:21:37-03:00"
 }
