@@ -25,7 +25,7 @@ ARCHIVOS = {
 }
 # Banco Mundial: PIB per cápita a precios constantes (proxy de productividad relativa) y consumo del gobierno
 BM_PAISES = "ARG;BRA;CHN;USA;EMU;CHL;MEX;CAN;JPN;GBR;CHE;IND;URY;VNM"
-BM_INDICADORES = ["NY.GDP.PCAP.KD", "NE.CON.GOVT.ZS", "NE.TRD.GNFS.ZS"]
+BM_INDICADORES = ["NY.GDP.PCAP.KD", "NE.CON.GOVT.ZS", "NE.TRD.GNFS.ZS", "NY.GDP.MKTP.CD", "BN.CAB.XOKA.GD.ZS", "BN.CAB.XOKA.CD", "NY.GDP.MKTP.KD"]
 
 
 def bajar(url, destino):
