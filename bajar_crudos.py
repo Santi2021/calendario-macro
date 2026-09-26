@@ -22,6 +22,11 @@ ARCHIVOS = {
     # balanza de pagos y posición de inversión internacional
     "indec_bdp_pii.xls": INDEC + "cin_I_2026.xls",
     "indec_bdp_1994_2016.xls": INDEC + "series_bdp_de_1994_2016.xls",
+    # comercio exterior por rubro: energía (exportaciones de combustibles y energía, importaciones de combustibles y lubricantes)
+    "indec_expo_grandes_rubros_1980_2025.xls": INDEC + "exp_gr_80_25.xls",
+    "indec_impo_uso_economico_1980_2025.xls": INDEC + "imp_uso_econ_80_25.xls",
+    "indec_expo_grandes_rubros_mensual.xls": INDEC + "expo_grandes_rubros_2025_2026.xls",
+    "indec_impo_uso_economico_mensual.xls": INDEC + "impo_uso_economico_2025_2026.xls",
 }
 # Banco Mundial: PIB per cápita a precios constantes (proxy de productividad relativa) y consumo del gobierno
 BM_PAISES = "ARG;BRA;CHN;USA;EMU;CHL;MEX;CAN;JPN;GBR;CHE;IND;URY;VNM"
