@@ -22,6 +22,8 @@ ARCHIVOS = {
     # balanza de pagos y posición de inversión internacional
     "indec_bdp_pii.xls": INDEC + "cin_I_2026.xls",
     "indec_bdp_1994_2016.xls": INDEC + "series_bdp_de_1994_2016.xls",
+    # cuenta de generación del ingreso: puestos de trabajo registrados, no registrados y no asalariados
+    "indec_cgi_puestos.xls": INDEC + "serie_cgi_07_26.xls",
     # comercio exterior por rubro: energía (exportaciones de combustibles y energía, importaciones de combustibles y lubricantes)
     "indec_expo_grandes_rubros_1980_2025.xls": INDEC + "exp_gr_80_25.xls",
     "indec_impo_uso_economico_1980_2025.xls": INDEC + "imp_uso_econ_80_25.xls",
