@@ -4,9 +4,9 @@ self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
 
 self.addEventListener("push", e => {
   let d = {};
-  try { d = e.data ? e.data.json() : {}; } catch (x) { d = { titulo: "Calendario macro", cuerpo: e.data ? e.data.text() : "" }; }
+  try { d = e.data ? e.data.json() : {}; } catch (x) { d = { titulo: "MacroCalendAR", cuerpo: e.data ? e.data.text() : "" }; }
   const acciones = (d.acciones || []).slice(0, 2).map(a => ({ action: a.id, title: a.titulo }));
-  e.waitUntil(self.registration.showNotification(d.titulo || "Calendario macro", {
+  e.waitUntil(self.registration.showNotification(d.titulo || "MacroCalendAR", {
     body: d.cuerpo || "",
     icon: "icono-192.png",
     badge: "badge-96.png",

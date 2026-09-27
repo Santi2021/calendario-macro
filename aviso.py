@@ -123,8 +123,8 @@ def resumen_manana(hoy, eventos, cat, estado):
     else:
         titulo = f"{dia} · sin publicaciones"
     return {"titulo": titulo, "cuerpo": "\n".join(lineas), "tag": "manana",
-            "url": WEB + "?v=agenda&origen=aviso",
-            "acciones": [{"id": "hoy", "titulo": "Ver hoy", "url": WEB + "?v=agenda&origen=aviso"},
+            "url": WEB + "?v=hoy&origen=aviso",
+            "acciones": [{"id": "hoy", "titulo": "Ver hoy", "url": WEB + "?v=hoy&origen=aviso"},
                          {"id": "semana", "titulo": "Semana", "url": WEB + "?v=semana&origen=aviso"}]}
 
 
@@ -190,7 +190,7 @@ def main(argv=None):
     ahora = dt.datetime.now(TZ)
     hoy = ahora.date()
     if a.prueba:
-        r = enviar({"titulo": "Calendario macro · prueba", "cuerpo": f"Los avisos funcionan. Enviado {ahora:%d/%m %H:%M}.",
+        r = enviar({"titulo": "MacroCalendAR · prueba", "cuerpo": f"Los avisos funcionan. Enviado {ahora:%d/%m %H:%M}.",
                     "tag": "prueba", "url": WEB + "?origen=prueba"})
         return 0 if r in ("ok", "sin_configurar") else 1
     eventos = cargar("eventos.json", [])

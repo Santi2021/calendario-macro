@@ -1,7 +1,7 @@
 {
-  "name": "Calendario macro Argentina",
-  "short_name": "Calendario macro",
-  "description": "Publicaciones de datos macro y sectoriales de Argentina, con confirmación diaria.",
+  "name": "MacroCalendAR",
+  "short_name": "MacroCalendAR",
+  "description": "Calendario de datos macro y sectoriales de Argentina, con confirmación diaria contra la fuente oficial.",
   "lang": "es-AR",
   "start_url": "./?origen=app",
   "scope": "./",
@@ -9,7 +9,23 @@
   "background_color": "#11171C",
   "theme_color": "#15212B",
   "icons": [
-    {"src": "icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
-    {"src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+    {
+      "src": "icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
