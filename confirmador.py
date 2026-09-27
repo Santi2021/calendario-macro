@@ -99,15 +99,26 @@ CONF = {
                        ("prensa", {"q": '"Índice Construya"', "lag": 1})],
     "priv.ipc_caba": [("rss", {"url": "https://www.estadisticaciudad.gob.ar/eyc/feed/", "clave": "precios", "lag": 1}),
                       ("prensa", {"q": "inflación CABA IDECBA", "lag": 1})],
-    "priv.acara": [("prensa", {"q": "ACARA patentamientos", "lag": 1})],
-    "priv.ciara_cec": [("prensa", {"q": "CIARA CEC liquidación", "lag": 1})],
+    # Privados con sitio propio verificado el 27-sep-2026 (prensa de respaldo)
+    "priv.acara": [("pagina_periodo", {"url": "https://api.acara.org.ar/api/v1/views/index", "patron": "patentados durante {mes} de {yyyy}", "lag": 1}),
+                   ("prensa", {"q": "ACARA patentamientos", "lag": 1})],
+    "priv.ciara_cec": [("pagina_lista", {"url": "https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20Mensual",
+                                         "patron": r"Divisas\s*<strong>(?P<d>\d{2})-(?P<m>[a-z]{3})-(?P<y>\d{4})", "tol": 3}),
+                       ("prensa", {"q": "CIARA CEC liquidación", "lag": 1})],
+    "priv.fiel_ipi": [("pagina_lista", {"url": "https://www.fiel.org/", "patron": r"N\S{1,8}mero \d+, (?P<d>\d{1,2}) de (?P<m>[a-z]+) de (?P<y>\d{4})", "tol": 3}),
+                      ("pagina_periodo", {"url": "https://www.fiel.org/", "patron": r"Var\. Anual {mes} {yyyy}", "lag": 1})],
+    "priv.cemento": [("pagina_periodo", {"url": "https://www.afcp.org.ar/despacho-mensual", "patron": "Despachos de cemento en el mes de {mes} de {yyyy}", "lag": 1})],
+    "priv.usda_wasde": [("archivo_lm", {"url": "https://www.usda.gov/oce/commodity/wasde/wasde{mm_ref}{yy_ref}.pdf", "lag": 0, "exigir_lm": True})],
     "priv.came_minoristas": [("prensa", {"q": 'CAME "ventas minoristas"', "lag": 1})],
     "priv.adimra": [("prensa", {"q": "ADIMRA metalúrgica", "lag": 1})],
     "priv.scentia": [("prensa", {"q": 'Scentia "consumo masivo"', "lag": 1})],
     "priv.uia_ceu": [("prensa", {"q": 'UIA "actividad industrial"', "lag": 1})],
     "priv.fractura_vm": [("prensa", {"q": '"etapas de fractura"', "lag": 1})],
-    "priv.utdt_icc": [("prensa", {"q": '"confianza del consumidor" "Di Tella"', "lag": 0})],
-    "priv.utdt_icg": [("prensa", {"q": '"confianza en el gobierno" "Di Tella"', "lag": 0})],
+    "priv.utdt_icc": [("pagina_periodo", {"url": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=4982", "patron": r'\(ICC\)</h4>\s*<div class="fecha">{mes} {yyyy}', "lag": 0}),
+                      ("prensa", {"q": '"confianza del consumidor" "Di Tella"', "lag": 0})],
+    "priv.utdt_ei": [("pagina_periodo", {"url": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=4982", "patron": r'\(EI\)</h4>\s*<div class="fecha">{mes} {yyyy}', "lag": 0})],
+    "priv.utdt_icg": [("pagina_periodo", {"url": "https://www.utdt.edu/ver_contenido.php?id_contenido=1351&id_item_menu=2970", "patron": r'\(ICG\)</h4>\s*<div class="fecha">{mes} {yyyy}', "lag": 0}),
+                      ("prensa", {"q": '"confianza en el gobierno" "Di Tella"', "lag": 0})],
     # Estado nacional: fuente oficial primero (verificado 27-sep-2026), prensa de respaldo
     "priv.resultado_fiscal": [("gob_noticias", {"url": "https://www.argentina.gob.ar/economia/sechacienda/noticias", "clave": "Sector Público Nacional"}),
                               ("prensa", {"q": '"Sector Público Nacional" superávit OR déficit', "lag": 1})],
@@ -380,6 +391,7 @@ def m_archivo_lm(http: Http, ev: dict, p: dict):
     y, m = mes_ref(f, p.get("lag", 1))
     url = p["url"].format(yyyy_ref=y, yy_ref=f"{y % 100:02d}", mm_ref=f"{m:02d}", mes_ref=MESES[m - 1])
     st, lm = http.get(url, head=True)
+    exigir = p.get("exigir_lm", False)   # cuando el nombre se repite entre años (USDA reusa wasdeMMYY)
     if st in (404, 410):
         return None, None
     if st != 200:
@@ -390,6 +402,8 @@ def m_archivo_lm(http: Http, ev: dict, p: dict):
         fecha = None
     if fecha and f - dt.timedelta(days=3) <= fecha <= f + dt.timedelta(days=VENTANA_DIAS):
         return fecha, url
+    if exigir:
+        return None, None                  # el archivo existe pero es viejo: no es este
     return min(f, HOY), url
 
 
@@ -411,6 +425,53 @@ def m_gob_noticias(http: Http, ev: dict, p: dict):
         fe = dt.date.fromisoformat(fecha)
         if clave_re.search(titulo.strip()) and abs((fe - f).days) <= tol:
             return fe, "https://www.argentina.gob.ar" + link
+    return None, None
+
+
+MES_ABR = {"ene": 1, "jan": 1, "feb": 2, "mar": 3, "abr": 4, "apr": 4, "may": 5, "jun": 6, "jul": 7,
+           "ago": 8, "aug": 8, "sep": 9, "set": 9, "oct": 10, "nov": 11, "dic": 12, "dec": 12}
+
+
+def m_pagina_lista(http: Http, ev: dict, p: dict):
+    """Página propia con un listado de publicaciones fechadas (ej. CIARA: 'Liquidación de Divisas 01-SEP-2026').
+    'patron' es una regex con grupos d, m, y (mes en número, abreviatura o nombre). Confirma si alguna
+    fecha del listado cae a no más de 'tol' días de la programada."""
+    st, html = http.get(p["url"])
+    if st != 200:
+        raise IOError(f"{p['url']}: HTTP {st}")
+    fechas = []
+    for m in re.finditer(p["patron"], html, re.I):
+        mm = m.group("m")
+        mes = int(mm) if mm.isdigit() else MES_ABR.get(mm.lower()[:3])
+        try:
+            fechas.append(dt.date(int(m.group("y")), mes, int(m.group("d"))))
+        except (TypeError, ValueError):
+            continue
+    if not fechas:
+        raise IOError(f"{p['url']}: listado sin fechas legibles (¿cambió la página?)")
+    f = d(ev["fecha"])
+    tol = p.get("tol", 3)
+    for fe in sorted(fechas, key=lambda x: abs((x - f).days)):
+        if abs((fe - f).days) <= tol and fe <= HOY:
+            return fe, p["url"]
+    return None, None
+
+
+def m_pagina_periodo(http: Http, ev: dict, p: dict):
+    """Página propia que muestra el último período publicado (ej. AFCP: 'Despachos de cemento en el mes de
+    Agosto de 2026'). Si aparece el período esperado, salió. La página no da el día: se toma la fecha
+    programada (o hoy, si se detecta después). En 'patron', {mes} y {yyyy} se reemplazan por el período."""
+    st, html = http.get(p["url"])
+    if st != 200:
+        raise IOError(f"{p['url']}: HTTP {st}")
+    f = d(ev["fecha"])
+    y, m = mes_ref(f, p.get("lag", 1))
+    patron = p["patron"].replace("{mes}", MESES[m - 1]).replace("{yyyy}", str(y))
+    if re.search(patron, html, re.I):
+        return min(f, HOY), p["url"]
+    generico = p["patron"].replace("{mes}", "(?:" + "|".join(MESES) + ")").replace("{yyyy}", r"20\d{2}")
+    if not re.search(generico, html, re.I):
+        raise IOError(f"{p['url']}: no aparece ningún período (¿cambió la página?)")
     return None, None
 
 
@@ -486,7 +547,7 @@ def m_prensa(http: Http, ev: dict, p: dict):
     return None, None
 
 
-METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "archivo_lm": m_archivo_lm, "gob_noticias": m_gob_noticias, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
+METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "archivo_lm": m_archivo_lm, "gob_noticias": m_gob_noticias, "pagina_lista": m_pagina_lista, "pagina_periodo": m_pagina_periodo, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
            "pagina_fecha": m_pagina_fecha, "prensa": m_prensa}
 
 
@@ -858,6 +919,37 @@ def selftest() -> int:
     ha = Http(fake={"https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-032026.pdf": (200, "Thu, 14 May 2026 15:17:34 GMT")})
     f, u = m_archivo_lm(ha, {"fecha": "2026-04-01"}, {"url": "https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-{mm_ref}{yyyy_ref}.pdf", "lag": 1})
     check("archivo_lm_resubido", f == dt.date(2026, 4, 1))
+
+    # 17. Listado fechado (CIARA) y período en página (AFCP, UTDT)
+    HOY = dt.date(2026, 9, 27)
+    hc = Http(fake={"https://www.ciaracec.com.ar/": (200, '<li><a href="/x.pdf">Liquidaci&oacute;n de Divisas  <strong>01-SEP-2026</strong></a></li>'
+                                                            '<li><a href="/y.pdf">Liquidaci&oacute;n de Divisas  <strong>03-AGO-2026</strong></a></li>')})
+    pc = {"url": "https://www.ciaracec.com.ar/ciara/liq", "patron": r"Divisas\s*<strong>(?P<d>\d{2})-(?P<m>[a-z]{3})-(?P<y>\d{4})", "tol": 3}
+    f, u = m_pagina_lista(hc, {"fecha": "2026-09-01"}, pc)
+    check("lista_ciara", f == dt.date(2026, 9, 1))
+    f, u = m_pagina_lista(hc, {"fecha": "2026-10-01"}, pc)
+    check("lista_ciara_no_salio", f is None)
+    ha2 = Http(fake={"https://www.afcp.org.ar/": (200, "<p>Despachos de cemento en el mes de Agosto de 2026</p>")})
+    pa = {"url": "https://www.afcp.org.ar/despacho-mensual", "patron": "Despachos de cemento en el mes de {mes} de {yyyy}", "lag": 1}
+    f, u = m_pagina_periodo(ha2, {"fecha": "2026-09-04"}, pa)
+    check("periodo_afcp", f == dt.date(2026, 9, 4))
+    f, u = m_pagina_periodo(ha2, {"fecha": "2026-10-06"}, pa)
+    check("periodo_afcp_no_salio", f is None)
+    try:
+        m_pagina_periodo(Http(fake={"https://www.afcp.org.ar/": (200, "<p>sitio nuevo</p>")}), {"fecha": "2026-10-06"}, pa)
+        check("periodo_pagina_cambiada_es_error", False)
+    except IOError:
+        check("periodo_pagina_cambiada_es_error", True)
+    hu = Http(fake={"https://www.utdt.edu/": (200, '<h4>Encuesta de Expectativas (EI)</h4> <div class="fecha">Septiembre 2026</div>'
+                                                   '<h4>Confianza del Consumidor (ICC)</h4> <div class="fecha">Agosto 2026</div>')})
+    pu = {"url": "https://www.utdt.edu/x", "patron": r'\(ICC\)</h4>\s*<div class="fecha">{mes} {yyyy}', "lag": 0}
+    f, u = m_pagina_periodo(hu, {"fecha": "2026-09-17"}, pu)
+    check("periodo_utdt_no_confunde_widgets", f is None)
+    # 18. USDA reusa nombres: archivo viejo (2020) no confirma el WASDE de octubre
+    hw = Http(fake={"https://www.usda.gov/oce/commodity/wasde/wasde1026.pdf": (200, "Wed, 15 Jan 2020 20:23:57 GMT")})
+    HOY = dt.date(2026, 10, 12)
+    f, u = m_archivo_lm(hw, {"fecha": "2026-10-09"}, {"url": "https://www.usda.gov/oce/commodity/wasde/wasde{mm_ref}{yy_ref}.pdf", "lag": 0, "exigir_lm": True})
+    check("wasde_archivo_viejo", f is None)
 
     total = ok + len(fallos)
     print(f"Autotest: {ok}/{total} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
