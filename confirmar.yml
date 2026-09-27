@@ -1,0 +1,109 @@
+name: Confirmar publicaciones
+
+on:
+  schedule:
+    # Varias corridas por día: GitHub puede demorar o saltear un horario programado,
+    # y el confirmador es idempotente (correrlo de más no cambia nada).
+    # Horarios en UTC; entre paréntesis, hora argentina.
+    - cron: "17 12 * * *"   # (09:17) lo del día anterior
+    - cron: "47 13 * * *"   # (10:47) respaldo de la mañana
+    - cron: "17 17 * * *"   # (14:17) mediodía
+    - cron: "47 19 * * *"   # (16:47) después de INDEC (16:00)
+    - cron: "17 22 * * *"   # (19:17) cierre del BCRA
+    - cron: "47 23 * * *"   # (20:47) respaldo de la noche
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Probar sin escribir"
+        type: boolean
+        default: true
+      aviso_prueba:
+        description: "Mandar un aviso de prueba al celular"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: confirmador
+  cancel-in-progress: false   # nunca dos corridas a la vez escribiendo el estado
+
+jobs:
+  confirmar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Dependencias
+        run: pip install requests==2.32.3 pywebpush==2.5.0
+
+      - name: Autotest (si falla, no se toca ningún dato)
+        run: python confirmador.py --selftest
+
+      - name: Corrida
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python confirmador.py --dry-run
+          else
+            python confirmador.py
+          fi
+
+      - name: Avisos al celular (resumen de la mañana y alertas de la noche)
+        env:
+          PUSH_SUSCRIPCION: ${{ secrets.PUSH_SUSCRIPCION }}
+          VAPID_PRIVADA: ${{ secrets.VAPID_PRIVADA }}
+        run: |
+          python aviso.py --selftest
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.aviso_prueba }}" = "true" ]; then
+            python aviso.py --prueba
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python aviso.py --dry-run
+          else
+            python aviso.py || echo "Falló el envío del aviso (no frena la corrida)"
+          fi
+
+      - name: Calendario suscribible (.ics)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python ics.py || echo "No se pudo generar el .ics (no frena la corrida)"
+
+      - name: Datos del mercado de cambios (BCRA)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python extraer_cambiario.py
+
+      - name: Anexo sectorial CLANAE (BCRA)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python extraer_clanae.py
+
+      - name: Series monetarias en dólares (API BCRA, una vez por día)
+        if: ${{ github.event.schedule == '17 12 * * *' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run) }}
+        run: python extraer_bcra_api.py
+
+      - name: Guardar estado
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "confirmador"
+          git config user.email "confirmador@users.noreply.github.com"
+          git add data/estado.json data/reporte.md data/avisos.json data/macrocalendar.ics
+          git add data/cambiario 2>/dev/null || true
+          git add data/bcra_api 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Confirmaciones $(date -u +%F)"
+            git pull --rebase
+            git push
+            # Los push del bot no siempre disparan la reconstrucción de la web: se pide explícitamente
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "No se pudo pedir la reconstrucción de la web"
+          fi

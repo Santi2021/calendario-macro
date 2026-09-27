@@ -96,6 +96,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
 .leyenda{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--ink3);margin-top:22px;align-items:center}
 .leyenda span{display:inline-flex;align-items:center;gap:6px}.leyenda .s{width:4px;height:14px;background:var(--ink3);border-radius:2px}
 .leyenda .s.e{background:repeating-linear-gradient(var(--ink3) 0 4px,transparent 4px 7px)}
+.ev .m a.inf{color:var(--ar);text-decoration:none;font-weight:600}
 .link{border:0;background:none;color:var(--ink3);cursor:pointer;font-size:12.5px;text-decoration:underline;padding:0}
 /* panel lateral de detalle */
 .cortina{position:fixed;inset:0;background:rgba(10,15,20,.4);z-index:40;opacity:0;pointer-events:none;transition:opacity .15s}
@@ -158,6 +159,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
  .row .o{font-size:12.5px;color:var(--ink3);margin:2px 0 0 16px}
  .row.baja .t{font-weight:500;color:var(--ink2)}.row.est .t i{background:transparent;box-shadow:inset 0 0 0 2px var(--c)}
  .row .st{font-size:11px}
+ .row .o a.inf,.ev .m a.inf{color:var(--ar);text-decoration:none;font-weight:600}
  .dias .dh{display:flex;justify-content:space-between;align-items:baseline;margin:10px 0 2px;font-size:13px;color:var(--ink3);font-weight:600}
  .dias .dh:first-child{margin-top:0}.dias .dh b{color:var(--ink);font-size:14px}
  .mas{font-size:12.5px;color:var(--ink3);padding:2px 0 6px 56px}
@@ -165,7 +167,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
  /* agenda */
  .mtit{display:flex;align-items:center;gap:10px;margin:6px 2px 10px}.mtit h2{margin:0 auto 0 0;font-size:26px;font-weight:700;letter-spacing:-.3px}
  .chipbtn{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;color:var(--ink2);display:inline-flex;gap:6px;align-items:center}
- .chipbtn svg{width:15px;height:15px}
+ .chipbtn svg{width:15px;height:15px}a.chipbtn{text-decoration:none}
  .ag .sd{position:sticky;top:calc(env(safe-area-inset-top,0px) + 56px);z-index:5;background:var(--bg);padding:12px 2px 6px;display:flex;align-items:baseline;gap:8px}
  .ag .sd .n{font-stretch:62%;font-weight:750;font-size:30px;line-height:.9}.ag .sd .w{font-size:13px;color:var(--ink2);font-weight:600;text-transform:capitalize}
  .ag .sd.hoy .w::after{content:"hoy";margin-left:8px;font-size:11px;font-weight:700;background:var(--ar);color:var(--bg);border-radius:6px;padding:1px 6px;text-transform:none}
@@ -227,7 +229,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
   <div class="leyenda">
     <span><i class="s"></i>Fecha oficial</span><span><i class="s e"></i>Fecha estimada</span>
     <span><span class="st confirmado">✓ salió</span></span><span><span class="st demorado">demorado</span></span><span><span class="st sin_verificar">sin verificar</span></span>
-    <button class="link" id="ics">Exportar a mi calendario (.ics)</button>
+    <a class="link" href="https://calendar.google.com/calendar/render?cid=webcal://santi2021.github.io/calendario-macro/data/macrocalendar.ics" target="_blank" rel="noopener">Suscribirme en Google Calendar</a> <button class="link" id="ics">Exportar (.ics)</button>
     <button class="link" id="tema">Cambiar tema</button>
     <span class="atajos"><kbd>/</kbd> buscar <kbd>T</kbd> hoy <kbd>←</kbd><kbd>→</kbd> mover <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> vistas</span>
   </div>
@@ -281,7 +283,7 @@ const nombre=e=>(CAT[e.id]||{}).n||e.t;
 function stHTML(e){const s=estadoDe(e);if(!s)return"";const lab={confirmado:"✓ salió",demorado:"demorado",sin_verificar:"sin verificar"}[s.estado];if(!lab)return"";
   const d=s.estado==="confirmado"&&s.desvio_dias?` (${s.desvio_dias>0?"+":""}${s.desvio_dias}d)`:"";return`<span class="st ${s.estado}">${lab}${d}</span>`}
 function evHTML(e){const meta=[(CAT[e.id]||{}).o,e.o!=="oficial"?"fecha estimada":null,e.al?"posible conflicto con feriado":null].filter(Boolean).join(" · ");
-  return`<div class="ev ${e.p} ${e.o!=="oficial"?"est":""}" style="--c:${GR[e.g].c}" data-i="${e.i}" tabindex="0" role="button"><span class="bar"></span><span class="h">${e.h||""}</span><div><div class="t">${esc(nombre(e))}</div><div class="m">${esc(meta)}</div></div><span class="s">${stHTML(e)}</span></div>`}
+  return`<div class="ev ${e.p} ${e.o!=="oficial"?"est":""}" style="--c:${GR[e.g].c}" data-i="${e.i}" tabindex="0" role="button"><span class="bar"></span><span class="h">${e.h||""}</span><div><div class="t">${esc(nombre(e))}</div><div class="m">${esc(meta)}${typeof linkInf==="function"?linkInf(e):""}</div></div><span class="s">${stHTML(e)}</span></div>`}
 function bind(root){root.querySelectorAll("[data-i]").forEach(el=>{el.onclick=()=>detalle(E[+el.dataset.i]);el.onkeydown=k=>{if(k.key==="Enter")detalle(E[+el.dataset.i])}})}
 
 function chips(){
@@ -444,7 +446,8 @@ function orgC(e){let o=(CAT[e.id]||{}).o||"";for(const[a,b]of ORGC)if(o.startsWi
 const ms={tab:"hoy",dias:40,mes:new Date(HOY.getFullYear(),HOY.getMonth(),1),sel:null};
 const esMovil=()=>MQ.matches;
 function rowHTML(e,conH=true){return`<div class="row ${e.p==="baja"?"baja":""} ${e.o!=="oficial"?"est":""}" style="--c:${GR[e.g].c}" data-i="${e.i}" role="button" tabindex="0">
-  <span class="h">${conH?(e.h||"—"):""}</span><div class="x"><div class="t"><i></i><span>${esc(corto(e))}</span></div><div class="o">${esc(orgC(e))}${e.o!=="oficial"?" · estimada":""}</div></div>${stHTML(e)}</div>`}
+  <span class="h">${conH?(e.h||"—"):""}</span><div class="x"><div class="t"><i></i><span>${esc(corto(e))}</span></div><div class="o">${esc(orgC(e))}${e.o!=="oficial"?" · estimada":""}${linkInf(e)}</div></div>${stHTML(e)}</div>`}
+function linkInf(e){const s=estadoDe(e);return s&&s.estado==="confirmado"&&s.evidencia?` · <a class="inf" href="${esc(s.evidencia)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">ver informe ↗</a>`:""}
 function habiles(desde,n){const r=[];let d=new Date(desde);while(r.length<n){if(d.getDay()>0&&d.getDay()<6)r.push(new Date(d));d=addD(d,1)}return r}
 function nAlertas(){const t=$("#alertas").innerHTML;return{h:t,n:(t.match(/class="alerta/g)||[]).length,grave:/class="alerta"><b>Demorado/.test(t)}}
 
@@ -491,7 +494,8 @@ async function mAjustes(){
    <div class="it"><div class="tx"><b>Código de suscripción</b><span>Para pegar en GitHub si cambiás de celular</span></div><button class="chipbtn" id="majcod">Ver</button></div></div>
   <div class="card aj"><h3>Vista</h3><div class="it"><div class="tx"><b>Tema</b></div><div class="seg" id="mtema">${[["sistema","Auto"],["light","Claro"],["dark","Oscuro"]].map(([k,l])=>`<button data-k="${k}" aria-pressed="${tema===k}">${l}</button>`).join("")}</div></div>
    <div class="it"><div class="tx"><b>Filtros</b><span>${nFiltros()?nFiltros()+" cambios sobre lo predeterminado":"Fuentes, prioridad y fechas estimadas"}</span></div><button class="chipbtn" id="majfil">Editar</button></div>
-   <div class="it"><div class="tx"><b>Agregar a mi calendario</b><span>Próximos 120 días en formato .ics</span></div><button class="chipbtn" id="majics">Exportar</button></div></div>
+   <div class="it"><div class="tx"><b>Suscribirme en Google Calendar</b><span>Se actualiza solo; sirve para compartir</span></div><a class="chipbtn" href="https://calendar.google.com/calendar/render?cid=webcal://santi2021.github.io/calendario-macro/data/macrocalendar.ics" target="_blank" rel="noopener">Abrir</a></div>
+   <div class="it"><div class="tx"><b>Link del calendario</b><span>Para Apple, Outlook u otros</span></div><button class="chipbtn" id="majics">Copiar</button></div></div>
   <div class="card aj"><h3>Sistema</h3><div class="it"><div class="tx"><b>Última confirmación</b><span>${ult}</span></div></div>
    <div class="it"><div class="tx"><b>Fuentes</b><span>${sal.length?"Con fallas: "+esc(sal.join(", ")):"Todas respondiendo"}</span></div></div>
    <div class="it"><div class="tx"><b>MacroCalendAR</b><span>${E.length} publicaciones en el calendario</span></div></div></div>`;
@@ -525,7 +529,7 @@ async function mRender(){
   on("verag",()=>irTab("agenda"));on("mfil",hojaFiltros);on("majfil",hojaFiltros);on("mmas",()=>{ms.dias+=30;mRender()});
   on("mant",()=>{ms.mes=new Date(ms.mes.getFullYear(),ms.mes.getMonth()-1,1);mRender()});on("msig",()=>{ms.mes=new Date(ms.mes.getFullYear(),ms.mes.getMonth()+1,1);mRender()});
   v.querySelectorAll(".mg button").forEach(b=>b.onclick=()=>{ms.sel=b.dataset.f;mRender()});
-  on("majav",panelAvisos);on("majcod",panelAvisos);on("majics",exportarICS);
+  on("majav",panelAvisos);on("majcod",panelAvisos);on("majics",async()=>{const b=$("#majics");try{await navigator.clipboard.writeText("https://santi2021.github.io/calendario-macro/data/macrocalendar.ics");b.textContent="Copiado ✓"}catch(e){prompt("Link del calendario","https://santi2021.github.io/calendario-macro/data/macrocalendar.ics")}});
   v.querySelectorAll("#mtema button").forEach(b=>b.onclick=()=>{const k=b.dataset.k,r=document.documentElement;if(k==="sistema"){delete r.dataset.theme;try{localStorage.removeItem("calmacro:tema")}catch(e){}}else{r.dataset.theme=k;store.set("tema",k)}mRender()});
 }
 function irTab(t){ms.tab=t;window.scrollTo(0,0);mRender();try{history.replaceState(null,"","?v="+t)}catch(e){}}
