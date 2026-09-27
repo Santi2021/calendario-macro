@@ -72,6 +72,10 @@ jobs:
             python aviso.py || echo "Falló el envío del aviso (no frena la corrida)"
           fi
 
+      - name: Calendario suscribible (.ics)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: python ics.py || echo "No se pudo generar el .ics (no frena la corrida)"
+
       - name: Datos del mercado de cambios (BCRA)
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         run: python extraer_cambiario.py
@@ -91,7 +95,7 @@ jobs:
         run: |
           git config user.name "confirmador"
           git config user.email "confirmador@users.noreply.github.com"
-          git add data/estado.json data/reporte.md data/avisos.json
+          git add data/estado.json data/reporte.md data/avisos.json data/macrocalendar.ics
           git add data/cambiario 2>/dev/null || true
           git add data/bcra_api 2>/dev/null || true
           if git diff --cached --quiet; then
