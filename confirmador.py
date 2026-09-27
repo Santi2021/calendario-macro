@@ -112,6 +112,33 @@ CONF = {
     "priv.recaudacion_arca": [("prensa", {"q": "recaudación ARCA interanual", "lag": 1})],
 }
 
+# INDEC: prefijo del PDF del informe técnico (verificado contra el listado el 27-sep-2026).
+# Va primero en la cadena de cada indicador; los métodos previos quedan de respaldo.
+INDEC_PDF = {
+    "indec.ipc": "ipc", "indec.cba_cbt": "canasta", "indec.canasta_crianza": "canasta_crianza",
+    "indec.sipm": "ipm", "indec.icc": "icc", "indec.ica": "ica", "indec.emae": "emae",
+    "indec.ipi_manuf": "ipi_manufacturero", "indec.isac": "isac", "indec.ipi_minero": "ipi_minero",
+    "indec.ipi_pesquero": "ipi_pesquero", "indec.issp": "issp", "indec.ucii": "capacidad",
+    "indec.supermercados": "super", "indec.mayoristas": "autoservicios_mayoristas", "indec.shoppings": "com",
+    "indec.etn_super": "etn_super_mayoristas", "indec.etn_industria": "etn_industria_manufacturera",
+    "indec.salarios": "salarios", "indec.turismo_int": "eti", "indec.dotacion_apn": "dotacion_personal_apn",
+    "indec.eoh": "eoh", "indec.pib_avance": "pib", "indec.eph_mercado_trabajo": "mercado_trabajo_eph",
+    "indec.bdp": "bal", "indec.cgi": "cgi", "indec.eph_distribucion": "ingresos",
+    "indec.precios_cant_comex": "ipcext", "indec.aft_stats": "i_argent", "indec.patentamientos": "patentamientos",
+    "indec.accesos_internet": "internet", "indec.farmaceutica": "farm", "indec.energia_ind": "indicadores_energeticos",
+    "indec.maquinaria_agricola": "maq_agricola", "indec.electrodomesticos": "electro", "indec.pobreza": "eph_pobreza",
+    "indec.eph_condiciones_vida": "eph_indicadores_hogares", "indec.complejos_exportadores": "complejos",
+    "indec.opex": "opex", "indec.enge": "enge", "indec.eph_tu_tasas": "eph_total_urbano",
+    "indec.eph_tu_distribucion": "eph_total_urbano_ingresos", "indec.eph_informalidad": "informalidad_laboral_eph",
+    "indec.csc_cultura": "csc", "indec.cuenta_energia": "cuenta_energia", "indec.remuneracion_sexo_edad": "cgi_sexo_edad",
+    "indec.ingreso_ahorro_nacional": "ingreso_ahorro_nac", "indec.csi_gobierno": "cuentas_sectores_institucionales",
+    "indec.csi_financieras": "cuentas_sociedades_financieras", "indec.csi_rdm": "cuentas_resto_del_mundo",
+    "indec.fbkf_gobierno": "formacion_capital_fijo", "indec.tic_eph": "mautic",
+    "indec.cuenta_emisiones": "cuenta_emisiones_aire", "indec.cuenta_recursos_energ": "cuenta_re",
+}
+for _ind, _pref in INDEC_PDF.items():
+    CONF[_ind] = [("indec_informes", {"pref": _pref})] + CONF.get(_ind, [])
+
 # Calendarios oficiales vigilados: si cambian, se avisa para recargarlos.
 CALENDARIOS = {
     "indec_2sem": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem{yyyy}.pdf",
@@ -194,27 +221,65 @@ def guardar_atomico(nombre: str, obj) -> None:
 # Métodos de confirmación. Cada uno devuelve (fecha_real|None, url_evidencia|None).
 # Si no hay evidencia devuelve (None, None). Si la fuente no responde, lanza excepción.
 # ======================================================================================
+BCRA_API = "https://www.bcra.gob.ar/wp-json/bcra/v1/publicaciones?category=informes,estadisticas&lang=es&action=total"
+
+
 def m_bcra_listado(http: Http, ev: dict, p: dict):
-    st, html = http.get("https://www.bcra.gob.ar/ultimos-informes/")
+    """Listado completo de informes del BCRA. La página 'Últimos informes' arma su tabla con JavaScript
+    a partir de esta API (JSON con título, período y fecha de cada publicación, ~2.200 filas)."""
+    st, txt = http.get(BCRA_API)
     if st != 200:
-        raise IOError(f"BCRA listado HTTP {st}")
+        raise IOError(f"API BCRA HTTP {st}")
+    try:
+        pubs = json.loads(txt)["data"]["publicaciones"]
+    except Exception as ex:
+        raise IOError(f"API BCRA: respuesta ilegible ({ex})")
+    if not pubs:
+        raise IOError("API BCRA: listado vacío")
     ab = {"ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6, "jul": 7,
           "ago": 8, "sep": 9, "oct": 10, "nov": 11, "dic": 12}
-    texto = re.sub(r"<[^>]+>", " ", html)
-    texto = re.sub(r"\s+", " ", texto)
-    if not re.search(r"\b\d{2} (ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic) \d{4}\b", texto):
-        # Página sin ninguna fecha: la tabla se arma con JavaScript o cambió la estructura.
-        # No es evidencia de que el informe no salió.
-        raise IOError("listado BCRA sin fechas legibles (tabla cargada por JavaScript)")
     objetivo = d(ev["fecha"])
-    # Cada fila del listado: "<Nombre> <Periodicidad> <Período> DD mmm AAAA"
-    for m in re.finditer(re.escape(p["nombre"]) + r".{0,140}?\b(\d{2}) ([a-z]{3}) (\d{4})", texto):
-        try:
-            f = dt.date(int(m.group(3)), ab[m.group(2).lower()], int(m.group(1)))
-        except (KeyError, ValueError):
+    nombre = p["nombre"].lower()
+    for pub in pubs:
+        if nombre not in (pub.get("titulo") or "").lower():
             continue
+        m = re.match(r"(\d{1,2}) ([a-z]{3})\w* (\d{4})", (pub.get("fecha") or "").lower())
+        if not m or m.group(2) not in ab:
+            continue
+        f = dt.date(int(m.group(3)), ab[m.group(2)], int(m.group(1)))
         if abs((f - objetivo).days) <= VENTANA_DIAS:
-            return f, "https://www.bcra.gob.ar/ultimos-informes/"
+            return f, pub.get("url") or "https://www.bcra.gob.ar/ultimos-informes/"
+    return None, None
+
+
+INDEC_INFORMES = "https://www.indec.gob.ar/Institucional/Indec/InformesTecnicos"
+
+
+def m_indec_informes(http: Http, ev: dict, p: dict):
+    """Listado completo de informes técnicos de INDEC (~4.000 filas: fecha DD/MM/AAAA + PDF).
+    Cada PDF se llama <prefijo>_<período><hash>.pdf (ej. ipc_09_26A1BE2DC4CD.pdf); el prefijo
+    identifica al indicador. Se exige prefijo exacto seguido de '_<dígito>' para no confundir
+    'canasta' con 'canasta_crianza' ni 'cgi' con 'cgi_sexo_edad'."""
+    st, html = http.get(INDEC_INFORMES)
+    if st != 200:
+        raise IOError(f"INDEC informes HTTP {st}")
+    filas = []
+    ultima = None
+    for m in re.finditer(r"\b(\d{2})/(\d{2})/(20\d{2})\b|informesdeprensa/([A-Za-z0-9_\-]+)\.pdf", html):
+        if m.group(1):
+            try:
+                ultima = dt.date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+            except ValueError:
+                ultima = None
+        elif ultima:
+            filas.append((ultima, m.group(4)))
+    if len(filas) < 100:
+        raise IOError(f"INDEC informes: sólo {len(filas)} filas legibles (¿cambió la página?)")
+    objetivo = d(ev["fecha"])
+    patron = re.compile(re.escape(p["pref"]) + r"_\d", re.I)
+    for fecha, archivo in filas:
+        if patron.match(archivo) and abs((fecha - objetivo).days) <= VENTANA_DIAS:
+            return fecha, f"https://www.indec.gob.ar/uploads/informesdeprensa/{archivo}.pdf"
     return None, None
 
 
@@ -371,7 +436,7 @@ def m_prensa(http: Http, ev: dict, p: dict):
     return None, None
 
 
-METODOS = {"bcra_listado": m_bcra_listado, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
+METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
            "pagina_fecha": m_pagina_fecha, "prensa": m_prensa}
 
 
@@ -572,9 +637,10 @@ def selftest() -> int:
         else:
             fallos.append(nombre)
 
-    bcra_html = ("<table><tr><td>Relevamiento de Expectativas de Mercado (REM)</td><td>Mensual</td>"
-                 "<td>Agosto 2026</td><td>04 sep 2026</td></tr>"
-                 "<tr><td>Informe Monetario Mensual</td><td>Mensual</td><td>Agosto 2026</td><td>07 sep 2026</td></tr></table>")
+    bcra_json = json.dumps({"success": True, "data": {"publicaciones": [
+        {"titulo": "Relevamiento de Expectativas de Mercado (REM)", "url": "https://www.bcra.gob.ar/publicaciones/rem/", "periodo": "Agosto 2026", "fecha": "04 sep 2026"},
+        {"titulo": "Informe Monetario Mensual", "url": "https://www.bcra.gob.ar/publicaciones/imm/", "periodo": "Agosto 2026", "fecha": "07 sep 2026"},
+        {"titulo": "Relevamiento de Expectativas de Mercado (REM)", "url": "x", "periodo": "Julio 2026", "fecha": "05 ago 2026"}]}})
     rss_cca = ("<rss><channel><item><title>En agosto se vendieron 155.246 autos usados</title>"
                "<link>https://cca.org.ar/x</link><pubDate>Wed, 02 Sep 2026 13:00:00 +0000</pubDate></item></channel></rss>")
     news = ("<rss><channel>"
@@ -583,7 +649,7 @@ def selftest() -> int:
             "<item><title>Agosto: la inflación marcó 1,7% según INDEC</title><link>https://b</link><pubDate>Thu, 10 Sep 2026 19:30:00 +0000</pubDate></item>"
             "</channel></rss>")
     http = Http(fake={
-        "https://www.bcra.gob.ar/ultimos-informes/": (200, bcra_html),
+        BCRA_API: (200, bcra_json),
         "https://cca.org.ar/feed/": (200, rss_cca),
         "https://news.google.com/": (200, news),
         "https://adefa.org.ar/upload/estadisticas/resumen-2026-08-es.pdf": (200, ""),
@@ -651,13 +717,32 @@ def selftest() -> int:
     check("atomica", cargar("x.json", None) == {"a": 1} and not [p for p in os.listdir(DATA) if p.endswith(".tmp")])
     DATA = viejo
 
-    # 12. Listado BCRA sin fechas (tabla por JavaScript): debe ser error, no "no salió"
+    # 12. API BCRA con respuesta rota (HTML en vez de JSON): debe ser error, no "no salió"
     try:
-        m_bcra_listado(Http(fake={"https://www.bcra.gob.ar/ultimos-informes/": (200, "<div id='tabla'></div>")}),
+        m_bcra_listado(Http(fake={BCRA_API: (200, "<html>mantenimiento</html>")}),
                        {"fecha": "2026-09-18"}, {"nombre": "Informe sobre Bancos"})
-        check("listado_js_es_error", False)
+        check("api_bcra_rota_es_error", False)
     except IOError:
-        check("listado_js_es_error", True)
+        check("api_bcra_rota_es_error", True)
+    # 12b. BCRA: el REM de julio (05-ago) no confirma el de agosto buscado el 04-sep ± ventana, pero sí el 04-sep
+    f, u = m_bcra_listado(http, {"fecha": "2026-09-03"}, {"nombre": "Relevamiento de Expectativas de Mercado"})
+    check("bcra_rem_fecha_real", f == dt.date(2026, 9, 4))
+    # 12c. INDEC: prefijo exacto (canasta no confunde con canasta_crianza) y fecha del listado
+    filas = "".join(f"<div class='row'><div>{fe}</div><a href='/uploads/informesdeprensa/{ar}.pdf'>Ver informe</a></div>"
+                    for fe, ar in [("14/09/2026", "canasta_crianza_09_2661D221F8CF"), ("11/09/2026", "canasta_09_265C7188EBE6"),
+                                   ("10/09/2026", "ipc_09_26A1BE2DC4CD"), ("17/09/2026", "mercado_trabajo_eph_2trim26433FCBC5A8")] * 30)
+    hi = Http(fake={INDEC_INFORMES: (200, filas)})
+    f, u = m_indec_informes(hi, {"fecha": "2026-09-14"}, {"pref": "canasta"})
+    check("indec_prefijo_exacto", f == dt.date(2026, 9, 11) and "canasta_09" in u)
+    f, u = m_indec_informes(hi, {"fecha": "2026-09-17"}, {"pref": "mercado_trabajo_eph"})
+    check("indec_trimestral", f == dt.date(2026, 9, 17))
+    f, u = m_indec_informes(hi, {"fecha": "2026-09-17"}, {"pref": "cgi"})
+    check("indec_sin_evidencia", f is None)
+    try:
+        m_indec_informes(Http(fake={INDEC_INFORMES: (200, "<html>nuevo diseño</html>")}), {"fecha": "2026-09-14"}, {"pref": "ipc"})
+        check("indec_pagina_cambiada_es_error", False)
+    except IOError:
+        check("indec_pagina_cambiada_es_error", True)
     # 13. Página propia del BCRA con 'Publicado el'
     hb = Http(fake={"https://www.bcra.gob.ar/publicaciones/informe-sobre-bancos-julio-de-2026/":
                     (200, "<h1>Informe sobre Bancos</h1><p>Publicado el 18 Sep 2026</p>")})
