@@ -1,0 +1,2222 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MacroCalendAR//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MacroCalendAR
+X-WR-TIMEZONE:America/Argentina/Buenos_Aires
+X-WR-CALDESC:Publicaciones de datos macro y sectoriales de Argentina
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:privlicitacionestesoro20260729@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260729
+DTEND;VALUE=DATE:20260730
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcradeudaprivada20260730@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+TRANSP:TRANSPARENT
+SUMMARY:Informe sobre Deuda Externa… · BCRA
+DESCRIPTION:Informe sobre Deuda Externa Privada\nFecha oficial\nPrioridad 
+ media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecprecioscantcomex202607302026Q2@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260730T190000Z
+DTEND:20260730T191500Z
+SUMMARY:Índices de precios y cantidades… · INDEC
+DESCRIPTION:Índices de precios y cantidades del comercio exterior. Segund
+ o trimestre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-109
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20260731@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraied20260806@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+TRANSP:TRANSPARENT
+SUMMARY:Informe de Inversión Extranjera… · BCRA
+DESCRIPTION:Informe sobre Inversión Extranjera Directa\nFecha oficial\nPr
+ ioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraipom20260806@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+TRANSP:TRANSPARENT
+SUMMARY:IPOM · BCRA
+DESCRIPTION:Informe de Política Monetaria (IPOM) — II trim. 2026\nFecha
+  oficial\nPrioridad alta
+URL:https://www.bcra.gob.ar/listado-informe-de-politica-monetaria/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrarem20260806@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+TRANSP:TRANSPARENT
+SUMMARY:REM · BCRA
+DESCRIPTION:Relevamiento de Expectativas de Mercado (REM)\nFecha oficial\n
+ Prioridad alta
+URL:https://www.bcra.gob.ar/relevamiento-de-expectativas-de-mercado-rem/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipiminero20260806202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260806T190000Z
+DTEND:20260806T191500Z
+SUMMARY:IPI minero · INDEC
+DESCRIPTION:Índice de producción industrial minero (IPI minero). Junio d
+ e 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-7-172
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraimm20260807@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+TRANSP:TRANSPARENT
+SUMMARY:Informe monetario · BCRA
+DESCRIPTION:Informe Monetario Mensual\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipimanuf20260807202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260807T190000Z
+DTEND:20260807T191500Z
+SUMMARY:Industria (IPI) · INDEC
+DESCRIPTION:Índice de producción industrial manufacturero (IPI manufactu
+ rero). Junio de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-14
+END:VEVENT
+BEGIN:VEVENT
+UID:indecisac20260807202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260807T190000Z
+DTEND:20260807T191500Z
+SUMMARY:Construcción (ISAC) · INDEC
+DESCRIPTION:Indicadores de coyuntura de la actividad de la construcción. 
+ Junio de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-3-42
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20260810@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20260812@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privusdawasde20260812202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260812T160000Z
+DTEND:20260812T161500Z
+SUMMARY:WASDE · USDA
+DESCRIPTION:WASDE (USDA)\nFecha oficial\nPrioridad media
+URL:https://www.usda.gov/about-usda/general-information/staff-offices/offi
+ ce-chief-economist/commodity-markets/wasde-report
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabandascambiarias20260813@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260814
+TRANSP:TRANSPARENT
+SUMMARY:Régimen de bandas cambiarias · BCRA
+DESCRIPTION:Bandas cambiarias: proyección del mes siguiente\nFecha estima
+ da\nPrioridad alta
+URL:https://www.bcra.gob.ar/regimen-de-bandas-cambiarias/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccbacbt20260813202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260813T190000Z
+DTEND:20260813T191500Z
+SUMMARY:Canasta básica · INDEC
+DESCRIPTION:Valorización mensual de la canasta básica alimentaria (CBA) 
+ y de la canasta básica total (CBT). Julio de 2026\nFecha oficial\nPriori
+ dad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-43-149
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipc20260813202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260813T190000Z
+DTEND:20260813T191500Z
+SUMMARY:IPC · INDEC
+DESCRIPTION:Índice de precios al consumidor (IPC). Cobertura nacional. Ju
+ lio de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31
+END:VEVENT
+BEGIN:VEVENT
+UID:indecucii20260814202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260814T190000Z
+DTEND:20260814T191500Z
+SUMMARY:Capacidad instalada · INDEC
+DESCRIPTION:Utilización de la capacidad instalada en la industria (UCII).
+  Junio de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15
+END:VEVENT
+BEGIN:VEVENT
+UID:indecicc20260818202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260818T190000Z
+DTEND:20260818T191500Z
+SUMMARY:Costo de la construcción · INDEC
+DESCRIPTION:Índice del costo de la construcción (ICC). Julio de 2026\nFe
+ cha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-33
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsipm20260818202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260818T190000Z
+DTEND:20260818T191500Z
+SUMMARY:Precios mayoristas · INDEC
+DESCRIPTION:Sistema de índices de precios mayoristas (SIPM). Julio de 202
+ 6\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32
+END:VEVENT
+BEGIN:VEVENT
+UID:indecetnindustria20260819exp202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260819T190000Z
+DTEND:20260819T191500Z
+SUMMARY:Encuesta de tendencia de negocios · INDEC
+DESCRIPTION:Encuesta de tendencia de negocios. Industria manufacturera. Ex
+ pectativas agosto-octubre de 2026\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecemae20260820202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260820T190000Z
+DTEND:20260820T191500Z
+SUMMARY:EMAE · INDEC
+DESCRIPTION:Estimador mensual de actividad económica (EMAE). Junio de 202
+ 6\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-48
+END:VEVENT
+BEGIN:VEVENT
+UID:indecica20260820202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260820T190000Z
+DTEND:20260820T191500Z
+SUMMARY:Comercio exterior (ICA) · INDEC
+DESCRIPTION:Intercambio comercial argentino (ICA). Bienes. Julio de 2026\n
+ Fecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-2-40
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsalarios20260820202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260820T190000Z
+DTEND:20260820T191500Z
+SUMMARY:Salarios · INDEC
+DESCRIPTION:Índice de salarios. Junio de 2026\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-61
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabancos20260821@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260822
+TRANSP:TRANSPARENT
+SUMMARY:Informe de bancos · BCRA
+DESCRIPTION:Informe sobre Bancos\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20260821202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260822
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsupermercados20260821202606@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260821T190000Z
+DTEND:20260821T191500Z
+SUMMARY:Supermercados · INDEC
+DESCRIPTION:Encuesta de supermercados. Junio de 2026\nFecha oficial\nPrior
+ idad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticg20260824202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260824
+DTEND;VALUE=DATE:20260825
+TRANSP:TRANSPARENT
+SUMMARY:Confianza en el Gobierno · UTDT
+DESCRIPTION:Índice de Confianza en el Gobierno (UTDT)\nFecha oficial\nPri
+ oridad media
+URL:https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20260825@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:indecingresoahorronacional202608272025@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260827T190000Z
+DTEND:20260827T191500Z
+SUMMARY:Ingreso nacional y ahorro nacional · INDEC
+DESCRIPTION:Ingreso nacional y ahorro nacional. Año 2025\nFecha oficial\n
+ Prioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-47
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20260827@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260827
+DTEND;VALUE=DATE:20260828
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20260828@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrarem20260904@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+TRANSP:TRANSPARENT
+SUMMARY:REM · BCRA
+DESCRIPTION:Relevamiento de Expectativas de Mercado (REM)\nFecha oficial\n
+ Prioridad alta
+URL:https://www.bcra.gob.ar/relevamiento-de-expectativas-de-mercado-rem/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraimm20260907@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+TRANSP:TRANSPARENT
+SUMMARY:Informe monetario · BCRA
+DESCRIPTION:Informe Monetario Mensual\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipimanuf20260908202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260908T190000Z
+DTEND:20260908T191500Z
+SUMMARY:Industria (IPI) · INDEC
+DESCRIPTION:Índice de producción industrial manufacturero (IPI manufactu
+ rero). Julio de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-14
+END:VEVENT
+BEGIN:VEVENT
+UID:indecisac20260908202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260908T190000Z
+DTEND:20260908T191500Z
+SUMMARY:Construcción (ISAC) · INDEC
+DESCRIPTION:Indicadores de coyuntura de la actividad de la construcción. 
+ Julio de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-3-42
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipiminero20260909202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260909T190000Z
+DTEND:20260909T191500Z
+SUMMARY:IPI minero · INDEC
+DESCRIPTION:Índice de producción industrial minero (IPI minero). Julio d
+ e 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-7-172
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20260909@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260909
+DTEND;VALUE=DATE:20260910
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabandascambiarias20260910@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+TRANSP:TRANSPARENT
+SUMMARY:Régimen de bandas cambiarias · BCRA
+DESCRIPTION:Bandas cambiarias: proyección del mes siguiente\nFecha estima
+ da\nPrioridad alta
+URL:https://www.bcra.gob.ar/regimen-de-bandas-cambiarias/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccbacbt20260910202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260910T190000Z
+DTEND:20260910T191500Z
+SUMMARY:Canasta básica · INDEC
+DESCRIPTION:Valorización mensual de la canasta básica alimentaria (CBA) 
+ y de la canasta básica total (CBT). Agosto de 2026\nFecha oficial\nPrior
+ idad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-43-149
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipc20260910202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260910T190000Z
+DTEND:20260910T191500Z
+SUMMARY:IPC · INDEC
+DESCRIPTION:Índice de precios al consumidor (IPC). Cobertura nacional. Ag
+ osto de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20260911@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privusdawasde20260911202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260911T160000Z
+DTEND:20260911T161500Z
+SUMMARY:WASDE · USDA
+DESCRIPTION:WASDE (USDA)\nFecha oficial\nPrioridad media
+URL:https://www.usda.gov/about-usda/general-information/staff-offices/offi
+ ce-chief-economist/commodity-markets/wasde-report
+END:VEVENT
+BEGIN:VEVENT
+UID:indecucii20260915202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260915T190000Z
+DTEND:20260915T191500Z
+SUMMARY:Capacidad instalada · INDEC ✓
+DESCRIPTION:Utilización de la capacidad instalada en la industria (UCII).
+  Julio de 2026\nFecha oficial\nPrioridad media\nInforme: https://news.goo
+ gle.com/rss/articles/CBMi3wFBVV95cUxQVllzWERZRG95dlR6SmN3R29Na1FEZ0VrUXBi
+ dWoxSWM4bnVlRlk1QjN0U3Bnbmw1NEJBZFNlcEQxcThmQ2VVdGxNT2pUUlczUTI4U1h0Nm51Z
+ WVhZEhYRWU0ZERQNnpKNFF2aW1RRlpuelo4d3dGZEhIQTJTaWRJcy1zODhPbUJiRElPTjdJeU
+ FlV3g4UnREdzI1YWZ2UUhOTElZMERGby1fRnNTQUJYVXNGU1dhWTNndWpHMzRoLXFLdzFuTUk
+ 3aWFFY1ZDTmFGSlV1QTJHQmJsVFppUjFV0gH6AUFVX3lxTE9GcmVjblhwRnNkaGx4TE5CdF90
+ VWxRdjlNV0pPZ1lrc2ZJMkpKNE1VQk5vYTVzSmJ4RWhGamJSQm82TjdqeGluNkRsZXk3NTlUN
+ Tl4bzdBWjZ4V05ZZGdMMmxFUERRZW03ZjdZT3dtT1JnUkVBX3RzNjlqT3B2R2lPUmMyWDFVeE
+ Etc2h0VmlaSEkxMUZTOEtvbWVGZmdJU3Nkak9PUTRkVFZsVlRtWmcxa2hac1FncWNlSGU3dXZ
+ WR3l1Ukp0ZzR5Ti13T0U2UGJVczNsRHhoYWtib2M3SFEyVEtEN1BxcE1CZ2VWaUs1a1BJWEpR
+ cG56RGc?oc=5
+URL:https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVllzWERZRG95dlR6S
+ mN3R29Na1FEZ0VrUXBidWoxSWM4bnVlRlk1QjN0U3Bnbmw1NEJBZFNlcEQxcThmQ2VVdGxNT2
+ pUUlczUTI4U1h0Nm51ZWVhZEhYRWU0ZERQNnpKNFF2aW1RRlpuelo4d3dGZEhIQTJTaWRJcy1
+ zODhPbUJiRElPTjdJeUFlV3g4UnREdzI1YWZ2UUhOTElZMERGby1fRnNTQUJYVXNGU1dhWTNn
+ dWpHMzRoLXFLdzFuTUk3aWFFY1ZDTmFGSlV1QTJHQmJsVFppUjFV0gH6AUFVX3lxTE9GcmVjb
+ lhwRnNkaGx4TE5CdF90VWxRdjlNV0pPZ1lrc2ZJMkpKNE1VQk5vYTVzSmJ4RWhGamJSQm82Tj
+ dqeGluNkRsZXk3NTlUNTl4bzdBWjZ4V05ZZGdMMmxFUERRZW03ZjdZT3dtT1JnUkVBX3RzNjl
+ qT3B2R2lPUmMyWDFVeEEtc2h0VmlaSEkxMUZTOEtvbWVGZmdJU3Nkak9PUTRkVFZsVlRtWmcx
+ a2hac1FncWNlSGU3dXZWR3l1Ukp0ZzR5Ti13T0U2UGJVczNsRHhoYWtib2M3SFEyVEtEN1Bxc
+ E1CZ2VWaUs1a1BJWEpRcG56RGc?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:indecicc20260916202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260916T190000Z
+DTEND:20260916T191500Z
+SUMMARY:Costo de la construcción · INDEC ✓
+DESCRIPTION:Índice del costo de la construcción (ICC). Agosto de 2026\nF
+ echa oficial\nPrioridad media\nInforme: https://www.indec.gob.ar/uploads/
+ informesdeprensa/icc_09_26FEFC2E3F64.pdf
+URL:https://www.indec.gob.ar/uploads/informesdeprensa/icc_09_26FEFC2E3F64.
+ pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsipm20260916202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260916T190000Z
+DTEND:20260916T191500Z
+SUMMARY:Precios mayoristas · INDEC ✓
+DESCRIPTION:Sistema de índices de precios mayoristas (SIPM). Agosto de 20
+ 26\nFecha oficial\nPrioridad alta\nInforme: https://news.google.com/rss/a
+ rticles/CBMi0gFBVV95cUxNemhISENLcEEwWDA0ZkFCVjY1Y1NyTEJ4cFpVUjh2WjRuWVVnQ
+ 09TM3B4M3BTRk1qS3VYY1h4ZmR1LWhXYkhzWG1WWllianZ3aXQ4eVItZXZfWTY4TEs2azM5aD
+ g5ZGt0RjdNUENOV1hPMFFFT09hcmgwdU5VUG5XMWxSVm1LOU95eVk0bWE3Q01obGluMFRZNjQ
+ 0eEMtQWJlSTN1cXJOdjRGNlJIV2xDOGFsSFFmT211aEw4YklZTEZmVGNBV0dKWXlVNG9zZjdS
+ TlHSAeYBQVVfeXFMUHNGTXl6LVNDc0dYQ0w1WW80Y1Y3Yng3Y042dXNGYk1sMHhYVzJ2VG1DW
+ jVYcmVfR2xSdWVPZE5FaV9QUWZXMUYzN2dmV2k1bEhxSkY0NU5aZWkyZEY2Vlk1d2FLdkNVU2
+ NYSHB0MklWNi1qYXpUQlBhWEJRNnZqRUphZHUyU3I2dlY0X2NXU2s5MUJxb0NnVy0yUHB0MGJ
+ HZC16V2NGU1Yyb2k4aml0d2tSbXJSdm5peE5SdHoxX0NuSTFpRGczRnpDTlFQd2p0Y0FOLXVj
+ OHdQSlZ4cXU5MzBBNEF0YWc?oc=5
+URL:https://news.google.com/rss/articles/CBMi0gFBVV95cUxNemhISENLcEEwWDA0Z
+ kFCVjY1Y1NyTEJ4cFpVUjh2WjRuWVVnQ09TM3B4M3BTRk1qS3VYY1h4ZmR1LWhXYkhzWG1WWl
+ lianZ3aXQ4eVItZXZfWTY4TEs2azM5aDg5ZGt0RjdNUENOV1hPMFFFT09hcmgwdU5VUG5XMWx
+ SVm1LOU95eVk0bWE3Q01obGluMFRZNjQ0eEMtQWJlSTN1cXJOdjRGNlJIV2xDOGFsSFFmT211
+ aEw4YklZTEZmVGNBV0dKWXlVNG9zZjdSTlHSAeYBQVVfeXFMUHNGTXl6LVNDc0dYQ0w1WW80Y
+ 1Y3Yng3Y042dXNGYk1sMHhYVzJ2VG1DWjVYcmVfR2xSdWVPZE5FaV9QUWZXMUYzN2dmV2k1bE
+ hxSkY0NU5aZWkyZEY2Vlk1d2FLdkNVU2NYSHB0MklWNi1qYXpUQlBhWEJRNnZqRUphZHUyU3I
+ 2dlY0X2NXU2s5MUJxb0NnVy0yUHB0MGJHZC16V2NGU1Yyb2k4aml0d2tSbXJSdm5peE5SdHox
+ X0NuSTFpRGczRnpDTlFQd2p0Y0FOLXVjOHdQSlZ4cXU5MzBBNEF0YWc?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:indecephmercadotrabajo202609172026Q2@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260917T190000Z
+DTEND:20260917T191500Z
+SUMMARY:Desempleo (EPH) · INDEC ✓
+DESCRIPTION:Mercado de trabajo. Tasas e indicadores socioeconómicos. Segu
+ ndo trimestre de 2026\nFecha oficial\nPrioridad alta\nInforme: https://ww
+ w.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCB
+ C5A8.pdf
+URL:https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_
+ 2trim26433FCBC5A8.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:indecpibavance202609172026Q2@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260917T190000Z
+DTEND:20260917T191500Z
+SUMMARY:PIB trimestral · INDEC ✓
+DESCRIPTION:Informe de avance del nivel de actividad. Segundo trimestre de
+  2026\nFecha oficial\nPrioridad alta\nInforme: https://www.indec.gob.ar/u
+ ploads/informesdeprensa/pib_09_26065D6A3612.pdf
+URL:https://www.indec.gob.ar/uploads/informesdeprensa/pib_09_26065D6A3612.
+ pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabancos20260918@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+TRANSP:TRANSPARENT
+SUMMARY:Informe de bancos · BCRA ✓
+DESCRIPTION:Informe sobre Bancos\nFecha oficial\nPrioridad media\nInforme:
+  https://www.bcra.gob.ar/publicaciones/informe-sobre-bancos-julio-de-2026
+ /
+URL:https://www.bcra.gob.ar/publicaciones/informe-sobre-bancos-julio-de-20
+ 26/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecica20260918202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260918T190000Z
+DTEND:20260918T191500Z
+SUMMARY:Comercio exterior (ICA) · INDEC ✓
+DESCRIPTION:Intercambio comercial argentino (ICA). Bienes. Agosto de 2026\
+ nFecha oficial\nPrioridad alta\nInforme: https://news.google.com/rss/arti
+ cles/CBMimgFBVV95cUxPVUpnd3M4aTY1RnltZ1RMaEN6QkNlZGJnWGVWSHRDUDNlZzliU3Fu
+ WkpvWHZoMFlCWk5HdUo3SUkxZWhsX3lDMTVqR3E4ejlHakpRMEh3Y2FSNk11TDVFLThyTWoxW
+ lRBTnlPR0NFZlZqS19jZG5vb045Tkd1ejBJXzJYYm5XTnhLVXZxV0JTczZLano1VW9CRWtR0g
+ GuAUFVX3lxTE4zb0NwUW5wbEpfWURtTU0zWVhrWDh1TVhWMlVFM2EtdkNjS3NibE9VMjVWaVd
+ CWGpSX1JRS3JNX3ZEMFY4Y3NlYUJnLWhzZExqbHFNMXA0Q2UyTHB1U2lUbjVfaVpueElxamlz
+ VVgtNzd4VkxtV0VBT2RUcWVlTGNvT1FNN3RFSzltUDE4QU8tSmI5ajhmMDFhRUpRZjRpRDNYU
+ k1udkRsVXQ0SFREdw?oc=5
+URL:https://news.google.com/rss/articles/CBMimgFBVV95cUxPVUpnd3M4aTY1RnltZ
+ 1RMaEN6QkNlZGJnWGVWSHRDUDNlZzliU3FuWkpvWHZoMFlCWk5HdUo3SUkxZWhsX3lDMTVqR3
+ E4ejlHakpRMEh3Y2FSNk11TDVFLThyTWoxWlRBTnlPR0NFZlZqS19jZG5vb045Tkd1ejBJXzJ
+ YYm5XTnhLVXZxV0JTczZLano1VW9CRWtR0gGuAUFVX3lxTE4zb0NwUW5wbEpfWURtTU0zWVhr
+ WDh1TVhWMlVFM2EtdkNjS3NibE9VMjVWaVdCWGpSX1JRS3JNX3ZEMFY4Y3NlYUJnLWhzZExqb
+ HFNMXA0Q2UyTHB1U2lUbjVfaVpueElxamlzVVgtNzd4VkxtV0VBT2RUcWVlTGNvT1FNN3RFSz
+ ltUDE4QU8tSmI5ajhmMDFhRUpRZjRpRDNYUk1udkRsVXQ0SFREdw?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:indecetnindustria20260921exp202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260921T190000Z
+DTEND:20260921T191500Z
+SUMMARY:Encuesta de tendencia de negocios · INDEC ✓
+DESCRIPTION:Encuesta de tendencia de negocios. Industria manufacturera. Ex
+ pectativas septiembre-noviembre de 2026\nFecha oficial\nPrioridad media\n
+ Informe: https://www.indec.gob.ar/uploads/informesdeprensa/etn_industria_
+ manufacturera_09_261CFB527938.pdf
+URL:https://www.indec.gob.ar/uploads/informesdeprensa/etn_industria_manufa
+ cturera_09_261CFB527938.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsalarios20260922202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260922T190000Z
+DTEND:20260922T191500Z
+SUMMARY:Salarios · INDEC ✓
+DESCRIPTION:Índice de salarios. Julio de 2026\nFecha oficial\nPrioridad a
+ lta\nInforme: https://news.google.com/rss/articles/CBMi6wFBVV95cUxNNEIwNG
+ JfUENYUnNJSElZZlExMXRac1VWRHdDdk9QQTRYdkJtYlEta2pXb21YTWJyR1NjVzJLVG1YcUk
+ 0YmU3bmhYTHV5NHBGcG9tRW83X1p2ZE1uYk0tNC1rSHdXbzZXa2xtNUJRcDQ3aWNfd3NCNk52
+ QS1jb1B4d1V0MmowcGVaNXlYVHE0VE5mQW91STZQVzVET1VFUzhjUm8zWTBJLXdCRS1hNUNKQ
+ 19jcll6Q1VEZEs1bDFwdWR3V3k2UWlxMThVQ0tzVEdydGZpSkpTMkZoS083Z3VzQTNDMlgxUU
+ VZV0FZ?oc=5
+URL:https://news.google.com/rss/articles/CBMi6wFBVV95cUxNNEIwNGJfUENYUnNJS
+ ElZZlExMXRac1VWRHdDdk9QQTRYdkJtYlEta2pXb21YTWJyR1NjVzJLVG1YcUk0YmU3bmhYTH
+ V5NHBGcG9tRW83X1p2ZE1uYk0tNC1rSHdXbzZXa2xtNUJRcDQ3aWNfd3NCNk52QS1jb1B4d1V
+ 0MmowcGVaNXlYVHE0VE5mQW91STZQVzVET1VFUzhjUm8zWTBJLXdCRS1hNUNKQ19jcll6Q1VE
+ ZEs1bDFwdWR3V3k2UWlxMThVQ0tzVEdydGZpSkpTMkZoS083Z3VzQTNDMlgxUUVZV0FZ?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20260923202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsupermercados20260923202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260923T190000Z
+DTEND:20260923T191500Z
+SUMMARY:Supermercados · INDEC ✓
+DESCRIPTION:Encuesta de supermercados. Julio de 2026\nFecha oficial\nPrior
+ idad media\nInforme: https://news.google.com/rss/articles/CBMirgFBVV95cUx
+ OZlBDWktnazZhY1UzSmd6WVVRVC1wZjdqZjBZT0ZRb0oxZFotbVNiRGRQVEZabW9WaEhJd21J
+ OGVvcnRBcnlQNUpOQ1pUWTc3RE85U21jckItb21XNjk3NU1reW9Ebm5jb0ZCMm9UV2lUVjRmc
+ 29pYnNWWmtXOWc4ZVJDcC1XOGpoR0k3T0pSMm11WFZyZDVuclZrWUlNUE5nSlJxOXR2ZkZqLX
+ hFUWc?oc=5
+URL:https://news.google.com/rss/articles/CBMirgFBVV95cUxOZlBDWktnazZhY1UzS
+ md6WVVRVC1wZjdqZjBZT0ZRb0oxZFotbVNiRGRQVEZabW9WaEhJd21JOGVvcnRBcnlQNUpOQ1
+ pUWTc3RE85U21jckItb21XNjk3NU1reW9Ebm5jb0ZCMm9UV2lUVjRmc29pYnNWWmtXOWc4ZVJ
+ DcC1XOGpoR0k3T0pSMm11WFZyZDVuclZrWUlNUE5nSlJxOXR2ZkZqLXhFUWc?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:indecemae20260924202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260924T190000Z
+DTEND:20260924T191500Z
+SUMMARY:EMAE · INDEC ✓
+DESCRIPTION:Estimador mensual de actividad económica (EMAE). Julio de 202
+ 6\nFecha oficial\nPrioridad alta\nInforme: https://news.google.com/rss/ar
+ ticles/CBMiuwFBVV95cUxNSHpsSDZkXzhiM1BDTy1HbkFnTGtmNG5nX0cySnZNZmdZTHpfUW
+ VFSHV1cGgwZjIwVy1iNGlSdWRTc0tnczlEdTVicXJleWVNc3J4ZVFPYXFZS3FCNjFZeWQtRlU
+ teFlna01YcjJZVGMwVDN3RWFmOWRoSjVZcGU5S1Z6VnhUUUFCdjE4ZVhUT3dYaTJmN09uLUN3
+ a18wWU92Y1ROSi03N0xIbTE5cllVTEN5UVI3Q185NnFN0gHPAUFVX3lxTE13ZUJGVS1HelF4R
+ TFQRVpkX1BFWGhVaGVkSlM2ZW1qczRYNkVOUEJhaU1JeG1QT2RaSnE5Vl91MXdXaDNfQXZNQ1
+ dycTVscW9iWXBEX1o5amRzeVZsSkVLNzZvd2wzcmkwMVRPLXg2QlB5YkRnYTl5b1UwajExNFR
+ PZU1WOHpCdmI1TTZndUtJdVpiQVJ0eldQZHdGOTZ3TFo2VHJyMWc1aGF3NWctbWZIMXVVUWVP
+ dUl3dkhfUFJjNzAtRXFLRHJUZ2NCSGhCOA?oc=5
+URL:https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHpsSDZkXzhiM1BDT
+ y1HbkFnTGtmNG5nX0cySnZNZmdZTHpfUWVFSHV1cGgwZjIwVy1iNGlSdWRTc0tnczlEdTVicX
+ JleWVNc3J4ZVFPYXFZS3FCNjFZeWQtRlUteFlna01YcjJZVGMwVDN3RWFmOWRoSjVZcGU5S1Z
+ 6VnhUUUFCdjE4ZVhUT3dYaTJmN09uLUN3a18wWU92Y1ROSi03N0xIbTE5cllVTEN5UVI3Q185
+ NnFN0gHPAUFVX3lxTE13ZUJGVS1HelF4RTFQRVpkX1BFWGhVaGVkSlM2ZW1qczRYNkVOUEJha
+ U1JeG1QT2RaSnE5Vl91MXdXaDNfQXZNQ1dycTVscW9iWXBEX1o5amRzeVZsSkVLNzZvd2wzcm
+ kwMVRPLXg2QlB5YkRnYTl5b1UwajExNFRPZU1WOHpCdmI1TTZndUtJdVpiQVJ0eldQZHdGOTZ
+ 3TFo2VHJyMWc1aGF3NWctbWZIMXVVUWVPdUl3dkhfUFJjNzAtRXFLRHJUZ2NCSGhCOA?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:indecpobreza202609242026S1@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260924T190000Z
+DTEND:20260924T191500Z
+SUMMARY:Pobreza · INDEC ✓
+DESCRIPTION:Incidencia de la pobreza y de la indigencia en 31 aglomerados 
+ urbanos. Primer semestre de 2026\nFecha oficial\nPrioridad alta\nInforme:
+  https://news.google.com/rss/articles/CBMizgFBVV95cUxPbnJXUHZxOXNlSi1hNll
+ laXJYVG9NcnZiZW5yTk96MGVnaC00UDJqZXdETTBDRWhGc25Ra2FvLU85R2xsVTNvbGVDZjJ0
+ bWVGM001Q1RGSEV3WXJMZ29UOUdrWjcwb0tkcWJmRS1SVzgtNzZyNHVSWVhidzROTHlUclNiM
+ TQzODlRRkVkVGhtQm1LUWNYZGR0Wks5cWp3LTB3NDJteTlIU2xPVTFYQ0sxWHNFMDBkX3JTTT
+ UySWg0YVNiOUZkcF8xcVFJT0gtUdIB6AFBVV95cUxNWXVzY0ZCTlA2ZHMwY29uTDBxd3pKaWl
+ hd3h2SFhINmU5YWtydTRVYTJsLWpUeE5KSTBnUTdiSm5zdnJrX0VhV0JkZXZsbjFUOVJkNzFw
+ azE1Y2Y0SXhFUF9rT3FsajZ1NHdwMWVuQ3BWNktwcDgwb3d6STEzdTZsS3E5Wm8zLUJwM0hUN
+ 1FFckdRc05ESUlBeHpqQUdJb0FUR3FqeFBvQlA4MG5tTnBfMGxaVW54OUNtc3h5dFpuQ3duT3
+ hFLUoza0JVMGN6NThxdVVNMjQ5aFJEbTRsSW1hRVVlYnBHd1pE?oc=5
+URL:https://news.google.com/rss/articles/CBMizgFBVV95cUxPbnJXUHZxOXNlSi1hN
+ lllaXJYVG9NcnZiZW5yTk96MGVnaC00UDJqZXdETTBDRWhGc25Ra2FvLU85R2xsVTNvbGVDZj
+ J0bWVGM001Q1RGSEV3WXJMZ29UOUdrWjcwb0tkcWJmRS1SVzgtNzZyNHVSWVhidzROTHlUclN
+ iMTQzODlRRkVkVGhtQm1LUWNYZGR0Wks5cWp3LTB3NDJteTlIU2xPVTFYQ0sxWHNFMDBkX3JT
+ TTUySWg0YVNiOUZkcF8xcVFJT0gtUdIB6AFBVV95cUxNWXVzY0ZCTlA2ZHMwY29uTDBxd3pKa
+ Wlhd3h2SFhINmU5YWtydTRVYTJsLWpUeE5KSTBnUTdiSm5zdnJrX0VhV0JkZXZsbjFUOVJkNz
+ FwazE1Y2Y0SXhFUF9rT3FsajZ1NHdwMWVuQ3BWNktwcDgwb3d6STEzdTZsS3E5Wm8zLUJwM0h
+ UN1FFckdRc05ESUlBeHpqQUdJb0FUR3FqeFBvQlA4MG5tTnBfMGxaVW54OUNtc3h5dFpuQ3du
+ T3hFLUoza0JVMGN6NThxdVVNMjQ5aFJEbTRsSW1hRVVlYnBHd1pE?oc=5
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20260924@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas ✓
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia\nInforme: https://www.argentina.gob.ar/noticias/llamado-licitacion-de-
+ instrumentos-del-tesoro-nacional-denominados-en-pesos-y-en-dolares-13
+URL:https://www.argentina.gob.ar/noticias/llamado-licitacion-de-instrument
+ os-del-tesoro-nacional-denominados-en-pesos-y-en-dolares-13
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20260925@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA ✓
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta\nInforme: https://www.bcra.gob.ar/publi
+ caciones/informe-de-evolucion-del-mercado-de-cambios-y-balance-cambiario-
+ agosto-de-2026/
+URL:https://www.bcra.gob.ar/publicaciones/informe-de-evolucion-del-mercado
+ -de-cambios-y-balance-cambiario-agosto-de-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20260928@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticg20260928202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+TRANSP:TRANSPARENT
+SUMMARY:Confianza en el Gobierno · UTDT
+DESCRIPTION:Índice de Confianza en el Gobierno (UTDT)\nFecha oficial\nPri
+ oridad media
+URL:https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666
+END:VEVENT
+BEGIN:VEVENT
+UID:indecbdp202609292026Q2@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20260929T190000Z
+DTEND:20260929T191500Z
+SUMMARY:Balanza de pagos · INDEC
+DESCRIPTION:Balanza de pagos\, posición de inversión internacional y deu
+ da externa. Segundo trimestre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-35-45
+END:VEVENT
+BEGIN:VEVENT
+UID:indecephdistribucion202610012026Q2@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261001T190000Z
+DTEND:20261001T191500Z
+SUMMARY:Distribución del ingreso · INDEC
+DESCRIPTION:Evolución de la distribución del ingreso (EPH). Segundo trim
+ estre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-60
+END:VEVENT
+BEGIN:VEVENT
+UID:privacara20261001@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+TRANSP:TRANSPARENT
+SUMMARY:Patentamientos · ACARA
+DESCRIPTION:Patentamientos ACARA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privciaracec20261001@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+TRANSP:TRANSPARENT
+SUMMARY:Liquidación del agro · CIARA-CEC
+DESCRIPTION:Liquidación CIARA-CEC\nFecha estimada\nPrioridad alta
+URL:https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20
+ Mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:privrecaudacionarca20261001@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+TRANSP:TRANSPARENT
+SUMMARY:Recaudación · ARCA
+DESCRIPTION:Recaudación ARCA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecproductividadcapital20261002@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261002T190000Z
+DTEND:20261002T191500Z
+SUMMARY:Productividad y stock de capital · INDEC
+DESCRIPTION:Medición de la productividad 2016-2025 y el stock de capital 
+ 2004-2025 de la República Argentina\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privfracturavm20261002@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261003
+TRANSP:TRANSPARENT
+SUMMARY:Etapas de fractura en Vaca… · NCS Multistage
+DESCRIPTION:Etapas de fractura Vaca Muerta\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privadefa20261005@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+TRANSP:TRANSPARENT
+SUMMARY:Producción automotriz · ADEFA
+DESCRIPTION:ADEFA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrarem20261006@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+TRANSP:TRANSPARENT
+SUMMARY:REM · BCRA
+DESCRIPTION:Relevamiento de Expectativas de Mercado (REM)\nFecha oficial\n
+ Prioridad alta
+URL:https://www.bcra.gob.ar/relevamiento-de-expectativas-de-mercado-rem/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcemento20261006@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+TRANSP:TRANSPARENT
+SUMMARY:Despachos de cemento · AFCP
+DESCRIPTION:Despachos de cemento\nFecha estimada\nPrioridad media
+URL:https://www.afcp.org.ar/despacho-mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraimm20261007@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+TRANSP:TRANSPARENT
+SUMMARY:Informe monetario · BCRA
+DESCRIPTION:Informe Monetario Mensual\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipimanuf20261007202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261007T190000Z
+DTEND:20261007T191500Z
+SUMMARY:Industria (IPI) · INDEC
+DESCRIPTION:Índice de producción industrial manufacturero (IPI manufactu
+ rero). Agosto de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-14
+END:VEVENT
+BEGIN:VEVENT
+UID:indecisac20261007202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261007T190000Z
+DTEND:20261007T191500Z
+SUMMARY:Construcción (ISAC) · INDEC
+DESCRIPTION:Indicadores de coyuntura de la actividad de la construcción. 
+ Agosto de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-3-42
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipiminero20261008202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261008T190000Z
+DTEND:20261008T191500Z
+SUMMARY:IPI minero · INDEC
+DESCRIPTION:Índice de producción industrial minero (IPI minero). Agosto 
+ de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-7-172
+END:VEVENT
+BEGIN:VEVENT
+UID:privipccaba20261008@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+TRANSP:TRANSPARENT
+SUMMARY:IPC CABA · IDECBA
+DESCRIPTION:IPCBA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privconstruya20261009@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+TRANSP:TRANSPARENT
+SUMMARY:Índice Construya · Grupo Construya
+DESCRIPTION:Índice Construya\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20261009@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privusdawasde20261009202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261009T160000Z
+DTEND:20261009T161500Z
+SUMMARY:WASDE · USDA
+DESCRIPTION:WASDE (USDA)\nFecha oficial\nPrioridad media
+URL:https://www.usda.gov/about-usda/general-information/staff-offices/offi
+ ce-chief-economist/commodity-markets/wasde-report
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameminoristas20261011@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Ventas Minoristas Pymes · CAME
+DESCRIPTION:CAME ventas minoristas\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabandascambiarias20261013@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+TRANSP:TRANSPARENT
+SUMMARY:Régimen de bandas cambiarias · BCRA
+DESCRIPTION:Bandas cambiarias: proyección del mes siguiente\nFecha estima
+ da\nPrioridad alta
+URL:https://www.bcra.gob.ar/regimen-de-bandas-cambiarias/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccbacbt20261013202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261013T190000Z
+DTEND:20261013T191500Z
+SUMMARY:Canasta básica · INDEC
+DESCRIPTION:Valorización mensual de la canasta básica alimentaria (CBA) 
+ y de la canasta básica total (CBT). Septiembre de 2026\nFecha oficial\nP
+ rioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-43-149
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipc20261013202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261013T190000Z
+DTEND:20261013T191500Z
+SUMMARY:IPC · INDEC
+DESCRIPTION:Índice de precios al consumidor (IPC). Cobertura nacional. Se
+ ptiembre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20261014@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privsipa20261014202607@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+TRANSP:TRANSPARENT
+SUMMARY:Empleo registrado (SIPA) · Trabajo
+DESCRIPTION:Situación y evolución del trabajo registrado (SIPA). Julio d
+ e 2026\nFecha estimada\nPrioridad media
+URL:https://www.argentina.gob.ar/trabajo/estadisticas/situacion-y-evolucio
+ n-del-trabajo-registrado
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraecc20261015@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+TRANSP:TRANSPARENT
+SUMMARY:Condiciones crediticias · BCRA
+DESCRIPTION:Encuesta de Condiciones Crediticias (ECC)\nFecha oficial\nPrio
+ ridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecucii20261015202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261015T190000Z
+DTEND:20261015T191500Z
+SUMMARY:Capacidad instalada · INDEC
+DESCRIPTION:Utilización de la capacidad instalada en la industria (UCII).
+  Agosto de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticc20261015@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+TRANSP:TRANSPARENT
+SUMMARY:Confianza del consumidor · UTDT
+DESCRIPTION:ICC Di Tella\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabancos20261016@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+TRANSP:TRANSPARENT
+SUMMARY:Informe de bancos · BCRA
+DESCRIPTION:Informe sobre Bancos\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecicc20261016202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261016T190000Z
+DTEND:20261016T191500Z
+SUMMARY:Costo de la construcción · INDEC
+DESCRIPTION:Índice del costo de la construcción (ICC). Septiembre de 202
+ 6\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-33
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsipm20261016202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261016T190000Z
+DTEND:20261016T191500Z
+SUMMARY:Precios mayoristas · INDEC
+DESCRIPTION:Sistema de índices de precios mayoristas (SIPM). Septiembre d
+ e 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32
+END:VEVENT
+BEGIN:VEVENT
+UID:privresultadofiscal20261016@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+TRANSP:TRANSPARENT
+SUMMARY:Resultado fiscal · Hacienda
+DESCRIPTION:Resultado fiscal SPN\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecica20261019202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261019T190000Z
+DTEND:20261019T191500Z
+SUMMARY:Comercio exterior (ICA) · INDEC
+DESCRIPTION:Intercambio comercial argentino (ICA). Bienes. Septiembre de 2
+ 026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-2-40
+END:VEVENT
+BEGIN:VEVENT
+UID:privadimra20261019@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+TRANSP:TRANSPARENT
+SUMMARY:Índice de actividad metalúrgica · ADIMRA
+DESCRIPTION:ADIMRA metalurgia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecetnindustria20261020exp202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261020T190000Z
+DTEND:20261020T191500Z
+SUMMARY:Encuesta de tendencia de negocios · INDEC
+DESCRIPTION:Encuesta de tendencia de negocios. Industria manufacturera. Ex
+ pectativas octubre-diciembre de 2026\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecemae20261021202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261021T190000Z
+DTEND:20261021T191500Z
+SUMMARY:EMAE · INDEC
+DESCRIPTION:Estimador mensual de actividad económica (EMAE). Agosto de 20
+ 26\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-48
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsalarios20261021202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261021T190000Z
+DTEND:20261021T191500Z
+SUMMARY:Salarios · INDEC
+DESCRIPTION:Índice de salarios. Agosto de 2026\nFecha oficial\nPrioridad 
+ alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-61
+END:VEVENT
+BEGIN:VEVENT
+UID:privfielipi20261021@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+TRANSP:TRANSPARENT
+SUMMARY:Industria FIEL
+DESCRIPTION:IPI FIEL\nFecha oficial\nPrioridad media
+URL:https://www.fiel.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsupermercados20261022202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261022T190000Z
+DTEND:20261022T191500Z
+SUMMARY:Supermercados · INDEC
+DESCRIPTION:Encuesta de supermercados. Agosto de 2026\nFecha oficial\nPrio
+ ridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20261023202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+BEGIN:VEVENT
+UID:privscentia20261023@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+TRANSP:TRANSPARENT
+SUMMARY:Consumo masivo (scanning 8.000… · Scentia
+DESCRIPTION:Consumo masivo Scentia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameipipyme20261025@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Producción Industrial… · CAME
+DESCRIPTION:IPI Pyme CAME\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privenergiaprod20261026@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+TRANSP:TRANSPARENT
+SUMMARY:Producción de petróleo y gas · Secretaría de Energía
+DESCRIPTION:Producción de petróleo y gas\nFecha estimada\nPrioridad medi
+ a
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20261026@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticg20261026202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+TRANSP:TRANSPARENT
+SUMMARY:Confianza en el Gobierno · UTDT
+DESCRIPTION:Índice de Confianza en el Gobierno (UTDT)\nFecha oficial\nPri
+ oridad media
+URL:https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20261028@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcradeudaprivada20261029@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+TRANSP:TRANSPARENT
+SUMMARY:Informe sobre Deuda Externa… · BCRA
+DESCRIPTION:Informe sobre Deuda Externa Privada\nFecha oficial\nPrioridad 
+ media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdtei20261029@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+TRANSP:TRANSPARENT
+SUMMARY:Expectativas de inflación · UTDT
+DESCRIPTION:Expectativas de inflación Di Tella\nFecha estimada\nPrioridad
+  media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20261030@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privacara20261102@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:Patentamientos · ACARA
+DESCRIPTION:Patentamientos ACARA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privciaracec20261102@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:Liquidación del agro · CIARA-CEC
+DESCRIPTION:Liquidación CIARA-CEC\nFecha estimada\nPrioridad alta
+URL:https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20
+ Mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:privrecaudacionarca20261102@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:Recaudación · ARCA
+DESCRIPTION:Recaudación ARCA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecprecioscantcomex202611032026Q3@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261103T190000Z
+DTEND:20261103T191500Z
+SUMMARY:Índices de precios y cantidades… · INDEC
+DESCRIPTION:Índices de precios y cantidades del comercio exterior. Tercer
+  trimestre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-109
+END:VEVENT
+BEGIN:VEVENT
+UID:privfracturavm20261103@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+TRANSP:TRANSPARENT
+SUMMARY:Etapas de fractura en Vaca… · NCS Multistage
+DESCRIPTION:Etapas de fractura Vaca Muerta\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privadefa20261104@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+TRANSP:TRANSPARENT
+SUMMARY:Producción automotriz · ADEFA
+DESCRIPTION:ADEFA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraied20261105@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+TRANSP:TRANSPARENT
+SUMMARY:Informe de Inversión Extranjera… · BCRA
+DESCRIPTION:Informe sobre Inversión Extranjera Directa\nFecha oficial\nPr
+ ioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrarem20261105@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+TRANSP:TRANSPARENT
+SUMMARY:REM · BCRA
+DESCRIPTION:Relevamiento de Expectativas de Mercado (REM)\nFecha oficial\n
+ Prioridad alta
+URL:https://www.bcra.gob.ar/relevamiento-de-expectativas-de-mercado-rem/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcemento20261105@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+TRANSP:TRANSPARENT
+SUMMARY:Despachos de cemento · AFCP
+DESCRIPTION:Despachos de cemento\nFecha estimada\nPrioridad media
+URL:https://www.afcp.org.ar/despacho-mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipiminero20261106202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261106T190000Z
+DTEND:20261106T191500Z
+SUMMARY:IPI minero · INDEC
+DESCRIPTION:Índice de producción industrial minero (IPI minero). Septiem
+ bre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-7-172
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameminoristas20261108@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Ventas Minoristas Pymes · CAME
+DESCRIPTION:CAME ventas minoristas\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraimm20261109@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:Informe monetario · BCRA
+DESCRIPTION:Informe Monetario Mensual\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipimanuf20261109202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261109T190000Z
+DTEND:20261109T191500Z
+SUMMARY:Industria (IPI) · INDEC
+DESCRIPTION:Índice de producción industrial manufacturero (IPI manufactu
+ rero). Septiembre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-14
+END:VEVENT
+BEGIN:VEVENT
+UID:indecisac20261109202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261109T190000Z
+DTEND:20261109T191500Z
+SUMMARY:Construcción (ISAC) · INDEC
+DESCRIPTION:Indicadores de coyuntura de la actividad de la construcción. 
+ Septiembre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-3-42
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20261109@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privconstruya20261110@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+TRANSP:TRANSPARENT
+SUMMARY:Índice Construya · Grupo Construya
+DESCRIPTION:Índice Construya\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privipccaba20261110@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+TRANSP:TRANSPARENT
+SUMMARY:IPC CABA · IDECBA
+DESCRIPTION:IPCBA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privusdawasde20261110202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261110T170000Z
+DTEND:20261110T171500Z
+SUMMARY:WASDE · USDA
+DESCRIPTION:WASDE (USDA)\nFecha oficial\nPrioridad media
+URL:https://www.usda.gov/about-usda/general-information/staff-offices/offi
+ ce-chief-economist/commodity-markets/wasde-report
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20261111@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabandascambiarias20261112@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+TRANSP:TRANSPARENT
+SUMMARY:Régimen de bandas cambiarias · BCRA
+DESCRIPTION:Bandas cambiarias: proyección del mes siguiente\nFecha estima
+ da\nPrioridad alta
+URL:https://www.bcra.gob.ar/regimen-de-bandas-cambiarias/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccbacbt20261112202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261112T190000Z
+DTEND:20261112T191500Z
+SUMMARY:Canasta básica · INDEC
+DESCRIPTION:Valorización mensual de la canasta básica alimentaria (CBA) 
+ y de la canasta básica total (CBT). Octubre de 2026\nFecha oficial\nPrio
+ ridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-43-149
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipc20261112202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261112T190000Z
+DTEND:20261112T191500Z
+SUMMARY:IPC · INDEC
+DESCRIPTION:Índice de precios al consumidor (IPC). Cobertura nacional. Oc
+ tubre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabancos20261113@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+TRANSP:TRANSPARENT
+SUMMARY:Informe de bancos · BCRA
+DESCRIPTION:Informe sobre Bancos\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsalarios20261113202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261113T190000Z
+DTEND:20261113T191500Z
+SUMMARY:Salarios · INDEC
+DESCRIPTION:Índice de salarios. Septiembre de 2026\nFecha oficial\nPriori
+ dad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-61
+END:VEVENT
+BEGIN:VEVENT
+UID:indecucii20261113202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261113T190000Z
+DTEND:20261113T191500Z
+SUMMARY:Capacidad instalada · INDEC
+DESCRIPTION:Utilización de la capacidad instalada en la industria (UCII).
+  Septiembre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15
+END:VEVENT
+BEGIN:VEVENT
+UID:privsipa20261113202608@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+TRANSP:TRANSPARENT
+SUMMARY:Empleo registrado (SIPA) · Trabajo
+DESCRIPTION:Situación y evolución del trabajo registrado (SIPA). Agosto 
+ de 2026\nFecha estimada\nPrioridad media
+URL:https://www.argentina.gob.ar/trabajo/estadisticas/situacion-y-evolucio
+ n-del-trabajo-registrado
+END:VEVENT
+BEGIN:VEVENT
+UID:indecicc20261117202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261117T190000Z
+DTEND:20261117T191500Z
+SUMMARY:Costo de la construcción · INDEC
+DESCRIPTION:Índice del costo de la construcción (ICC). Octubre de 2026\n
+ Fecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-33
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsipm20261117202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261117T190000Z
+DTEND:20261117T191500Z
+SUMMARY:Precios mayoristas · INDEC
+DESCRIPTION:Sistema de índices de precios mayoristas (SIPM). Octubre de 2
+ 026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32
+END:VEVENT
+BEGIN:VEVENT
+UID:privresultadofiscal20261117@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+TRANSP:TRANSPARENT
+SUMMARY:Resultado fiscal · Hacienda
+DESCRIPTION:Resultado fiscal SPN\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecetnindustria20261119exp202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261119T190000Z
+DTEND:20261119T191500Z
+SUMMARY:Encuesta de tendencia de negocios · INDEC
+DESCRIPTION:Encuesta de tendencia de negocios. Industria manufacturera. Ex
+ pectativas noviembre 2026-enero 2027\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecica20261119202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261119T190000Z
+DTEND:20261119T191500Z
+SUMMARY:Comercio exterior (ICA) · INDEC
+DESCRIPTION:Intercambio comercial argentino (ICA). Bienes. Octubre de 2026
+ \nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-2-40
+END:VEVENT
+BEGIN:VEVENT
+UID:privadimra20261119@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:Índice de actividad metalúrgica · ADIMRA
+DESCRIPTION:ADIMRA metalurgia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticc20261119@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:Confianza del consumidor · UTDT
+DESCRIPTION:ICC Di Tella\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20261120202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameipipyme20261122@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Producción Industrial… · CAME
+DESCRIPTION:IPI Pyme CAME\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticg20261123202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+TRANSP:TRANSPARENT
+SUMMARY:Confianza en el Gobierno · UTDT
+DESCRIPTION:Índice de Confianza en el Gobierno (UTDT)\nFecha oficial\nPri
+ oridad media
+URL:https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666
+END:VEVENT
+BEGIN:VEVENT
+UID:indecemae20261124202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261124T190000Z
+DTEND:20261124T191500Z
+SUMMARY:EMAE · INDEC
+DESCRIPTION:Estimador mensual de actividad económica (EMAE). Septiembre d
+ e 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-48
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20261124@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsupermercados20261125202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261125T190000Z
+DTEND:20261125T191500Z
+SUMMARY:Supermercados · INDEC
+DESCRIPTION:Encuesta de supermercados. Septiembre de 2026\nFecha oficial\n
+ Prioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34
+END:VEVENT
+BEGIN:VEVENT
+UID:privenergiaprod20261125@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:Producción de petróleo y gas · Secretaría de Energía
+DESCRIPTION:Producción de petróleo y gas\nFecha estimada\nPrioridad medi
+ a
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privfielipi20261125@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:Industria FIEL
+DESCRIPTION:IPI FIEL\nFecha oficial\nPrioridad media
+URL:https://www.fiel.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:privscentia20261125@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:Consumo masivo (scanning 8.000… · Scentia
+DESCRIPTION:Consumo masivo Scentia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20261126@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdtei20261126@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+TRANSP:TRANSPARENT
+SUMMARY:Expectativas de inflación · UTDT
+DESCRIPTION:Expectativas de inflación Di Tella\nFecha estimada\nPrioridad
+  media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20261127@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privacara20261201@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+TRANSP:TRANSPARENT
+SUMMARY:Patentamientos · ACARA
+DESCRIPTION:Patentamientos ACARA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privciaracec20261201@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+TRANSP:TRANSPARENT
+SUMMARY:Liquidación del agro · CIARA-CEC
+DESCRIPTION:Liquidación CIARA-CEC\nFecha estimada\nPrioridad alta
+URL:https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20
+ Mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:privrecaudacionarca20261201@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+TRANSP:TRANSPARENT
+SUMMARY:Recaudación · ARCA
+DESCRIPTION:Recaudación ARCA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privfracturavm20261202@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+TRANSP:TRANSPARENT
+SUMMARY:Etapas de fractura en Vaca… · NCS Multistage
+DESCRIPTION:Etapas de fractura Vaca Muerta\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccsigobierno202612032025@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261203T190000Z
+DTEND:20261203T191500Z
+SUMMARY:Cuentas por sectores… · INDEC
+DESCRIPTION:Cuentas por sectores institucionales. Sector gobierno general.
+  Año 2025\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-118
+END:VEVENT
+BEGIN:VEVENT
+UID:privadefa20261203@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+TRANSP:TRANSPARENT
+SUMMARY:Producción automotriz · ADEFA
+DESCRIPTION:ADEFA\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrarem20261204@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+TRANSP:TRANSPARENT
+SUMMARY:REM · BCRA
+DESCRIPTION:Relevamiento de Expectativas de Mercado (REM)\nFecha estimada\
+ nPrioridad alta
+URL:https://www.bcra.gob.ar/relevamiento-de-expectativas-de-mercado-rem/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcemento20261204@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+TRANSP:TRANSPARENT
+SUMMARY:Despachos de cemento · AFCP
+DESCRIPTION:Despachos de cemento\nFecha estimada\nPrioridad media
+URL:https://www.afcp.org.ar/despacho-mensual
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameminoristas20261206@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Ventas Minoristas Pymes · CAME
+DESCRIPTION:CAME ventas minoristas\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraimm20261209@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+TRANSP:TRANSPARENT
+SUMMARY:Informe monetario · BCRA
+DESCRIPTION:Informe Monetario Mensual\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipimanuf20261209202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261209T190000Z
+DTEND:20261209T191500Z
+SUMMARY:Industria (IPI) · INDEC
+DESCRIPTION:Índice de producción industrial manufacturero (IPI manufactu
+ rero). Octubre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-14
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipiminero20261209202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261209T190000Z
+DTEND:20261209T191500Z
+SUMMARY:IPI minero · INDEC
+DESCRIPTION:Índice de producción industrial minero (IPI minero). Octubre
+  de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-7-172
+END:VEVENT
+BEGIN:VEVENT
+UID:indecisac20261209202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261209T190000Z
+DTEND:20261209T191500Z
+SUMMARY:Construcción (ISAC) · INDEC
+DESCRIPTION:Indicadores de coyuntura de la actividad de la construcción. 
+ Octubre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-3-42
+END:VEVENT
+BEGIN:VEVENT
+UID:privllamadotesoro20261209@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+TRANSP:TRANSPARENT
+SUMMARY:Llamado a licitación · Finanzas
+DESCRIPTION:Llamado a licitación del Tesoro\nFecha oficial\nPrioridad med
+ ia
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:privconstruya20261210@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+TRANSP:TRANSPARENT
+SUMMARY:Índice Construya · Grupo Construya
+DESCRIPTION:Índice Construya\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privusdawasde20261210202612@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261210T170000Z
+DTEND:20261210T171500Z
+SUMMARY:WASDE · USDA
+DESCRIPTION:WASDE (USDA)\nFecha oficial\nPrioridad media
+URL:https://www.usda.gov/about-usda/general-information/staff-offices/offi
+ ce-chief-economist/commodity-markets/wasde-report
+END:VEVENT
+BEGIN:VEVENT
+UID:privipccaba20261211@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+TRANSP:TRANSPARENT
+SUMMARY:IPC CABA · IDECBA
+DESCRIPTION:IPCBA\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privlicitacionestesoro20261211@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+TRANSP:TRANSPARENT
+SUMMARY:Licitación del Tesoro · Finanzas
+DESCRIPTION:Licitación del Tesoro (resultado)\nFecha oficial\nPrioridad a
+ lta
+URL:https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-
+ y-bonos-del-tesoro/cronograma-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabandascambiarias20261215@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+TRANSP:TRANSPARENT
+SUMMARY:Régimen de bandas cambiarias · BCRA
+DESCRIPTION:Bandas cambiarias: proyección del mes siguiente\nFecha estima
+ da\nPrioridad alta
+URL:https://www.bcra.gob.ar/regimen-de-bandas-cambiarias/
+END:VEVENT
+BEGIN:VEVENT
+UID:indeccbacbt20261215202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261215T190000Z
+DTEND:20261215T191500Z
+SUMMARY:Canasta básica · INDEC
+DESCRIPTION:Valorización mensual de la canasta básica alimentaria (CBA) 
+ y de la canasta básica total (CBT). Noviembre de 2026\nFecha oficial\nPr
+ ioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-43-149
+END:VEVENT
+BEGIN:VEVENT
+UID:indecipc20261215202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261215T190000Z
+DTEND:20261215T191500Z
+SUMMARY:IPC · INDEC
+DESCRIPTION:Índice de precios al consumidor (IPC). Cobertura nacional. No
+ viembre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31
+END:VEVENT
+BEGIN:VEVENT
+UID:privsipa20261215202609@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+TRANSP:TRANSPARENT
+SUMMARY:Empleo registrado (SIPA) · Trabajo
+DESCRIPTION:Situación y evolución del trabajo registrado (SIPA). Septiem
+ bre de 2026\nFecha estimada\nPrioridad media
+URL:https://www.argentina.gob.ar/trabajo/estadisticas/situacion-y-evolucio
+ n-del-trabajo-registrado
+END:VEVENT
+BEGIN:VEVENT
+UID:indecpibavance202612162026Q3@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261216T190000Z
+DTEND:20261216T191500Z
+SUMMARY:PIB trimestral · INDEC
+DESCRIPTION:Informe de avance del nivel de actividad. Tercer trimestre de 
+ 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-47
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsalarios20261216202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261216T190000Z
+DTEND:20261216T191500Z
+SUMMARY:Salarios · INDEC
+DESCRIPTION:Índice de salarios. Octubre de 2026\nFecha oficial\nPrioridad
+  alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-61
+END:VEVENT
+BEGIN:VEVENT
+UID:indecucii20261216202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261216T190000Z
+DTEND:20261216T191500Z
+SUMMARY:Capacidad instalada · INDEC
+DESCRIPTION:Utilización de la capacidad instalada en la industria (UCII).
+  Octubre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15
+END:VEVENT
+BEGIN:VEVENT
+UID:privfielipi20261216@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+TRANSP:TRANSPARENT
+SUMMARY:Industria FIEL
+DESCRIPTION:IPI FIEL\nFecha oficial\nPrioridad media
+URL:https://www.fiel.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecicc20261217202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261217T190000Z
+DTEND:20261217T191500Z
+SUMMARY:Costo de la construcción · INDEC
+DESCRIPTION:Índice del costo de la construcción (ICC). Noviembre de 2026
+ \nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-33
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsipm20261217202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261217T190000Z
+DTEND:20261217T191500Z
+SUMMARY:Precios mayoristas · INDEC
+DESCRIPTION:Sistema de índices de precios mayoristas (SIPM). Noviembre de
+  2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-32
+END:VEVENT
+BEGIN:VEVENT
+UID:privresultadofiscal20261217@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+TRANSP:TRANSPARENT
+SUMMARY:Resultado fiscal · Hacienda
+DESCRIPTION:Resultado fiscal SPN\nFecha estimada\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticc20261217@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+TRANSP:TRANSPARENT
+SUMMARY:Confianza del consumidor · UTDT
+DESCRIPTION:ICC Di Tella\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcrabancos20261218@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+TRANSP:TRANSPARENT
+SUMMARY:Informe de bancos · BCRA
+DESCRIPTION:Informe sobre Bancos\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecephmercadotrabajo202612182026Q3@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261218T190000Z
+DTEND:20261218T191500Z
+SUMMARY:Desempleo (EPH) · INDEC
+DESCRIPTION:Mercado de trabajo. Tasas e indicadores socioeconómicos. Terc
+ er trimestre de 2026\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecica20261218202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261218T190000Z
+DTEND:20261218T191500Z
+SUMMARY:Comercio exterior (ICA) · INDEC
+DESCRIPTION:Intercambio comercial argentino (ICA). Bienes. Noviembre de 20
+ 26\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-2-40
+END:VEVENT
+BEGIN:VEVENT
+UID:privadimra20261218@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+TRANSP:TRANSPARENT
+SUMMARY:Índice de actividad metalúrgica · ADIMRA
+DESCRIPTION:ADIMRA metalurgia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privcameipipyme20261220@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+TRANSP:TRANSPARENT
+SUMMARY:Índice de Producción Industrial… · CAME
+DESCRIPTION:IPI Pyme CAME\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecemae20261221202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261221T190000Z
+DTEND:20261221T191500Z
+SUMMARY:EMAE · INDEC
+DESCRIPTION:Estimador mensual de actividad económica (EMAE). Octubre de 2
+ 026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-48
+END:VEVENT
+BEGIN:VEVENT
+UID:indecbdp202612222026Q3@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261222T190000Z
+DTEND:20261222T191500Z
+SUMMARY:Balanza de pagos · INDEC
+DESCRIPTION:Balanza de pagos\, posición de inversión internacional y deu
+ da externa. Tercer trimestre de 2026\nFecha oficial\nPrioridad alta
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-35-45
+END:VEVENT
+BEGIN:VEVENT
+UID:indecetnindustria20261222exp202612@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261222T190000Z
+DTEND:20261222T191500Z
+SUMMARY:Encuesta de tendencia de negocios · INDEC
+DESCRIPTION:Encuesta de tendencia de negocios. Industria manufacturera. Ex
+ pectativas diciembre 2026-febrero 2027\nFecha oficial\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privenergiaprod20261222@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+TRANSP:TRANSPARENT
+SUMMARY:Producción de petróleo y gas · Secretaría de Energía
+DESCRIPTION:Producción de petróleo y gas\nFecha estimada\nPrioridad medi
+ a
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:privscentia20261222@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+TRANSP:TRANSPARENT
+SUMMARY:Consumo masivo (scanning 8.000… · Scentia
+DESCRIPTION:Consumo masivo Scentia\nFecha estimada\nPrioridad media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20261223202611@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecephdistribucion202612232026Q3@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261223T190000Z
+DTEND:20261223T191500Z
+SUMMARY:Distribución del ingreso · INDEC
+DESCRIPTION:Evolución de la distribución del ingreso (EPH). Tercer trime
+ stre de 2026\nFecha oficial\nPrioridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-4-31-60
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdtei20261223@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+TRANSP:TRANSPARENT
+SUMMARY:Expectativas de inflación · UTDT
+DESCRIPTION:Expectativas de inflación Di Tella\nFecha estimada\nPrioridad
+  media
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:indecsupermercados20261228202610@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART:20261228T190000Z
+DTEND:20261228T191500Z
+SUMMARY:Supermercados · INDEC
+DESCRIPTION:Encuesta de supermercados. Octubre de 2026\nFecha oficial\nPri
+ oridad media
+URL:https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34
+END:VEVENT
+BEGIN:VEVENT
+UID:privutdticg20261228202612@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+TRANSP:TRANSPARENT
+SUMMARY:Confianza en el Gobierno · UTDT
+DESCRIPTION:Índice de Confianza en el Gobierno (UTDT)\nFecha oficial\nPri
+ oridad media
+URL:https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666
+END:VEVENT
+BEGIN:VEVENT
+UID:bcracambiario20261231@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+TRANSP:TRANSPARENT
+SUMMARY:Balance cambiario · BCRA
+DESCRIPTION:Informe de Evolución del Mercado de Cambios y Balance Cambiar
+ io\nFecha oficial\nPrioridad alta
+URL:https://santi2021.github.io/calendario-macro/
+END:VEVENT
+BEGIN:VEVENT
+UID:bcraplanillareservas20270122202612@macrocalendar
+DTSTAMP:20260927T192849Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+TRANSP:TRANSPARENT
+SUMMARY:Planilla de reservas… · BCRA
+DESCRIPTION:Planilla de reservas internacionales y liquidez en moneda extr
+ anjera\nFecha oficial\nPrioridad media
+URL:https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos
+ -fmi/
+END:VEVENT
+END:VCALENDAR
