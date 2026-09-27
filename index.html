@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Calendario macro Argentina</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#15212B">
+<link rel="icon" href="icono-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
 <style>
@@ -104,6 +107,12 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
 .hist{width:100%;border-collapse:collapse;font-size:13.5px}.hist td{padding:5px 6px;border-bottom:1px solid var(--line)}
 .panel a{color:var(--indec)}.cerrar{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:16px;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:4px 10px;cursor:pointer}
 .atajos{font-size:12.5px;color:var(--ink3)}kbd{font:inherit;font-size:11.5px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--panel)}
+/* avisos */
+.icono.on{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.pasos{margin:0 0 16px;padding-left:20px;font-size:14px;display:grid;gap:8px}.pasos b{font-weight:650}
+.codigo{width:100%;min-height:118px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);padding:10px;resize:vertical;word-break:break-all}
+.btn{border:0;border-radius:8px;padding:9px 16px;font-weight:650;cursor:pointer;background:var(--ink);color:var(--panel2)}.btn.sec{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.fila{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 4px}.nota{font-size:13px;color:var(--ink3);margin:10px 0 0}
 @media (max-width:900px){.topbar{position:static;margin-bottom:12px}.reloj{display:none}.semana{grid-template-columns:1fr}.dia{min-height:0}.mes{gap:3px}.celda{min-height:62px;padding:5px}.celda .top{display:none}
 .hoy{grid-template-columns:1fr}.prox{border-left:0;padding-left:0;border-top:1px solid color-mix(in srgb,var(--hoyTxt) 25%,transparent);padding-top:14px}
 .agdia{grid-template-columns:1fr;gap:6px}.agdia .d{display:flex;align-items:baseline;gap:10px}.buscar{width:100%}.ev{grid-template-columns:4px 44px 1fr}.ev .s{grid-column:3}}
@@ -119,6 +128,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
     <div class="views" role="group" aria-label="Vista">
       <button data-v="agenda" aria-pressed="true">Agenda</button><button data-v="semana" aria-pressed="false">Semana</button><button data-v="mes" aria-pressed="false">Mes</button>
     </div>
+    <button class="icono" id="avisosBtn" hidden>Avisos</button>
   </div></div>
 
   <section class="hoy" id="hoy" aria-live="polite"></section>
@@ -294,5 +304,46 @@ function reloj(){const a=ahoraAR();$("#reloj").textContent=`${String(a.h).padSta
   const nuevo=parse(a.f);if(iso(nuevo)!==iso(HOY)){HOY=nuevo;render()}else hoyBox()}
 function render(){chips();hoyBox();salud();alertas();({agenda:vAgenda,semana:vSemana,mes:vMes})[st.vista]()}
 preparar(EV0);marcar();render();reloj();setInterval(reloj,30000);
+/* ---------- Avisos al celular (notificaciones push de la propia web) ---------- */
+const VAPID_PUBLICA="BAO0VXU9b8Ol00fVtU-yIXG6pewjSWFtzo2I1jRMojIjIOLGV3akjGVK9D8xjWvuB_pc5ZRua0Oy_mb7IoZH14g";
+const b64u=s=>{const p="=".repeat((4-s.length%4)%4);const r=atob((s+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(r,c=>c.charCodeAt(0))};
+let REG=null;
+async function iniciarAvisos(){
+  const btn=$("#avisosBtn");
+  if(!("serviceWorker" in navigator)||!("PushManager" in window)||!/^https?:/.test(location.protocol))return;
+  try{REG=await navigator.serviceWorker.register("sw.js")}catch(e){return}
+  btn.hidden=false;await pintarBoton();btn.onclick=panelAvisos;
+}
+async function suscripcion(){try{return REG?await REG.pushManager.getSubscription():null}catch(e){return null}}
+async function pintarBoton(){const s=await suscripcion();const b=$("#avisosBtn");const on=!!s&&Notification.permission==="granted";b.classList.toggle("on",on);b.textContent=on?"Avisos ✓":"Avisos"}
+async function panelAvisos(){
+  const p=$("#panel");p.style.setProperty("--c","var(--ink)");
+  const s=await suscripcion();const perm=Notification.permission;
+  let h=`<button class="cerrar" id="cerrar">Cerrar</button><div class="org">Calendario macro</div><h3>Avisos en el celular</h3>`;
+  if(perm==="denied"){h+=`<p>Las notificaciones están bloqueadas para esta página. Habilitalas desde los ajustes del navegador (candado junto a la dirección → Notificaciones → Permitir) y volvé a abrir este panel.</p>`}
+  else if(!s){h+=`<p>Un aviso a la mañana con lo que se publica en el día y el estado de lo de ayer. A la noche, sólo si un dato se demoró o una fuente se cayó.</p>
+    <ol class="pasos"><li>Tocá <b>Activar avisos</b> y aceptá el permiso.</li><li>Copiá el código que aparece.</li><li>Pegalo en GitHub como secreto <b>PUSH_SUSCRIPCION</b>.</li></ol>
+    <div class="fila"><button class="btn" id="activar">Activar avisos</button></div>`}
+  else{h+=`<p style="color:var(--ok);font-weight:650">Este celular ya está suscripto.</p>
+    <p>Si todavía no lo hiciste, copiá este código y pegalo en GitHub: <b>Settings → Secrets and variables → Actions → New repository secret</b>, con el nombre <b>PUSH_SUSCRIPCION</b>.</p>
+    <textarea class="codigo" id="codigo" readonly>${esc(JSON.stringify(s))}</textarea>
+    <div class="fila"><button class="btn" id="copiar">Copiar código</button><button class="btn sec" id="probar">Probar en este celular</button></div>
+    <p class="nota" id="msg"></p>
+    <p class="nota">El código identifica sólo a este navegador; no contiene datos personales. Si borrás los datos del navegador o cambiás de celular, activá de nuevo y reemplazá el secreto.</p>
+    <div class="fila"><button class="link" id="desactivar">Desactivar avisos en este celular</button></div>`}
+  p.innerHTML=h;p.classList.add("on");p.setAttribute("aria-hidden","false");$("#cortina").classList.add("on");$("#cerrar").onclick=cerrar;
+  const a=$("#activar");if(a)a.onclick=async()=>{a.disabled=true;a.textContent="Activando…";
+    try{const r=await Notification.requestPermission();if(r!=="granted"){a.textContent="Permiso no concedido";return}
+      await REG.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u(VAPID_PUBLICA)});await pintarBoton();panelAvisos()}
+    catch(e){a.disabled=false;a.textContent="Reintentar";const n=document.createElement("p");n.className="nota";n.textContent="No se pudo activar: "+e.message;a.parentNode.after(n)}};
+  const c=$("#copiar");if(c)c.onclick=async()=>{const t=$("#codigo");try{await navigator.clipboard.writeText(t.value)}catch(e){t.select();document.execCommand("copy")}c.textContent="Copiado ✓"};
+  const pr=$("#probar");if(pr)pr.onclick=()=>{REG.showNotification("Calendario macro",{body:"Así se ven los avisos en este celular.",icon:"icono-192.png",badge:"badge-96.png",tag:"prueba"});$("#msg").textContent="Listo: tendría que haberte llegado una notificación de prueba local."};
+  const d=$("#desactivar");if(d)d.onclick=async()=>{const s2=await suscripcion();if(s2)await s2.unsubscribe();await pintarBoton();panelAvisos()};
+}
+/* Al abrir desde un aviso: ?v=hoy|agenda|semana */
+{const v=new URLSearchParams(location.search).get("v");if(v==="semana"||v==="agenda"||v==="mes"){st.vista=v;marcar();render()}
+ if(v==="hoy"||v)window.scrollTo(0,0)}
+iniciarAvisos();
+
 cargarVivo().then(()=>{render()});
 </script></body></html>
