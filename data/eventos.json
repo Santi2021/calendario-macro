@@ -3294,6 +3294,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-01-12",
+  "hora": "14:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-01",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-01-13",
   "hora": null,
   "indicador": "bcra.bandas_cambiarias",
@@ -3528,6 +3537,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-01-26",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-01",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
+ },
+ {
   "fecha": "2026-01-28",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -3735,6 +3753,15 @@
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
  },
  {
+  "fecha": "2026-02-10",
+  "hora": "14:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-02",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-02-11",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -3922,6 +3949,15 @@
   "titulo": "Llamado a licitación del Tesoro",
   "origen": "oficial",
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
+ },
+ {
+  "fecha": "2026-02-23",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-02",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-02-24",
@@ -4131,6 +4167,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-03-10",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-03",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-03-11",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -4336,6 +4381,15 @@
   "titulo": "Encuesta de supermercados. Enero de 2026",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+ },
+ {
+  "fecha": "2026-03-23",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-03",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-03-25",
@@ -4552,6 +4606,15 @@
   "titulo": "Indicadores de coyuntura de la actividad de la construcción. Febrero de 2026",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+ },
+ {
+  "fecha": "2026-04-09",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-04",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
  },
  {
   "fecha": "2026-04-10",
@@ -4851,6 +4914,15 @@
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
  },
  {
+  "fecha": "2026-04-27",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-04",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
+ },
+ {
   "fecha": "2026-04-28",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -5020,6 +5092,15 @@
   "titulo": "Indicador sintético de servicios públicos (ISSP). Febrero de 2026",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+ },
+ {
+  "fecha": "2026-05-12",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-05",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
  },
  {
   "fecha": "2026-05-13",
@@ -5247,6 +5328,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-05-25",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-05",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
+ },
+ {
   "fecha": "2026-05-26",
   "hora": "16:00",
   "indicador": "indec.turismo_int",
@@ -5472,6 +5562,15 @@
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
  },
  {
+  "fecha": "2026-06-11",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-06",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-06-12",
   "hora": null,
   "indicador": "bcra.boletin",
@@ -5596,6 +5695,15 @@
   "titulo": "Mercado de trabajo. Tasas e indicadores socioeconómicos. Primer trimestre de 2026",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2026.pdf"
+ },
+ {
+  "fecha": "2026-06-22",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-06",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-06-23",
@@ -5839,6 +5947,15 @@
   "titulo": "Indicadores de coyuntura de la actividad de la construcción. Mayo de 2026",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf"
+ },
+ {
+  "fecha": "2026-07-10",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-07",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
  },
  {
   "fecha": "2026-07-13",
@@ -6093,6 +6210,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-07-27",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-07",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
+ },
+ {
   "fecha": "2026-07-28",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -6309,6 +6435,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-08-12",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-08",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-08-13",
   "hora": null,
   "indicador": "bcra.bandas_cambiarias",
@@ -6496,6 +6631,15 @@
   "titulo": "Cuenta de energía. Flujos físicos. Año 2023",
   "origen": "oficial",
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf"
+ },
+ {
+  "fecha": "2026-08-24",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-08",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-08-25",
@@ -6750,6 +6894,15 @@
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
  },
  {
+  "fecha": "2026-09-11",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-09",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-09-14",
   "hora": null,
   "indicador": "bcra.boletin",
@@ -7000,6 +7153,15 @@
   "titulo": "Licitación del Tesoro (resultado)",
   "origen": "oficial",
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
+ },
+ {
+  "fecha": "2026-09-28",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-09",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-09-29",
@@ -7288,6 +7450,15 @@
   "titulo": "Llamado a licitación del Tesoro",
   "origen": "oficial",
   "fuente": "https://www.argentina.gob.ar/economia/finanzas/licitaciones-de-letras-y-bonos-del-tesoro/cronograma-2026"
+ },
+ {
+  "fecha": "2026-10-09",
+  "hora": "13:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-10",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
  },
  {
   "fecha": "2026-10-11",
@@ -7725,10 +7896,10 @@
   "fecha": "2026-10-26",
   "hora": null,
   "indicador": "priv.utdt_icg",
-  "periodo": null,
-  "titulo": "ICG Di Tella",
-  "origen": "estimada",
-  "fuente": "última semana"
+  "periodo": "2026-10",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-10-28",
@@ -8104,6 +8275,15 @@
   "fuente": "IPC INDEC −2 hábiles"
  },
  {
+  "fecha": "2026-11-10",
+  "hora": "14:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-11",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
+ },
+ {
   "fecha": "2026-11-11",
   "hora": null,
   "indicador": "bcra.estado_resumido",
@@ -8410,6 +8590,15 @@
   "fuente": "domingo 3ª–4ª semana"
  },
  {
+  "fecha": "2026-11-23",
+  "hora": null,
+  "indicador": "priv.utdt_icg",
+  "periodo": "2026-11",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
+ },
+ {
   "fecha": "2026-11-24",
   "hora": "16:00",
   "indicador": "indec.emae",
@@ -8633,15 +8822,6 @@
   "titulo": "Relevamiento semanal EcoGo",
   "origen": "estimada",
   "fuente": "lunes o martes"
- },
- {
-  "fecha": "2026-11-30",
-  "hora": null,
-  "indicador": "priv.utdt_icg",
-  "periodo": null,
-  "titulo": "ICG Di Tella",
-  "origen": "estimada",
-  "fuente": "última semana"
  },
  {
   "fecha": "2026-12-01",
@@ -8903,6 +9083,15 @@
   "titulo": "Índice Construya",
   "origen": "estimada",
   "fuente": "ventana día 9–13"
+ },
+ {
+  "fecha": "2026-12-10",
+  "hora": "14:00",
+  "indicador": "priv.usda_wasde",
+  "periodo": "2026-12",
+  "titulo": "WASDE (USDA)",
+  "origen": "oficial",
+  "fuente": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
  },
  {
   "fecha": "2026-12-11",
@@ -9367,10 +9556,10 @@
   "fecha": "2026-12-28",
   "hora": null,
   "indicador": "priv.utdt_icg",
-  "periodo": null,
-  "titulo": "ICG Di Tella",
-  "origen": "estimada",
-  "fuente": "última semana"
+  "periodo": "2026-12",
+  "titulo": "Índice de Confianza en el Gobierno (UTDT)",
+  "origen": "oficial",
+  "fuente": "https://www.utdt.edu/listado_contenidos.php?id_item_menu=41666"
  },
  {
   "fecha": "2026-12-29",
