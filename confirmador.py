@@ -108,8 +108,16 @@ CONF = {
     "priv.fractura_vm": [("prensa", {"q": '"etapas de fractura"', "lag": 1})],
     "priv.utdt_icc": [("prensa", {"q": '"confianza del consumidor" "Di Tella"', "lag": 0})],
     "priv.utdt_icg": [("prensa", {"q": '"confianza en el gobierno" "Di Tella"', "lag": 0})],
-    "priv.resultado_fiscal": [("prensa", {"q": '"Sector Público Nacional" superávit OR déficit', "lag": 1})],
-    "priv.recaudacion_arca": [("prensa", {"q": "recaudación ARCA interanual", "lag": 1})],
+    # Estado nacional: fuente oficial primero (verificado 27-sep-2026), prensa de respaldo
+    "priv.resultado_fiscal": [("gob_noticias", {"url": "https://www.argentina.gob.ar/economia/sechacienda/noticias", "clave": "Sector Público Nacional"}),
+                              ("prensa", {"q": '"Sector Público Nacional" superávit OR déficit', "lag": 1})],
+    "priv.recaudacion_arca": [("archivo_lm", {"url": "https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-{mm_ref}{yyyy_ref}.pdf", "lag": 1}),
+                              ("prensa", {"q": "recaudación ARCA interanual", "lag": 1})],
+    "priv.licitaciones_tesoro": [("gob_noticias", {"url": "https://www.argentina.gob.ar/economia/finanzas/noticias", "clave": r"^Resultado de la licitaci[oó]n(?!.*conversi)", "tol": 2})],
+    "priv.llamado_tesoro": [("gob_noticias", {"url": "https://www.argentina.gob.ar/economia/finanzas/noticias", "clave": r"^Llamado a licitaci[oó]n", "tol": 2})],
+    "priv.sipa": [("archivo_lm", {"url": "https://www.argentina.gob.ar/sites/default/files/trabajoregistrado_{yy_ref}{mm_ref}_estadisticas.xlsx", "lag": 3})],
+    "priv.ripte_eil": [("archivo_lm", {"url": "https://www.argentina.gob.ar/sites/default/files/ripte_{mes_ref}_{yyyy_ref}-mdch.pdf", "lag": 2}),
+                       ("prensa", {"q": "RIPTE remuneración imponible", "lag": 2})],
 }
 
 # INDEC: prefijo del PDF del informe técnico (verificado contra el listado el 27-sep-2026).
@@ -175,7 +183,7 @@ class Http:
                     if r.status_code in (405, 403):  # algunos servidores no aceptan HEAD
                         r = requests.get(url, headers=UA, timeout=30, stream=True)
                         r.close()
-                    out = (r.status_code, "")
+                    out = (r.status_code, r.headers.get("Last-Modified", ""))  # HEAD: el texto es la fecha de carga
                 else:
                     r = requests.get(url, headers=UA, timeout=30)
                     r.encoding = r.encoding or "utf-8"
@@ -364,6 +372,48 @@ def m_archivo(http: Http, ev: dict, p: dict):
     raise IOError(f"{url}: HTTP {st}")     # 403 u otro: bloqueo o error, no es evidencia de nada
 
 
+def m_archivo_lm(http: Http, ev: dict, p: dict):
+    """Archivo con nombre previsible por período del dato (ej. trabajoregistrado_2606_estadisticas.xlsx).
+    Existe = salió. La fecha sale del Last-Modified del servidor si cae cerca de la programada;
+    si el archivo se volvió a subir después (pasa en ARCA), se toma la programada: la existencia ya prueba que salió."""
+    f = d(ev["fecha"])
+    y, m = mes_ref(f, p.get("lag", 1))
+    url = p["url"].format(yyyy_ref=y, yy_ref=f"{y % 100:02d}", mm_ref=f"{m:02d}", mes_ref=MESES[m - 1])
+    st, lm = http.get(url, head=True)
+    if st in (404, 410):
+        return None, None
+    if st != 200:
+        raise IOError(f"{url}: HTTP {st}")
+    try:
+        fecha = parsedate_to_datetime(lm).astimezone(TZ).date() if lm else None
+    except Exception:
+        fecha = None
+    if fecha and f - dt.timedelta(days=3) <= fecha <= f + dt.timedelta(days=VENTANA_DIAS):
+        return fecha, url
+    return min(f, HOY), url
+
+
+def m_gob_noticias(http: Http, ev: dict, p: dict):
+    """Listado de noticias de un área de argentina.gob.ar (ej. /economia/finanzas/noticias).
+    Cada tarjeta trae <time datetime='AAAA-MM-DD ...'> y el título en <h3>. Se busca un título
+    que contenga la clave con fecha a no más de 'tol' días de la programada."""
+    st, html = http.get(p["url"])
+    if st != 200:
+        raise IOError(f"{p['url']}: HTTP {st}")
+    items = re.findall(r'<a href="(/noticias/[^"]+)"[^>]*>(?:(?!</a>).)*?<time datetime=\'(\d{4}-\d{2}-\d{2})[^\']*\'>'
+                       r'[^<]*</time>\s*<h3>([^<]+)</h3>', html, re.S)
+    if not items:
+        raise IOError(f"{p['url']}: sin noticias legibles (¿cambió la página?)")
+    f = d(ev["fecha"])
+    tol = p.get("tol", VENTANA_DIAS)
+    clave_re = re.compile(p["clave"], re.I)
+    for link, fecha, titulo in items:
+        fe = dt.date.fromisoformat(fecha)
+        if clave_re.search(titulo.strip()) and abs((fe - f).days) <= tol:
+            return fe, "https://www.argentina.gob.ar" + link
+    return None, None
+
+
 def m_rss(http: Http, ev: dict, p: dict):
     st, xml = http.get(p["url"])
     if st != 200:
@@ -436,7 +486,7 @@ def m_prensa(http: Http, ev: dict, p: dict):
     return None, None
 
 
-METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
+METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "archivo_lm": m_archivo_lm, "gob_noticias": m_gob_noticias, "bcra_publicacion": m_bcra_publicacion, "xlsx_modificado": m_xlsx_modificado, "archivo": m_archivo, "rss": m_rss,
            "pagina_fecha": m_pagina_fecha, "prensa": m_prensa}
 
 
@@ -782,6 +832,32 @@ def selftest() -> int:
     check("xlsx_confirma", f == dt.date(2026, 9, 25))
     f, u = m_xlsx_modificado(Http(fake={ux: (200, xlsx("2026-08-28T16:40:00Z"))}), {"fecha": "2026-09-25"}, {"url": ux})
     check("xlsx_mes_anterior_no_confirma", f is None)
+
+    # 14. Noticias de argentina.gob.ar: resultado de licitación el mismo día, sin confundir con el llamado
+    card = lambda link, fe, t: (f'<a href="/noticias/{link}" class="panel panel-default"><div class="panel-heading"></div>'
+                                f"<div class=\"panel-body\"><time datetime='{fe} 17:18:06'>x</time>  <h3>{t}</h3></div></a>")
+    noti = (card("llamado-9", "2026-09-24", "Llamado a licitación de instrumentos del Tesoro Nacional")
+            + card("resu-12", "2026-09-11", "Resultado de la licitación por efectivo de instrumentos del Tesoro Nacional")
+            + card("llamado-8", "2026-09-09", "Llamado a licitación de instrumentos del Tesoro Nacional"))
+    hn = Http(fake={"https://www.argentina.gob.ar/economia/finanzas/noticias": (200, noti)})
+    f, u = m_gob_noticias(hn, {"fecha": "2026-09-11"}, {"url": "https://www.argentina.gob.ar/economia/finanzas/noticias", "clave": r"^Resultado de la licitaci[oó]n", "tol": 2})
+    check("noticias_resultado", f == dt.date(2026, 9, 11) and u.endswith("resu-12"))
+    f, u = m_gob_noticias(hn, {"fecha": "2026-09-28"}, {"url": "https://www.argentina.gob.ar/economia/finanzas/noticias", "clave": r"^Resultado de la licitaci[oó]n", "tol": 2})
+    check("noticias_sin_resultado_aun", f is None)
+    f, u = m_gob_noticias(hn, {"fecha": "2026-09-24"}, {"url": "https://www.argentina.gob.ar/economia/finanzas/noticias", "clave": r"^Llamado a licitaci[oó]n", "tol": 2})
+    check("noticias_llamado", f == dt.date(2026, 9, 24))
+    # 15. Archivo por período con Last-Modified: SIPA de junio subido el 10-sep; julio todavía no existe
+    HOY = dt.date(2026, 9, 27)
+    ua = "https://www.argentina.gob.ar/sites/default/files/trabajoregistrado_{yy_ref}{mm_ref}_estadisticas.xlsx"
+    hs = Http(fake={"https://www.argentina.gob.ar/sites/default/files/trabajoregistrado_2606_estadisticas.xlsx": (200, "Thu, 10 Sep 2026 18:33:19 GMT")})
+    f, u = m_archivo_lm(hs, {"fecha": "2026-09-11"}, {"url": ua, "lag": 3})
+    check("archivo_lm_fecha", f == dt.date(2026, 9, 10))
+    f, u = m_archivo_lm(hs, {"fecha": "2026-10-13"}, {"url": ua, "lag": 3})
+    check("archivo_lm_no_salio", f is None)
+    # 16. ARCA re-subió el PDF meses después: la existencia confirma, con la fecha programada
+    ha = Http(fake={"https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-032026.pdf": (200, "Thu, 14 May 2026 15:17:34 GMT")})
+    f, u = m_archivo_lm(ha, {"fecha": "2026-04-01"}, {"url": "https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-{mm_ref}{yyyy_ref}.pdf", "lag": 1})
+    check("archivo_lm_resubido", f == dt.date(2026, 4, 1))
 
     total = ok + len(fallos)
     print(f"Autotest: {ok}/{total} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
