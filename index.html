@@ -191,6 +191,22 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
  .ok2{color:var(--ok);font-weight:650;font-size:13.5px}
  /* hojas inferiores (detalle, filtros, alertas, avisos) */
  .panel{top:auto;left:0;right:0;width:100%;max-height:88vh;border-radius:22px 22px 0 0;transform:translateY(105%);transition:transform .26s cubic-bezier(.2,.8,.2,1);padding:28px 20px calc(env(safe-area-inset-bottom,0px) + 24px)}
+
+ @keyframes mder{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+ @keyframes mizq{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+ #mv.arr{transition:none}
+ .row,.card[role=button],.tabs button,.mg button,.chipbtn,.go,.pill,.cargar{transition:transform .12s ease,background .15s}
+ .row:active,.card[role=button]:active,.mg button:active,.chipbtn:active,.go:active,.pill:active,.cargar:active{transform:scale(.97)}
+ .tabs button:active svg{transform:scale(.9)}
+ *{-webkit-tap-highlight-color:transparent}
+ .mh .mtt{position:absolute;left:0;right:0;text-align:center;font-weight:650;font-size:16px;opacity:0;transform:translateY(6px);transition:opacity .18s,transform .18s;pointer-events:none;text-transform:capitalize}
+ .mh.titulo .mtt{opacity:1;transform:none}.mh.titulo .mw{opacity:0}.mh .mw{transition:opacity .18s}
+ .mh.sombra{box-shadow:0 1px 0 var(--line)}
+ .ptr{position:fixed;top:calc(env(safe-area-inset-top,0px) + 58px);left:50%;z-index:14;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:var(--panel2);box-shadow:0 4px 14px rgba(0,0,0,.18);display:grid;place-items:center;opacity:0;transform:translateY(-40px) scale(.7);pointer-events:none}
+ .ptr svg{width:18px;height:18px;color:var(--ar)}.ptr.gira svg{animation:gira .8s linear infinite}
+ @keyframes gira{to{transform:rotate(360deg)}}
+ .toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s,transform .2s;z-index:50;pointer-events:none}
+ .toast.on{opacity:1;transform:translate(-50%,0)}
  .panel{border-left:0!important;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
  .panel::before{content:"";position:absolute;top:9px;left:50%;width:40px;height:5px;border-radius:3px;background:var(--line);transform:translateX(-50%)}
  .panel .cerrar{top:14px;right:14px;font-size:13px}
@@ -199,7 +215,7 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
  .fsec .chips{display:flex;flex-wrap:wrap;gap:8px}.fsec .chip{font-size:14px;padding:7px 13px 7px 11px}
  .panel .buscar{width:100%;padding:10px 12px;border-radius:10px;font-size:15px}
 }
-@media (prefers-reduced-motion:reduce){.panel,.cortina,#mv{transition:none;animation:none}}
+@media (prefers-reduced-motion:reduce){.panel,.cortina,#mv,.row,.tabs button,.mh .mtt{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -235,7 +251,8 @@ button,input{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--i
   </div>
 </div>
 <div id="m">
-  <header class="mh"><img src="favicon-64.png" alt=""><div class="mw">MacroCalend<i>AR</i></div><span class="mclk" id="mclk"></span></header>
+  <header class="mh" id="mh"><img src="favicon-64.png" alt=""><div class="mw">MacroCalend<i>AR</i></div><span class="mtt" id="mtt"></span><span class="mclk" id="mclk"></span></header>
+  <div class="ptr" id="ptr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg></div><div class="toast" id="toast"></div>
   <main id="mv"></main>
   <nav class="tabs" aria-label="Secciones">
     <button data-t="hoy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="12" cy="15.2" r="1.8" fill="currentColor" stroke="none"/></svg><span>Hoy</span></button><button data-t="agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg><span>Agenda</span></button><button data-t="mes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg><span>Mes</span></button><button data-t="ajustes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2.2"/><circle cx="10" cy="17" r="2.2"/></svg><span>Ajustes</span></button>
@@ -521,7 +538,7 @@ function hojaFiltros(){
 async function mRender(){
   if(!esMovil())return;
   const v=$("#mv");v.innerHTML=ms.tab==="hoy"?mHoy():ms.tab==="agenda"?mAgenda():ms.tab==="mes"?mMes():await mAjustes();
-  v.style.animation="none";v.offsetHeight;v.style.animation="";
+  v.style.animation="none";v.offsetHeight;v.style.animation=v.dataset.dir==="izq"?"mizq .24s cubic-bezier(.2,.8,.2,1)":v.dataset.dir==="der"?"mder .24s cubic-bezier(.2,.8,.2,1)":"";v.dataset.dir="";
   document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-current",b.dataset.t===ms.tab?"page":"false"));
   bind(v);
   const on=(id,fn)=>{const el=document.getElementById(id);if(el)el.onclick=fn};
@@ -532,12 +549,54 @@ async function mRender(){
   on("majav",panelAvisos);on("majcod",panelAvisos);on("majics",async()=>{const b=$("#majics");try{await navigator.clipboard.writeText("https://santi2021.github.io/calendario-macro/data/macrocalendar.ics");b.textContent="Copiado ✓"}catch(e){prompt("Link del calendario","https://santi2021.github.io/calendario-macro/data/macrocalendar.ics")}});
   v.querySelectorAll("#mtema button").forEach(b=>b.onclick=()=>{const k=b.dataset.k,r=document.documentElement;if(k==="sistema"){delete r.dataset.theme;try{localStorage.removeItem("calmacro:tema")}catch(e){}}else{r.dataset.theme=k;store.set("tema",k)}mRender()});
 }
-function irTab(t){ms.tab=t;window.scrollTo(0,0);mRender();try{history.replaceState(null,"","?v="+t)}catch(e){}}
+const ORDEN=["hoy","agenda","mes","ajustes"],SCROLL={};
+const vib=ms=>{try{if(navigator.vibrate&&!matchMedia("(prefers-reduced-motion:reduce)").matches)navigator.vibrate(ms)}catch(e){}};
+function irTab(t,dir){if(t===ms.tab)return;SCROLL[ms.tab]=window.scrollY;const d=dir||(ORDEN.indexOf(t)>ORDEN.indexOf(ms.tab)?1:-1);ms.tab=t;
+  const v=$("#mv");v.dataset.dir=d>0?"der":"izq";mRender().then(()=>{window.scrollTo(0,SCROLL[t]||0)});vib(8);try{history.replaceState(history.state,"","?v="+t)}catch(e){}}
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{if(ms.tab===b.dataset.t){window.scrollTo({top:0,behavior:"smooth"});return}irTab(b.dataset.t)});
 /* deslizar hacia abajo para cerrar la hoja */
 {let y0=null;const p=$("#panel");p.addEventListener("touchstart",e=>{y0=p.scrollTop<=0?e.touches[0].clientY:null},{passive:true});
  p.addEventListener("touchmove",e=>{if(y0===null)return;const dy=e.touches[0].clientY-y0;if(dy>0){p.style.transition="none";p.style.transform=`translateY(${dy}px)`}},{passive:true});
  p.addEventListener("touchend",e=>{if(y0===null)return;const dy=(e.changedTouches[0].clientY-y0);p.style.transition="";p.style.transform="";if(dy>90)cerrar();y0=null})}
+
+/* ---------- fluidez: gestos, atrás de Android, refresco, título compacto ---------- */
+function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("on"),1800)}
+/* el botón atrás de Android cierra la hoja en vez de salir de la app */
+{const abrir=hoja,det=detalle,cer=cerrar;let enHist=false;
+ const push=()=>{if(esMovil()&&!enHist){history.pushState({hoja:1},"");enHist=true}};
+ hoja=function(h){abrir(h);push()};detalle=function(e){det(e);push()};
+ cerrar=function(){const estaba=$("#panel").classList.contains("on");cer();if(enHist&&estaba){enHist=false;history.back()}};
+ addEventListener("popstate",()=>{if(enHist){enHist=false;cer()}});
+ $("#cortina").onclick=()=>cerrar();}
+/* deslizar hacia los costados: cambia de sección (en Mes, cambia de mes) */
+{let x0=0,y0=0,t0=0,modo=null;const v=$("#mv");
+ const libre=el=>!el.closest(".panel,input,textarea,.seg,.chips");
+ addEventListener("touchstart",e=>{if(!esMovil()||e.touches.length>1||!libre(e.target)||$("#panel").classList.contains("on")){modo="no";return}
+   x0=e.touches[0].clientX;y0=e.touches[0].clientY;t0=Date.now();modo=null},{passive:true});
+ addEventListener("touchmove",e=>{if(modo==="no")return;const dx=e.touches[0].clientX-x0,dy=e.touches[0].clientY-y0;
+   if(modo===null){if(Math.abs(dx)>12&&Math.abs(dx)>Math.abs(dy)*1.4)modo="h";else if(Math.abs(dy)>10)modo="v";}
+   if(modo==="h"){const i=ORDEN.indexOf(ms.tab),borde=(dx>0&&i===0&&ms.tab!=="mes")||(dx<0&&i===ORDEN.length-1);
+     v.style.transition="none";v.style.transform=`translateX(${borde?dx*.25:dx*.45}px)`;v.style.opacity=String(1-Math.min(Math.abs(dx)/900,.25))}},{passive:true});
+ addEventListener("touchend",e=>{if(modo!=="h"){modo=null;return}const dx=e.changedTouches[0].clientX-x0,vel=Math.abs(dx)/Math.max(1,Date.now()-t0);
+   v.style.transition="transform .22s cubic-bezier(.2,.8,.2,1),opacity .22s";v.style.transform="";v.style.opacity="";modo=null;
+   if(Math.abs(dx)<70&&vel<.45)return;const dir=dx<0?1:-1;
+   if(ms.tab==="mes"&&e.target.closest(".mg,.mtit")){ms.mes=new Date(ms.mes.getFullYear(),ms.mes.getMonth()+dir,1);v.dataset.dir=dir>0?"der":"izq";mRender();vib(6);return}
+   const i=ORDEN.indexOf(ms.tab)+dir;if(i>=0&&i<ORDEN.length)irTab(ORDEN[i],dir)});}
+/* tirar hacia abajo para actualizar */
+{let y0=null,d=0;const ptr=$("#ptr");
+ addEventListener("touchstart",e=>{y0=esMovil()&&window.scrollY<=0&&!$("#panel").classList.contains("on")?e.touches[0].clientY:null;d=0},{passive:true});
+ addEventListener("touchmove",e=>{if(y0===null)return;d=e.touches[0].clientY-y0;if(d<=0){ptr.style.opacity=0;return}
+   const k=Math.min(d/90,1);ptr.style.transition="none";ptr.style.opacity=String(k);ptr.style.transform=`translateY(${Math.min(d*.5,50)-40}px) scale(${.7+.3*k}) rotate(${d*3}deg)`},{passive:true});
+ addEventListener("touchend",async()=>{if(y0===null)return;y0=null;ptr.style.transition="transform .25s,opacity .25s";
+   if(d>90){ptr.classList.add("gira");ptr.style.transform="translateY(12px) scale(1)";vib(10);await cargarVivo();render();ptr.classList.remove("gira");toast("Actualizado")}
+   ptr.style.opacity=0;ptr.style.transform="translateY(-40px) scale(.7)";d=0});}
+/* título compacto en la barra al bajar */
+{const mh=$("#mh");let tick=false;addEventListener("scroll",()=>{if(tick||!esMovil())return;tick=true;requestAnimationFrame(()=>{tick=false;
+   const h=document.querySelector("#mv .mtit h2, #mv .mhero");const pas=h?h.getBoundingClientRect().bottom<60:false;
+   $("#mtt").textContent=ms.tab==="hoy"?`${DIAS[HOY.getDay()]} ${HOY.getDate()}`:(h?h.textContent:"");mh.classList.toggle("titulo",pas);mh.classList.toggle("sombra",window.scrollY>4)})},{passive:true});}
+/* color de la barra del sistema igual al fondo de la app */
+function colorBarra(){const c=getComputedStyle(document.body).backgroundColor;document.querySelector('meta[name="theme-color"]').setAttribute("content",c)}
+new MutationObserver(colorBarra).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});matchMedia("(prefers-color-scheme:dark)").addEventListener("change",colorBarra);setTimeout(colorBarra,50);
 {const v=new URLSearchParams(location.search).get("v");if(v)ms.tab=v==="semana"?"agenda":["hoy","agenda","mes","ajustes"].includes(v)?v:"hoy"}
 const _render=render;render=function(){_render();mRender()};
 MQ.addEventListener("change",()=>render());

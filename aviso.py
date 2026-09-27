@@ -155,28 +155,55 @@ def alerta_noche(hoy, eventos, cat, estado, avisos):
              "acciones": [{"id": "ver", "titulo": "Ver detalle", "url": WEB + "?v=agenda&origen=alerta"}]}, claves)
 
 
+def suscripciones(texto):
+    """El secreto PUSH_SUSCRIPCION acepta un código o varios: un objeto {...}, una lista [{...},{...}]
+    o varios objetos pegados uno debajo del otro (así es más fácil sumar el de un amigo)."""
+    texto = (texto or "").strip()
+    if not texto:
+        return []
+    try:
+        v = json.loads(texto)
+        return v if isinstance(v, list) else [v]
+    except json.JSONDecodeError:
+        dec, out, k = json.JSONDecoder(), [], 0
+        while k < len(texto):
+            while k < len(texto) and texto[k] in " \t\r\n,;":
+                k += 1
+            if k >= len(texto):
+                break
+            obj, k = dec.raw_decode(texto, k)
+            out.append(obj)
+        return out
+
+
 def enviar(payload):
-    sub, priv = os.environ.get("PUSH_SUSCRIPCION", "").strip(), os.environ.get("VAPID_PRIVADA", "").strip()
-    if not sub or not priv:
+    priv = os.environ.get("VAPID_PRIVADA", "").strip()
+    try:
+        subs = suscripciones(os.environ.get("PUSH_SUSCRIPCION", ""))
+    except (ValueError, json.JSONDecodeError) as ex:
+        print(f"[avisos] el secreto PUSH_SUSCRIPCION no tiene un formato válido: {ex}")
+        return "error"
+    if not subs or not priv:
         print("[avisos] sin configurar (faltan los secretos PUSH_SUSCRIPCION / VAPID_PRIVADA): no se manda nada")
         return "sin_configurar"
     from pywebpush import webpush, WebPushException
-    try:
-        webpush(subscription_info=json.loads(sub), data=json.dumps(payload, ensure_ascii=False),
-                vapid_private_key=priv, vapid_claims={"sub": "https://santi2021.github.io"}, ttl=6 * 3600,
-                headers={"Urgency": "high" if payload.get("tag") == "alerta" else "normal"})
-        print(f"[avisos] enviado: {payload['titulo']}")
-        return "ok"
-    except WebPushException as ex:
-        st = getattr(ex.response, "status_code", None)
-        if st in (404, 410):
-            print("[avisos] la suscripción del celular venció: abrí la web, tocá Avisos → Activar y reemplazá el secreto PUSH_SUSCRIPCION")
-            return "vencida"
-        print(f"[avisos] error al enviar: {ex}")
-        return "error"
-    except (ValueError, json.JSONDecodeError) as ex:
-        print(f"[avisos] el secreto PUSH_SUSCRIPCION no es un código válido: {ex}")
-        return "error"
+    ok = 0
+    for n, sub in enumerate(subs, 1):
+        try:
+            webpush(subscription_info=sub, data=json.dumps(payload, ensure_ascii=False),
+                    vapid_private_key=priv, vapid_claims={"sub": "https://santi2021.github.io"}, ttl=6 * 3600,
+                    headers={"Urgency": "high" if payload.get("tag") == "alerta" else "normal"})
+            ok += 1
+        except WebPushException as ex:
+            st = getattr(ex.response, "status_code", None)
+            if st in (404, 410):
+                print(f"[avisos] celular {n}: la suscripción venció (hay que activar de nuevo en ese celular y reemplazar su código)")
+            else:
+                print(f"[avisos] celular {n}: error al enviar: {ex}")
+        except Exception as ex:
+            print(f"[avisos] celular {n}: código inválido: {ex}")
+    print(f"[avisos] enviado a {ok} de {len(subs)} celulares: {payload['titulo']}")
+    return "ok" if ok else "error"
 
 
 def main(argv=None):
@@ -257,6 +284,11 @@ def selftest():
     check("alerta_una_sola_vez", a2 is None)
     os.environ.pop("PUSH_SUSCRIPCION", None)
     check("sin_secretos_no_falla", enviar({"titulo": "x", "cuerpo": "y"}) == "sin_configurar")
+    a1 = '{"endpoint":"https://a","keys":{"p256dh":"x","auth":"y"}}'
+    b1 = '{"endpoint":"https://b","keys":{"p256dh":"x","auth":"y"}}'
+    check("un_codigo", len(suscripciones(a1)) == 1)
+    check("varios_pegados", [x["endpoint"] for x in suscripciones(a1 + "\n" + b1)] == ["https://a", "https://b"])
+    check("lista", len(suscripciones("[" + a1 + "," + b1 + "]")) == 2)
     print(f"Autotest avisos: {ok}/{ok + len(fallos)} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
     return 0 if not fallos else 1
 
