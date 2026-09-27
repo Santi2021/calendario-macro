@@ -1,1 +1,5 @@
-{"alertados": ["metodo:bcra_listado"]}
+{
+ "alertados": [
+  "metodo:bcra_listado"
+ ]
+}
