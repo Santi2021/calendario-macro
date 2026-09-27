@@ -17,6 +17,10 @@ on:
         description: "Probar sin escribir"
         type: boolean
         default: true
+      aviso_prueba:
+        description: "Mandar un aviso de prueba al celular"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -38,7 +42,7 @@ jobs:
           python-version: "3.11"
 
       - name: Dependencias
-        run: pip install requests==2.32.3
+        run: pip install requests==2.32.3 pywebpush==2.5.0
 
       - name: Autotest (si falla, no se toca ningún dato)
         run: python confirmador.py --selftest
@@ -52,6 +56,20 @@ jobs:
             python confirmador.py --dry-run
           else
             python confirmador.py
+          fi
+
+      - name: Avisos al celular (resumen de la mañana y alertas de la noche)
+        env:
+          PUSH_SUSCRIPCION: ${{ secrets.PUSH_SUSCRIPCION }}
+          VAPID_PRIVADA: ${{ secrets.VAPID_PRIVADA }}
+        run: |
+          python aviso.py --selftest
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.aviso_prueba }}" = "true" ]; then
+            python aviso.py --prueba
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python aviso.py --dry-run
+          else
+            python aviso.py || echo "Falló el envío del aviso (no frena la corrida)"
           fi
 
       - name: Datos del mercado de cambios (BCRA)
@@ -73,7 +91,7 @@ jobs:
         run: |
           git config user.name "confirmador"
           git config user.email "confirmador@users.noreply.github.com"
-          git add data/estado.json data/reporte.md
+          git add data/estado.json data/reporte.md data/avisos.json
           git add data/cambiario 2>/dev/null || true
           git add data/bcra_api 2>/dev/null || true
           if git diff --cached --quiet; then
