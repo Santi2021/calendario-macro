@@ -20,7 +20,12 @@
    "desvio_dias": 0
   },
   "indec.icc|2026-09-16|2026-08": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-16",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/icc_09_26FEFC2E3F64.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.sipm|2026-09-16|2026-08": {
    "estado": "confirmado",
@@ -31,13 +36,28 @@
    "desvio_dias": 0
   },
   "indec.eph_mercado_trabajo|2026-09-17|2026-Q2": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-17",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.farmaceutica|2026-09-17|2026-Q2": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-17",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/farm_09_26BEA5E4F826.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.pib_avance|2026-09-17|2026-Q2": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-17",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/pib_09_26065D6A3612.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "bcra.bancos|2026-09-18|": {
    "estado": "confirmado",
@@ -59,10 +79,20 @@
    "desvio_dias": 0
   },
   "indec.etn_industria|2026-09-21|exp:2026-09": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-21",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/etn_industria_manufacturera_09_261CFB527938.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.etn_super|2026-09-21|exp:2026-09": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-21",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/etn_super_mayoristas_09_26F587F8EE6D.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.salarios|2026-09-22|2026-07": {
    "estado": "confirmado",
@@ -76,10 +106,20 @@
    "estado": "sin_metodo"
   },
   "indec.mayoristas|2026-09-23|2026-07": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-23",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/autoservicios_mayoristas_09_26DA5CEEFE06.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.shoppings|2026-09-23|2026-07": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-23",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/com_09_2694F525320C.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   },
   "indec.supermercados|2026-09-23|2026-07": {
    "estado": "confirmado",
@@ -122,18 +162,33 @@
    "desvio_dias": 0
   },
   "indec.turismo_int|2026-09-25|2026-08": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-25",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/eti_09_2658FB61A61B.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
+  },
+  "priv.llamado_tesoro|2026-09-24|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-24",
+   "evidencia": "https://www.argentina.gob.ar/noticias/llamado-licitacion-de-instrumentos-del-tesoro-nacional-denominados-en-pesos-y-en-dolares-13",
+   "metodo": "gob_noticias",
+   "confirmado_el": "2026-09-27",
+   "desvio_dias": 0
   }
  },
  "salud": {
   "bcra_publicacion": 0,
   "prensa": 0,
   "bcra_listado": 7,
-  "xlsx_modificado": 0
+  "xlsx_modificado": 0,
+  "indec_informes": 0,
+  "gob_noticias": 0
  },
  "calendarios": {
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-26T22:48:14-03:00"
+ "ultima_corrida": "2026-09-27T14:02:30-03:00"
 }
