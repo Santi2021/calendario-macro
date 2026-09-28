@@ -1,0 +1,63 @@
+name: Pruebas
+
+# Corre cada vez que se sube un cambio al código o a la base del calendario. Si algo se rompió,
+# queda en rojo en Actions (y GitHub manda un mail) antes de que el problema llegue a la app.
+# No escribe nada ni toca datos: sólo prueba.
+on:
+  push:
+    paths:
+      - "*.py"
+      - "index.html"
+      - "sw.js"
+      - "manifest.webmanifest"
+      - "data/eventos.json"
+      - "data/catalogo.json"
+      - "data/feriados.json"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pruebas-${{ github.ref }}
+  cancel-in-progress: true     # si subís varios archivos seguidos, prueba sólo el último estado
+
+jobs:
+  python:
+    name: Confirmador, avisos y datos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Dependencias
+        run: pip install requests==2.32.3 pywebpush==2.5.0
+      - name: Sintaxis de todos los scripts
+        run: python -m py_compile *.py
+      - name: Autotest del confirmador
+        run: python confirmador.py --selftest
+      - name: Autotest de los avisos
+        run: python aviso.py --selftest
+      - name: Datos válidos y coherentes
+        run: python pruebas.py --datos
+      - name: El calendario suscribible se genera
+        run: python ics.py
+
+  web:
+    name: La app abre en celular y compu
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Navegador de prueba
+        run: |
+          pip install playwright==1.47.0
+          python -m playwright install --with-deps chromium
+      - name: Pruebas en navegador (claro y oscuro)
+        run: python pruebas.py --web
