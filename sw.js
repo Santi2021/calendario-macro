@@ -20,7 +20,10 @@ self.addEventListener("fetch", e => {
       return await Promise.race([red, new Promise((_, no) => setTimeout(() => no(new Error("lento")), 4000))]);
     } catch (x) {
       const c = await cache.match(clave);
-      if (c) return c;
+      if (c) {                                      // copia guardada: se marca para que la app lo sepa
+        const h = new Headers(c.headers); h.set("x-mc-copia", "1");
+        return new Response(await c.blob(), { status: c.status, statusText: c.statusText, headers: h });
+      }
       if (e.request.mode === "navigate") { const i = await cache.match(new Request(new URL("index.html", self.registration.scope))); if (i) return i; }
       return red;                                   // sin copia guardada: esperar a la red
     }

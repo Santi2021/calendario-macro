@@ -422,6 +422,7 @@ a.ms.ok:active{transform:scale(.94)}
  button.mas{display:flex;align-items:center;width:calc(100% + 2*var(--s4));min-height:44px;margin:0 calc(-1*var(--s4));padding:0 var(--s4) 0 calc(var(--s4) + 4px + var(--s3));border:0;background:none;font:inherit;font-size:var(--t-sub);font-weight:600;color:var(--link);text-align:left}
  button.mas:active{background:var(--fill)}
  /* salud */
+ .salud2.vg .ico,.dsalud.vg .ico{color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,transparent)}
  .salud2 .sx{flex:1;min-width:0}.salud2 .cv{color:var(--ink3);display:grid;opacity:.7}.salud2 .cv svg{width:16px;height:16px}
  /* mes: puntos sólidos en el día elegido, pasado con color en vez de opacidad */
  .mg button.sel .dt i{background:rgba(255,255,255,.85)!important;box-shadow:none}
@@ -589,6 +590,7 @@ a.ms.ok:active{transform:scale(.94)}
  .dsalud.mal .ico,.dalb .ico{color:var(--warn);background:color-mix(in srgb,var(--warn) 15%,transparent)}
  .dalb.grave .ico{color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,transparent)}
  .dsalud b,.dalb b{display:block;font-size:15px;font-weight:650}.dsalud span,.dalb span{font-size:13px;color:var(--ink3)}
+ .dsalud.vg .ico{color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,transparent)}
  .dalb>div{flex:1}.dalb .cv{color:var(--ink3);display:grid}.dalb .cv svg{width:16px;height:16px}
  .dsalud:hover,.dalb:hover{background:color-mix(in srgb,var(--ink) 4%,var(--card))}
  .dnums{display:grid;grid-template-columns:repeat(3,1fr);padding:var(--s4) var(--s4) var(--s3);align-content:center}
@@ -800,10 +802,27 @@ function preparar(raw){E=normalizar(raw).map(e=>({...e,g:grupo(e.id),p:(CAT[e.id
 const clave=e=>`${e.id}|${e.f}|${e.per||""}`;
 function estadoDe(e){const s=(ESTADO.eventos||{})[clave(e)];if(s&&s.estado&&s.estado!=="programado"&&s.estado!=="sin_metodo")return s;return null}
 
+/* Vigía: GitHub no garantiza la hora de las corridas programadas. Si ya debió haber corrido una
+   revisión (con 90 minutos de margen) y no hay ninguna desde entonces, la app lo dice en vez de
+   mostrar estados viejos como si estuvieran al día. Horarios = los del flujo confirmar.yml. */
+function turnosDe(f){const d=parse(f).getDay(),r=[];
+  if(d>=1&&d<=5){for(let h=9;h<=20;h++){r.push(`${String(h).padStart(2,"0")}:07`,`${String(h).padStart(2,"0")}:37`)}r.push("21:07")}
+  else r.push("10:17","18:17");return r.map(x=>new Date(`${f}T${x}:00-03:00`))}
+function vigia(ahora=new Date()){const u=ESTADO.ultima_corrida;if(!u)return null;const t=new Date(u);if(isNaN(t))return null;
+  const lim=ahora.getTime()-90*6e4,hoyAR=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Argentina/Buenos_Aires"}).format(ahora);let debio=null;
+  for(let k=0;k<5&&!debio;k++){const ts=turnosDe(iso(addD(parse(hoyAR),-k))).filter(x=>x.getTime()<=lim);if(ts.length)debio=ts[ts.length-1]}
+  if(!debio||t>=debio)return null;
+  const hh=new Intl.DateTimeFormat("es-AR",{timeZone:"America/Argentina/Buenos_Aires",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).format(t);
+  const fAR=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Argentina/Buenos_Aires"}).format(t);
+  const desde=fAR===hoyAR?`las ${hh}`:`el ${Number(fAR.slice(8))}/${Number(fAR.slice(5,7))} a las ${hh}`;
+  return SIN_RED?{desde,hora:hh,titulo:`Sin conexión · datos ${de(desde)}`,sub:"Los estados se actualizan cuando vuelva la conexión"}
+                :{desde,hora:hh,titulo:`Sin revisar desde ${desde}`,sub:"GitHub atrasó las revisiones: los estados pueden no estar al día"}}
+let SIN_RED=false;
+const de=t=>t.startsWith("el ")?"del "+t.slice(3):"de "+t;
 async function cargarVivo(){
   if(!/^https?:/.test(location.protocol))return;
-  const j=async u=>{const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw 0;return r.json()};
-  try{ESTADO=await j("data/estado.json");fuenteDatos="vivo"}catch(e){}
+  const j=async u=>{const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw 0;if(u==="data/estado.json")SIN_RED=r.headers.get("x-mc-copia")==="1";return r.json()};
+  try{ESTADO=await j("data/estado.json");fuenteDatos="vivo"}catch(e){SIN_RED=true}
   try{const c=await j("data/catalogo.json");const C={};c.forEach(x=>C[x.id]={n:x.nombre,o:x.organismo,b:x.bloque,f:x.frecuencia,p:x.prioridad,r:x.regla,cf:x.confianza,u:x.url,m:x.confirmacion});CAT=C;
       const ev=await j("data/eventos.json");preparar(ev);fuenteDatos="vivo"}catch(e){}
   try{const f=await j("data/feriados.json");const F={};f.forEach(x=>F[x.fecha]=x.nombre+(x.tipo==="a_verificar"?" (a confirmar)":""));FER=F}catch(e){}
@@ -853,7 +872,8 @@ function salud(){
   $("#salud").innerHTML=ult?`<h2>Últimos 30 días</h2><span class="ok"><b>${c.confirmado}</b>confirmados</span><span class="${c.demorado?"mal":""}"><b>${c.demorado}</b>demorados</span><span class="${c.sin_verificar?"av":""}"><b>${c.sin_verificar}</b>sin verificar</span>`:"";
 }
 function alertas(){
-  const f0=iso(HOY);let h="";const by={};E.filter(e=>e.al&&e.f>=f0).forEach(e=>(by[e.f]=by[e.f]||[]).push(e));
+  const f0=iso(HOY);let h="";
+  {const vg=vigia();if(vg)h+=SIN_RED?`<div class="alerta info"><b>Sin conexión:</b> se muestran los datos ${de(vg.desde)}. Se actualizan solos cuando vuelva la conexión.</div>`:`<div class="alerta"><b>Sin revisar desde ${vg.desde}:</b> GitHub está atrasando las revisiones programadas, así que los estados pueden no estar al día. Se normaliza solo con la próxima revisión.</div>`}const by={};E.filter(e=>e.al&&e.f>=f0).forEach(e=>(by[e.f]=by[e.f]||[]).push(e));
   h+=Object.entries(by).map(([f,es])=>{const d=parse(f);return`<div class="alerta"><b>Posible cambio de fecha:</b> el ${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]} es ${esc(FER[f]||"fin de semana")} y hay publicaciones programadas (${es.map(e=>esc(nombre(e))).join(", ")}). Si se confirma el feriado, se van a mover.</div>`}).join("");
   const dem=E.filter(e=>{const s=estadoDe(e);return s&&s.estado==="demorado"&&e.p==="alta"&&e.f>=iso(addD(HOY,-10))});
   if(dem.length)h+=`<div class="alerta"><b>Demorado:</b> ${dem.map(e=>esc(nombre(e))+" ("+parse(e.f).getDate()+"/"+(parse(e.f).getMonth()+1)+")").join(", ")} no aparece publicado todavía.</div>`;
@@ -1016,7 +1036,9 @@ function mHoy(){
    if(ult.length)h+=`<h3 class="sech">Últimos publicados</h3><div class="card rec">${ult.map(e=>{const d=parse(e.f);return rowHTML(e,false).replace(/<span class="h( sh)?"><\/span>/,`<span class="h">${d.getDate()}/${d.getMonth()+1}</span>`)}).join("")}</div>`}
   const desde=iso(addD(HOY,-30)),hasta=iso(addD(HOY,-1));const c={confirmado:0,demorado:0};E.filter(e=>e.f>=desde&&e.f<=hasta).forEach(e=>{const s=estadoDe(e);if(s&&c[s.estado]!==undefined)c[s.estado]++});
   const ult=ESTADO.ultima_corrida?new Date(ESTADO.ultima_corrida):null,fa=fallas();
-  if(ult)h+=`<div class="card salud2 ${fa.length||c.demorado?"alerta2":""}" role="button" data-go="ajustes"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div class="sx"><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"publicaciones demoradas":"publicación demorada"}`:"Todo al día"}</b><span>Revisado ${hace(ult)} · ${c.confirmado} confirmadas</span></div><span class="cv">${I.chev}</span></div>`;
+  const vg=vigia();
+  if(ult&&vg)h+=`<div class="card salud2 alerta2 vg" role="button" data-go="ajustes"><span class="ico">${I.clock}</span><div class="sx"><b>${vg.titulo}</b><span>${vg.sub}</span></div><span class="cv">${I.chev}</span></div>`;
+  else if(ult)h+=`<div class="card salud2 ${fa.length||c.demorado?"alerta2":""}" role="button" data-go="ajustes"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div class="sx"><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"publicaciones demoradas":"publicación demorada"}`:"Todo al día"}</b><span>Revisado ${hace(ult)} · ${c.confirmado} confirmadas</span></div><span class="cv">${I.chev}</span></div>`;
   return h;
 }
 function mAgenda(){
@@ -1060,7 +1082,7 @@ async function mAjustes(){
    <a class="it tap" href="https://calendar.google.com/calendar/render?cid=webcal://santi2021.github.io/calendario-macro/data/macrocalendar.ics" target="_blank" rel="noopener"><span class="ic" style="--k:#1D7AF2">${I.cal}</span><div class="tx"><b>Suscribirme en Google Calendar</b><span>Se actualiza solo</span></div><span class="cv">${I.arr}</span></a>
    ${fila(I.link,"var(--bcra)","Copiar link del calendario","Para Apple, Outlook u otros",`<span class="cv" id="majicsv">${I.chev}</span>`,"majics")}</div>
   <h3 class="sech">Sistema</h3><div class="card aj">
-   ${fila(I.clock,"#AF52DE","Última confirmación",ult?`${hace(ult)} · ${ult.toLocaleString("es-AR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"})}`:"—","")}
+   ${fila(I.clock,vigia()?"var(--bad)":"#AF52DE","Última confirmación",ult?`${hace(ult)} · ${ult.toLocaleString("es-AR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"})}${vigia()?(SIN_RED?" · sin conexión":" · atrasada"):""}`:"—",vigia()?`<i class="sdot mal"></i>`:"")}
    ${fila(I.pulse,fa.length?"var(--warn)":"var(--ok)","Fuentes",fa.length?"Con fallas: "+esc(fa.join(", ")):"Todas respondiendo",`<i class="sdot ${fa.length?"mal":""}"></i>`)}</div>
   <div class="acerca"><img src="icono-192.png" alt=""><b>MacroCalend<i>AR</i></b><span>${E.length.toLocaleString("es-AR")} publicaciones · datos oficiales</span></div>`;
 }
@@ -1105,7 +1127,7 @@ function mDetalle(e){
   <div class="mdk"><div><div class="mdd">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}</div><div class="mdr">${relTxt(e)}${e.h?" · "+e.h:" · sin horario fijo"}</div></div>${mSt(e,false)}</div>
   ${e.al?`<div class="mdal"><b>Puede moverse:</b> ${esc(FER[e.f]||"feriado cercano")}</div>`:""}
   <div class="mda">${prim}<button class="bt" id="mdsh">${IC.sh}Compartir</button>${e.f>=fh?`<button class="bt" id="mdcal">${IC.cal}Agendar</button>`:""}</div>
-  <div class="mdl">${fila("Período",esc(perTxt(e.per)))}${fila("Frecuencia",esc(c.f||""))}${fila("Prioridad",esc(c.p||""))}${fila("Fecha",origen)}${fila("Confirmación",esc(confTxt(c.m)))}${prox&&e.f<=fh?fila("Próxima",(()=>{const q=parse(prox.f);return`${DIAS[q.getDay()].slice(0,3)} ${q.getDate()} ${MES3[q.getMonth()]}`})()):""}</div>
+  <div class="mdl">${fila("Período",esc(perTxt(e.per)))}${fila("Frecuencia",esc(c.f||""))}${fila("Prioridad",esc(c.p||""))}${fila("Fecha",origen)}${s&&s.estado==="confirmado"&&s.desvio_dias?fila("Salió",(()=>{const q=parse(s.fecha_real),n=s.desvio_dias;return`${q.getDate()} ${MES3[q.getMonth()]} · ${Math.abs(n)} ${Math.abs(n)===1?"día":"días"} ${n>0?"tarde":"antes"}`})()):""}${s&&s.hora_detectada?fila("Detectado",s.hora_desde?`entre ${s.hora_desde} y ${s.hora_detectada}`:`a las ${s.hora_detectada}`):""}${fila("Confirmación",esc(confTxt(c.m)))}${prox&&e.f<=fh?fila("Próxima",(()=>{const q=parse(prox.f);return`${DIAS[q.getDay()].slice(0,3)} ${q.getDate()} ${MES3[q.getMonth()]}`})()):""}</div>
   ${c.r?`<details class="mdreg"><summary>Cómo se calcula la fecha</summary><p>${esc(c.r)}</p></details>`:""}
   ${hist.length?`<h4 class="mdh4">Anteriores</h4><div class="mdhist">${hist.map(x=>{const q=parse(x.f);return`<div class="hi" data-k="${esc(clave(x))}" role="button"><span>${q.getDate()} ${MES3[q.getMonth()]} ${String(q.getFullYear()).slice(2)}</span><span>${esc(perTxt(x.per))}</span>${mSt(x,false)}</div>`}).join("")}</div>`:""}`;
   p.scrollTop=0;p.classList.add("on");p.setAttribute("aria-hidden","false");$("#cortina").classList.add("on");
@@ -1242,7 +1264,8 @@ function dResumen(){
     <div class="dscroll"><div class="dlist">${lista||`<p class="dvac">${FER[f]?"Feriado: "+esc(FER[f]):HOY.getDay()%6===0?"Fin de semana, no hay publicaciones":"No hay publicaciones hoy"}</p>`}</div>
     ${(()=>{const nd=habiles(addD(HOY,1),1)[0],ne=porDia(iso(nd));if(!ne.length)return"";const man=iso(nd)===iso(addD(HOY,1));
       return`<div class="dnext"><div class="dgd"><b>${man?"Mañana":"Próximo día hábil"} · ${DIAS[nd.getDay()].slice(0,3)} ${nd.getDate()} ${m3(nd)}</b><span>${ne.length}</span></div>${[...ne].sort((x,y)=>(x.h||"99").localeCompare(y.h||"99")).slice(0,5).map(e=>dRow(e)).join("")}</div>`})()}</div></div>
-   <div class="dright">${p?(()=>{const d=parse(p.f);return`<div class="dc dkey" data-i="${p.i}" role="button" tabindex="0"><div class="kl">Próximo dato clave <span>${I.chev}</span></div><div class="kc">${cuenta(p)}</div><div class="kn"><i style="--c:${GR[p.g].c}"></i>${esc(corto(p))}</div><div class="ko">${esc(orgC(p))}</div><div class="kw">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?" · "+p.h:""}</div></div>`})():""}<div class="dside"><div class="dc destado"><div class="dsalud ${fa.length||c.demorado?"mal":""}" role="button" tabindex="0" data-aj="1"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"demoradas":"demorada"}`:"Todo al día"}</b><span>${ult?"Revisado "+hace(ult):"Sin datos de revisión"}</span></div></div>
+   <div class="dright">${p?(()=>{const d=parse(p.f);return`<div class="dc dkey" data-i="${p.i}" role="button" tabindex="0"><div class="kl">Próximo dato clave <span>${I.chev}</span></div><div class="kc">${cuenta(p)}</div><div class="kn"><i style="--c:${GR[p.g].c}"></i>${esc(corto(p))}</div><div class="ko">${esc(orgC(p))}</div><div class="kw">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?" · "+p.h:""}</div></div>`})():""}<div class="dside"><div class="dc destado">${(()=>{const vg=vigia();return vg?`<div class="dsalud mal vg" role="button" tabindex="0" data-aj="1"><span class="ico">${I.clock}</span><div><b>${vg.titulo}</b><span>${vg.sub}</span></div></div>`
+   :`<div class="dsalud ${fa.length||c.demorado?"mal":""}" role="button" tabindex="0" data-aj="1"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"demoradas":"demorada"}`:"Todo al día"}</b><span>${ult?"Revisado "+hace(ult):"Sin datos de revisión"}</span></div></div>`})()}
     <div class="dnums"><p>Últimos 30 días</p><div><b>${c.confirmado}</b><span>confirmadas</span></div><div class="${c.demorado?"r":""}"><b class="${c.demorado?"":"cero"}">${c.demorado}</b><span>demoradas</span></div><div class="${c.sin_verificar?"a":""}"><b class="${c.sin_verificar?"":"cero"}">${c.sin_verificar}</b><span>sin verificar</span></div></div></div>
     ${al.n?`<button class="dc dalb ${al.grave?"grave":""}" data-alert="1"><span class="ico">${I.bell}</span><div><b>${al.n} ${al.n>1?"alertas":"alerta"}</b><span>Cambios de fecha y avisos</span></div><span class="cv">${I.chev}</span></button>`:""}</div></div>
   </section>`;
@@ -1322,6 +1345,17 @@ document.addEventListener("keydown",k=>{if(!esEsc())return;const t=k.target;
   if(k.key==="f"||k.key==="F"){hojaFiltros();return}
   if(ds.v!=="resumen"&&(k.key==="ArrowRight"||k.key==="ArrowLeft")){dNav(k.key==="ArrowRight"?1:-1)}});
 const _render=render;render=function(){_render();mRender();dRender()};
+/* Al volver a la app después de un rato, trae datos nuevos sola; y si el vigía cambia de estado, redibuja. */
+{let ultCarga=Date.now(),vgAntes=null,ocupado=false;
+ const hoja=()=>$("#panel").classList.contains("on");
+ const recargar=async()=>{if(ocupado)return;ocupado=true;try{ultCarga=Date.now();await cargarVivo()}finally{ocupado=false}};
+ document.addEventListener("visibilitychange",async()=>{if(document.visibilityState!=="visible"||Date.now()-ultCarga<5*6e4||hoja())return;
+   await recargar();render();vgAntes=!!vigia()});
+ /* con la pestaña abierta: trae datos nuevos cada 15 minutos (y antes de acusar atraso) y redibuja sólo si hace falta */
+ setInterval(async()=>{if(document.visibilityState!=="visible"||hoja())return;
+   const antes=ESTADO.ultima_corrida;
+   if(Date.now()-ultCarga>=15*6e4||(vigia()&&Date.now()-ultCarga>=5*6e4))await recargar();
+   const v=!!vigia();if(ESTADO.ultima_corrida!==antes||(vgAntes!==null&&v!==vgAntes)){render();vgAntes=v}else if(vgAntes===null)vgAntes=v},6e4);}
 MQ.addEventListener("change",()=>render());
 mRender().then(()=>irTab(ms.tab,false));dRender();
 

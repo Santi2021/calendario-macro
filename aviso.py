@@ -6,8 +6,11 @@ Cuándo manda:
   - Resumen de la mañana: en la primera corrida desde las 09:00 (hora argentina), una vez por día.
     Qué se publica hoy (prioridad alta y media, sin semanales) y cómo salió lo de ayer.
     Si hoy no hay nada y ayer no quedó nada pendiente, no manda (día sin novedades = sin aviso).
-  - Alerta de la noche: desde las 19:00, sólo si hay datos demorados o fuentes caídas que todavía
-    no se avisaron. Cada problema se avisa una sola vez.
+  - Cierre del día: en la primera corrida desde las 19:00 de cada día hábil, una vez por día.
+    Qué salió hoy y qué falta, más los datos demorados o fuentes caídas que todavía no se avisaron.
+    Si hoy no había nada y no hay problemas, no manda.
+  - Alerta de la noche: después del cierre (y los fines de semana), sólo si aparece un dato demorado
+    o una fuente caída que todavía no se avisó. Cada problema se avisa una sola vez.
 
 Qué necesita (secretos del repositorio en GitHub):
   PUSH_SUSCRIPCION   el código que muestra la web al tocar "Activar avisos"
@@ -155,6 +158,67 @@ def alerta_noche(hoy, eventos, cat, estado, avisos):
              "acciones": [{"id": "ver", "titulo": "Ver detalle", "url": WEB + "?v=agenda&origen=alerta"}]}, claves)
 
 
+def cierre_dia(hoy, eventos, cat, estado, avisos):
+    """Resumen de cierre: lo de hoy (salió / falta confirmar) + problemas todavía no avisados."""
+    est = estado.get("eventos", {})
+    ya = set(avisos.get("alertados", []))
+    st = lambda e: est.get(clave(e), {}).get("estado")
+    hoy_ev = sorted([e for e in eventos if e.get("fecha") == hoy.isoformat() and relevante(e, cat)],
+                    key=lambda e: e.get("hora") or "99")
+    conf = [e for e in hoy_ev if st(e) == "confirmado"]
+    desde = (hoy - dt.timedelta(days=12)).isoformat()
+    dem = [e for e in eventos if e.get("fecha") and desde <= e["fecha"] < hoy.isoformat() and relevante(e, cat)
+           and st(e) == "demorado" and clave(e) not in ya]
+    caidos = [m for m, n in (estado.get("salud") or {}).items() if n >= 3 and f"metodo:{m}" not in ya]
+    if not hoy_ev and not dem and not caidos:
+        return None, []
+    dia = f"{DIAS[hoy.weekday()]} {hoy.day}/{hoy.month}"
+    lineas, claves = [], []
+    for e in hoy_ev[:MAX_LINEAS]:
+        lineas.append(f"✓ {corto(e, cat)}" if st(e) == "confirmado" else f"· {corto(e, cat)}: todavía sin confirmar")
+    if len(hoy_ev) > MAX_LINEAS:
+        lineas.append(f"y {len(hoy_ev) - MAX_LINEAS} más")
+    for e in dem[:3]:
+        f = dt.date.fromisoformat(e["fecha"])
+        lineas.append(f"Demorado: {corto(e, cat)} (programado el {f.day}/{f.month})")
+        claves.append(clave(e))
+    if len(dem) > 3:
+        lineas.append(f"y {len(dem) - 3} demorados más")
+        claves += [clave(e) for e in dem[3:]]
+    for m in caidos:
+        lineas.append(f"Fuente caída: método «{m}» falla hace {estado['salud'][m]} corridas")
+        claves.append(f"metodo:{m}")
+    if hoy_ev:
+        titulo = f"Cierre del {dia} · {len(conf)} de {len(hoy_ev)} " + ("salió" if len(hoy_ev) == 1 else "salieron")
+        if len(conf) == len(hoy_ev):
+            titulo += " ✓"
+    elif dem:
+        titulo = f"Cierre del {dia} · demorado: {corto(dem[0], cat)}"
+    else:
+        titulo = f"Cierre del {dia} · fuente caída"
+    problema = bool(dem or caidos)
+    return ({"titulo": titulo, "cuerpo": "\n".join(lineas), "tag": "alerta" if problema else "cierre",
+             "url": WEB + ("?v=agenda&origen=alerta" if problema else "?v=hoy&origen=cierre"),
+             "acciones": [{"id": "hoy", "titulo": "Ver hoy", "url": WEB + "?v=hoy&origen=cierre"},
+                          {"id": "agenda", "titulo": "Agenda", "url": WEB + "?v=agenda&origen=cierre"}]}, claves)
+
+
+def decidir(ahora, eventos, cat, estado, avisos):
+    """Qué avisos corresponden en esta corrida: lista de (tipo, aviso o None, claves de problemas)."""
+    hoy = ahora.date()
+    salidas = []
+    if ahora.hour >= HORA_MANANA and avisos.get("manana") != hoy.isoformat() and hoy.weekday() < 5:
+        salidas.append(("manana", resumen_manana(hoy, eventos, cat, estado), []))
+    if ahora.hour >= HORA_NOCHE:
+        if hoy.weekday() < 5 and avisos.get("cierre") != hoy.isoformat():
+            p, claves = cierre_dia(hoy, eventos, cat, estado, avisos)
+            salidas.append(("cierre", p, claves))
+        else:
+            p, claves = alerta_noche(hoy, eventos, cat, estado, avisos)
+            salidas.append(("noche", p, claves))
+    return salidas
+
+
 def suscripciones(texto):
     """El secreto PUSH_SUSCRIPCION acepta un código o varios: un objeto {...}, una lista [{...},{...}]
     o varios objetos pegados uno debajo del otro (así es más fácil sumar el de un amigo)."""
@@ -224,26 +288,20 @@ def main(argv=None):
     cat = {c["id"]: c for c in cargar("catalogo.json", [])}
     estado = cargar("estado.json", {})
     avisos = cargar("avisos.json", {})
-    salidas = []
-    if ahora.hour >= HORA_MANANA and avisos.get("manana") != hoy.isoformat() and hoy.weekday() < 5:
-        p = resumen_manana(hoy, eventos, cat, estado)
-        salidas.append(("manana", p, []))
-    if ahora.hour >= HORA_NOCHE:
-        p, claves = alerta_noche(hoy, eventos, cat, estado, avisos)
-        salidas.append(("noche", p, claves))
+    salidas = decidir(ahora, eventos, cat, estado, avisos)
     for tipo, p, claves in salidas:
         if p is None:
             print(f"[avisos] {tipo}: sin novedades, no se manda")
-            if tipo == "manana" and not a.dry_run:
-                avisos["manana"] = hoy.isoformat()
+            if tipo in ("manana", "cierre") and not a.dry_run:
+                avisos[tipo] = hoy.isoformat()
             continue
         if a.dry_run:
             print(f"[avisos] {tipo} (dry-run):\n  {p['titulo']}\n  " + p["cuerpo"].replace("\n", "\n  "))
             continue
         r = enviar(p)
         if r == "ok":
-            if tipo == "manana":
-                avisos["manana"] = hoy.isoformat()
+            if tipo in ("manana", "cierre"):
+                avisos[tipo] = hoy.isoformat()
             avisos["alertados"] = (avisos.get("alertados", []) + claves)[-200:]
         avisos["ultimo_resultado"] = {"cuando": ahora.isoformat(timespec="minutes"), "tipo": tipo, "resultado": r}
     if not a.dry_run and salidas:
@@ -289,6 +347,28 @@ def selftest():
     check("un_codigo", len(suscripciones(a1)) == 1)
     check("varios_pegados", [x["endpoint"] for x in suscripciones(a1 + "\n" + b1)] == ["https://a", "https://b"])
     check("lista", len(suscripciones("[" + a1 + "," + b1 + "]")) == 2)
+    # Cierre del día
+    est3 = {"eventos": {"indec.ipc|2026-09-28|2026-08": {"estado": "confirmado"},
+                        "indec.emae|2026-09-25|2026-07": {"estado": "demorado"}}, "salud": {}}
+    c, cl3 = cierre_dia(dt.date(2026, 9, 28), ev, cat, est3, {})
+    check("cierre_titulo", c and c["titulo"] == "Cierre del lunes 28/9 · 1 de 2 salieron")
+    check("cierre_lineas", c and "✓ IPC · INDEC" in c["cuerpo"] and "· Licitación del Tesoro · Finanzas: todavía sin confirmar" in c["cuerpo"])
+    check("cierre_demora", c and "Demorado: EMAE · INDEC (programado el 25/9)" in c["cuerpo"] and cl3 == ["indec.emae|2026-09-25|2026-07"])
+    check("cierre_urgente_si_problema", c and c["tag"] == "alerta")
+    c2, cl4 = cierre_dia(dt.date(2026, 9, 28), ev, cat, est3, {"alertados": cl3})
+    check("cierre_no_repite_demora", c2 and "Demorado" not in c2["cuerpo"] and cl4 == [] and c2["tag"] == "cierre")
+    est4 = {"eventos": {"indec.ipc|2026-09-28|2026-08": {"estado": "confirmado"},
+                        "priv.licitaciones_tesoro|2026-09-28|": {"estado": "confirmado"}}}
+    c3, _ = cierre_dia(dt.date(2026, 9, 28), ev, cat, est4, {})
+    check("cierre_todo_ok", c3 and c3["titulo"].endswith("2 de 2 salieron ✓"))
+    check("cierre_sin_nada", cierre_dia(dt.date(2026, 9, 30), ev, cat, {"eventos": {}}, {}) == (None, []))
+    t = lambda h, dia=28: dt.datetime(2026, 9, dia, h, 7, tzinfo=TZ)
+    tipos = lambda sal: [x[0] for x in sal]
+    check("decidir_manana", tipos(decidir(t(9), ev, cat, est4, {})) == ["manana"])
+    check("decidir_cierre_una_vez", tipos(decidir(t(19), ev, cat, est4, {"manana": "2026-09-28"})) == ["cierre"]
+          and tipos(decidir(t(20), ev, cat, est4, {"manana": "2026-09-28", "cierre": "2026-09-28"})) == ["noche"])
+    check("decidir_finde_sin_cierre", tipos(decidir(t(19, 27), ev, cat, est4, {})) == ["noche"])
+    check("decidir_madrugada_nada", decidir(t(7), ev, cat, est4, {}) == [])
     print(f"Autotest avisos: {ok}/{ok + len(fallos)} OK" + (f" | fallaron: {', '.join(fallos)}" if fallos else ""))
     return 0 if not fallos else 1
 

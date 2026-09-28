@@ -555,6 +555,7 @@ METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "
 # Núcleo
 # ======================================================================================
 HOY = dt.datetime.now(TZ).date()
+AHORA = None   # momento real de la corrida; sólo el autotest lo fija (None = reloj)
 
 
 def s_bcra_listado(http: Http) -> None:
@@ -586,6 +587,7 @@ def clave(ev: dict) -> str:
 
 def confirmar(http: Http, eventos: list, estado: dict, salud: dict, log: list, sondear: bool = False) -> dict:
     cambios = {"confirmados": [], "demorados": [], "sin_verificar": [], "sin_metodo": 0}
+    vis = AHORA or dt.datetime.now(TZ)
     fallidos, exitosos = set(), set()
     desde = HOY - dt.timedelta(days=VENTANA_DIAS)
     for ev in eventos:
@@ -616,11 +618,25 @@ def confirmar(http: Http, eventos: list, estado: dict, salud: dict, log: list, s
             if fecha:
                 e.update(estado="confirmado", fecha_real=fecha.isoformat(), evidencia=url,
                          metodo=nombre, confirmado_el=HOY.isoformat(),
-                         desvio_dias=(fecha - f).days)
+                         desvio_dias=(fecha - f).days, visto=vis.isoformat(timespec="minutes"))
+                # Hora real: sólo tiene sentido si se detectó el mismo día en que salió. Es una cota:
+                # el dato apareció entre la última consulta que respondió sin encontrarlo (ese mismo
+                # día) y esta. Si la fuente no respondía antes, no se inventa el piso.
+                if fecha == vis.date():
+                    e["hora_detectada"] = vis.strftime("%H:%M")
+                    try:
+                        ne = dt.datetime.fromisoformat(e.get("no_estaba") or "").astimezone(TZ)
+                    except ValueError:
+                        ne = None
+                    if ne and ne.date() == fecha and ne < vis:
+                        e["hora_desde"] = ne.strftime("%H:%M")
+                e.pop("no_estaba", None)
                 cambios["confirmados"].append((ev, e))
                 break
         if e["estado"] == "confirmado":
             continue
+        if consultado_ok:
+            e["no_estaba"] = vis.isoformat(timespec="minutes")   # una fuente respondió y todavía no estaba
         if not consultado_ok:
             # Ninguna fuente respondió: no se sabe si salió o no. No se lo acusa de demorado.
             if (HOY - f).days > TOLERANCIA_DIAS:
@@ -750,7 +766,10 @@ def main(argv=None) -> int:
     cambios = confirmar(http, eventos, estado["eventos"], estado["salud"], log, sondear=True)
     avisos = vigilar_calendarios(http, estado["calendarios"], log)
     rep = reporte(cambios, avisos, estado["salud"], eventos, estado["eventos"])
-    estado["ultima_corrida"] = dt.datetime.now(TZ).isoformat(timespec="seconds")
+    ahora = dt.datetime.now(TZ)
+    estado["ultima_corrida"] = ahora.isoformat(timespec="seconds")
+    # Historial de corridas (unos 5 días): mide cuánto atrasa GitHub los horarios programados.
+    estado["corridas"] = (estado.get("corridas", []) + [ahora.isoformat(timespec="minutes")])[-120:]
 
     print(rep)
     if log:
@@ -863,6 +882,32 @@ def selftest() -> int:
     sal5 = {"bcra_listado": 7}
     confirmar(HttpMuerto(), [], {}, sal5, [], sondear=True)
     check("sondeo_suma", sal5.get("bcra_listado") == 8)
+    # 12b. Hora real: detectado el mismo día → hora y ventana; detectado otro día → sin hora
+    global AHORA
+    HOY = dt.date(2026, 9, 4)
+    AHORA = dt.datetime(2026, 9, 4, 16, 7, tzinfo=TZ)
+    evr = [{"fecha": "2026-09-04", "indicador": "bcra.rem", "titulo": "REM", "periodo": "2026-08"}]
+    todavia = json.dumps({"success": True, "data": {"publicaciones": [
+        {"titulo": "Relevamiento de Expectativas de Mercado (REM)", "url": "x", "periodo": "Julio 2026", "fecha": "05 ago 2026"}]}})
+    esth = {}
+    AHORA = dt.datetime(2026, 9, 4, 15, 37, tzinfo=TZ)
+    confirmar(Http(fake={BCRA_API: (200, todavia), "https://news.google.com/": (200, "<rss></rss>")}), evr, esth, {}, [])
+    check("no_estaba_registrado", list(esth.values())[0].get("no_estaba") == "2026-09-04T15:37-03:00")
+    AHORA = dt.datetime(2026, 9, 4, 16, 7, tzinfo=TZ)
+    confirmar(http, evr, esth, {}, [])
+    eh = list(esth.values())[0]
+    check("hora_detectada", eh.get("estado") == "confirmado" and eh.get("hora_detectada") == "16:07"
+          and eh.get("hora_desde") == "15:37" and eh.get("visto") == "2026-09-04T16:07-03:00" and "no_estaba" not in eh)
+    esth3 = {}
+    confirmar(HttpMuerto(), evr, esth3, {}, [])
+    check("sin_piso_si_fuente_caida", "no_estaba" not in list(esth3.values())[0])
+    HOY = dt.date(2026, 9, 7)
+    AHORA = dt.datetime(2026, 9, 7, 9, 7, tzinfo=TZ)
+    esth2 = {}
+    confirmar(http, evr, esth2, {}, [])
+    eh2 = list(esth2.values())[0]
+    check("sin_hora_otro_dia", eh2.get("estado") == "confirmado" and "hora_detectada" not in eh2 and eh2.get("desvio_dias") == 0)
+    AHORA = None
     # 9. Escritura atómica
     global DATA
     viejo = DATA
