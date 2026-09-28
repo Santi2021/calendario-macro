@@ -557,11 +557,34 @@ METODOS = {"bcra_listado": m_bcra_listado, "indec_informes": m_indec_informes, "
 HOY = dt.datetime.now(TZ).date()
 
 
+def s_bcra_listado(http: Http) -> None:
+    """Sondeo liviano: la API del BCRA responde y trae el listado."""
+    st, txt = http.get(BCRA_API)
+    if st != 200:
+        raise IOError(f"API BCRA HTTP {st}")
+    if len(json.loads(txt)["data"]["publicaciones"]) < 100:
+        raise IOError("API BCRA: listado incompleto")
+
+
+def s_indec_informes(http: Http) -> None:
+    """Sondeo liviano: el listado de informes técnicos de INDEC responde con fechas."""
+    st, html = http.get(INDEC_INFORMES)
+    if st != 200:
+        raise IOError(f"INDEC informes HTTP {st}")
+    if len(re.findall(r"\b\d{2}/\d{2}/20\d{2}\b", html)) < 100:
+        raise IOError("INDEC informes: listado incompleto")
+
+
+# Los listados centrales se prueban en cada corrida aunque ese día no haya nada que confirmar,
+# así la salud refleja el presente y no queda colgado un fallo viejo.
+SONDEOS = {"bcra_listado": s_bcra_listado, "indec_informes": s_indec_informes}
+
+
 def clave(ev: dict) -> str:
     return f"{ev['indicador']}|{ev['fecha']}|{ev.get('periodo') or ''}"
 
 
-def confirmar(http: Http, eventos: list, estado: dict, salud: dict, log: list) -> dict:
+def confirmar(http: Http, eventos: list, estado: dict, salud: dict, log: list, sondear: bool = False) -> dict:
     cambios = {"confirmados": [], "demorados": [], "sin_verificar": [], "sin_metodo": 0}
     fallidos, exitosos = set(), set()
     desde = HOY - dt.timedelta(days=VENTANA_DIAS)
@@ -606,6 +629,16 @@ def confirmar(http: Http, eventos: list, estado: dict, salud: dict, log: list) -
         elif (HOY - f).days > TOLERANCIA_DIAS and e["estado"] != "demorado":
             e["estado"] = "demorado"
             cambios["demorados"].append(ev)
+    if sondear:
+        for m, fn in SONDEOS.items():
+            if m in exitosos or m in fallidos:
+                continue
+            try:
+                fn(http)
+                exitosos.add(m)
+            except Exception as ex:
+                fallidos.add(m)
+                log.append(f"[sondeo] {m}: {str(ex)[:160]}")
     # Salud por corrida: un método suma a lo sumo 1 fallo por corrida y vuelve a 0 si funcionó alguna vez.
     for m in fallidos - exitosos:
         salud[m] = salud.get(m, 0) + 1
@@ -714,7 +747,7 @@ def main(argv=None) -> int:
     log: list = []
     http = Http()
 
-    cambios = confirmar(http, eventos, estado["eventos"], estado["salud"], log)
+    cambios = confirmar(http, eventos, estado["eventos"], estado["salud"], log, sondear=True)
     avisos = vigilar_calendarios(http, estado["calendarios"], log)
     rep = reporte(cambios, avisos, estado["salud"], eventos, estado["eventos"])
     estado["ultima_corrida"] = dt.datetime.now(TZ).isoformat(timespec="seconds")
@@ -820,6 +853,16 @@ def selftest() -> int:
     sal = {}
     confirmar(HttpMuerto(), [{"fecha": "2026-09-2%d" % i, "indicador": "indec.emae", "titulo": "E", "periodo": str(i)} for i in range(1, 6)], {}, sal, [])
     check("salud_por_corrida", sal.get("prensa") == 1)
+    # 12. Sondeo: un fallo viejo se limpia aunque no haya nada que confirmar; si la fuente cae, suma
+    pubs = json.dumps({"data": {"publicaciones": [{"titulo": "x", "fecha": "1 ene 2026"}] * 150}})
+    filas = "".join(f"<td>0{i % 9 + 1}/01/2026</td>" for i in range(150))
+    http4 = Http(fake={BCRA_API: (200, pubs), INDEC_INFORMES: (200, filas)})
+    sal4 = {"bcra_listado": 7, "indec_informes": 2}
+    confirmar(http4, [], {}, sal4, [], sondear=True)
+    check("sondeo_limpia", sal4 == {"bcra_listado": 0, "indec_informes": 0})
+    sal5 = {"bcra_listado": 7}
+    confirmar(HttpMuerto(), [], {}, sal5, [], sondear=True)
+    check("sondeo_suma", sal5.get("bcra_listado") == 8)
     # 9. Escritura atómica
     global DATA
     viejo = DATA
