@@ -547,7 +547,19 @@ a.ms.ok:active{transform:scale(.94)}
  .drow .dx span{font-size:13px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
  .ms{cursor:pointer}
  /* resumen: héroe */
- .dhero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr) 300px;gap:var(--s4);align-items:stretch}
+ .dhero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--s4);align-items:stretch}
+ .dright{display:flex;flex-direction:column;gap:var(--s4);min-width:0}
+ .dright .dkey{flex:1;min-height:210px}
+ .dside{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s4)}
+ .dside:not(:has(.dalb)){grid-template-columns:1fr}
+ .destado{display:flex;flex-direction:column;overflow:hidden}
+ .destado .dsalud{border-radius:0;box-shadow:0 .5px 0 var(--sep)}
+ .destado .dnums{padding:var(--s4)}
+ .dalb{flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--s3)}
+ .dside .dalb{align-items:flex-start;padding:var(--s5)}
+ .dnext{margin-top:var(--s3);padding-top:var(--s2);box-shadow:0 -.5px 0 var(--sep)}
+ .dnext .dgd b{color:var(--ink2);font-weight:650}
+ .dalb .cv{position:absolute;top:var(--s4);right:var(--s4)}.dalb{position:relative}
  .dtoday{padding:var(--s5) var(--s3) var(--s3)}
  .dtop{display:flex;align-items:flex-end;gap:var(--s4);padding:0 var(--s3) var(--s4)}
  .dnum{font-stretch:62%;font-weight:760;font-size:88px;line-height:.76;letter-spacing:-.03em}
@@ -557,16 +569,15 @@ a.ms.ok:active{transform:scale(.94)}
  .ahora2::before{content:"";position:absolute;left:0;right:0;top:-.75px;height:1.5px;background:var(--bad)}
  .ahora2 span{position:absolute;left:0;top:-9px;font-size:10.5px;font-weight:750;color:var(--bg);background:var(--bad);border-radius:5px;padding:1px 5px;font-variant-numeric:tabular-nums}
  .ahora2.fila::before{left:16px;right:16px}.ahora2.fila span{left:16px}
- .dkey{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:230px;padding:var(--s6);background:var(--hero);color:var(--heroTxt);cursor:pointer;transition:transform .3s var(--spring)}
+ .dkey{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-start;min-height:210px;padding:var(--s6);background:var(--hero);color:var(--heroTxt);cursor:pointer;transition:transform .3s var(--spring)}
  .dkey:hover{transform:translateY(-2px)}
  .dkey::after{content:"";position:absolute;right:-30%;top:-40%;width:90%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(116,172,223,.28),transparent);z-index:-1;opacity:var(--glow)}
- .kl{margin-bottom:auto;padding-bottom:var(--s5);display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--heroSub)}
+ .kl{margin-bottom:auto;padding-bottom:var(--s4);display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--heroSub)}
  .kl svg{width:18px;height:18px}
- .kc{font-stretch:66%;font-weight:760;font-size:64px;line-height:.9;letter-spacing:-.02em;margin-bottom:var(--s3)}
+ .kc{font-stretch:66%;font-weight:760;font-size:clamp(40px,3.6vw,54px);line-height:.95;letter-spacing:-.02em;margin-bottom:var(--s3)}
  .kn{font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.25}
  .kn i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:9px;vertical-align:2px}
  .ko{font-size:14px;color:var(--heroSub);margin:2px 0 0 18px}.kw{font-size:13px;color:var(--heroSub);margin-top:var(--s3)}
- .dside{display:flex;flex-direction:column;gap:var(--s3)}
  .dsalud,.dalb{display:flex;align-items:center;gap:var(--s3);padding:var(--s4);border:0;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
  .dsalud .ico,.dalb .ico{flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
  .dsalud .ico svg,.dalb .ico svg{width:20px;height:20px}
@@ -575,7 +586,7 @@ a.ms.ok:active{transform:scale(.94)}
  .dsalud b,.dalb b{display:block;font-size:15px;font-weight:650}.dsalud span,.dalb span{font-size:13px;color:var(--ink3)}
  .dalb>div{flex:1}.dalb .cv{color:var(--ink3);display:grid}.dalb .cv svg{width:16px;height:16px}
  .dsalud:hover,.dalb:hover{background:color-mix(in srgb,var(--ink) 4%,var(--card))}
- .dnums{display:grid;grid-template-columns:repeat(3,1fr);padding:var(--s4) var(--s4) var(--s3);flex:1;align-content:center}
+ .dnums{display:grid;grid-template-columns:repeat(3,1fr);padding:var(--s4) var(--s4) var(--s3);align-content:center}
  .dnums div{display:flex;flex-direction:column}.dnums b{font-stretch:70%;font-size:34px;font-weight:760;line-height:1;font-variant-numeric:tabular-nums}
  .dnums span{font-size:12.5px;color:var(--ink3);margin-top:4px}.dnums .r b{color:var(--bad)}.dnums .a b{color:var(--warn)}
  .dnums b.cero{color:var(--ink3)}
@@ -660,6 +671,7 @@ a.ms.ok:active{transform:scale(.94)}
  .dgd b{font-weight:700}.dgd span{min-width:22px;height:22px;padding:0 7px;border-radius:11px;background:var(--fill);font-size:12px;font-weight:700;color:var(--ink2);display:inline-grid;place-items:center}
  .dgd+.drow::before{display:none}
  .dgrid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5)}
+ .dgrid2 .dcl{height:560px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
  .dwrap>.empty{padding:72px 24px}
  /* panel lateral (detalle, filtros, ajustes, alertas) */
  .cortina{background:rgba(0,0,0,.3);transition:opacity .3s}
@@ -679,19 +691,19 @@ a.ms.ok:active{transform:scale(.94)}
  .panel .aj .it.tap{cursor:pointer}.panel .aj .it.tap:hover{background:var(--fill)}
  .dajs{margin:var(--s4) 0 var(--s2);font-size:12px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
  .datj dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0;padding:var(--s3) 0;font-size:13.5px;color:var(--ink2);align-items:center}.datj dt{white-space:nowrap}.datj dd{margin:0}
- .fsec .chip{cursor:pointer}
+ .fsec .chip,.seg button,.sw,.panel button,.panel a,.panel [role=button],.dnav button,.dlnk,.ms,[data-i]{cursor:pointer}
  .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,16px);background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;opacity:0;transition:opacity .2s,transform .45s var(--spring);z-index:60;pointer-events:none}
  .toast.on{opacity:1;transform:translate(-50%,0)}
 }
 @media (min-width:761px) and (max-width:1279px){
- .dhero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.dside{grid-column:1/-1;flex-direction:row}.dside>*{flex:1}
+ .dhero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
  .dmes{grid-template-columns:minmax(0,1fr) 300px}.dmd{height:108px}
 }
 @media (min-width:761px) and (max-width:1023px){
  .dh{grid-template-columns:auto 1fr;height:auto;padding:10px var(--s5);row-gap:8px}.dnav{grid-column:1/-1;grid-row:2;justify-self:center}
  .dact{grid-column:2;grid-row:1}.dsearch{width:170px}.dsearch:focus-within{width:210px}.dbtn{padding:0 11px}
  #dv{padding:var(--s5) var(--s5) 64px}
- .dhero{grid-template-columns:1fr}.dside{flex-direction:column}
+ .dhero{grid-template-columns:1fr}
  .dgrid2{grid-template-columns:1fr}
  .wk{grid-template-columns:repeat(5,minmax(150px,1fr));overflow-x:auto;padding-bottom:6px}
  .dmes{grid-template-columns:1fr}.dpane{position:static;max-height:none;margin-top:0}.dmd .dml{display:none}.dmd{height:72px}.dmd .dcnt{display:grid;position:absolute;right:10px;bottom:10px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;place-items:center;background:var(--fill);font-size:12px;font-weight:700;color:var(--ink2)}.dmd.sel .dcnt{background:rgba(255,255,255,.22);color:#fff}
@@ -1222,19 +1234,20 @@ function dResumen(){
   const ult=ESTADO.ultima_corrida?new Date(ESTADO.ultima_corrida):null,fa=fallas(),al=nAlertas();
   let h=`<section class="dhero">
    <div class="dc dtoday"><div class="dtop"><div class="dnum">${HOY.getDate()}</div><div class="ddia"><b>${DIAS[HOY.getDay()]}</b><span>${MESES[HOY.getMonth()]} ${HOY.getFullYear()}</span></div><div class="dsum">${es.length?`<b>${es.length}</b> ${es.length>1?"publicaciones":"publicación"} hoy${sal?` · <b>${sal}</b> ${sal>1?"salieron":"salió"}`:""}`:""}</div></div>
-    <div class="dlist">${lista||`<p class="dvac">${FER[f]?"Feriado: "+esc(FER[f]):HOY.getDay()%6===0?"Fin de semana, no hay publicaciones":"No hay publicaciones hoy"}</p>`}</div></div>
-   ${p?(()=>{const d=parse(p.f);return`<div class="dc dkey" data-i="${p.i}" role="button" tabindex="0"><div class="kl">Próximo dato clave <span>${I.chev}</span></div><div class="kc">${cuenta(p)}</div><div class="kn"><i style="--c:${GR[p.g].c}"></i>${esc(corto(p))}</div><div class="ko">${esc(orgC(p))}</div><div class="kw">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?" · "+p.h:""}</div></div>`})():""}
-   <div class="dside"><div class="dc dsalud ${fa.length||c.demorado?"mal":""}" role="button" tabindex="0" data-aj="1"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"demoradas":"demorada"}`:"Todo al día"}</b><span>${ult?"Revisado "+hace(ult):"Sin datos de revisión"}</span></div></div>
-    <div class="dc dnums"><p>Últimos 30 días</p><div><b>${c.confirmado}</b><span>confirmadas</span></div><div class="${c.demorado?"r":""}"><b class="${c.demorado?"":"cero"}">${c.demorado}</b><span>demoradas</span></div><div class="${c.sin_verificar?"a":""}"><b class="${c.sin_verificar?"":"cero"}">${c.sin_verificar}</b><span>sin verificar</span></div></div>
-    ${al.n?`<button class="dc dalb ${al.grave?"grave":""}" data-alert="1"><span class="ico">${I.bell}</span><div><b>${al.n} ${al.n>1?"alertas":"alerta"}</b><span>Cambios de fecha y avisos</span></div><span class="cv">${I.chev}</span></button>`:""}</div>
+    <div class="dlist">${lista||`<p class="dvac">${FER[f]?"Feriado: "+esc(FER[f]):HOY.getDay()%6===0?"Fin de semana, no hay publicaciones":"No hay publicaciones hoy"}</p>`}</div>
+    ${(()=>{const nd=habiles(addD(HOY,1),1)[0],ne=porDia(iso(nd));if(!ne.length)return"";const man=iso(nd)===iso(addD(HOY,1));
+      return`<div class="dnext"><div class="dgd"><b>${man?"Mañana":"Próximo día hábil"} · ${DIAS[nd.getDay()].slice(0,3)} ${nd.getDate()} ${m3(nd)}</b><span>${ne.length}</span></div>${[...ne].sort((x,y)=>(x.h||"99").localeCompare(y.h||"99")).slice(0,5).map(e=>dRow(e)).join("")}</div>`})()}</div>
+   <div class="dright">${p?(()=>{const d=parse(p.f);return`<div class="dc dkey" data-i="${p.i}" role="button" tabindex="0"><div class="kl">Próximo dato clave <span>${I.chev}</span></div><div class="kc">${cuenta(p)}</div><div class="kn"><i style="--c:${GR[p.g].c}"></i>${esc(corto(p))}</div><div class="ko">${esc(orgC(p))}</div><div class="kw">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?" · "+p.h:""}</div></div>`})():""}<div class="dside"><div class="dc destado"><div class="dsalud ${fa.length||c.demorado?"mal":""}" role="button" tabindex="0" data-aj="1"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"demoradas":"demorada"}`:"Todo al día"}</b><span>${ult?"Revisado "+hace(ult):"Sin datos de revisión"}</span></div></div>
+    <div class="dnums"><p>Últimos 30 días</p><div><b>${c.confirmado}</b><span>confirmadas</span></div><div class="${c.demorado?"r":""}"><b class="${c.demorado?"":"cero"}">${c.demorado}</b><span>demoradas</span></div><div class="${c.sin_verificar?"a":""}"><b class="${c.sin_verificar?"":"cero"}">${c.sin_verificar}</b><span>sin verificar</span></div></div></div>
+    ${al.n?`<button class="dc dalb ${al.grave?"grave":""}" data-alert="1"><span class="ico">${I.bell}</span><div><b>${al.n} ${al.n>1?"alertas":"alerta"}</b><span>Cambios de fecha y avisos</span></div><span class="cv">${I.chev}</span></button>`:""}</div></div>
   </section>`;
   const L=lunes(HOY);
   h+=`<section class="dsec"><div class="dsh"><h2>Esta semana</h2><span>${L.getDate()} – ${addD(L,4).getDate()} ${m3(addD(L,4))}</span><button class="dlnk" data-go="semana">Ver semana ${I.chev}</button></div>${dSemana(L,true)}</section>`;
   const prox=habiles(addD(L,7),10);let q="";
-  let filas=0;prox.forEach(d=>{const f2=iso(d),e2=porDia(f2);if(!e2.length||filas>=12)return;filas+=e2.length;q+=`<div class="dgd"><b>${DIAS[d.getDay()].slice(0,3)} ${d.getDate()} ${m3(d)}</b><span>${e2.length}</span></div>`+e2.map(e=>dRow(e)).join("")});
-  const rec=E.filter(e=>e.f<f&&e.f>=iso(addD(HOY,-7))&&pasa(e)&&(estadoDe(e)||{}).estado==="confirmado").sort((a,b)=>b.f.localeCompare(a.f)||orden(a,b)).slice(0,8);
+  prox.forEach(d=>{const f2=iso(d),e2=porDia(f2);if(!e2.length)return;q+=`<div class="dgd"><b>${DIAS[d.getDay()].slice(0,3)} ${d.getDate()} ${m3(d)}</b><span>${e2.length}</span></div>`+e2.map(e=>dRow(e)).join("")});
+  const rec=E.filter(e=>e.f<f&&e.f>=iso(addD(HOY,-21))&&pasa(e)&&(estadoDe(e)||{}).estado==="confirmado").sort((a,b)=>b.f.localeCompare(a.f)||orden(a,b)).slice(0,30);
   h+=`<section class="dgrid2"><div class="dsec"><div class="dsh"><h2>Próximas dos semanas</h2><button class="dlnk" data-go="lista">Ver lista ${I.chev}</button></div><div class="dc dcl">${q||`<p class="dvac">Sin publicaciones con estos filtros</p>`}</div></div>
-   <div class="dsec"><div class="dsh"><h2>Últimos publicados</h2></div><div class="dc dcl">${rec.map(e=>dRow(e,true)).join("")||`<p class="dvac">Nada confirmado en la última semana</p>`}</div></div></section>`;
+   <div class="dsec"><div class="dsh"><h2>Últimos publicados</h2></div><div class="dc dcl">${rec.map(e=>dRow(e,true)).join("")||`<p class="dvac">Nada confirmado en las últimas tres semanas</p>`}</div></div></section>`;
   return h}
 function dVSemana(){const L=ds.sem,V=addD(L,4);
   return dCab(`${L.getDate()}${L.getMonth()!==V.getMonth()?" "+m3(L):""} – ${V.getDate()} ${m3(V)}`,`${V.getFullYear()} · semana ${Math.ceil(((L-new Date(L.getFullYear(),0,1))/864e5+new Date(L.getFullYear(),0,1).getDay()+1)/7)}`,true)+dSemana(L,false)}
