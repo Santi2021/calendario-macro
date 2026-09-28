@@ -548,7 +548,12 @@ a.ms.ok:active{transform:scale(.94)}
  .ms{cursor:pointer}
  /* resumen: héroe */
  .dhero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--s4);align-items:stretch}
- .dright{display:flex;flex-direction:column;gap:var(--s4);min-width:0}
+ .dhero{height:452px}
+ .dtoday{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+ .dscroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;-webkit-mask-image:linear-gradient(#000 calc(100% - 24px),transparent);mask-image:linear-gradient(#000 calc(100% - 24px),transparent);padding-bottom:16px}
+ .dright{display:flex;flex-direction:column;gap:var(--s4);min-width:0;min-height:0}
+ .dright .dkey{justify-content:space-between}
+ .dright .dkey .kl{margin-bottom:0}
  .dright .dkey{flex:1;min-height:210px}
  .dside{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s4)}
  .dside:not(:has(.dalb)){grid-template-columns:1fr}
@@ -556,7 +561,7 @@ a.ms.ok:active{transform:scale(.94)}
  .destado .dsalud{border-radius:0;box-shadow:0 .5px 0 var(--sep)}
  .destado .dnums{padding:var(--s4)}
  .dalb{flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--s3)}
- .dside .dalb{align-items:flex-start;padding:var(--s5)}
+ .dside .dalb{align-items:flex-start;justify-content:center;padding:var(--s5)}
  .dnext{margin-top:var(--s3);padding-top:var(--s2);box-shadow:0 -.5px 0 var(--sep)}
  .dnext .dgd b{color:var(--ink2);font-weight:650}
  .dalb .cv{position:absolute;top:var(--s4);right:var(--s4)}.dalb{position:relative}
@@ -703,7 +708,7 @@ a.ms.ok:active{transform:scale(.94)}
  .dh{grid-template-columns:auto 1fr;height:auto;padding:10px var(--s5);row-gap:8px}.dnav{grid-column:1/-1;grid-row:2;justify-self:center}
  .dact{grid-column:2;grid-row:1}.dsearch{width:170px}.dsearch:focus-within{width:210px}.dbtn{padding:0 11px}
  #dv{padding:var(--s5) var(--s5) 64px}
- .dhero{grid-template-columns:1fr}
+ .dhero{grid-template-columns:1fr;height:auto}.dtoday{max-height:520px}
  .dgrid2{grid-template-columns:1fr}
  .wk{grid-template-columns:repeat(5,minmax(150px,1fr));overflow-x:auto;padding-bottom:6px}
  .dmes{grid-template-columns:1fr}.dpane{position:static;max-height:none;margin-top:0}.dmd .dml{display:none}.dmd{height:72px}.dmd .dcnt{display:grid;position:absolute;right:10px;bottom:10px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;place-items:center;background:var(--fill);font-size:12px;font-weight:700;color:var(--ink2)}.dmd.sel .dcnt{background:rgba(255,255,255,.22);color:#fff}
@@ -1234,9 +1239,9 @@ function dResumen(){
   const ult=ESTADO.ultima_corrida?new Date(ESTADO.ultima_corrida):null,fa=fallas(),al=nAlertas();
   let h=`<section class="dhero">
    <div class="dc dtoday"><div class="dtop"><div class="dnum">${HOY.getDate()}</div><div class="ddia"><b>${DIAS[HOY.getDay()]}</b><span>${MESES[HOY.getMonth()]} ${HOY.getFullYear()}</span></div><div class="dsum">${es.length?`<b>${es.length}</b> ${es.length>1?"publicaciones":"publicación"} hoy${sal?` · <b>${sal}</b> ${sal>1?"salieron":"salió"}`:""}`:""}</div></div>
-    <div class="dlist">${lista||`<p class="dvac">${FER[f]?"Feriado: "+esc(FER[f]):HOY.getDay()%6===0?"Fin de semana, no hay publicaciones":"No hay publicaciones hoy"}</p>`}</div>
+    <div class="dscroll"><div class="dlist">${lista||`<p class="dvac">${FER[f]?"Feriado: "+esc(FER[f]):HOY.getDay()%6===0?"Fin de semana, no hay publicaciones":"No hay publicaciones hoy"}</p>`}</div>
     ${(()=>{const nd=habiles(addD(HOY,1),1)[0],ne=porDia(iso(nd));if(!ne.length)return"";const man=iso(nd)===iso(addD(HOY,1));
-      return`<div class="dnext"><div class="dgd"><b>${man?"Mañana":"Próximo día hábil"} · ${DIAS[nd.getDay()].slice(0,3)} ${nd.getDate()} ${m3(nd)}</b><span>${ne.length}</span></div>${[...ne].sort((x,y)=>(x.h||"99").localeCompare(y.h||"99")).slice(0,5).map(e=>dRow(e)).join("")}</div>`})()}</div>
+      return`<div class="dnext"><div class="dgd"><b>${man?"Mañana":"Próximo día hábil"} · ${DIAS[nd.getDay()].slice(0,3)} ${nd.getDate()} ${m3(nd)}</b><span>${ne.length}</span></div>${[...ne].sort((x,y)=>(x.h||"99").localeCompare(y.h||"99")).slice(0,5).map(e=>dRow(e)).join("")}</div>`})()}</div></div>
    <div class="dright">${p?(()=>{const d=parse(p.f);return`<div class="dc dkey" data-i="${p.i}" role="button" tabindex="0"><div class="kl">Próximo dato clave <span>${I.chev}</span></div><div class="kc">${cuenta(p)}</div><div class="kn"><i style="--c:${GR[p.g].c}"></i>${esc(corto(p))}</div><div class="ko">${esc(orgC(p))}</div><div class="kw">${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}${p.h?" · "+p.h:""}</div></div>`})():""}<div class="dside"><div class="dc destado"><div class="dsalud ${fa.length||c.demorado?"mal":""}" role="button" tabindex="0" data-aj="1"><span class="ico">${fa.length||c.demorado?I.warn:I.ok}</span><div><b>${fa.length===1?`${esc(fa[0])} no responde`:fa.length?`${fa.length} fuentes no responden`:c.demorado?`${c.demorado} ${c.demorado>1?"demoradas":"demorada"}`:"Todo al día"}</b><span>${ult?"Revisado "+hace(ult):"Sin datos de revisión"}</span></div></div>
     <div class="dnums"><p>Últimos 30 días</p><div><b>${c.confirmado}</b><span>confirmadas</span></div><div class="${c.demorado?"r":""}"><b class="${c.demorado?"":"cero"}">${c.demorado}</b><span>demoradas</span></div><div class="${c.sin_verificar?"a":""}"><b class="${c.sin_verificar?"":"cero"}">${c.sin_verificar}</b><span>sin verificar</span></div></div></div>
     ${al.n?`<button class="dc dalb ${al.grave?"grave":""}" data-alert="1"><span class="ico">${I.bell}</span><div><b>${al.n} ${al.n>1?"alertas":"alerta"}</b><span>Cambios de fecha y avisos</span></div><span class="cv">${I.chev}</span></button>`:""}</div></div>
