@@ -176,19 +176,41 @@
    "metodo": "gob_noticias",
    "confirmado_el": "2026-09-27",
    "desvio_dias": 0
+  },
+  "bcra.estado_resumido|2026-09-28|2026-09-23": {
+   "estado": "sin_metodo"
+  },
+  "indec.energia_ind|2026-09-28|2026-Q2": {
+   "estado": "programado",
+   "no_estaba": "2026-09-28T10:42-03:00"
+  },
+  "indec.epi|2026-09-28|": {
+   "estado": "sin_metodo"
+  },
+  "priv.licitaciones_tesoro|2026-09-28|": {
+   "estado": "programado",
+   "no_estaba": "2026-09-28T10:42-03:00"
+  },
+  "priv.utdt_icg|2026-09-28|2026-09": {
+   "estado": "programado",
+   "no_estaba": "2026-09-28T10:42-03:00"
   }
  },
  "salud": {
   "bcra_publicacion": 0,
   "prensa": 0,
-  "bcra_listado": 7,
+  "bcra_listado": 0,
   "xlsx_modificado": 0,
   "indec_informes": 0,
-  "gob_noticias": 0
+  "gob_noticias": 0,
+  "pagina_periodo": 0
  },
  "calendarios": {
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-27T22:58:52-03:00"
+ "ultima_corrida": "2026-09-28T10:42:43-03:00",
+ "corridas": [
+  "2026-09-28T10:42-03:00"
+ ]
 }

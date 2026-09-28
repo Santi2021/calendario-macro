@@ -1,5 +1,11 @@
 {
  "alertados": [
   "metodo:bcra_listado"
- ]
+ ],
+ "manana": "2026-09-28",
+ "ultimo_resultado": {
+  "cuando": "2026-09-28T10:42-03:00",
+  "tipo": "manana",
+  "resultado": "ok"
+ }
 }

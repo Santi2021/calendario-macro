@@ -1,4 +1,8 @@
-# Reporte del 2026-09-27
+# Reporte del 2026-09-28
 
-## Métodos caídos (3 corridas o más fallando)
-- bcra_listado
+## Hoy se publica
+- Estado resumido de activos y pasivos del BCRA
+- 16:00 Indicadores del sector energético. Segundo trimestre de 2026
+- 16:00 Estadísticas de productos industriales (EPI)
+- Licitación del Tesoro (resultado)
+- Índice de Confianza en el Gobierno (UTDT)
