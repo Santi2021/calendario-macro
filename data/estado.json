@@ -181,15 +181,29 @@
    "estado": "sin_metodo"
   },
   "indec.energia_ind|2026-09-28|2026-Q2": {
-   "estado": "programado",
-   "no_estaba": "2026-09-28T12:02-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-28",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/indicadores_energeticos_09_261E0B5DCCF4.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-28",
+   "desvio_dias": 0,
+   "visto": "2026-09-28T17:04-03:00",
+   "hora_detectada": "17:04",
+   "hora_desde": "12:02"
   },
   "indec.epi|2026-09-28|": {
    "estado": "sin_metodo"
   },
   "priv.licitaciones_tesoro|2026-09-28|": {
-   "estado": "programado",
-   "no_estaba": "2026-09-28T12:02-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-28",
+   "evidencia": "https://www.argentina.gob.ar/noticias/resultado-de-la-licitacion-por-efectivo-de-instrumentos-del-tesoro-nacional-denominados-13",
+   "metodo": "gob_noticias",
+   "confirmado_el": "2026-09-28",
+   "desvio_dias": 0,
+   "visto": "2026-09-28T17:04-03:00",
+   "hora_detectada": "17:04",
+   "hora_desde": "12:02"
   },
   "priv.utdt_icg|2026-09-28|2026-09": {
    "estado": "confirmado",
@@ -216,9 +230,10 @@
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-28T12:02:46-03:00",
+ "ultima_corrida": "2026-09-28T17:04:47-03:00",
  "corridas": [
   "2026-09-28T10:42-03:00",
-  "2026-09-28T12:02-03:00"
+  "2026-09-28T12:02-03:00",
+  "2026-09-28T17:04-03:00"
  ]
 }

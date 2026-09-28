@@ -1,7 +1,8 @@
 # Reporte del 2026-09-28
 
 ## Confirmados
-- 2026-09-28 Índice de Confianza en el Gobierno (UTDT): pagina_periodo
+- 2026-09-28 Indicadores del sector energético. Segundo trimestre de 2026: indec_informes
+- 2026-09-28 Licitación del Tesoro (resultado): gob_noticias
 
 ## Hoy se publica
 - Estado resumido de activos y pasivos del BCRA
