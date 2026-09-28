@@ -2,21 +2,20 @@ name: Confirmar publicaciones
 
 on:
   schedule:
-    # Varias corridas por día: GitHub puede demorar o saltear un horario programado,
-    # y el confirmador es idempotente (correrlo de más no cambia nada).
-    # Horarios en UTC; entre paréntesis, hora argentina.
-    - cron: "17 12 * * *"   # (09:17) lo del día anterior
-    - cron: "47 13 * * *"   # (10:47) respaldo de la mañana
-    - cron: "17 17 * * *"   # (14:17) mediodía
-    - cron: "47 19 * * *"   # (16:47) después de INDEC (16:00)
-    - cron: "17 22 * * *"   # (19:17) cierre del BCRA
-    - cron: "47 23 * * *"   # (20:47) respaldo de la noche
+    # GitHub no garantiza la hora de las corridas programadas: con carga las atrasa (hubo atrasos de
+    # más de 3 horas) o las saltea. La defensa es la frecuencia: una corrida cada 30 minutos en horario
+    # hábil, así si una se atrasa o se pierde, la siguiente la cubre. El confirmador y los avisos son
+    # idempotentes (correrlos de más no cambia nada ni duplica avisos). Minutos impares para esquivar
+    # la congestión de la hora en punto. Horarios en UTC (Argentina = UTC-3).
+    - cron: "7,37 12-23 * * 1-5"   # lunes a viernes, 09:07 a 20:37 cada media hora
+    - cron: "7 0 * * 2-6"          # 21:07, cierre del día hábil
+    - cron: "17 13,21 * * 0,6"     # fines de semana: 10:17 y 18:17
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Probar sin escribir"
+        description: "Probar sin escribir (dejalo destildado para una corrida real)"
         type: boolean
-        default: true
+        default: false
       aviso_prueba:
         description: "Mandar un aviso de prueba al celular"
         type: boolean
@@ -76,16 +75,28 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         run: python ics.py || echo "No se pudo generar el .ics (no frena la corrida)"
 
-      - name: Datos del mercado de cambios (BCRA)
+      # Las extracciones de datos no necesitan correr cada media hora: una marca con la hora de la
+      # última ejecución (data/.marcas) las limita a cada 3 horas y a una vez por día, respectivamente.
+      - name: ¿Toca extraer datos?
+        id: marcas
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: |
+          mkdir -p data/.marcas
+          ahora=$(date -u +%s); hoy=$(date -u +%F)
+          ult=$(cat data/.marcas/extracciones 2>/dev/null || echo 0)
+          if [ $((ahora - ult)) -ge 10800 ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "extraer=1" >> "$GITHUB_OUTPUT"; echo "$ahora" > data/.marcas/extracciones; fi
+          if [ "$(cat data/.marcas/bcra_api 2>/dev/null)" != "$hoy" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "api=1" >> "$GITHUB_OUTPUT"; echo "$hoy" > data/.marcas/bcra_api; fi
+
+      - name: Datos del mercado de cambios (BCRA)
+        if: ${{ steps.marcas.outputs.extraer == '1' }}
         run: python extraer_cambiario.py
 
       - name: Anexo sectorial CLANAE (BCRA)
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        if: ${{ steps.marcas.outputs.extraer == '1' }}
         run: python extraer_clanae.py
 
       - name: Series monetarias en dólares (API BCRA, una vez por día)
-        if: ${{ github.event.schedule == '17 12 * * *' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run) }}
+        if: ${{ steps.marcas.outputs.api == '1' }}
         run: python extraer_bcra_api.py
 
       - name: Guardar estado
@@ -98,6 +109,7 @@ jobs:
           git add data/estado.json data/reporte.md data/avisos.json data/macrocalendar.ics
           git add data/cambiario 2>/dev/null || true
           git add data/bcra_api 2>/dev/null || true
+          git add data/.marcas 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Sin cambios"
           else
