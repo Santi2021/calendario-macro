@@ -217,8 +217,15 @@
    "hora_desde": "10:42"
   },
   "indec.bdp|2026-09-29|2026-Q2": {
-   "estado": "programado",
-   "no_estaba": "2026-09-29T14:58-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-29",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/bal_09_26BA83A84318.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-09-29",
+   "desvio_dias": 0,
+   "visto": "2026-09-29T19:07-03:00",
+   "hora_detectada": "19:07",
+   "hora_desde": "14:58"
   },
   "indec.indec_informa|2026-09-29|": {
    "estado": "sin_metodo"
@@ -237,13 +244,14 @@
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-29T14:59:08-03:00",
+ "ultima_corrida": "2026-09-29T19:07:41-03:00",
  "corridas": [
   "2026-09-28T10:42-03:00",
   "2026-09-28T12:02-03:00",
   "2026-09-28T17:04-03:00",
   "2026-09-28T21:20-03:00",
   "2026-09-29T02:37-03:00",
-  "2026-09-29T14:59-03:00"
+  "2026-09-29T14:59-03:00",
+  "2026-09-29T19:07-03:00"
  ]
 }
