@@ -1,8 +1,5 @@
-# Reporte del 2026-09-28
+# Reporte del 2026-09-29
 
 ## Hoy se publica
-- Estado resumido de activos y pasivos del BCRA
-- 16:00 Indicadores del sector energético. Segundo trimestre de 2026
-- 16:00 Estadísticas de productos industriales (EPI)
-- Licitación del Tesoro (resultado)
-- Índice de Confianza en el Gobierno (UTDT)
+- 16:00 Balanza de pagos, posición de inversión internacional y deuda externa. Segundo trimestre de 2026
+- 16:00 INDEC Informa
