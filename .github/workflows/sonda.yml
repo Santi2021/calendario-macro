@@ -1,0 +1,39 @@
+name: Sonda
+on:
+  push:
+    branches: [sonda]
+jobs:
+  s:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: python
+        run: |
+          import re, json, urllib.request
+          def get(u):
+              r=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
+              with urllib.request.urlopen(r,timeout=60) as x: return x.read().decode("utf-8","replace")
+          h=get("https://www.indec.gob.ar/Institucional/Indec/InformesTecnicos")
+          filas=[];u=None
+          for m in re.finditer(r"\b(\d{2})/(\d{2})/(20\d{2})\b|informesdeprensa/([A-Za-z0-9_\-]+)\.pdf",h):
+              if m.group(1): u=m.group(0)
+              elif u: filas.append((u,m.group(4)))
+          print("filas",len(filas))
+          for f,a in filas:
+              if f[3:] in ("09/2026","06/2026","03/2026","12/2025") and f[:2] in ("23","24","25","26","27","28","29","30"): print("FILA",f,a)
+          for f,a in filas:
+              if re.match(r"(epi|prod|productos)",a,re.I): print("EPI",f,a)
+          i=h.lower().find("productos industriales")
+          print("CTX",h[max(0,i-1500):i+500] if i>=0 else "no")
+          j=json.loads(get("https://www.bcra.gob.ar/wp-json/bcra/v1/publicaciones?category=informes,estadisticas&lang=es&action=total"))["data"]["publicaciones"]
+          tit={}
+          for p in j: tit.setdefault(p.get("titulo"),[]).append(p.get("fecha"))
+          for t,fs in tit.items():
+              if t and re.search(r"resumid|activos|pasivos|balance|estado",t,re.I): print("BCRA",t,fs[:6],len(fs))
+          print("TITULOS",sorted(t for t in tit if t)[:400])
+          print("EJ",j[0])
+          for u in ["https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/","https://www.bcra.gob.ar/estado-resumido-de-activos-y-pasivos/"]:
+              try:
+                  g=get(u); print("PAG",u,len(g)); 
+                  for m in re.finditer(r"href=\"([^\"]+(?:pdf|xls|xlsx))\"",g): print("  L",m.group(1))
+                  k=g.lower().find("resumid"); print("  CTX",re.sub(r"\s+"," ",re.sub("<[^>]+>"," ",g[max(0,k-800):k+1500])) if k>=0 else "no")
+              except Exception as e: print("PAG",u,e)
