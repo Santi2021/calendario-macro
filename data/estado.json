@@ -243,6 +243,30 @@
    "visto": "2026-09-30T19:06-03:00",
    "hora_detectada": "19:06",
    "hora_desde": "14:53"
+  },
+  "indec.eph_distribucion|2026-10-01|2026-Q2": {
+   "estado": "programado",
+   "no_estaba": "2026-10-01T02:42-03:00"
+  },
+  "priv.acara|2026-10-01|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-09-30",
+   "evidencia": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNM0RhSGlmcWJRMWE2cGlTWmN0dnR6ZEE3OVRFcmwxQVdqZHpid3NnZjF6NFRxcm9zZHl6WlVyY3R6SFJldm4yWFVWTVpQNlpGVEJMU1NBbFk4RVJzWTBhbnNyWnIwQU5uQTBOdmk3SUFTR0FIOWhjalVYdWtiQTZFOHBONzV5WDVzXzI5WTVqM1o1a0ZNTjhTUThiVG82RVBoUHpFRlVJUmtXUdIBrwFBVV95cUxNZGNFT2ZuQVhPUHVXaGFQZlFudUVCbXBMMTNYeU5La2NMMlVCeV9UaWlYaW9vdmZlOWFleGw0Qlk5SDVwX3NMaUY4V2pVNXhGRnNmajBQZnE3aEdsWF9JQWxqLWNLMjM2anV6S0lIb2RwM0t3UndrVmp3bmdMX0hydUNTZm9oaUpYWW9BSlg5YjNqc0lKNC1VSzA0THE4OGNoVHZyd1huNkxBME5VSEtZ?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-10-01",
+   "desvio_dias": -1,
+   "visto": "2026-10-01T02:42-03:00"
+  },
+  "priv.bcba_pas|2026-10-01|": {
+   "estado": "sin_metodo"
+  },
+  "priv.ciara_cec|2026-10-01|": {
+   "estado": "programado",
+   "no_estaba": "2026-10-01T02:42-03:00"
+  },
+  "priv.recaudacion_arca|2026-10-01|": {
+   "estado": "programado",
+   "no_estaba": "2026-10-01T02:42-03:00"
   }
  },
  "salud": {
@@ -252,13 +276,15 @@
   "xlsx_modificado": 0,
   "indec_informes": 0,
   "gob_noticias": 0,
-  "pagina_periodo": 0
+  "pagina_periodo": 0,
+  "pagina_lista": 0,
+  "archivo_lm": 0
  },
  "calendarios": {
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-09-30T22:14:36-03:00",
+ "ultima_corrida": "2026-10-01T02:42:56-03:00",
  "corridas": [
   "2026-09-28T10:42-03:00",
   "2026-09-28T12:02-03:00",
@@ -271,6 +297,7 @@
   "2026-09-30T02:25-03:00",
   "2026-09-30T14:54-03:00",
   "2026-09-30T19:06-03:00",
-  "2026-09-30T22:14-03:00"
+  "2026-09-30T22:14-03:00",
+  "2026-10-01T02:42-03:00"
  ]
 }

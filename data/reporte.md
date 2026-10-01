@@ -1,5 +1,11 @@
-# Reporte del 2026-09-30
+# Reporte del 2026-10-01
+
+## Confirmados
+- 2026-10-01 Patentamientos ACARA: prensa (desvío -1 días)
 
 ## Hoy se publica
-- 16:00 Dosier estadístico de personas mayores 2026
-- 16:00 Dotación de personal de la administración pública nacional, empresas y sociedades. Agosto de 2026
+- 16:00 Evolución de la distribución del ingreso (EPH). Segundo trimestre de 2026
+- Patentamientos ACARA
+- Panorama Agrícola Semanal BCBA
+- Liquidación CIARA-CEC
+- Recaudación ARCA
