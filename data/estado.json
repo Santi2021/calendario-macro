@@ -192,7 +192,13 @@
    "hora_desde": "12:02"
   },
   "indec.epi|2026-09-28|": {
-   "estado": "sin_metodo"
+   "estado": "confirmado",
+   "fecha_real": "2026-09-28",
+   "evidencia": "https://www.indec.gob.ar/ftp/cuadros/economia/epi_09_26.pdf",
+   "metodo": "archivo_lm",
+   "confirmado_el": "2026-10-01",
+   "desvio_dias": 0,
+   "visto": "2026-10-01T11:07-03:00"
   },
   "priv.licitaciones_tesoro|2026-09-28|": {
    "estado": "confirmado",
@@ -246,7 +252,7 @@
   },
   "indec.eph_distribucion|2026-10-01|2026-Q2": {
    "estado": "programado",
-   "no_estaba": "2026-10-01T02:42-03:00"
+   "no_estaba": "2026-10-01T11:07-03:00"
   },
   "priv.acara|2026-10-01|": {
    "estado": "confirmado",
@@ -261,12 +267,19 @@
    "estado": "sin_metodo"
   },
   "priv.ciara_cec|2026-10-01|": {
-   "estado": "programado",
-   "no_estaba": "2026-10-01T02:42-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-01",
+   "evidencia": "https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20Mensual",
+   "metodo": "pagina_lista",
+   "confirmado_el": "2026-10-01",
+   "desvio_dias": 0,
+   "visto": "2026-10-01T11:07-03:00",
+   "hora_detectada": "11:07",
+   "hora_desde": "02:42"
   },
   "priv.recaudacion_arca|2026-10-01|": {
    "estado": "programado",
-   "no_estaba": "2026-10-01T02:42-03:00"
+   "no_estaba": "2026-10-01T11:07-03:00"
   }
  },
  "salud": {
@@ -284,7 +297,7 @@
   "indec_2sem": "e4a0fde0e0e93ad857f6227c3a9a432b8159549e881567e93221d383e34f943d",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-01T02:42:56-03:00",
+ "ultima_corrida": "2026-10-01T11:07:44-03:00",
  "corridas": [
   "2026-09-28T10:42-03:00",
   "2026-09-28T12:02-03:00",
@@ -298,6 +311,7 @@
   "2026-09-30T14:54-03:00",
   "2026-09-30T19:06-03:00",
   "2026-09-30T22:14-03:00",
-  "2026-10-01T02:42-03:00"
+  "2026-10-01T02:42-03:00",
+  "2026-10-01T11:07-03:00"
  ]
 }
