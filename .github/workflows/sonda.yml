@@ -21,19 +21,12 @@ jobs:
                   r=urllib.request.Request(u,method="HEAD",headers={"User-Agent":"Mozilla/5.0"})
                   with urllib.request.urlopen(r,timeout=60) as x: return x.status, x.headers.get("Last-Modified"), x.headers.get("Content-Length")
               except Exception as e: return str(e)
-          g=get("https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/")
-          k=g.find("Estado resumido")
-          print("RAW",g[k-200:k+6000])
-          for f in ["pasivos1.pdf","reservas1.pdf","temp0826.pdf","temp0926.pdf","Estado_resumido.pdf","estado_resumido.pdf","ERAP.pdf"]:
-              u="https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/"+f; print("HEAD",f,head(u))
-          for u in ["https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-18","https://www.indec.gob.ar/indec/web/Nivel3-Tema-3-6","https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-17"]:
+          import requests
+          for u in ['https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls', 'https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_10_26.xls', 'https://www.indec.gob.ar/ftp/cuadros/economia/epi_09_26.pdf', 'https://www.indec.gob.ar/ftp/cuadros/economia/epi_12_26.pdf', 'https://www.argentina.gob.ar/sites/default/files/trabajoregistrado_2606_estadisticas.xlsx', 'https://www.argentina.gob.ar/sites/default/files/trabajoregistrado_2612_estadisticas.xlsx', 'https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-082026.pdf', 'https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-122026.pdf', 'https://www.argentina.gob.ar/sites/default/files/ripte_julio_2026-mdch.pdf', 'https://www.usda.gov/oce/commodity/wasde/wasde0926.pdf', 'https://www.usda.gov/oce/commodity/wasde/wasde1226.pdf']:
               try:
-                  h=get(u); t=re.sub(r"\s+"," ",re.sub("<[^>]+>"," ",h))
-                  i=t.lower().find("productos industriales"); print("IND",u,len(h),t[max(0,i-300):i+600] if i>=0 else "no")
-                  for m in re.finditer(r"(?:href|src)=\"([^\"]+\.(?:xls|xlsx|pdf|zip))\"",h): print("  IL",m.group(1))
-              except Exception as e: print("IND",u,e)
-          for f in ["epi_09_26.pdf","epi_trim.xls","epi.xls","sh_epi.xls","epi_06_26.pdf"]:
-              print("IHEAD",f,head("https://www.indec.gob.ar/ftp/cuadros/economia/"+f))
+                  r=requests.head(u,headers={"User-Agent":"Mozilla/5.0"},timeout=30,allow_redirects=True)
+                  print("CT",r.status_code,r.headers.get("Content-Type"),r.headers.get("Last-Modified"),r.headers.get("Content-Length"),r.url!=u,u)
+              except Exception as e: print("CT",u,e)
       - run: |
           git config user.name bot; git config user.email bot@x
           git add salida.txt; git commit -qm salida; git push -q
