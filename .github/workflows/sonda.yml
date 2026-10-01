@@ -2,13 +2,17 @@ name: Sonda
 on:
   push:
     branches: [sonda]
+permissions:
+  contents: write
 jobs:
   s:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - shell: python
         run: |
-          import re, json, urllib.request
+          import re, json, urllib.request, sys
+          sys.stdout=open('salida.txt','w')
           def get(u):
               r=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
               with urllib.request.urlopen(r,timeout=60) as x: return x.read().decode("utf-8","replace")
@@ -37,3 +41,6 @@ jobs:
                   for m in re.finditer(r"href=\"([^\"]+(?:pdf|xls|xlsx))\"",g): print("  L",m.group(1))
                   k=g.lower().find("resumid"); print("  CTX",re.sub(r"\s+"," ",re.sub("<[^>]+>"," ",g[max(0,k-800):k+1500])) if k>=0 else "no")
               except Exception as e: print("PAG",u,e)
+      - run: |
+          git config user.name bot; git config user.email bot@x
+          git add salida.txt; git commit -qm salida; git push -q
