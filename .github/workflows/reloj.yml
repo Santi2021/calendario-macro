@@ -45,7 +45,7 @@ jobs:
           REPO, RUN_ID, PREVIO = os.environ["REPO"], int(os.environ["RUN_ID"]), os.environ.get("PREVIO") or ""
           API = f"https://api.github.com/repos/{REPO}/actions"
           HDR = {"Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Accept": "application/vnd.github+json",
-                 "X-GitHub-Api-Version": "2022-11-28"}
+                 "X-GitHub-Api-Version": "2022-11-28", "Content-Type": "application/json"}
           MAX_ESPERA = 5 * 3600 + 30 * 60                     # el trabajo puede durar hasta 6 h
 
           def api(metodo, ruta, cuerpo=None):
