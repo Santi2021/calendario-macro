@@ -80,6 +80,9 @@ CONF = {
     "indec.ipc":  [("archivo", {"url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_{mm_pub}_{yy_pub}.xls"}),
                    ("prensa", {"q": "INDEC inflación", "lag": 1})],
     "indec.emae": [("prensa", {"q": "EMAE INDEC", "lag": 2})],
+    # EPI no sale como informe técnico: sólo el PDF en /ftp/cuadros con el mes de publicación.
+    "indec.epi":  [("archivo_lm", {"url": "https://www.indec.gob.ar/ftp/cuadros/economia/epi_{mm_pub}_{yy_pub}.pdf",
+                                   "exigir_lm": True})],
     "indec.ica":  [("prensa", {"q": "INDEC comercial exportaciones importaciones", "lag": 1})],
     "indec.sipm": [("prensa", {"q": "INDEC mayoristas", "lag": 1})],
     "indec.ipi_manuf": [("prensa", {"q": "INDEC industria manufacturera", "lag": 2})],
@@ -169,6 +172,15 @@ CALENDARIOS = {
 # ======================================================================================
 # Utilidades
 # ======================================================================================
+DOC_EXT = re.compile(r"\.(pdf|xlsx?|xlsm|csv|zip|docx?)$", re.I)
+
+
+def es_pagina_de_error(url: str, content_type: str) -> bool:
+    """INDEC y USDA contestan 200 con una página HTML cuando el archivo pedido no existe (en vez de 404).
+    Si se pidió un documento (.pdf, .xls…) y vuelve HTML, el archivo no está."""
+    return bool(DOC_EXT.search(url.split("?")[0])) and content_type.lower().startswith("text/html")
+
+
 class Http:
     """Cliente HTTP con timeout, reintentos con espera creciente y caché por corrida."""
 
@@ -195,6 +207,8 @@ class Http:
                         r = requests.get(url, headers=UA, timeout=30, stream=True)
                         r.close()
                     out = (r.status_code, r.headers.get("Last-Modified", ""))  # HEAD: el texto es la fecha de carga
+                    if out[0] == 200 and es_pagina_de_error(url, r.headers.get("Content-Type", "")):
+                        out = (404, "")
                 else:
                     r = requests.get(url, headers=UA, timeout=30)
                     r.encoding = r.encoding or "utf-8"
@@ -389,7 +403,8 @@ def m_archivo_lm(http: Http, ev: dict, p: dict):
     si el archivo se volvió a subir después (pasa en ARCA), se toma la programada: la existencia ya prueba que salió."""
     f = d(ev["fecha"])
     y, m = mes_ref(f, p.get("lag", 1))
-    url = p["url"].format(yyyy_ref=y, yy_ref=f"{y % 100:02d}", mm_ref=f"{m:02d}", mes_ref=MESES[m - 1])
+    url = p["url"].format(yyyy_ref=y, yy_ref=f"{y % 100:02d}", mm_ref=f"{m:02d}", mes_ref=MESES[m - 1],
+                          mm_pub=f"{f.month:02d}", yy_pub=f"{f.year % 100:02d}")
     st, lm = http.get(url, head=True)
     exigir = p.get("exigir_lm", False)   # cuando el nombre se repite entre años (USDA reusa wasdeMMYY)
     if st in (404, 410):
@@ -1007,6 +1022,16 @@ def selftest() -> int:
     ha = Http(fake={"https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-032026.pdf": (200, "Thu, 14 May 2026 15:17:34 GMT")})
     f, u = m_archivo_lm(ha, {"fecha": "2026-04-01"}, {"url": "https://www.arca.gob.ar/institucional/documentos/ARCA-Recaudacion-{mm_ref}{yyyy_ref}.pdf", "lag": 1})
     check("archivo_lm_resubido", f == dt.date(2026, 4, 1))
+    # 16b. EPI: PDF con el mes de publicación; INDEC contesta 200 con HTML si no existe (se trata como 404)
+    ue = "https://www.indec.gob.ar/ftp/cuadros/economia/epi_{mm_pub}_{yy_pub}.pdf"
+    he = Http(fake={"https://www.indec.gob.ar/ftp/cuadros/economia/epi_09_26.pdf": (200, "Mon, 28 Sep 2026 17:38:35 GMT")})
+    f, u = m_archivo_lm(he, {"fecha": "2026-09-28"}, {"url": ue, "exigir_lm": True})
+    check("epi_salio", f == dt.date(2026, 9, 28) and u.endswith("epi_09_26.pdf"))
+    f, u = m_archivo_lm(he, {"fecha": "2026-12-29"}, {"url": ue, "exigir_lm": True})
+    check("epi_no_salio", f is None)
+    check("pagina_error_html", es_pagina_de_error("https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_10_26.xls", "text/html; charset=utf-8"))
+    check("pagina_error_pdf_real", not es_pagina_de_error("https://x/epi_09_26.pdf", "application/pdf"))
+    check("pagina_error_no_archivo", not es_pagina_de_error("https://www.indec.gob.ar/Institucional/Indec/InformesTecnicos", "text/html"))
 
     # 17. Listado fechado (CIARA) y período en página (AFCP, UTDT)
     HOY = dt.date(2026, 9, 27)
