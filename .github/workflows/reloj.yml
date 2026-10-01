@@ -1,0 +1,101 @@
+name: Reloj
+
+# Por qué existe: desde fines de agosto de 2026 GitHub dispara los horarios programados (cron) tarde o
+# directamente no los dispara. Este flujo hace de reloj propio: espera hasta el próximo horario,
+# lanza "Confirmar publicaciones" y se vuelve a lanzar a sí mismo. Los lanzamientos manuales
+# (workflow_dispatch) con el token del repo sí crean corridas aunque las programadas fallen.
+#
+# Horarios (hora argentina, los mismos que usa el vigía de la app):
+#   lunes a viernes: 09:07 a 20:37 cada media hora, y 21:07
+#   sábado y domingo: 10:17 y 18:17
+#
+# Si la cadena se corta (una falla de GitHub), el cron de abajo la vuelve a arrancar; si ya hay un
+# reloj vivo, el nuevo se da cuenta y termina en segundos. "Confirmar publicaciones" conserva además
+# sus propios horarios programados como respaldo: correr de más no cambia nada.
+on:
+  workflow_dispatch:
+    inputs:
+      previo:
+        description: "Uso interno: id de la corrida del reloj que lanzó esta (dejalo vacío)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "23 * * * *"   # rescate: arranca un reloj si no hay ninguno vivo
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  reloj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Esperar el próximo horario y lanzar la revisión
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          PREVIO: ${{ inputs.previo }}
+        shell: python
+        run: |
+          import datetime as dt, json, os, sys, time, urllib.request
+
+          TZ = dt.timezone(dt.timedelta(hours=-3))           # Argentina, sin horario de verano
+          REPO, RUN_ID, PREVIO = os.environ["REPO"], int(os.environ["RUN_ID"]), os.environ.get("PREVIO") or ""
+          API = f"https://api.github.com/repos/{REPO}/actions"
+          HDR = {"Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Accept": "application/vnd.github+json",
+                 "X-GitHub-Api-Version": "2022-11-28"}
+          MAX_ESPERA = 5 * 3600 + 30 * 60                     # el trabajo puede durar hasta 6 h
+
+          def api(metodo, ruta, cuerpo=None):
+              req = urllib.request.Request(API + ruta, method=metodo, headers=HDR,
+                                           data=json.dumps(cuerpo).encode() if cuerpo is not None else None)
+              for intento in range(4):
+                  try:
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          t = r.read()
+                          return json.loads(t) if t else {}
+                  except Exception as ex:
+                      print(f"API {metodo} {ruta}: {ex} (intento {intento + 1})")
+                      time.sleep(15 * (intento + 1))
+              raise SystemExit(f"No se pudo llamar a la API: {metodo} {ruta}")
+
+          def lanzar(flujo, entradas=None):
+              api("POST", f"/workflows/{flujo}/dispatches", {"ref": "main", "inputs": entradas or {}})
+              print(f"Lanzado {flujo} {entradas or ''}")
+
+          # 1) Un solo reloj a la vez: si hay otro vivo más antiguo (que no sea el que me lanzó), termino.
+          vivos = []
+          for estado in ("in_progress", "queued"):
+              d = api("GET", f"/workflows/reloj.yml/runs?status={estado}&per_page=50")
+              vivos += [r["id"] for r in d.get("workflow_runs", [])]
+          otros = [i for i in vivos if i != RUN_ID and str(i) != PREVIO and i < RUN_ID]
+          if otros:
+              print(f"Ya hay un reloj vivo ({otros}); este termina.")
+              sys.exit(0)
+
+          # 2) Próximo horario.
+          def turnos(dia):
+              if dia.weekday() < 5:
+                  hs = [(h, m) for h in range(9, 21) for m in (7, 37)] + [(21, 7)]
+              else:
+                  hs = [(10, 17), (18, 17)]
+              return [dt.datetime(dia.year, dia.month, dia.day, h, m, tzinfo=TZ) for h, m in hs]
+
+          ahora = dt.datetime.now(TZ)
+          proximo = next(t for k in range(8) for t in turnos(ahora.date() + dt.timedelta(days=k))
+                         if t > ahora + dt.timedelta(seconds=60))
+          espera = (proximo - ahora).total_seconds()
+          print(f"Ahora {ahora:%a %d/%m %H:%M}; próximo horario {proximo:%a %d/%m %H:%M} (en {espera / 60:.0f} min)")
+
+          # 3) Esperar. Si falta más de lo que permite un trabajo, me relevo antes sin lanzar la revisión.
+          if espera > MAX_ESPERA:
+              time.sleep(MAX_ESPERA)
+              lanzar("reloj.yml", {"previo": str(RUN_ID)})
+              sys.exit(0)
+          time.sleep(espera)
+
+          # 4) Lanzar la revisión y el próximo reloj.
+          lanzar("confirmar.yml")
+          lanzar("reloj.yml", {"previo": str(RUN_ID)})
