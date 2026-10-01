@@ -1,49 +1,321 @@
-filas 3998
-FILA 30/09/2026 dotacion_personal_apn_09_2679845EB044
-FILA 29/09/2026 bal_09_26BA83A84318
-FILA 28/09/2026 indicadores_energeticos_09_261E0B5DCCF4
-FILA 25/09/2026 eti_09_2658FB61A61B
-FILA 24/09/2026 eph_pobreza_09_2670733F4C4D
-FILA 24/09/2026 emae_09_26FE154D8FFE
-FILA 23/09/2026 super_09_260FBFF11FE1
-FILA 23/09/2026 com_09_2694F525320C
-FILA 23/09/2026 autoservicios_mayoristas_09_26DA5CEEFE06
-FILA 30/06/2026 indicadores_energeticos_06_26FA8E233DAC
-FILA 30/06/2026 dotacion_personal_apn_06_26F85FA26BD1
-FILA 29/06/2026 emae_06_2614960E37C4
-FILA 25/06/2026 ingresos1trim26536C8EDD3E
-FILA 25/06/2026 eti_06_2672C94002E2
-FILA 24/06/2026 bal_06_26F22D340551
-FILA 24/06/2026 farm_06_261E5249621F
-FILA 23/06/2026 pib_06_26FAE3FD2BFA
-FILA 23/06/2026 salarios_06_260C41EBE741
-FILA 30/03/2026 indicadores_energeticos_03_26DC47C0AEAA
-FILA 27/03/2026 bal_03_262210251315
-FILA 26/03/2026 emae_03_261428A90362
-FILA 26/03/2026 maq_agricola_03_26447D4233AE
-FILA 25/03/2026 eti_03_26920BBE6C44
-FILA 25/03/2026 salarios_03_26875AE99312
-FILA 25/03/2026 farm_03_26AE541731BA
-FILA 30/12/2025 dotacion_personal_apn_12_25132A2074A1
-FILA 26/12/2025 super_12_250E443B531B
-FILA 26/12/2025 autoservicios_mayoristas_12_259721D95D4B
-FILA 26/12/2025 com_12_2548C3B79DEB
-FILA 23/12/2025 salarios_12_250C1AB773EE
-FILA 23/12/2025 bal_12_25A30CCDCD2C
-FILA 23/12/2025 eti_12_254823CF51B2
-CTX no
-BCRA Informe de Evolución del Mercado de Cambios y Balance Cambiario ['25 sep 2026', '28 ago 2026', '31 jul 2026', '26 jun 2026', '29 may 2026', '24 abr 2026'] 184
-BCRA Estados contables ['14 may 2026', '16 abr 2025', '02 may 2024', '18 may 2023', '21 abr 2022', '29 abr 2021'] 28
-BCRA Informe de Mercado de Cambios, Deuda y Formación de Activos Externos 2015-2019 ['14 may 2020'] 1
-BCRA Relevamiento de Títulos de Deuda y Otros Pasivos Externos ['29 sep 2017', '30 jun 2017', '31 mar 2017', '30 dic 2016', '30 sep 2016', '30 jun 2016'] 58
-TITULOS ['Boletín Estadístico', 'Boletín Monetario y Financiero', 'Encuesta de Condiciones Crediticias (ECC)', 'Estados contables', 'Informe Anual al Congreso', 'Informe Macroeconómico y de Política Monetaria', 'Informe Monetario Mensual', 'Informe de Estabilidad Financiera', 'Informe de Evolución del Mercado de Cambios y Balance Cambiario', 'Informe de Inclusión Financiera', 'Informe de Inflación', 'Informe de Inversiones Directas en Empresas Residentes', 'Informe de Inversión Extranjera Directa', 'Informe de Mercado de Cambios, Deuda y Formación de Activos Externos 2015-2019', 'Informe de Otros Proveedores No Financieros de Crédito', 'Informe de Pagos Minoristas', 'Informe de Pagos de Deuda Externa Financiera del Sector Privado 2020-2022', 'Informe de Política Monetaria (IPOM)', 'Informe de Proveedores No Financieros de Crédito', 'Informe sobre Bancos', 'Informe sobre Deuda Externa Privada', 'Informe sobre Protección a las Personas Usuarias de Servicios Financieros', 'Informe sobre el Régimen de Disponibilidad de Divisas para Inversores Extranjeros', 'Memoria Anual', 'Notas Técnicas', 'Productos Derivados Financieros', 'Proyecciones de la Balanza Comercial 2024-2030', 'Publicaciones del Museo', 'Relevamiento de Expectativas de Mercado (REM)', 'Relevamiento de Títulos de Deuda y Otros Pasivos Externos']
-EJ {'id': 106785, 'titulo': 'Informe de Pagos Minoristas', 'url': 'https://www.bcra.gob.ar/publicaciones/informe-de-pagos-minoristas-agosto-de-2026/', 'frecuencia': 'Mensual', 'periodo': 'Agosto 2026', 'fecha': '25 sep 2026'}
-PAG https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/ 80681
-  L /archivos/Pdfs/PublicacionesEstadisticas/Indicadores_del_Sistema_Financiero.xlsx
-  L /archivos/Pdfs/PublicacionesEstadisticas/reservas1.pdf
-  L /archivos/Pdfs/PublicacionesEstadisticas/pasivos1.pdf
-  L /archivos/Pdfs/PublicacionesEstadisticas/temp0826.pdf
-  L /archivos/Pdfs/PublicacionesEstadisticas/reservas1.pdf
-  L /archivos/Pdfs/PublicacionesEstadisticas/pasivos1.pdf
-  CTX . *** La información se publica diariamente dentro de las 48 horas hábiles posteriores a la fecha a que se refieren los datos. **** La información se publicó diariamente dentro de las 72 horas hábiles posteriores a la fecha a la que se refieren los datos hasta el 15/01/2016 y dentro de las 48 horas hábiles a partir de los datos correspondientes al 18/01/2016. Publicaciones semanales Estado resumido de activos y pasivos del BCRA Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación 31/12/2025 07/01/2026 31/03/2026 07/04/2026 30/06/2026 03/07/2026 30/09/2026 05/10/2026 07/01/2026 12/01/2026 07/04/2026 10/04/2026 07/07/2026 14/07/2026 07/10/2026 13/10/2026 15/01/2026 20/01/2026 15/04/2026 20/04/2026 15/07/2026 20/07/2026 15/10/2026 20/10/2026 23/01/2026 28/01/2026 23/04/2026 28/04/2026 23/07/2026 28/07/2026 23/10/2026 2
-PAG https://www.bcra.gob.ar/estado-resumido-de-activos-y-pasivos/ HTTP Error 404: Not Found
+RAW le et_pb_text et_pb_text_14 parrafo_pag  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><a href="/estados-resumidos-activos-pasivos-semanales/">Estado resumido de activos y pasivos del BCRA</a></p></div>
+			</div><div class="et_pb_module et_pb_code et_pb_code_4 tabla-data tabla-rowspan">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><table id="tabla-rowcolspan-int">
+ <thead>
+     <tr>
+    <td>Fecha  a la que se refiere la información</td>
+    <td>Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+ 
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+   </tr></thead>
+
+  <tr>
+    <td>31/12/2025</td>
+    <td>07/01/2026</td>
+   
+    <td>31/03/2026</td>
+    <td>07/04/2026</td>
+  
+    <td>30/06/2026</td>
+    <td>03/07/2026</td>
+  
+    <td>30/09/2026</td>
+    <td>05/10/2026</td>
+  </tr>
+  <tr>
+    <td>07/01/2026</td>
+    <td>12/01/2026</td>
+    
+    <td>07/04/2026</td>
+    <td>10/04/2026</td>
+
+    <td>07/07/2026</td>
+    <td>14/07/2026</td>
+   
+    <td>07/10/2026</td>
+    <td>13/10/2026</td>
+  </tr>
+  <tr>
+    <td>15/01/2026</td>
+    <td>20/01/2026</td>
+   
+    <td>15/04/2026</td>
+    <td>20/04/2026</td>
+
+    <td>15/07/2026</td>
+    <td>20/07/2026</td>
+
+    <td>15/10/2026</td>
+    <td>20/10/2026</td>
+  </tr>
+  <tr>
+    <td>23/01/2026</td>
+    <td>28/01/2026</td>
+    
+    <td>23/04/2026</td>
+    <td>28/04/2026</td>
+
+    <td>23/07/2026</td>
+    <td>28/07/2026</td>
+
+    <td>23/10/2026</td>
+    <td>28/10/2026</td>
+  </tr>
+  <tr>
+    <td>31/01/2026</td>
+    <td>04/02/2026</td>
+
+    <td>30/04/2026</td>
+    <td>06/05/2026</td>
+
+    <td>31/07/2026</td>
+    <td>05/08/2026</td>
+
+    <td>31/10/2026</td>
+    <td>04/11/2026</td>
+  </tr>
+  <tr>
+    <td>07/02/2026</td>
+    <td>11/02/2026</td>
+
+    <td>07/05/2026</td>
+    <td>12/05/2026</td>
+ 
+    <td>07/08/2026</td>
+    <td>12/08/2026</td>
+ 
+    <td>07/11/2026</td>
+    <td>13/11/2026</td>
+  </tr>
+  <tr>
+    <td>15/02/2026</td>
+    <td>20/02/2026</td>
+
+    <td>15/05/2026</td>
+    <td>20/05/2026</td>
+  
+    <td>15/08/2026</td>
+    <td>20/08/2026</td>
+
+    <td>15/11/2026</td>
+    <td>18/11/2026</td>
+  </tr>
+  <tr>
+    <td>23/02/2026</td>
+    <td>26/02/2026</td>
+
+    <td>23/05/2026</td>
+    <td>28/05/2026</td>
+
+    <td>23/08/2026</td>
+    <td>26/08/2026</td>
+   
+    <td>23/11/2026</td>
+    <td>26/11/2026</td>
+  </tr>
+  <tr>
+    <td>28/02/2026</td>
+    <td>04/03/2026</td>
+
+    <td>31/05/2026</td>
+    <td>03/06/2026</td>
+
+    <td>31/08/2026</td>
+    <td>03/09/2026</td>
+
+    <td>30/11/2026</td>
+    <td>03/12/2026</td>
+  </tr>
+  <tr>
+    <td>07/03/2026</td>
+    <td>11/03/2026</td>
+
+    <td>07/06/2026</td>
+    <td>10/06/2026</td>
+  
+    <td>07/09/2026</td>
+    <td>10/09/2026</td>
+
+    <td>07/12/2026</td>
+    <td>11/12/2026</td>
+  </tr>
+  <tr>
+    <td>15/03/2026</td>
+    <td>18/03/2026</td>
+
+    <td>15/06/2026</td>
+    <td>18/06/2026</td>
+ 
+    <td>15/09/2026</td>
+    <td>18/09/2026</td>
+    
+    <td>15/12/2026</td>
+    <td>18/12/2026</td>
+  </tr>
+  <tr>
+    <td>23/03/2026</td>
+    <td>27/03/2026</td>
+   
+    <td>23/06/2026</td>
+    <td>26/06/2026</td>
+
+    <td>23/09/2026</td>
+    <td>28/09/2026</td>
+
+    <td>23/12/2026</td>
+    <td>30/12/2026</td>
+  </tr>
+  <tr>
+  
+    <td>31/12/2026</td>
+    <td>07/01/2027 </td>
+  </tr>
+
+				
+</table></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_15 parrafo_pag  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_module et_pb_text et_pb_text_16 parrafo_pag  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3>Publicaciones mensuales</h3></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_17 parrafo_pag  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p>Planilla de reservas internacionales y liquidez en moneda extranjera del BCRA</p></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_18 parrafo_pag  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><a href="/boletin-estadistico/">Boletín estadístico del BCRA</a><sup>*</sup></p></div>
+			</div><div class="et_pb_module et_pb_code et_pb_code_5 tabla-data tabla-rowspan salto-linea">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><table id="tabla-rowcolspan-int">
+<thead>
+  <tr>
+    <td>Fecha    a la que se refiere la información</td>
+    <td>Fecha Publicación</td>
+ 
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td>Fecha Publicación</td>
+  </tr>
+
+  </thead>
+  <tr>
+    <td>31/12/2025</td>
+    <td>23/01/2026</td>
+
+    <td>30/04/2026</td>
+    <td>22/05/2026</td>
+
+    <td>31/07/2026</td>
+    <td>21/08/2026</td>
+
+    <td>31/10/2026</td>
+    <td>20/11/2026</td>
+  </tr>
+  <tr>
+    <td>31/01/2026</td>
+    <td>23/02/2026</td>
+
+    <td>31/05/2026</td>
+    <td>23/06/2026</td>
+
+    <td>31/08/2026</td>
+    <td>23/09/2026</td>
+
+    <td>30/11/2026</td>
+    <td>23/12/2026</td>
+  </tr>
+  <tr>
+    <td>28/02/2026</td>
+    <td>20/03/2026</td>
+
+    <td>30/06/2026</td>
+    <td>23/07/2026</td>
+
+    <td>30/09/2026</td>
+    <td>23/10/2026</td>
+
+    <td>31/12/2026</td>
+    <td>22/01/2027</td>
+  </tr>
+  <tr>
+    <td>31/03/2026</td>
+    <td>23/04/2026</td>
+
+
+  </tr>
+</table></div>
+			</div><div class="et_pb_module et_pb_code et_pb_code_6 tabla-data tabla-rowspan">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><table id="tabla-rowcolspan-int">
+    <thead>
+      <tr>
+    <td>Fecha    a la que se refiere la información</td>
+    <td >Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td >Fecha Publicación</td>
+
+    <td>Fecha a la que se refiere la    información</td>
+    <td >Fecha Publicación</td>
+    
+    <td>Fecha a la que se refiere la    información</td>
+    <td >Fecha Publicación</td>
+  </tr
+HEAD pasivos1.pdf (200, None, None)
+HEAD reservas1.pdf (200, None, None)
+HEAD temp0826.pdf (200, None, None)
+HEAD temp0926.pdf (200, None, None)
+HEAD Estado_resumido.pdf (200, None, None)
+HEAD estado_resumido.pdf (200, None, None)
+HEAD ERAP.pdf (200, None, None)
+IND https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-18 37421 no
+  IL /ftp/cuadros/publicaciones/politica_difusion_indec.pdf
+IND https://www.indec.gob.ar/indec/web/Nivel3-Tema-3-6 37418 no
+  IL /ftp/cuadros/publicaciones/politica_difusion_indec.pdf
+IND https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-17 37421 no
+  IL /ftp/cuadros/publicaciones/politica_difusion_indec.pdf
+IHEAD epi_09_26.pdf (200, 'Mon, 28 Sep 2026 17:38:35 GMT', '3359626')
+IHEAD epi_trim.xls (200, None, '37465')
+IHEAD epi.xls (200, None, '37465')
+IHEAD sh_epi.xls (200, None, '37465')
+IHEAD epi_06_26.pdf (200, 'Mon, 06 Jul 2026 14:53:40 GMT', '1950960')
