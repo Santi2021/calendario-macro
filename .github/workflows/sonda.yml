@@ -16,31 +16,24 @@ jobs:
           def get(u):
               r=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
               with urllib.request.urlopen(r,timeout=60) as x: return x.read().decode("utf-8","replace")
-          h=get("https://www.indec.gob.ar/Institucional/Indec/InformesTecnicos")
-          filas=[];u=None
-          for m in re.finditer(r"\b(\d{2})/(\d{2})/(20\d{2})\b|informesdeprensa/([A-Za-z0-9_\-]+)\.pdf",h):
-              if m.group(1): u=m.group(0)
-              elif u: filas.append((u,m.group(4)))
-          print("filas",len(filas))
-          for f,a in filas:
-              if f[3:] in ("09/2026","06/2026","03/2026","12/2025") and f[:2] in ("23","24","25","26","27","28","29","30"): print("FILA",f,a)
-          for f,a in filas:
-              if re.match(r"(epi|prod|productos)",a,re.I): print("EPI",f,a)
-          i=h.lower().find("productos industriales")
-          print("CTX",h[max(0,i-1500):i+500] if i>=0 else "no")
-          j=json.loads(get("https://www.bcra.gob.ar/wp-json/bcra/v1/publicaciones?category=informes,estadisticas&lang=es&action=total"))["data"]["publicaciones"]
-          tit={}
-          for p in j: tit.setdefault(p.get("titulo"),[]).append(p.get("fecha"))
-          for t,fs in tit.items():
-              if t and re.search(r"resumid|activos|pasivos|balance|estado",t,re.I): print("BCRA",t,fs[:6],len(fs))
-          print("TITULOS",sorted(t for t in tit if t)[:400])
-          print("EJ",j[0])
-          for u in ["https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/","https://www.bcra.gob.ar/estado-resumido-de-activos-y-pasivos/"]:
+          def head(u):
               try:
-                  g=get(u); print("PAG",u,len(g)); 
-                  for m in re.finditer(r"href=\"([^\"]+(?:pdf|xls|xlsx))\"",g): print("  L",m.group(1))
-                  k=g.lower().find("resumid"); print("  CTX",re.sub(r"\s+"," ",re.sub("<[^>]+>"," ",g[max(0,k-800):k+1500])) if k>=0 else "no")
-              except Exception as e: print("PAG",u,e)
+                  r=urllib.request.Request(u,method="HEAD",headers={"User-Agent":"Mozilla/5.0"})
+                  with urllib.request.urlopen(r,timeout=60) as x: return x.status, x.headers.get("Last-Modified"), x.headers.get("Content-Length")
+              except Exception as e: return str(e)
+          g=get("https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/")
+          k=g.find("Estado resumido")
+          print("RAW",g[k-200:k+6000])
+          for f in ["pasivos1.pdf","reservas1.pdf","temp0826.pdf","temp0926.pdf","Estado_resumido.pdf","estado_resumido.pdf","ERAP.pdf"]:
+              u="https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/"+f; print("HEAD",f,head(u))
+          for u in ["https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-18","https://www.indec.gob.ar/indec/web/Nivel3-Tema-3-6","https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-17"]:
+              try:
+                  h=get(u); t=re.sub(r"\s+"," ",re.sub("<[^>]+>"," ",h))
+                  i=t.lower().find("productos industriales"); print("IND",u,len(h),t[max(0,i-300):i+600] if i>=0 else "no")
+                  for m in re.finditer(r"(?:href|src)=\"([^\"]+\.(?:xls|xlsx|pdf|zip))\"",h): print("  IL",m.group(1))
+              except Exception as e: print("IND",u,e)
+          for f in ["epi_09_26.pdf","epi_trim.xls","epi.xls","sh_epi.xls","epi_06_26.pdf"]:
+              print("IHEAD",f,head("https://www.indec.gob.ar/ftp/cuadros/economia/"+f))
       - run: |
           git config user.name bot; git config user.email bot@x
           git add salida.txt; git commit -qm salida; git push -q
