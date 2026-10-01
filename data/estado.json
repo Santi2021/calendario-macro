@@ -252,7 +252,7 @@
   },
   "indec.eph_distribucion|2026-10-01|2026-Q2": {
    "estado": "programado",
-   "no_estaba": "2026-10-01T18:07-03:00"
+   "no_estaba": "2026-10-01T18:37-03:00"
   },
   "priv.acara|2026-10-01|": {
    "estado": "confirmado",
@@ -278,8 +278,15 @@
    "hora_desde": "02:42"
   },
   "priv.recaudacion_arca|2026-10-01|": {
-   "estado": "programado",
-   "no_estaba": "2026-10-01T18:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-01",
+   "evidencia": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQdndBYkxCVWtpdmVxQnViWC1NVm4tUnVjUTZUcmtudmtPcmN1ek0tdEczYWlDT2taT3FaaFEweFYxUmJxd1hCVXNULTd4TEUwWjBWTmM4ck92bU94empyelFPM25WbEZGdHlJMEt3LVczbXpjQWxSOWhhcTVSTUFuTE5wTzhBZjVrNzRPdDhXdTZxa0N2OTFuOWpYcnd4UEdTVUJ3OC02ZDgtcUdtRHNvZ2RaX3ZVdjBlMFF6LTVn0gHDAUFVX3lxTFBrb1hxcmUxWTRTdGM4UXVGMVZUTnNTNnZ0WUlFbXgzTk1scTQ3dmsxdzZsUThESWlUODVHNFlSYTRmQWhSUDhObGF5eXRWQmo0YmpCZU13TGNreVUySHJMWW9oNFBHcEFvVTdGMUg5Smd2djNueVU3V1FFYWNqYzMxdEZtZm5MdWNodXZFc1M3czRYc2Q4YXRXUG45WmM4OEVuRDV4WDNaVlpBOU1wLXZiSXA5Y1J1MjdzczRNeFVoMEpvQQ?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-10-01",
+   "desvio_dias": 0,
+   "visto": "2026-10-01T18:37-03:00",
+   "hora_detectada": "18:37",
+   "hora_desde": "18:07"
   }
  },
  "salud": {
@@ -297,7 +304,7 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-01T18:07:24-03:00",
+ "ultima_corrida": "2026-10-01T18:37:24-03:00",
  "corridas": [
   "2026-09-28T10:42-03:00",
   "2026-09-28T12:02-03:00",
@@ -327,6 +334,7 @@
   "2026-10-01T16:37-03:00",
   "2026-10-01T17:07-03:00",
   "2026-10-01T17:38-03:00",
-  "2026-10-01T18:07-03:00"
+  "2026-10-01T18:07-03:00",
+  "2026-10-01T18:37-03:00"
  ]
 }
