@@ -1,0 +1,49 @@
+filas 3998
+FILA 30/09/2026 dotacion_personal_apn_09_2679845EB044
+FILA 29/09/2026 bal_09_26BA83A84318
+FILA 28/09/2026 indicadores_energeticos_09_261E0B5DCCF4
+FILA 25/09/2026 eti_09_2658FB61A61B
+FILA 24/09/2026 eph_pobreza_09_2670733F4C4D
+FILA 24/09/2026 emae_09_26FE154D8FFE
+FILA 23/09/2026 super_09_260FBFF11FE1
+FILA 23/09/2026 com_09_2694F525320C
+FILA 23/09/2026 autoservicios_mayoristas_09_26DA5CEEFE06
+FILA 30/06/2026 indicadores_energeticos_06_26FA8E233DAC
+FILA 30/06/2026 dotacion_personal_apn_06_26F85FA26BD1
+FILA 29/06/2026 emae_06_2614960E37C4
+FILA 25/06/2026 ingresos1trim26536C8EDD3E
+FILA 25/06/2026 eti_06_2672C94002E2
+FILA 24/06/2026 bal_06_26F22D340551
+FILA 24/06/2026 farm_06_261E5249621F
+FILA 23/06/2026 pib_06_26FAE3FD2BFA
+FILA 23/06/2026 salarios_06_260C41EBE741
+FILA 30/03/2026 indicadores_energeticos_03_26DC47C0AEAA
+FILA 27/03/2026 bal_03_262210251315
+FILA 26/03/2026 emae_03_261428A90362
+FILA 26/03/2026 maq_agricola_03_26447D4233AE
+FILA 25/03/2026 eti_03_26920BBE6C44
+FILA 25/03/2026 salarios_03_26875AE99312
+FILA 25/03/2026 farm_03_26AE541731BA
+FILA 30/12/2025 dotacion_personal_apn_12_25132A2074A1
+FILA 26/12/2025 super_12_250E443B531B
+FILA 26/12/2025 autoservicios_mayoristas_12_259721D95D4B
+FILA 26/12/2025 com_12_2548C3B79DEB
+FILA 23/12/2025 salarios_12_250C1AB773EE
+FILA 23/12/2025 bal_12_25A30CCDCD2C
+FILA 23/12/2025 eti_12_254823CF51B2
+CTX no
+BCRA Informe de Evolución del Mercado de Cambios y Balance Cambiario ['25 sep 2026', '28 ago 2026', '31 jul 2026', '26 jun 2026', '29 may 2026', '24 abr 2026'] 184
+BCRA Estados contables ['14 may 2026', '16 abr 2025', '02 may 2024', '18 may 2023', '21 abr 2022', '29 abr 2021'] 28
+BCRA Informe de Mercado de Cambios, Deuda y Formación de Activos Externos 2015-2019 ['14 may 2020'] 1
+BCRA Relevamiento de Títulos de Deuda y Otros Pasivos Externos ['29 sep 2017', '30 jun 2017', '31 mar 2017', '30 dic 2016', '30 sep 2016', '30 jun 2016'] 58
+TITULOS ['Boletín Estadístico', 'Boletín Monetario y Financiero', 'Encuesta de Condiciones Crediticias (ECC)', 'Estados contables', 'Informe Anual al Congreso', 'Informe Macroeconómico y de Política Monetaria', 'Informe Monetario Mensual', 'Informe de Estabilidad Financiera', 'Informe de Evolución del Mercado de Cambios y Balance Cambiario', 'Informe de Inclusión Financiera', 'Informe de Inflación', 'Informe de Inversiones Directas en Empresas Residentes', 'Informe de Inversión Extranjera Directa', 'Informe de Mercado de Cambios, Deuda y Formación de Activos Externos 2015-2019', 'Informe de Otros Proveedores No Financieros de Crédito', 'Informe de Pagos Minoristas', 'Informe de Pagos de Deuda Externa Financiera del Sector Privado 2020-2022', 'Informe de Política Monetaria (IPOM)', 'Informe de Proveedores No Financieros de Crédito', 'Informe sobre Bancos', 'Informe sobre Deuda Externa Privada', 'Informe sobre Protección a las Personas Usuarias de Servicios Financieros', 'Informe sobre el Régimen de Disponibilidad de Divisas para Inversores Extranjeros', 'Memoria Anual', 'Notas Técnicas', 'Productos Derivados Financieros', 'Proyecciones de la Balanza Comercial 2024-2030', 'Publicaciones del Museo', 'Relevamiento de Expectativas de Mercado (REM)', 'Relevamiento de Títulos de Deuda y Otros Pasivos Externos']
+EJ {'id': 106785, 'titulo': 'Informe de Pagos Minoristas', 'url': 'https://www.bcra.gob.ar/publicaciones/informe-de-pagos-minoristas-agosto-de-2026/', 'frecuencia': 'Mensual', 'periodo': 'Agosto 2026', 'fecha': '25 sep 2026'}
+PAG https://www.bcra.gob.ar/normas-especiales-para-la-divulgacion-de-datos-fmi/ 80681
+  L /archivos/Pdfs/PublicacionesEstadisticas/Indicadores_del_Sistema_Financiero.xlsx
+  L /archivos/Pdfs/PublicacionesEstadisticas/reservas1.pdf
+  L /archivos/Pdfs/PublicacionesEstadisticas/pasivos1.pdf
+  L /archivos/Pdfs/PublicacionesEstadisticas/temp0826.pdf
+  L /archivos/Pdfs/PublicacionesEstadisticas/reservas1.pdf
+  L /archivos/Pdfs/PublicacionesEstadisticas/pasivos1.pdf
+  CTX . *** La información se publica diariamente dentro de las 48 horas hábiles posteriores a la fecha a que se refieren los datos. **** La información se publicó diariamente dentro de las 72 horas hábiles posteriores a la fecha a la que se refieren los datos hasta el 15/01/2016 y dentro de las 48 horas hábiles a partir de los datos correspondientes al 18/01/2016. Publicaciones semanales Estado resumido de activos y pasivos del BCRA Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación Fecha a la que se refiere la información Fecha Publicación 31/12/2025 07/01/2026 31/03/2026 07/04/2026 30/06/2026 03/07/2026 30/09/2026 05/10/2026 07/01/2026 12/01/2026 07/04/2026 10/04/2026 07/07/2026 14/07/2026 07/10/2026 13/10/2026 15/01/2026 20/01/2026 15/04/2026 20/04/2026 15/07/2026 20/07/2026 15/10/2026 20/10/2026 23/01/2026 28/01/2026 23/04/2026 28/04/2026 23/07/2026 28/07/2026 23/10/2026 2
+PAG https://www.bcra.gob.ar/estado-resumido-de-activos-y-pasivos/ HTTP Error 404: Not Found
