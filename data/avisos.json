@@ -2,10 +2,10 @@
  "alertados": [
   "metodo:bcra_listado"
  ],
- "manana": "2026-10-02",
+ "manana": "2026-10-05",
  "ultimo_resultado": {
-  "cuando": "2026-10-02T19:03-03:00",
-  "tipo": "cierre",
+  "cuando": "2026-10-05T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-10-02"
