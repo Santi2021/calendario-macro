@@ -7344,13 +7344,13 @@
   "fuente": "https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf"
  },
  {
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-05",
   "hora": null,
   "indicador": "priv.cemento",
   "periodo": null,
   "titulo": "Despachos de cemento",
   "origen": "estimada",
-  "fuente": "ventana 3º–5º hábil"
+  "fuente": "ventana 3º–4º hábil"
  },
  {
   "fecha": "2026-10-07",
@@ -8154,13 +8154,13 @@
   "fuente": "jueves"
  },
  {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-04",
   "hora": null,
   "indicador": "priv.cemento",
   "periodo": null,
   "titulo": "Despachos de cemento",
   "origen": "estimada",
-  "fuente": "ventana 3º–5º hábil"
+  "fuente": "ventana 3º–4º hábil"
  },
  {
   "fecha": "2026-11-05",
@@ -8977,13 +8977,13 @@
   "fuente": "viernes"
  },
  {
-  "fecha": "2026-12-04",
+  "fecha": "2026-12-03",
   "hora": null,
   "indicador": "priv.cemento",
   "periodo": null,
   "titulo": "Despachos de cemento",
   "origen": "estimada",
-  "fuente": "ventana 3º–5º hábil"
+  "fuente": "ventana 3º–4º hábil"
  },
  {
   "fecha": "2026-12-04",

@@ -1926,12 +1926,12 @@
   "frecuencia": "mensual",
   "prioridad": "media",
   "tipo": "evento",
-  "regla": "3º–5º día hábil del mes siguiente.",
+  "regla": "3º–4º día hábil del mes siguiente (se estima en el 3º). No sigue un día de semana fijo: 6-jul (lun, 4º), 4-sep (vie, 4º), 5-oct (lun, 3º).",
   "confianza": "media",
   "estado": "activo",
   "hora": null,
   "url": "https://www.afcp.org.ar/despacho-mensual",
-  "evidencia": "histórico: 4/5-sep, 6-jul",
+  "evidencia": "histórico: 6-jul-26, 4-sep-26, 5-oct-26; 2024: 4-jul, 5-sep",
   "confirmacion": "página de despacho mensual de AFCP (período)"
  },
  {
