@@ -252,7 +252,7 @@
   },
   "indec.eph_distribucion|2026-10-01|2026-Q2": {
    "estado": "demorado",
-   "no_estaba": "2026-10-07T15:46-03:00"
+   "no_estaba": "2026-10-07T18:07-03:00"
   },
   "priv.acara|2026-10-01|": {
    "estado": "confirmado",
@@ -307,7 +307,7 @@
   },
   "priv.fractura_vm|2026-10-02|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-07T15:46-03:00"
+   "no_estaba": "2026-10-07T18:07-03:00"
   },
   "priv.lcg_semanal|2026-10-02|": {
    "estado": "sin_metodo"
@@ -365,15 +365,29 @@
   },
   "bcra.imm|2026-10-07|": {
    "estado": "programado",
-   "no_estaba": "2026-10-07T15:46-03:00"
+   "no_estaba": "2026-10-07T18:07-03:00"
   },
   "indec.ipi_manuf|2026-10-07|2026-08": {
-   "estado": "programado",
-   "no_estaba": "2026-10-07T15:46-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-07",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/ipi_manufacturero_10_264B0CD91C87.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-07",
+   "desvio_dias": 0,
+   "visto": "2026-10-07T18:07-03:00",
+   "hora_detectada": "18:07",
+   "hora_desde": "15:46"
   },
   "indec.isac|2026-10-07|2026-08": {
-   "estado": "programado",
-   "no_estaba": "2026-10-07T15:46-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-07",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/isac_10_2674E79F6A29.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-07",
+   "desvio_dias": 0,
+   "visto": "2026-10-07T18:07-03:00",
+   "hora_detectada": "18:07",
+   "hora_desde": "15:46"
   }
  },
  "salud": {
@@ -393,9 +407,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-07T15:46:22-03:00",
+ "ultima_corrida": "2026-10-07T18:07:37-03:00",
  "corridas": [
-  "2026-09-30T02:25-03:00",
   "2026-09-30T14:54-03:00",
   "2026-09-30T19:06-03:00",
   "2026-09-30T22:14-03:00",
@@ -514,6 +527,7 @@
   "2026-10-07T10:37-03:00",
   "2026-10-07T11:07-03:00",
   "2026-10-07T11:37-03:00",
-  "2026-10-07T15:46-03:00"
+  "2026-10-07T15:46-03:00",
+  "2026-10-07T18:07-03:00"
  ]
 }
