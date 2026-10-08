@@ -1,6 +1,7 @@
-# Reporte del 2026-10-07
+# Reporte del 2026-10-08
 
 ## Hoy se publica
-- Informe Monetario Mensual
-- 16:00 Índice de producción industrial manufacturero (IPI manufacturero). Agosto de 2026
-- 16:00 Indicadores de coyuntura de la actividad de la construcción. Agosto de 2026
+- 16:00 Índice de producción industrial minero (IPI minero). Agosto de 2026
+- 16:00 Indicador sintético de servicios públicos (ISSP). Julio de 2026
+- Panorama Agrícola Semanal BCBA
+- IPCBA
