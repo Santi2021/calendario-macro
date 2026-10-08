@@ -6,9 +6,9 @@
  ],
  "manana": "2026-10-08",
  "ultimo_resultado": {
-  "cuando": "2026-10-08T09:07-03:00",
-  "tipo": "manana",
+  "cuando": "2026-10-08T19:07-03:00",
+  "tipo": "cierre",
   "resultado": "ok"
  },
- "cierre": "2026-10-07"
+ "cierre": "2026-10-08"
 }
