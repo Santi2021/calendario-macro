@@ -252,7 +252,7 @@
   },
   "indec.eph_distribucion|2026-10-01|2026-Q2": {
    "estado": "demorado",
-   "no_estaba": "2026-10-08T11:07-03:00"
+   "no_estaba": "2026-10-08T11:37-03:00"
   },
   "priv.acara|2026-10-01|": {
    "estado": "confirmado",
@@ -307,7 +307,7 @@
   },
   "priv.fractura_vm|2026-10-02|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-08T11:07-03:00"
+   "no_estaba": "2026-10-08T11:37-03:00"
   },
   "priv.lcg_semanal|2026-10-02|": {
    "estado": "sin_metodo"
@@ -398,18 +398,25 @@
   },
   "indec.ipi_minero|2026-10-08|2026-08": {
    "estado": "programado",
-   "no_estaba": "2026-10-08T11:07-03:00"
+   "no_estaba": "2026-10-08T11:37-03:00"
   },
   "indec.issp|2026-10-08|2026-07": {
    "estado": "programado",
-   "no_estaba": "2026-10-08T11:07-03:00"
+   "no_estaba": "2026-10-08T11:37-03:00"
   },
   "priv.bcba_pas|2026-10-08|": {
    "estado": "sin_metodo"
   },
   "priv.ipc_caba|2026-10-08|": {
-   "estado": "programado",
-   "no_estaba": "2026-10-08T11:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-08",
+   "evidencia": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQlNiQVRBcEptdnh2LTRjX2NZdnVPUjFNNWhRZW55bHhYSEY5M2JrbExENFpMN3lQZ3lQc3RtVDk0S2NPb0R3Qm1yYVk4WEV3Wl9MaENEX29KVVZ5SFUtX25hUnZJWV9VUXBjSmtRcGx2alBLQURGdklUOU5NT1BWcHdWODRJTFZraWRSNlliTVoyaWZ4dmU3MkcwSXNVZ01QRFE?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-10-08",
+   "desvio_dias": 0,
+   "visto": "2026-10-08T11:37-03:00",
+   "hora_detectada": "11:37",
+   "hora_desde": "11:07"
   }
  },
  "salud": {
@@ -429,9 +436,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-08T11:07:51-03:00",
+ "ultima_corrida": "2026-10-08T11:37:34-03:00",
  "corridas": [
-  "2026-10-01T15:37-03:00",
   "2026-10-01T16:07-03:00",
   "2026-10-01T16:37-03:00",
   "2026-10-01T17:07-03:00",
@@ -550,6 +556,7 @@
   "2026-10-08T09:37-03:00",
   "2026-10-08T10:07-03:00",
   "2026-10-08T10:37-03:00",
-  "2026-10-08T11:07-03:00"
+  "2026-10-08T11:07-03:00",
+  "2026-10-08T11:37-03:00"
  ]
 }
