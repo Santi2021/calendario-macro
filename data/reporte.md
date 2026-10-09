@@ -1,8 +1,5 @@
 # Reporte del 2026-10-09
 
-## Confirmados
-- 2026-10-09 WASDE (USDA): archivo_lm
-
 ## Hoy se publica
 - Informativo semanal BCR
 - Índice Construya
