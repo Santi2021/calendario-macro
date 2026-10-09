@@ -6,6 +6,3 @@
 - Inflación semanal alimentos LCG
 - Llamado a licitación del Tesoro
 - 13:00 WASDE (USDA)
-
-## Log técnico
-[fallo] priv.usda_wasde archivo_lm: https://www.usda.gov/oce/commodity/wasde/wasde1026.pdf: HTTP 403
