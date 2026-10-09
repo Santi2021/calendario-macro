@@ -1,7 +1,8 @@
-# Reporte del 2026-10-08
+# Reporte del 2026-10-09
 
 ## Hoy se publica
-- 16:00 Índice de producción industrial minero (IPI minero). Agosto de 2026
-- 16:00 Indicador sintético de servicios públicos (ISSP). Julio de 2026
-- Panorama Agrícola Semanal BCBA
-- IPCBA
+- Informativo semanal BCR
+- Índice Construya
+- Inflación semanal alimentos LCG
+- Llamado a licitación del Tesoro
+- 13:00 WASDE (USDA)
