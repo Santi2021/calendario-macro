@@ -4,10 +4,10 @@
   "indec.eph_distribucion|2026-10-01|2026-Q2",
   "priv.fractura_vm|2026-10-02|"
  ],
- "manana": "2026-10-08",
+ "manana": "2026-10-09",
  "ultimo_resultado": {
-  "cuando": "2026-10-08T19:07-03:00",
-  "tipo": "cierre",
+  "cuando": "2026-10-09T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-10-08"
