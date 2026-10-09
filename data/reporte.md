@@ -1,8 +1,5 @@
 # Reporte del 2026-10-09
 
-## Sin evidencia pasada la tolerancia
-- 2026-10-02 Etapas de fractura Vaca Muerta
-
 ## Hoy se publica
 - Informativo semanal BCR
 - Índice Construya
