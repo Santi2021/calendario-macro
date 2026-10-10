@@ -1,8 +1,4 @@
-# Reporte del 2026-10-09
+# Reporte del 2026-10-10
 
-## Hoy se publica
-- Informativo semanal BCR
-- Índice Construya
-- Inflación semanal alimentos LCG
-- Llamado a licitación del Tesoro
-- 13:00 WASDE (USDA)
+## Confirmados
+- 2026-10-09 Índice Construya: prensa (desvío -1 días)
