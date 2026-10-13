@@ -1,6 +1,6 @@
 # Reporte del 2026-10-13
 
-## Sin evidencia pasada la tolerancia
+## Sin verificar (ninguna fuente respondió)
 - 2026-10-01 Evolución de la distribución del ingreso (EPH). Segundo trimestre de 2026
 
 ## Hoy se publica
@@ -11,5 +11,4 @@
 - 16:00 Índices de patentamientos. Tercer trimestre de 2026
 
 ## Log técnico
-[fallo] calendario indec_2sem: https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf: HTTPSConnectionPool(host='www.indec.gob.ar', port=443): Max retries exceeded with ur
-[fallo] calendario indec_1sem_prox: https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_1sem2027.pdf: HTTPSConnectionPool(host='www.indec.gob.ar', port=443): Max retries exceeded with ur
+[fallo] indec.eph_distribucion indec_informes: https://www.indec.gob.ar/Institucional/Indec/InformesTecnicos: HTTPSConnectionPool(host='www.indec.gob.ar', port=443): Max retries exceeded with url: /Instituci
