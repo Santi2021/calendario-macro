@@ -1,8 +1,5 @@
 # Reporte del 2026-10-13
 
-## Sin evidencia pasada la tolerancia
-- 2026-10-02 Etapas de fractura Vaca Muerta
-
 ## Hoy se publica
 - Bandas cambiarias: proyección del mes siguiente
 - Estado resumido de activos y pasivos del BCRA
