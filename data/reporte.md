@@ -1,8 +1,5 @@
 # Reporte del 2026-10-13
 
-## Confirmados
-- 2026-10-13 Índice de precios al consumidor (IPC). Cobertura nacional. Septiembre de 2026: prensa (desvío -1 días)
-
 ## Hoy se publica
 - Bandas cambiarias: proyección del mes siguiente
 - Estado resumido de activos y pasivos del BCRA
