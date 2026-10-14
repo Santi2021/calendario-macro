@@ -1,8 +1,11 @@
-# Reporte del 2026-10-13
+# Reporte del 2026-10-14
+
+## Confirmados
+- 2026-10-14 RIPTE. Agosto de 2026: archivo_lm (desvío -1 días)
+- 2026-10-14 Situación y evolución del trabajo registrado (SIPA). Julio de 2026: archivo_lm (desvío -1 días)
 
 ## Hoy se publica
-- Bandas cambiarias: proyección del mes siguiente
-- Estado resumido de activos y pasivos del BCRA
-- 16:00 Valorización mensual de la canasta básica alimentaria (CBA) y de la canasta básica total (CBT). Septiembre de 2026
-- 16:00 Índice de precios al consumidor (IPC). Cobertura nacional. Septiembre de 2026
-- 16:00 Índices de patentamientos. Tercer trimestre de 2026
+- Boletín Estadístico
+- Licitación del Tesoro (resultado)
+- RIPTE. Agosto de 2026
+- Situación y evolución del trabajo registrado (SIPA). Julio de 2026
