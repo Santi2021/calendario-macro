@@ -1,8 +1,5 @@
 # Reporte del 2026-10-14
 
-## Confirmados
-- 2026-10-14 Boletín Estadístico: bcra_publicacion
-
 ## Hoy se publica
 - Boletín Estadístico
 - Licitación del Tesoro (resultado)
