@@ -5,10 +5,10 @@
   "priv.fractura_vm|2026-10-02|",
   "priv.came_minoristas|2026-10-11|"
  ],
- "manana": "2026-10-15",
+ "manana": "2026-10-16",
  "ultimo_resultado": {
-  "cuando": "2026-10-15T19:07-03:00",
-  "tipo": "cierre",
+  "cuando": "2026-10-16T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-10-15"
