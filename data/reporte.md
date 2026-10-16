@@ -1,8 +1,11 @@
-# Reporte del 2026-10-15
+# Reporte del 2026-10-16
 
 ## Hoy se publica
-- Encuesta de Condiciones Crediticias (ECC)
-- 16:00 Cuenta de generación del ingreso e insumo de mano de obra. Segundo trimestre de 2026
-- 16:00 Utilización de la capacidad instalada en la industria (UCII). Agosto de 2026
-- Panorama Agrícola Semanal BCBA
-- ICC Di Tella
+- Informe sobre Bancos
+- 16:00 Valorización mensual de la canasta de crianza de la primera infancia, la niñez y la adolescencia. Septiembre de 2026
+- 16:00 Índice del costo de la construcción (ICC). Septiembre de 2026
+- 16:00 Sistema de índices de precios mayoristas (SIPM). Septiembre de 2026
+- Informativo semanal BCR
+- CICCRA carne
+- Inflación semanal alimentos LCG
+- Resultado fiscal SPN
