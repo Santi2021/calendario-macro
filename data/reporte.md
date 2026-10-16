@@ -1,8 +1,5 @@
 # Reporte del 2026-10-16
 
-## Confirmados
-- 2026-10-16 Informe sobre Bancos: bcra_publicacion
-
 ## Hoy se publica
 - Informe sobre Bancos
 - 16:00 Valorización mensual de la canasta de crianza de la primera infancia, la niñez y la adolescencia. Septiembre de 2026
