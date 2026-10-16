@@ -471,7 +471,7 @@
   },
   "priv.came_minoristas|2026-10-11|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "no_estaba": "2026-10-16T16:07-03:00"
   },
   "bcra.bandas_cambiarias|2026-10-13|": {
    "estado": "sin_metodo"
@@ -552,7 +552,7 @@
   },
   "bcra.ecc|2026-10-15|": {
    "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "no_estaba": "2026-10-16T16:07-03:00"
   },
   "indec.cgi|2026-10-15|2026-Q2": {
    "estado": "confirmado",
@@ -581,23 +581,44 @@
   },
   "priv.utdt_icc|2026-10-15|": {
    "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "no_estaba": "2026-10-16T16:07-03:00"
   },
   "bcra.bancos|2026-10-16|": {
    "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "no_estaba": "2026-10-16T16:07-03:00"
   },
   "indec.canasta_crianza|2026-10-16|2026-09": {
-   "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-16",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/canasta_crianza_10_26AFEB88B62D.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-16",
+   "desvio_dias": 0,
+   "visto": "2026-10-16T16:07-03:00",
+   "hora_detectada": "16:07",
+   "hora_desde": "15:37"
   },
   "indec.icc|2026-10-16|2026-09": {
-   "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-16",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/icc_10_26C96DA2A124.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-16",
+   "desvio_dias": 0,
+   "visto": "2026-10-16T16:07-03:00",
+   "hora_detectada": "16:07",
+   "hora_desde": "15:37"
   },
   "indec.sipm|2026-10-16|2026-09": {
-   "estado": "programado",
-   "no_estaba": "2026-10-16T15:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-16",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/ipm_10_264148D51FC8.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-16",
+   "desvio_dias": 0,
+   "visto": "2026-10-16T16:07-03:00",
+   "hora_detectada": "16:07",
+   "hora_desde": "15:37"
   },
   "priv.bcr_semanal|2026-10-16|": {
    "estado": "sin_metodo"
@@ -638,9 +659,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-16T15:37:34-03:00",
+ "ultima_corrida": "2026-10-16T16:07:31-03:00",
  "corridas": [
-  "2026-10-12T11:37-03:00",
   "2026-10-12T12:07-03:00",
   "2026-10-12T12:37-03:00",
   "2026-10-12T13:07-03:00",
@@ -759,6 +779,7 @@
   "2026-10-16T14:07-03:00",
   "2026-10-16T14:37-03:00",
   "2026-10-16T15:07-03:00",
-  "2026-10-16T15:37-03:00"
+  "2026-10-16T15:37-03:00",
+  "2026-10-16T16:07-03:00"
  ]
 }
