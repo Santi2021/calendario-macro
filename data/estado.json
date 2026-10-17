@@ -471,7 +471,7 @@
   },
   "priv.came_minoristas|2026-10-11|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-17T01:15-03:00"
+   "no_estaba": "2026-10-17T10:17-03:00"
   },
   "bcra.bandas_cambiarias|2026-10-13|": {
    "estado": "sin_metodo"
@@ -581,7 +581,7 @@
   },
   "priv.utdt_icc|2026-10-15|": {
    "estado": "programado",
-   "no_estaba": "2026-10-17T01:15-03:00"
+   "no_estaba": "2026-10-17T10:17-03:00"
   },
   "bcra.bancos|2026-10-16|": {
    "estado": "confirmado",
@@ -651,7 +651,7 @@
  "salud": {
   "bcra_publicacion": 0,
   "prensa": 0,
-  "bcra_listado": 1,
+  "bcra_listado": 2,
   "xlsx_modificado": 0,
   "indec_informes": 0,
   "gob_noticias": 0,
@@ -666,9 +666,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-17T01:16:24-03:00",
+ "ultima_corrida": "2026-10-17T10:17:40-03:00",
  "corridas": [
-  "2026-10-12T18:07-03:00",
   "2026-10-12T18:37-03:00",
   "2026-10-12T19:07-03:00",
   "2026-10-12T19:37-03:00",
@@ -787,6 +786,7 @@
   "2026-10-16T20:37-03:00",
   "2026-10-16T21:07-03:00",
   "2026-10-16T22:12-03:00",
-  "2026-10-17T01:16-03:00"
+  "2026-10-17T01:16-03:00",
+  "2026-10-17T10:17-03:00"
  ]
 }
