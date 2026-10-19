@@ -3,13 +3,15 @@
   "metodo:bcra_listado",
   "indec.eph_distribucion|2026-10-01|2026-Q2",
   "priv.fractura_vm|2026-10-02|",
-  "priv.came_minoristas|2026-10-11|"
+  "priv.came_minoristas|2026-10-11|",
+  "bcra.ecc|2026-10-15|",
+  "priv.utdt_icc|2026-10-15|"
  ],
  "manana": "2026-10-19",
  "ultimo_resultado": {
-  "cuando": "2026-10-19T09:07-03:00",
-  "tipo": "manana",
+  "cuando": "2026-10-19T19:07-03:00",
+  "tipo": "cierre",
   "resultado": "ok"
  },
- "cierre": "2026-10-16"
+ "cierre": "2026-10-19"
 }
