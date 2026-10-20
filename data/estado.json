@@ -471,7 +471,7 @@
   },
   "priv.came_minoristas|2026-10-11|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-20T15:37-03:00"
+   "no_estaba": "2026-10-20T16:07-03:00"
   },
   "bcra.bandas_cambiarias|2026-10-13|": {
    "estado": "sin_metodo"
@@ -552,7 +552,7 @@
   },
   "bcra.ecc|2026-10-15|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-20T15:37-03:00"
+   "no_estaba": "2026-10-20T16:07-03:00"
   },
   "indec.cgi|2026-10-15|2026-Q2": {
    "estado": "confirmado",
@@ -581,7 +581,7 @@
   },
   "priv.utdt_icc|2026-10-15|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-20T15:37-03:00"
+   "no_estaba": "2026-10-20T16:07-03:00"
   },
   "bcra.bancos|2026-10-16|": {
    "estado": "confirmado",
@@ -676,12 +676,26 @@
    "estado": "sin_metodo"
   },
   "indec.etn_industria|2026-10-20|exp:2026-10": {
-   "estado": "programado",
-   "no_estaba": "2026-10-20T15:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-20",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/etn_industria_manufacturera_10_263EB1C34688.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-20",
+   "desvio_dias": 0,
+   "visto": "2026-10-20T16:07-03:00",
+   "hora_detectada": "16:07",
+   "hora_desde": "15:37"
   },
   "indec.etn_super|2026-10-20|exp:2026-10": {
-   "estado": "programado",
-   "no_estaba": "2026-10-20T15:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-20",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/etn_super_mayoristas_10_262614744125.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-10-20",
+   "desvio_dias": 0,
+   "visto": "2026-10-20T16:07-03:00",
+   "hora_detectada": "16:07",
+   "hora_desde": "15:37"
   },
   "priv.letras_pba|2026-10-20|": {
    "estado": "sin_metodo"
@@ -705,9 +719,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-20T15:37:24-03:00",
+ "ultima_corrida": "2026-10-20T16:07:41-03:00",
  "corridas": [
-  "2026-10-14T17:32-03:00",
   "2026-10-14T17:37-03:00",
   "2026-10-14T18:07-03:00",
   "2026-10-14T18:37-03:00",
@@ -826,6 +839,7 @@
   "2026-10-20T14:07-03:00",
   "2026-10-20T14:37-03:00",
   "2026-10-20T15:07-03:00",
-  "2026-10-20T15:37-03:00"
+  "2026-10-20T15:37-03:00",
+  "2026-10-20T16:07-03:00"
  ]
 }
