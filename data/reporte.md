@@ -1,7 +1,6 @@
-# Reporte del 2026-10-20
+# Reporte del 2026-10-21
 
 ## Hoy se publica
-- Estado resumido de activos y pasivos del BCRA
-- 16:00 Encuesta de tendencia de negocios. Industria manufacturera. Expectativas octubre-diciembre de 2026
-- 16:00 Encuesta de tendencia de negocios. Supermercados y autoservicios mayoristas. Expectativas octubre-diciembre de 2026
-- Licitación Letras PBA
+- 16:00 Estimador mensual de actividad económica (EMAE). Agosto de 2026
+- 16:00 Índice de salarios. Agosto de 2026
+- IPI FIEL
