@@ -7,10 +7,10 @@
   "bcra.ecc|2026-10-15|",
   "priv.utdt_icc|2026-10-15|"
  ],
- "manana": "2026-10-21",
+ "manana": "2026-10-22",
  "ultimo_resultado": {
-  "cuando": "2026-10-21T19:07-03:00",
-  "tipo": "cierre",
+  "cuando": "2026-10-22T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-10-21"
