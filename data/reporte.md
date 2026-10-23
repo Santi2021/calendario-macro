@@ -1,8 +1,10 @@
-# Reporte del 2026-10-22
+# Reporte del 2026-10-23
+
+## Confirmados
+- 2026-10-23 Consumo masivo Scentia: prensa (desvío -1 días)
 
 ## Hoy se publica
-- 16:00 Encuesta de autoservicios mayoristas. Agosto de 2026
-- 16:00 Encuesta nacional de centros de compras. Agosto de 2026
-- 16:00 Encuesta de supermercados. Agosto de 2026
-- Panorama Agrícola Semanal BCBA
-- Escrituras CABA
+- Planilla de reservas internacionales y liquidez en moneda extranjera
+- Informativo semanal BCR
+- Inflación semanal alimentos LCG
+- Consumo masivo Scentia

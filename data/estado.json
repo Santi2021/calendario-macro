@@ -471,7 +471,7 @@
   },
   "priv.came_minoristas|2026-10-11|": {
    "estado": "demorado",
-   "no_estaba": "2026-10-22T22:48-03:00"
+   "no_estaba": "2026-10-23T01:39-03:00"
   },
   "bcra.bandas_cambiarias|2026-10-13|": {
    "estado": "sin_metodo"
@@ -793,6 +793,24 @@
    "visto": "2026-10-22T10:07-03:00",
    "hora_detectada": "10:07",
    "hora_desde": "09:37"
+  },
+  "bcra.planilla_reservas|2026-10-23|2026-09": {
+   "estado": "sin_metodo"
+  },
+  "priv.bcr_semanal|2026-10-23|": {
+   "estado": "sin_metodo"
+  },
+  "priv.lcg_semanal|2026-10-23|": {
+   "estado": "sin_metodo"
+  },
+  "priv.scentia|2026-10-23|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-10-22",
+   "evidencia": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQOVBmNUtzckpWOTNseVhwYmo2T2JUZXM3ZUh1MFgtQkFPbUFVaHVMemVMRnozNVlmTjdMbUt5NWdxT3VsNE03X3prWmtCeWZlUUJyckhFU0xhNmxoNHRLdGtiLWxNNEQ3MTRHSkJST0pPRjVFdmlYMVdsMVZLZVZtUlN0bmNrWUhLeEdyc2RpQ1V0TnFMNnVVMThCMGhnRWw1dzlCdzlpSnFhOHdiLWNjVUtWUTRXaUJ5OHh1V3hYU2l5SVlRMjRlUF93MllaYzRoREdEaWtpOXY0ZUhEd2doQzBGLVJhNXNCVUHSAYQCQVVfeXFMTmZONjFWYlJXRkJ4blg1Z2NuSmVkMVF6NGRzdS1yaWJMR2N6UnFjVEhXUHJCc2VGTDV6eDBuY1dEeGlYVVF0V0ZxMW5ublhxRUN0WU1Bczh4N0dSNU9SX2xmQkV4THpIRXZJVUtuNzR4VkFyaFMyX01rVU1YNkFXbHRPaFRNcG56akxZLXZhS2RnV0RFN1Yxa0JtNVFTLTZoMDlNSFVWbTQxbE9fRF9RUG5CXzlNa3M4VTIxZmkyQm82QWZTTkNsWG5xbTZwcXFuUkZMS2VRYmVZVW5HY1k4YnAxejVUeUlxUlJaUVJ2Y3lKMkp2OVN3YVJaNEdRWktVMWNOY00?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-10-23",
+   "desvio_dias": -1,
+   "visto": "2026-10-23T01:39-03:00"
   }
  },
  "salud": {
@@ -813,9 +831,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-22T22:48:40-03:00",
+ "ultima_corrida": "2026-10-23T01:39:21-03:00",
  "corridas": [
-  "2026-10-18T13:34-03:00",
   "2026-10-18T18:17-03:00",
   "2026-10-18T20:16-03:00",
   "2026-10-19T09:07-03:00",
@@ -934,6 +951,7 @@
   "2026-10-22T20:31-03:00",
   "2026-10-22T20:37-03:00",
   "2026-10-22T21:07-03:00",
-  "2026-10-22T22:48-03:00"
+  "2026-10-22T22:48-03:00",
+  "2026-10-23T01:39-03:00"
  ]
 }
