@@ -1,8 +1,5 @@
 # Reporte del 2026-10-23
 
-## Confirmados
-- 2026-10-23 Consumo masivo Scentia: prensa (desvío -1 días)
-
 ## Hoy se publica
 - Planilla de reservas internacionales y liquidez en moneda extranjera
 - Informativo semanal BCR
