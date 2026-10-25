@@ -1,1 +1,4 @@
-# Reporte del 2026-10-24
+# Reporte del 2026-10-25
+
+## Hoy se publica
+- IPI Pyme CAME
