@@ -1,7 +1,7 @@
 # Reporte del 2026-10-26
 
 ## Confirmados
-- 2026-10-26 Estadísticas de turismo internacional. Septiembre y tercer trimestre de 2026: indec_informes
+- 2026-10-26 Índice de Confianza en el Gobierno (UTDT): pagina_periodo
 
 ## Hoy se publica
 - 16:00 Estadísticas de turismo internacional. Septiembre y tercer trimestre de 2026
