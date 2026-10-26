@@ -833,12 +833,19 @@
    "estado": "sin_metodo"
   },
   "priv.llamado_tesoro|2026-10-26|": {
-   "estado": "programado",
-   "no_estaba": "2026-10-26T17:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-26",
+   "evidencia": "https://www.argentina.gob.ar/noticias/llamado-licitacion-de-instrumentos-del-tesoro-nacional-denominados-en-pesos-y-en-dolares-15",
+   "metodo": "gob_noticias",
+   "confirmado_el": "2026-10-26",
+   "desvio_dias": 0,
+   "visto": "2026-10-26T17:37-03:00",
+   "hora_detectada": "17:37",
+   "hora_desde": "17:07"
   },
   "priv.uia_ceu|2026-10-26|": {
    "estado": "programado",
-   "no_estaba": "2026-10-26T17:07-03:00"
+   "no_estaba": "2026-10-26T17:37-03:00"
   },
   "priv.utdt_icg|2026-10-26|2026-10": {
    "estado": "confirmado",
@@ -870,9 +877,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-26T17:07:33-03:00",
+ "ultima_corrida": "2026-10-26T17:37:33-03:00",
  "corridas": [
-  "2026-10-20T20:37-03:00",
   "2026-10-20T21:07-03:00",
   "2026-10-20T22:55-03:00",
   "2026-10-21T01:35-03:00",
@@ -991,6 +997,7 @@
   "2026-10-26T15:37-03:00",
   "2026-10-26T16:07-03:00",
   "2026-10-26T16:37-03:00",
-  "2026-10-26T17:07-03:00"
+  "2026-10-26T17:07-03:00",
+  "2026-10-26T17:37-03:00"
  ]
 }
