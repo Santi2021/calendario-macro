@@ -1,5 +1,8 @@
 # Reporte del 2026-10-26
 
+## Confirmados
+- 2026-10-26 Actividad industrial UIA: prensa
+
 ## Hoy se publica
 - 16:00 Estadísticas de turismo internacional. Septiembre y tercer trimestre de 2026
 - Relevamiento semanal EcoGo
