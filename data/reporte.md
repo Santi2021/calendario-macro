@@ -1,5 +1,8 @@
 # Reporte del 2026-10-30
 
+## Confirmados
+- 2026-10-30 Informe de Pagos Minoristas: bcra_publicacion
+
 ## Hoy se publica
 - Informe de Evolución del Mercado de Cambios y Balance Cambiario
 - Informe de Inclusión Financiera
@@ -7,6 +10,3 @@
 - 16:00 Dotación de personal de la administración pública nacional, empresas y sociedades. Septiembre de 2026
 - Informativo semanal BCR
 - Inflación semanal alimentos LCG
-
-## Log técnico
-[fallo] bcra.pagos_minoristas bcra_publicacion: https://www.bcra.gob.ar/publicaciones/informe-de-pagos-minoristas-septiembre-de-2026/: 404 con patrón no verificado

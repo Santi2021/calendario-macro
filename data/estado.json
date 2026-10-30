@@ -909,19 +909,26 @@
   },
   "bcra.cambiario|2026-10-30|": {
    "estado": "programado",
-   "no_estaba": "2026-10-30T14:07-03:00"
+   "no_estaba": "2026-10-30T14:37-03:00"
   },
   "bcra.inclusion|2026-10-30|": {
    "estado": "programado",
-   "no_estaba": "2026-10-30T14:07-03:00"
+   "no_estaba": "2026-10-30T14:37-03:00"
   },
   "bcra.pagos_minoristas|2026-10-30|": {
-   "estado": "programado",
-   "no_estaba": "2026-10-30T14:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-10-30",
+   "evidencia": "https://www.bcra.gob.ar/publicaciones/informe-de-pagos-minoristas-septiembre-de-2026/",
+   "metodo": "bcra_publicacion",
+   "confirmado_el": "2026-10-30",
+   "desvio_dias": 0,
+   "visto": "2026-10-30T14:37-03:00",
+   "hora_detectada": "14:37",
+   "hora_desde": "14:07"
   },
   "indec.dotacion_apn|2026-10-30|2026-09": {
    "estado": "programado",
-   "no_estaba": "2026-10-30T14:07-03:00"
+   "no_estaba": "2026-10-30T14:37-03:00"
   },
   "priv.bcr_semanal|2026-10-30|": {
    "estado": "sin_metodo"
@@ -948,9 +955,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-10-30T14:07:47-03:00",
+ "ultima_corrida": "2026-10-30T14:37:36-03:00",
  "corridas": [
-  "2026-10-26T12:07-03:00",
   "2026-10-26T12:37-03:00",
   "2026-10-26T13:07-03:00",
   "2026-10-26T13:40-03:00",
@@ -1069,6 +1075,7 @@
   "2026-10-30T12:37-03:00",
   "2026-10-30T13:07-03:00",
   "2026-10-30T13:37-03:00",
-  "2026-10-30T14:07-03:00"
+  "2026-10-30T14:07-03:00",
+  "2026-10-30T14:37-03:00"
  ]
 }
