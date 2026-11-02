@@ -954,6 +954,43 @@
   },
   "priv.lcg_semanal|2026-10-30|": {
    "estado": "sin_metodo"
+  },
+  "priv.acara|2026-11-02|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-02",
+   "evidencia": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZDRULXZxV3hIbWwxUEpQNk45QVQ5NkdTWWR2azJob1l0U3hkZUZ6WVhKX2dCbHZIZkZyMUZDcjlJSG5DeXVIcFE4Qlp4aWNBRXRtVTFYUnRMbXZNVDJBZHVhRjI0aUtBZFZ1OE8yeHlBR0luVU5hQTlnSnFUbGtkRVV0dHZvSEhneVpXTDhwX1J2X05UZUVfUEd4a29SRVZ2dUd5NFlJejdCeHdZcFNWd3dB?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-11-02",
+   "desvio_dias": 0,
+   "visto": "2026-11-02T09:07-03:00",
+   "hora_detectada": "09:07"
+  },
+  "priv.cca_usados|2026-11-02|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-02",
+   "evidencia": "https://cca.org.ar/en-octubre-se-comercializaron-162-796-autos-usados/",
+   "metodo": "rss",
+   "confirmado_el": "2026-11-02",
+   "desvio_dias": 0,
+   "visto": "2026-11-02T09:07-03:00",
+   "hora_detectada": "09:07"
+  },
+  "priv.ciara_cec|2026-11-02|": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-02",
+   "evidencia": "https://www.ciaracec.com.ar/ciara/Informaci%C3%B3n/Liquidaci%C3%B3n%20Mensual",
+   "metodo": "pagina_lista",
+   "confirmado_el": "2026-11-02",
+   "desvio_dias": 0,
+   "visto": "2026-11-02T09:07-03:00",
+   "hora_detectada": "09:07"
+  },
+  "priv.ecogo_semanal|2026-11-02|": {
+   "estado": "sin_metodo"
+  },
+  "priv.recaudacion_arca|2026-11-02|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-02T09:07-03:00"
   }
  },
  "salud": {
@@ -974,9 +1011,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-11-01T21:47:17-03:00",
+ "ultima_corrida": "2026-11-02T09:07:26-03:00",
  "corridas": [
-  "2026-10-27T10:37-03:00",
   "2026-10-27T11:07-03:00",
   "2026-10-27T11:37-03:00",
   "2026-10-27T12:07-03:00",
@@ -1095,6 +1131,7 @@
   "2026-11-01T10:17-03:00",
   "2026-11-01T15:26-03:00",
   "2026-11-01T18:17-03:00",
-  "2026-11-01T21:47-03:00"
+  "2026-11-01T21:47-03:00",
+  "2026-11-02T09:07-03:00"
  ]
 }
