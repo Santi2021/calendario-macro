@@ -39,11 +39,11 @@ concepto_id,nivel_a,nivel_b,nivel_c,nivel_d
 38,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","01-Préstamos financieros, títulos de deuda y líneas de crédito - Ingresos",Otros préstamos del exterior y títulos de deuda - Ingresos
 39,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Préstamos de Organismos Internacionales y agencias oficiales de crédito - Egresos
 40,03- Cuenta Financiera,"02- Préstamos financieros, títulos de deuda y líneas de crédito","02- Préstamos financieros, títulos de deuda y líneas de crédito - Egresos",Otros préstamos del exterior y títulos de deuda - Egresos
-41,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Billetes - Ingresos
-42,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,01- Venta de billetes y divisas sin fines específicos,Divisas - Ingresos
-43,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Billetes - Egresos
-44,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Otras inversiones
-45,03- Cuenta Financiera,03- Compra-venta de billetes y divisas sin fines específicos,02- Compra de billetes y divisas sin fines específicos,Inversiones directas de residentes en el exterior
+41,03- Cuenta Financiera,03- Compra-venta de billetes y transferencia de divisas sin fines específicos,01- Venta de billetes y transferencia de divisas sin fines específicos,Billetes - Ingresos
+42,03- Cuenta Financiera,03- Compra-venta de billetes y transferencia de divisas sin fines específicos,01- Venta de billetes y transferencia de divisas sin fines específicos,Divisas - Ingresos
+43,03- Cuenta Financiera,03- Compra-venta de billetes y transferencia de divisas sin fines específicos,02- Compra de billetes y transferencia de divisas sin fines específicos,Billetes - Egresos
+44,03- Cuenta Financiera,03- Compra-venta de billetes y transferencia de divisas sin fines específicos,02- Compra de billetes y transferencia de divisas sin fines específicos,Otras inversiones
+45,03- Cuenta Financiera,03- Compra-venta de billetes y transferencia de divisas sin fines específicos,02- Compra de billetes y  transferencia de divisas sin fines específicos,Inversiones directas de residentes en el exterior
 46,03- Cuenta Financiera,06- Otros movimientos de la cuenta financiera,01- Otros movimientos de la cuenta financiera,Otros movimientos de la cuenta financiera
 47,03- Cuenta Financiera,04- Operaciones de canje por transferencias con el exterior,01- Operaciones de canje por transferencias con el exterior,Operaciones de canje por transferencias con el exterior
 48,02- Cuenta Capital,01- Cuenta Capital,01-Capital - Egresos,Capital - Egresos
