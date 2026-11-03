@@ -1,8 +1,5 @@
-# Reporte del 2026-11-02
+# Reporte del 2026-11-03
 
 ## Hoy se publica
-- Patentamientos ACARA
-- Autos usados CCA
-- Liquidación CIARA-CEC
-- Relevamiento semanal EcoGo
-- Recaudación ARCA
+- 16:00 Índices de precios y cantidades del comercio exterior. Tercer trimestre de 2026
+- Etapas de fractura Vaca Muerta
