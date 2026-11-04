@@ -1,8 +1,5 @@
 # Reporte del 2026-11-04
 
-## Confirmados
-- 2026-11-04 ADEFA: archivo
-
 ## Hoy se publica
 - Estado resumido de activos y pasivos del BCRA
 - 16:00 Indicadores de condiciones de vida de los hogares (EPH). Primer semestre de 2026
