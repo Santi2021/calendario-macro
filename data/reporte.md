@@ -1,5 +1,8 @@
-# Reporte del 2026-11-03
+# Reporte del 2026-11-04
 
 ## Hoy se publica
-- 16:00 Índices de precios y cantidades del comercio exterior. Tercer trimestre de 2026
-- Etapas de fractura Vaca Muerta
+- Estado resumido de activos y pasivos del BCRA
+- 16:00 Indicadores de condiciones de vida de los hogares (EPH). Primer semestre de 2026
+- 16:00 Bases de microdatos de la Encuesta Permanente de Hogares. Segundo trimestre de 2026
+- ADEFA
+- Despachos de cemento
