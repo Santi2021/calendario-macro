@@ -1010,25 +1010,25 @@
   },
   "priv.fractura_vm|2026-11-03|": {
    "estado": "programado",
-   "no_estaba": "2026-11-04T12:07-03:00"
+   "no_estaba": "2026-11-04T12:37-03:00"
   },
   "bcra.estado_resumido|2026-11-04|2026-10-31": {
    "estado": "sin_metodo"
   },
   "indec.eph_condiciones_vida|2026-11-04|2026-S1": {
    "estado": "programado",
-   "no_estaba": "2026-11-04T12:07-03:00"
+   "no_estaba": "2026-11-04T12:37-03:00"
   },
   "indec.eph_microdatos|2026-11-04|2026-Q2": {
    "estado": "sin_metodo"
   },
   "priv.adefa|2026-11-04|": {
    "estado": "programado",
-   "no_estaba": "2026-11-04T12:07-03:00"
+   "no_estaba": "2026-11-04T12:37-03:00"
   },
   "priv.cemento|2026-11-04|": {
    "estado": "programado",
-   "no_estaba": "2026-11-04T12:07-03:00"
+   "no_estaba": "2026-11-04T12:37-03:00"
   }
  },
  "salud": {
@@ -1049,9 +1049,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-11-04T12:07:27-03:00",
+ "ultima_corrida": "2026-11-04T12:37:27-03:00",
  "corridas": [
-  "2026-10-29T12:37-03:00",
   "2026-10-29T13:07-03:00",
   "2026-10-29T13:37-03:00",
   "2026-10-29T14:07-03:00",
@@ -1170,6 +1169,7 @@
   "2026-11-04T10:37-03:00",
   "2026-11-04T11:07-03:00",
   "2026-11-04T11:37-03:00",
-  "2026-11-04T12:07-03:00"
+  "2026-11-04T12:07-03:00",
+  "2026-11-04T12:37-03:00"
  ]
 }
