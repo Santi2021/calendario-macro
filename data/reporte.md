@@ -1,5 +1,8 @@
 # Reporte del 2026-11-05
 
+## Confirmados
+- 2026-11-04 Despachos de cemento: pagina_periodo
+
 ## Hoy se publica
 - Informe sobre Inversión Extranjera Directa
 - Relevamiento de Expectativas de Mercado (REM)
