@@ -1009,8 +1009,15 @@
    "hora_desde": "15:37"
   },
   "priv.fractura_vm|2026-11-03|": {
-   "estado": "programado",
-   "no_estaba": "2026-11-05T16:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-11-05",
+   "evidencia": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOSHJBQjA1eFNRaUpmUE4yVXVBS2ptSm10T1EzRlh0anRQRWM5LXZEMGJjZmRqLXdQMi0zQk0tVnJrMEdnMmpXU2JSMG1TYUNReDFRQmh1VWxucjZta0wyNTJhb3E3M3FQdER3RlhiX0dPRWVIWVo1Ym1CXzFHRklaLVU4emZ3MWxkN2F2NGROSC14YzQwSXFFUko4UmtqOXlSYW90bDRMZ2pqZ1UzSndmRFFpYnRzWWhNOEN3eGdEZVRoV0liRkI4dWdfbnPSAcMBQVVfeXFMUEFCNENfbTZXU0haa1RFWTlCejI2YXNIOEJ6OS10RE5lczc1ZW04eHFhT04yUFRfTjR4YVNwT0N2dmRQb0N5WWRUWWRrMFNkOGFtTHA2MXVWQnlrRW9uUUt2UFYzQ1ItOUROeDVyRGxZd0hfVDF0bWtXZGxKMng3OHpBTGhWdXljVnVkS2hrMHlJRlFDMVMwNnl3Y1g4OWFCMVhnRFFqNm05SV9KNEhiMnRwU0JXWXctdEl1SGJ4bm53WW00?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-11-05",
+   "desvio_dias": 2,
+   "visto": "2026-11-05T16:37-03:00",
+   "hora_detectada": "16:37",
+   "hora_desde": "16:07"
   },
   "bcra.estado_resumido|2026-11-04|2026-10-31": {
    "estado": "sin_metodo"
@@ -1050,12 +1057,19 @@
    "visto": "2026-11-05T09:37-03:00"
   },
   "bcra.ied|2026-11-05|": {
-   "estado": "programado",
-   "no_estaba": "2026-11-05T16:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-11-05",
+   "evidencia": "https://www.bcra.gob.ar/publicaciones/informe-sobre-inversion-extranjera-directa-segundo-trimestre-2026/",
+   "metodo": "bcra_listado",
+   "confirmado_el": "2026-11-05",
+   "desvio_dias": 0,
+   "visto": "2026-11-05T16:37-03:00",
+   "hora_detectada": "16:37",
+   "hora_desde": "16:07"
   },
   "bcra.rem|2026-11-05|": {
    "estado": "programado",
-   "no_estaba": "2026-11-05T16:07-03:00"
+   "no_estaba": "2026-11-05T16:37-03:00"
   },
   "indec.aft_stats|2026-11-05|": {
    "estado": "confirmado",
@@ -1104,9 +1118,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-11-05T16:07:38-03:00",
+ "ultima_corrida": "2026-11-05T16:37:34-03:00",
  "corridas": [
-  "2026-10-30T15:08-03:00",
   "2026-10-30T15:37-03:00",
   "2026-10-30T16:07-03:00",
   "2026-10-30T16:37-03:00",
@@ -1225,6 +1238,7 @@
   "2026-11-05T14:37-03:00",
   "2026-11-05T15:07-03:00",
   "2026-11-05T15:37-03:00",
-  "2026-11-05T16:07-03:00"
+  "2026-11-05T16:07-03:00",
+  "2026-11-05T16:37-03:00"
  ]
 }
