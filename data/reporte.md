@@ -1,8 +1,7 @@
 # Reporte del 2026-11-05
 
 ## Confirmados
-- 2026-11-03 Etapas de fractura Vaca Muerta: prensa (desvío +2 días)
-- 2026-11-05 Informe sobre Inversión Extranjera Directa: bcra_listado
+- 2026-11-05 Relevamiento de Expectativas de Mercado (REM): prensa
 
 ## Hoy se publica
 - Informe sobre Inversión Extranjera Directa
