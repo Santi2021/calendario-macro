@@ -1132,6 +1132,35 @@
    "desvio_dias": 0,
    "visto": "2026-11-08T10:17-03:00",
    "hora_detectada": "10:17"
+  },
+  "bcra.imm|2026-11-09|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-09T09:07-03:00"
+  },
+  "indec.ipi_manuf|2026-11-09|2026-09": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-06",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/ipi_manufacturero_11_2630BE216D2B.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-11-09",
+   "desvio_dias": -3,
+   "visto": "2026-11-09T09:07-03:00"
+  },
+  "indec.isac|2026-11-09|2026-09": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-06",
+   "evidencia": "https://www.indec.gob.ar/uploads/informesdeprensa/isac_11_26F4E69BED3F.pdf",
+   "metodo": "indec_informes",
+   "confirmado_el": "2026-11-09",
+   "desvio_dias": -3,
+   "visto": "2026-11-09T09:07-03:00"
+  },
+  "priv.ecogo_semanal|2026-11-09|": {
+   "estado": "sin_metodo"
+  },
+  "priv.llamado_tesoro|2026-11-09|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-09T09:07-03:00"
   }
  },
  "salud": {
@@ -1152,9 +1181,8 @@
   "indec_2sem": "ea203918cf5b902c7018ce2b9e94d949a677eb75e0bd2fceff345464bfae5c17",
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c"
  },
- "ultima_corrida": "2026-11-08T21:56:58-03:00",
+ "ultima_corrida": "2026-11-09T09:07:29-03:00",
  "corridas": [
-  "2026-11-02T21:07-03:00",
   "2026-11-03T00:25-03:00",
   "2026-11-03T03:37-03:00",
   "2026-11-03T09:07-03:00",
@@ -1273,6 +1301,7 @@
   "2026-11-08T10:17-03:00",
   "2026-11-08T15:23-03:00",
   "2026-11-08T18:17-03:00",
-  "2026-11-08T21:56-03:00"
+  "2026-11-08T21:56-03:00",
+  "2026-11-09T09:07-03:00"
  ]
 }
