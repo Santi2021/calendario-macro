@@ -1,5 +1,8 @@
 # Reporte del 2026-11-12
 
+## Confirmados
+- 2026-11-12 Valorización mensual de la canasta básica alimentaria (CBA) y de la canasta básica total (CBT). Octubre de 2026: indec_informes
+
 ## Hoy se publica
 - Bandas cambiarias: proyección del mes siguiente
 - 16:00 Valorización mensual de la canasta básica alimentaria (CBA) y de la canasta básica total (CBT). Octubre de 2026
