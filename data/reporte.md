@@ -1,5 +1,9 @@
 # Reporte del 2026-11-13
 
+## Confirmados
+- 2026-11-13 Índice de salarios. Septiembre de 2026: indec_informes
+- 2026-11-13 Utilización de la capacidad instalada en la industria (UCII). Septiembre de 2026: indec_informes
+
 ## Hoy se publica
 - Informe sobre Bancos
 - Boletín Estadístico
