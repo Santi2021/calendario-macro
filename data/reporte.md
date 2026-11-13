@@ -1,12 +1,5 @@
 # Reporte del 2026-11-13
 
-## Confirmados
-- 2026-11-13 RIPTE. Septiembre de 2026: archivo_lm (desvío -1 días)
-- 2026-11-13 Situación y evolución del trabajo registrado (SIPA). Agosto de 2026: archivo_lm (desvío -1 días)
-
-## Sin evidencia pasada la tolerancia
-- 2026-11-09 Llamado a licitación del Tesoro
-
 ## Hoy se publica
 - Informe sobre Bancos
 - Boletín Estadístico
