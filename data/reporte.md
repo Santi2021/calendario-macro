@@ -1,5 +1,8 @@
 # Reporte del 2026-11-13
 
+## Confirmados
+- 2026-11-13 Boletín Estadístico: bcra_publicacion
+
 ## Hoy se publica
 - Informe sobre Bancos
 - Boletín Estadístico
