@@ -5,6 +5,3 @@
 - 16:00 Sistema de índices de precios mayoristas (SIPM). Octubre de 2026
 - Licitación Letras PBA
 - Resultado fiscal SPN
-
-## Log técnico
-[fallo] priv.ipc_caba prensa: Google News HTTP 429
