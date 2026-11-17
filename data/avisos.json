@@ -9,10 +9,10 @@
   "priv.llamado_tesoro|2026-11-09|",
   "priv.ipc_caba|2026-11-10|"
  ],
- "manana": "2026-11-16",
+ "manana": "2026-11-17",
  "ultimo_resultado": {
-  "cuando": "2026-11-14T22:05-03:00",
-  "tipo": "noche",
+  "cuando": "2026-11-17T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-11-16"
