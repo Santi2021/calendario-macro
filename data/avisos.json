@@ -7,13 +7,14 @@
   "bcra.ecc|2026-10-15|",
   "priv.utdt_icc|2026-10-15|",
   "priv.llamado_tesoro|2026-11-09|",
-  "priv.ipc_caba|2026-11-10|"
+  "priv.ipc_caba|2026-11-10|",
+  "bcra.bancos|2026-11-13|"
  ],
  "manana": "2026-11-17",
  "ultimo_resultado": {
-  "cuando": "2026-11-17T09:07-03:00",
-  "tipo": "manana",
+  "cuando": "2026-11-17T19:07-03:00",
+  "tipo": "cierre",
   "resultado": "ok"
  },
- "cierre": "2026-11-16"
+ "cierre": "2026-11-17"
 }
