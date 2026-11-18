@@ -1,7 +1,6 @@
-# Reporte del 2026-11-17
+# Reporte del 2026-11-18
 
 ## Hoy se publica
-- 16:00 Índice del costo de la construcción (ICC). Octubre de 2026
-- 16:00 Sistema de índices de precios mayoristas (SIPM). Octubre de 2026
-- Licitación Letras PBA
-- Resultado fiscal SPN
+- Estado resumido de activos y pasivos del BCRA
+- 16:00 Dosier estadístico en conmemoración del Día Mundial del Niño. Sexta edición
+- CICCRA carne
