@@ -1,5 +1,10 @@
 # Reporte del 2026-11-19
 
+## Confirmados
+- 2026-11-19 Encuesta de tendencia de negocios. Industria manufacturera. Expectativas noviembre 2026-enero 2027: indec_informes
+- 2026-11-19 Encuesta de tendencia de negocios. Supermercados y autoservicios mayoristas. Expectativas noviembre 2026-enero 2027: indec_informes
+- 2026-11-19 Intercambio comercial argentino (ICA). Bienes. Octubre de 2026: indec_informes
+
 ## Hoy se publica
 - 16:00 Encuesta de tendencia de negocios. Industria manufacturera. Expectativas noviembre 2026-enero 2027
 - 16:00 Encuesta de tendencia de negocios. Supermercados y autoservicios mayoristas. Expectativas noviembre 2026-enero 2027
