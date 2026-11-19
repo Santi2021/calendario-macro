@@ -7,3 +7,6 @@
 - ADIMRA metalurgia
 - Panorama Agrícola Semanal BCBA
 - ICC Di Tella
+
+## Log técnico
+[fallo] priv.ipc_caba rss: https://www.estadisticaciudad.gob.ar/eyc/feed/: HTTPSConnectionPool(host='www.estadisticaciudad.gob.ar', port=443): Read timed out. (read timeout=30)
