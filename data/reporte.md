@@ -7,3 +7,7 @@
 - ADIMRA metalurgia
 - Panorama Agrícola Semanal BCBA
 - ICC Di Tella
+
+## Log técnico
+[fallo] priv.ipc_caba prensa: https://news.google.com/rss/search?q=inflaci%C3%B3n+CABA+IDECBA+after:2026-11-06+before:2026-11-20&hl=es-419&gl=AR&ceid=AR:es-419: HTTP 503
+[fallo] priv.adimra prensa: https://news.google.com/rss/search?q=ADIMRA+metal%C3%BArgica+after:2026-11-15+before:2026-11-20&hl=es-419&gl=AR&ceid=AR:es-419: HTTP 503
