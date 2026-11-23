@@ -1440,8 +1440,15 @@
    "estado": "sin_metodo"
   },
   "priv.utdt_icg|2026-11-23|2026-11": {
-   "estado": "programado",
-   "no_estaba": "2026-11-23T12:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-11-23",
+   "evidencia": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNamc5TlhINXNuLVdkUTNEbU8xYnpFSlBpWTFNYW1KOWpBRjZ1dUZsVXpqY0lJUlgtcWZHTG5TMlNpVWZhX1N1eFN4cnQ4WHlsR1BQREcteHdUQzZtRDRONjc1TFdmcWM0aG43aHNYRDZPeVBFbHN2UjVqellaanU2N1ZDcWh3eUhsamVpSWpxa05ZRlVieEdFZmxNcTgxRGZoZVJJYlYteEJIWnZnbXhwZkdrckdaV25oakhUWGRFZW9HTGxZYVQ4TVhndzFDX2JydkJhOEFDQ3RON01pZGF0Mg?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-11-23",
+   "desvio_dias": 0,
+   "visto": "2026-11-23T13:07-03:00",
+   "hora_detectada": "13:07",
+   "hora_desde": "12:37"
   }
  },
  "salud": {
@@ -1463,9 +1470,8 @@
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c",
   "indec_1sem_prox": "17881e7928599de05dd71001f40a4ae20f1795c51f9cc84195711f3cc3fb53f3"
  },
- "ultima_corrida": "2026-11-23T12:37:25-03:00",
+ "ultima_corrida": "2026-11-23T13:07:24-03:00",
  "corridas": [
-  "2026-11-17T13:07-03:00",
   "2026-11-17T13:37-03:00",
   "2026-11-17T14:07-03:00",
   "2026-11-17T14:37-03:00",
@@ -1584,6 +1590,7 @@
   "2026-11-23T11:07-03:00",
   "2026-11-23T11:37-03:00",
   "2026-11-23T12:07-03:00",
-  "2026-11-23T12:37-03:00"
+  "2026-11-23T12:37-03:00",
+  "2026-11-23T13:07-03:00"
  ]
 }
