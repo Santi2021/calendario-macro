@@ -5,6 +5,3 @@
 - Escrituras CABA
 - Llamado a licitación del Tesoro
 - Actividad industrial UIA
-
-## Log técnico
-[fallo] priv.escrituras_caba prensa: Google News HTTP 429
