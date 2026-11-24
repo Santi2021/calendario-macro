@@ -1449,6 +1449,27 @@
    "visto": "2026-11-23T13:07-03:00",
    "hora_detectada": "13:07",
    "hora_desde": "12:37"
+  },
+  "indec.emae|2026-11-24|2026-09": {
+   "estado": "confirmado",
+   "fecha_real": "2026-11-23",
+   "evidencia": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRFNaY3piZHk2OWJoUW5vNUZXaEFTU3dObThJSGJ6LXMzSmJSd3E3UlFYUVhGaGpfNHJtQ2RIckJZczFFVlItVkxNeFNKX29sa2VvMDMxc21pMXVmQUpQUTNxQnkyYm41bzJLQUZmVjliMWVlemRHaVhEbXRCZER3WVBQbFJ0RlZRV2NtbFhnVW9zbnJnal9rNzFoQ1YzYzZmbDdQZnY5VWhXU21kbjhGaFRFbHgxSFo4NVBfYzlDUVdJbjcyNkNyNEpobnNRMExDQ1RFN3l4SUc3cWtyd3RMRmwyUUQwWVHSAe8BQVVfeXFMTmpUMi1jNGxXSUxNalRacjZUT0ZnSlF1TkF4YVl0OXRzWkRuZFBvOXl4WW9jMmNGbjlLWnV0ODhMYmVXNlFXSmNrRzBRTXhuczZHemIyVUhISVR2ZHhSaGRBb3VDUTBCbGU0b0RLX0dQZjIxbXJZT05NbGh2ZjhxV1JiaVYyQ2tCWUhfTHdYT3ZMQ1o3UjFqczgxQTlCNmRvc3NYbXluWThKaHZrS1kzNXRFb0h5TnFNaWtWZHFoMkhIWTB0Z3YyLWRlUjFMSmhWbFNkOWNZbG1wMjA1NHJfTVFwd1ZyWU4yU3R1dGtFUU0?oc=5",
+   "metodo": "prensa",
+   "confirmado_el": "2026-11-24",
+   "desvio_dias": -1,
+   "visto": "2026-11-24T06:44-03:00"
+  },
+  "priv.escrituras_caba|2026-11-24|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-24T06:44-03:00"
+  },
+  "priv.llamado_tesoro|2026-11-24|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-24T06:44-03:00"
+  },
+  "priv.uia_ceu|2026-11-24|": {
+   "estado": "programado",
+   "no_estaba": "2026-11-24T06:44-03:00"
   }
  },
  "salud": {
@@ -1470,9 +1491,8 @@
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c",
   "indec_1sem_prox": "17881e7928599de05dd71001f40a4ae20f1795c51f9cc84195711f3cc3fb53f3"
  },
- "ultima_corrida": "2026-11-23T21:07:22-03:00",
+ "ultima_corrida": "2026-11-24T06:44:21-03:00",
  "corridas": [
-  "2026-11-17T23:49-03:00",
   "2026-11-18T04:14-03:00",
   "2026-11-18T09:07-03:00",
   "2026-11-18T09:37-03:00",
@@ -1591,6 +1611,7 @@
   "2026-11-23T20:07-03:00",
   "2026-11-23T20:37-03:00",
   "2026-11-23T20:42-03:00",
-  "2026-11-23T21:07-03:00"
+  "2026-11-23T21:07-03:00",
+  "2026-11-24T06:44-03:00"
  ]
 }
