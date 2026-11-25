@@ -1,7 +1,7 @@
 # Reporte del 2026-11-25
 
 ## Confirmados
-- 2026-11-25 IPI FIEL: pagina_periodo
+- 2026-11-24 Escrituras CABA: rss (desvío +1 días)
 
 ## Hoy se publica
 - 16:00 Encuesta de comercios de electrodomésticos y artículos para el hogar. Tercer trimestre de 2026
