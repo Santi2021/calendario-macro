@@ -1461,7 +1461,7 @@
   },
   "priv.escrituras_caba|2026-11-24|": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   },
   "priv.llamado_tesoro|2026-11-24|": {
    "estado": "confirmado",
@@ -1483,30 +1483,37 @@
   },
   "indec.electrodomesticos|2026-11-25|2026-Q3": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   },
   "indec.mayoristas|2026-11-25|2026-09": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   },
   "indec.shoppings|2026-11-25|2026-09": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   },
   "indec.supermercados|2026-11-25|2026-09": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   },
   "priv.energia_prod|2026-11-25|": {
    "estado": "sin_metodo"
   },
   "priv.fiel_ipi|2026-11-25|": {
-   "estado": "programado",
-   "no_estaba": "2026-11-25T12:07-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-11-25",
+   "evidencia": "https://www.fiel.org/",
+   "metodo": "pagina_periodo",
+   "confirmado_el": "2026-11-25",
+   "desvio_dias": 0,
+   "visto": "2026-11-25T12:37-03:00",
+   "hora_detectada": "12:37",
+   "hora_desde": "12:07"
   },
   "priv.scentia|2026-11-25|": {
    "estado": "programado",
-   "no_estaba": "2026-11-25T11:37-03:00"
+   "no_estaba": "2026-11-25T12:37-03:00"
   }
  },
  "salud": {
@@ -1528,9 +1535,8 @@
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c",
   "indec_1sem_prox": "17881e7928599de05dd71001f40a4ae20f1795c51f9cc84195711f3cc3fb53f3"
  },
- "ultima_corrida": "2026-11-25T12:07:30-03:00",
+ "ultima_corrida": "2026-11-25T12:37:32-03:00",
  "corridas": [
-  "2026-11-19T12:07-03:00",
   "2026-11-19T12:37-03:00",
   "2026-11-19T13:07-03:00",
   "2026-11-19T13:39-03:00",
@@ -1649,6 +1655,7 @@
   "2026-11-25T10:37-03:00",
   "2026-11-25T11:07-03:00",
   "2026-11-25T11:41-03:00",
-  "2026-11-25T12:07-03:00"
+  "2026-11-25T12:07-03:00",
+  "2026-11-25T12:37-03:00"
  ]
 }
