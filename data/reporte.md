@@ -1,8 +1,5 @@
 # Reporte del 2026-11-25
 
-## Confirmados
-- 2026-11-24 Escrituras CABA: rss (desvío +1 días)
-
 ## Hoy se publica
 - 16:00 Encuesta de comercios de electrodomésticos y artículos para el hogar. Tercer trimestre de 2026
 - 16:00 Encuesta de autoservicios mayoristas. Septiembre de 2026
