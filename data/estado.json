@@ -1548,25 +1548,32 @@
   },
   "priv.scentia|2026-11-25|": {
    "estado": "programado",
-   "no_estaba": "2026-11-26T14:37-03:00"
+   "no_estaba": "2026-11-26T15:07-03:00"
   },
   "bcra.estado_resumido|2026-11-26|2026-11-23": {
    "estado": "sin_metodo"
   },
   "bcra.pnfc|2026-11-26|": {
-   "estado": "programado",
-   "no_estaba": "2026-11-26T14:37-03:00"
+   "estado": "confirmado",
+   "fecha_real": "2026-11-26",
+   "evidencia": "https://www.bcra.gob.ar/publicaciones/informe-de-proveedores-no-financieros-de-credito-primer-semestre-2026/",
+   "metodo": "bcra_listado",
+   "confirmado_el": "2026-11-26",
+   "desvio_dias": 0,
+   "visto": "2026-11-26T15:07-03:00",
+   "hora_detectada": "15:07",
+   "hora_desde": "14:37"
   },
   "priv.bcba_pas|2026-11-26|": {
    "estado": "sin_metodo"
   },
   "priv.licitaciones_tesoro|2026-11-26|": {
    "estado": "programado",
-   "no_estaba": "2026-11-26T14:37-03:00"
+   "no_estaba": "2026-11-26T15:07-03:00"
   },
   "priv.utdt_ei|2026-11-26|": {
    "estado": "programado",
-   "no_estaba": "2026-11-26T14:37-03:00"
+   "no_estaba": "2026-11-26T15:07-03:00"
   }
  },
  "salud": {
@@ -1588,9 +1595,8 @@
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c",
   "indec_1sem_prox": "17881e7928599de05dd71001f40a4ae20f1795c51f9cc84195711f3cc3fb53f3"
  },
- "ultima_corrida": "2026-11-26T14:37:28-03:00",
+ "ultima_corrida": "2026-11-26T15:07:26-03:00",
  "corridas": [
-  "2026-11-20T14:42-03:00",
   "2026-11-20T15:07-03:00",
   "2026-11-20T15:37-03:00",
   "2026-11-20T16:07-03:00",
@@ -1709,6 +1715,7 @@
   "2026-11-26T13:07-03:00",
   "2026-11-26T13:37-03:00",
   "2026-11-26T14:07-03:00",
-  "2026-11-26T14:37-03:00"
+  "2026-11-26T14:37-03:00",
+  "2026-11-26T15:07-03:00"
  ]
 }
