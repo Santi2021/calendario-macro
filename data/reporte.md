@@ -1,10 +1,8 @@
-# Reporte del 2026-11-25
+# Reporte del 2026-11-26
 
 ## Hoy se publica
-- 16:00 Encuesta de comercios de electrodomésticos y artículos para el hogar. Tercer trimestre de 2026
-- 16:00 Encuesta de autoservicios mayoristas. Septiembre de 2026
-- 16:00 Encuesta nacional de centros de compras. Septiembre de 2026
-- 16:00 Encuesta de supermercados. Septiembre de 2026
-- Producción de petróleo y gas
-- IPI FIEL
-- Consumo masivo Scentia
+- Estado resumido de activos y pasivos del BCRA
+- Informe sobre Proveedores No Financieros de Crédito
+- Panorama Agrícola Semanal BCBA
+- Licitación del Tesoro (resultado)
+- Expectativas de inflación Di Tella
