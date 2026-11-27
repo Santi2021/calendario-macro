@@ -1,8 +1,7 @@
 # Reporte del 2026-11-27
 
 ## Confirmados
-- 2026-11-27 Informe de la industria de maquinaria agrícola. Tercer trimestre de 2026: indec_informes
-- 2026-11-27 Estadísticas de turismo internacional. Octubre de 2026: indec_informes
+- 2026-11-27 Informe de Evolución del Mercado de Cambios y Balance Cambiario: xlsx_modificado
 
 ## Hoy se publica
 - Informe de Evolución del Mercado de Cambios y Balance Cambiario
