@@ -10,10 +10,10 @@
   "priv.ipc_caba|2026-11-10|",
   "bcra.bancos|2026-11-13|"
  ],
- "manana": "2026-11-26",
+ "manana": "2026-11-27",
  "ultimo_resultado": {
-  "cuando": "2026-11-26T19:07-03:00",
-  "tipo": "cierre",
+  "cuando": "2026-11-27T09:07-03:00",
+  "tipo": "manana",
   "resultado": "ok"
  },
  "cierre": "2026-11-26"
