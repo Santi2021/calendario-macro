@@ -1,8 +1,5 @@
 # Reporte del 2026-11-27
 
-## Confirmados
-- 2026-11-27 Informe de Evolución del Mercado de Cambios y Balance Cambiario: xlsx_modificado
-
 ## Hoy se publica
 - Informe de Evolución del Mercado de Cambios y Balance Cambiario
 - Informe de Pagos Minoristas
