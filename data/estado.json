@@ -1548,7 +1548,7 @@
   },
   "priv.scentia|2026-11-25|": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "bcra.estado_resumido|2026-11-26|2026-11-23": {
    "estado": "sin_metodo"
@@ -1580,23 +1580,23 @@
   },
   "priv.utdt_ei|2026-11-26|": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "bcra.cambiario|2026-11-27|": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "bcra.pagos_minoristas|2026-11-27|": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "indec.maquinaria_agricola|2026-11-27|2026-Q3": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "indec.turismo_int|2026-11-27|2026-10": {
    "estado": "programado",
-   "no_estaba": "2026-11-27T11:07-03:00"
+   "no_estaba": "2026-11-27T11:37-03:00"
   },
   "priv.bcr_semanal|2026-11-27|": {
    "estado": "sin_metodo"
@@ -1624,9 +1624,8 @@
   "bcra_calendario": "43fc33ea4825e463689a772a96412fa22460f4768d75f0c8ac3f17c2a461507c",
   "indec_1sem_prox": "17881e7928599de05dd71001f40a4ae20f1795c51f9cc84195711f3cc3fb53f3"
  },
- "ultima_corrida": "2026-11-27T11:07:27-03:00",
+ "ultima_corrida": "2026-11-27T11:37:26-03:00",
  "corridas": [
-  "2026-11-22T10:17-03:00",
   "2026-11-22T17:22-03:00",
   "2026-11-22T18:17-03:00",
   "2026-11-22T22:46-03:00",
@@ -1745,6 +1744,7 @@
   "2026-11-27T09:37-03:00",
   "2026-11-27T10:07-03:00",
   "2026-11-27T10:37-03:00",
-  "2026-11-27T11:07-03:00"
+  "2026-11-27T11:07-03:00",
+  "2026-11-27T11:37-03:00"
  ]
 }
